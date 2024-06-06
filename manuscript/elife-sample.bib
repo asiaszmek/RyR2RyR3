@@ -72,6 +72,23 @@ keywords = {CaM, [CaM], CaM binding, CaM redistribution},
 abstract = {Calmodulin (CaM) is a ubiquitous Ca2+ binding protein and Ca2+-CaM activates many cellular targets and functions. While much of CaM is thought to be protein bound, quantitative data in cardiac myocytes is lacking regarding CaM location, [CaM]free and CaM redistribution during changes in [Ca2+]i. Here, we demonstrated that in adult rabbit cardiac myocytes, CaM is highly concentrated at Z-lines (confirmed by Di-8-ANEPPS staining of transverse tubules) using three different approaches: immunocytochemistry (endogenous CaM), Alexa Fluor 488 conjugate CaM (F-CaM) in both permeabilized cells (exogenous CaM) and in patch clamped intact cells (via pipette dialysis). Using 100nM [CaM]free we washed F-CaM into permeabilized myocytes and saw a two-phase (fast and slow) CaM binding curve with a plateau after 40min of F-CaM wash-in. We also measured myocyte [CaM]free using two modified null-point titration methods, finding [CaM]free to be 50–75nM (which is only 1/100 of total [CaM]). Higher [Ca2+]i increased CaM binding especially in the nucleus and at Z-lines and significantly slowed F-CaM dissociation rate when F-CaM was washed out of permeabilized myocytes. Additionally, in both permeabilized and intact myocytes, CaM moved into the nucleus when [Ca2+]i was elevated, and this was reversible. We conclude that [CaM]free is very low in myocytes even at resting [Ca2+]i, indicating intense competition of CaM targets for free CaM. Bound CaM is relatively concentrated at Z-lines at rest but translocates significantly to the nucleus upon elevation of [Ca2+]i, which may influence activation of different targets and cellular functions.}
 }
 
+@article{RyR1CaMBD3,
+@Comment CaMBD3 in RyR1 is predicted to bind CaM and Ca(RyR1 to Ca)
+@Comment CAMBD3 can bind CaMBD2 in RyR -- Shiferaws model with competition of
+@Comment CaMBD3 and CaM for CaMBD2??? However the affinity at 0 Ca is 800 nM,
+@Comment at 50 uM -- 230 nM, at 500 uM -- 268, at 5 mM -- 181
+
+
+title = {A Ca2+-Binding Domain in RyR1 that Interacts with the Calmodulin Binding Site and Modulates Channel Activity},
+authors = {Liangwen Xiong and Jia-Zheng Zhang and Rong He and Susan L. Hamilton},
+journal = {Biophys J},
+volume = {90},
+number={1},
+year = {2014},
+page = 173,
+}
+
+
 @article{doi:10.1021/bi401502x,
 @Comment In 10uM Ca2+ CaMCa4 Kd for CaMBD1 7.6+/-1 uM
 @Comment In 10 uM Ca2+ CaMCa4 Kd for CaMBD2 0.047 uM
@@ -159,6 +176,7 @@ year = {2019}
 
 
 @article{https://doi.org/10.1111/j.1476-5381.2008.00092.x,
+@Comment this group claims that CaM increases RyR2 open probability and they see more sparks
 author = {Sigalas, C and Bent, S and Kitmitto, A and O'Neill, S and Sitsapesan, R},
 title = {Ca2+-calmodulin can activate and inactivate cardiac ryanodine receptors},
 journal = {British Journal of Pharmacology},
@@ -185,4 +203,93 @@ doi = {https://doi.org/10.1016/j.bpj.2009.07.027},
 url = {https://www.sciencedirect.com/science/article/pii/S0006349509012909},
 author = {Charalambos Sigalas and Maria Belen Mayo-Martin and David E. Jane and Rebecca Sitsapesan},
 abstract = {We have shown that physiological levels of Ca2+-calmodulin (Ca2+CaM; 50–100 nM) activate cardiac ryanodine receptors (RyR2) incorporated into bilayers and increase the frequency of Ca2+ sparks and waves in cardiac cells. In contrast, it is well known that Ca2+CaM inhibits [3H]ryanodine binding to cardiac sarcoplasmic reticulum. Since the [3H]ryanodine binding technique does not reflect the effects of Ca2+CaM on RyR2 open probability (Po), we have investigated, using the reversible ryanoid, ryanodol, whether Ca2+CaM can directly influence the binding of ryanoids to single RyR2 channels independently of Po. We demonstrate that Ca2+CaM reduces the rate of ryanodol association to RyR2 without affecting the rate of dissociation. We also find that ryanodol-bound channels fluctuate between at least two distinct subconductance states, M1 and M2, in a voltage-dependent manner. Ca2+CaM significantly alters the equilibrium between these two states. The results suggest that Ca2+CaM binding to RyR2 causes a conformation change to regions of the channel that include the ryanoid binding site, thereby leading to a decrease in ryanoid association rate and modulation of gating within the ryanoid/RyR2 bound state. Our data provide a possible explanation for why the effects of Ca2+CaM at the single-channel level are not mirrored by [3H]ryanodine binding studies.}
+}
+
+
+@article{doi:10.1021/bi700655h,
+@Comment RyRp which corresponds to CaMBD2 in RyR2.
+@Comment Ca affinity for CaM bound to RyR1 is lowered 10 fold.
+@Comment seems that Ca binds to N lobe of CaM bound to RyR1 with affinity ~3.5-4.5 uM
+author = {Boschek, Curt B. and Jones, Terry E. and Squier, Thomas C. and Bigelow, Diana J.},
+title = {Calcium Occupancy of N-Terminal Sites within Calmodulin Induces Inhibition of the Ryanodine Receptor Calcium Release Channel},
+journal = {Biochemistry},
+volume = {46},
+number = {37},
+pages = {10621-10628},
+year = {2007},
+doi = {10.1021/bi700655h},
+    note ={PMID: 17713923},
+
+URL = { 
+    
+        https://doi.org/10.1021/bi700655h
+    
+    
+
+},
+eprint = { 
+    
+        https://doi.org/10.1021/bi700655h
+    
+    
+
+}
+
+}
+
+@Article{molecules25184040,
+@Comment Ca binding to RyR activates it/increases opening probability, Ca binding to CaM bound to RyR modulates -- inhibites RyR2
+AUTHOR = {Bauerová-Hlinková, Vladena and Hajdúchová, Dominika and Bauer, Jacob A.},
+TITLE = {Structure and Function of the Human Ryanodine Receptors and Their Association with Myopathies—Present State, Challenges, and Perspectives},
+JOURNAL = {Molecules},
+VOLUME = {25},
+YEAR = {2020},
+NUMBER = {18},
+ARTICLE-NUMBER = {4040},
+URL = {https://www.mdpi.com/1420-3049/25/18/4040},
+PubMedID = {32899693},
+ISSN = {1420-3049},
+ABSTRACT = {Cardiac arrhythmias are serious, life-threatening diseases associated with the dysregulation of Ca2+ influx into the cytoplasm of cardiomyocytes. This dysregulation often arises from dysfunction of ryanodine receptor 2 (RyR2), the principal Ca2+ release channel. Dysfunction of RyR1, the skeletal muscle isoform, also results in less severe, but also potentially life-threatening syndromes. The RYR2 and RYR1 genes have been found to harbor three main mutation “hot spots”, where mutations change the channel structure, its interdomain interface properties, its interactions with its binding partners, or its dynamics. In all cases, the result is a defective release of Ca2+ ions from the sarcoplasmic reticulum into the myocyte cytoplasm. Here, we provide an overview of the most frequent diseases resulting from mutations to RyR1 and RyR2, briefly review some of the recent experimental structural work on these two molecules, detail some of the computational work describing their dynamics, and summarize the known changes to the structure and function of these receptors with particular emphasis on their N-terminal, central, and channel domains.},
+DOI = {10.3390/molecules25184040}
+}
+
+
+@article{10.1085/jgp.200910380,
+@Comment model of Mg2+ and Ca2+ binding to RyR2
+    author = {Zahradníková, Alexandra and Valent, Ivan and Zahradník, Ivan},
+    title = "{Frequency and release flux of calcium sparks in rat cardiac myocytes: a relation to RYR gating}",
+    journal = {Journal of General Physiology},
+    volume = {136},
+    number = {1},
+    pages = {101-116},
+    year = {2010},
+    month = {06},
+    abstract = "{Cytosolic calcium concentration in resting cardiac myocytes locally fluctuates as a result of spontaneous microscopic Ca2+ releases or abruptly rises as a result of an external trigger. These processes, observed as calcium sparks, are fundamental for proper function of cardiac muscle. In this study, we analyze how the characteristics of spontaneous and triggered calcium sparks are related to cardiac ryanodine receptor (RYR) gating. We show that the frequency of spontaneous sparks and the probability distribution of calcium release flux quanta of triggered sparks correspond quantitatively to predictions of an allosteric homotetrameric model of RYR gating. This model includes competitive binding of Ca2+ and Mg2+ ions to the RYR activation sites and allosteric interaction between divalent ion binding and channel opening. It turns out that at rest, RYRs are almost fully occupied by Mg2+. Therefore, spontaneous sparks are most frequently evoked by random openings of the highly populated but rarely opening Mg4RYR and CaMg3RYR forms, whereas triggered sparks are most frequently evoked by random openings of the less populated but much more readily opening Ca2Mg2RYR and Ca3MgRYR forms. In both the spontaneous and the triggered sparks, only a small fraction of RYRs in the calcium release unit manages to open during the spark because of the limited rate of Mg2+ unbinding. This mechanism clarifies the unexpectedly low calcium release flux during elementary release events and unifies the theory of calcium signaling in resting and contracting cardiac myocytes.}",
+    issn = {0022-1295},
+    doi = {10.1085/jgp.200910380},
+    url = {https://doi.org/10.1085/jgp.200910380},
+    eprint = {https://rupress.org/jgp/article-pdf/136/1/101/1735185/jgp\_200910380.pdf},
+}
+
+
+@article{Fret_CaM_to_RyR2,
+@Comment dissociation and association time constants rates for CaM binding to RyR, F-CaM does not preserve Kd for RyR binding
+title={FRET Detection of Calmodulin Binding to the Cardiac RyR2 Calcium Release Channel},
+author= {Tao Guo AND Bradley R. Fruen AND Florentin R. Nitu AND Trinh D. Nguyen
+Yi Yang AND Razvan L. Cornea AND Donald M. Bers},
+journal={Biohys J},
+year=2011,
+volume=101,
+numver=9,
+page=2170,
+
+}
+
+@article{RYR2_oxi_CaM_binding,
+@Comment H2O2 lowers RyR2's affinity for CaM,does not change the affinity for FKBP12.6
+title= {Oxidation of ryanodine receptor (RyR) and calmodulin enhance Ca release and pathologically alter, RyR structure and calmodulin affinity},
+year={2015},
+volume=85,
+page=240,
+author={Tetsuro Oda AND Yi Yang AND Hitoshi Uchinoumi AND David D. Thomas AND Ye Chen-Izu AND Takayoshi Kato AND Takeshi Yamamoto AND Masafumi Yano AND Razvan L. Cornea AND Donald M. Bers},
 }
