@@ -1,5 +1,5 @@
 @article{RyR2_pore_CaMCa2,
-
+@Comment These high-resolution 3D structures reveal that Ca2+-CaM binds to RyR2 and induces conformational changes in the central domain that is connected to the gate of the channel, resulting in pore closure (ie, Ca2+-CaM–induced inactivation of RyR2).
 author= {Gong, D. and  Chi, X. and Wei, J},
 title = {Modulation of cardiac ryanodine receptor 2 by calmodulin},
 journal = {Nature}
@@ -9,7 +9,17 @@ year = 2019,
 doi = {https://doi.org/10.1038/s41586-019-1377-y},
 }
 @article{doi:10.1021/acs.biochem.1c00152,
-@Comment CaMBD3 (the high affinity site) bound calmodulin binds 5 calcium molecules, the last one is important for stabilizing the binding
+@Comment CaMBD3 (the high affinity site) bound calmodulin binds 5 calcium molecules, the last one is important for stabilizing the binding(?)
+@Comment CaMN to CaMD3 Kd values are 200 ± 50 nM (wild type),
+@Comment CaMC to CaMD3 Kd is 400 nM
+@Comment CaM to CaMD3 Kd is 100 nM
+@Comment The binding analysis reveals that four Ca2+ ions bind to the EF-hand motifs with relatively high affinity (K1 and K2 = 100 nM, and K3 and K4 = 1.0 μM), and an extra fifth Ca2+ binds to the CaM/CaMBD3 complex in the micromolar range (K5 = 5.0–50.0 μM).
+@Comment The binding analysis reveals that four Ca2+ ions bind to the EF-hand motifs with relatively high affinity (K1 and K2 = 100 nM, and K3 and K4 = 1.0 μM), and an extra fifth Ca2+ binds to the CaM/CaMBD3 complex in the micromolar range (K5 = 5.0–50.0 μM).
+@Comment the binding of CaM to CaMBD2 alone may be sufficient to promote CaM-dependent channel inactivation. (33) Thus, binding of CaM to CaMBD3 is not required for CaM-dependent channel inactivation of RyR2. If CaMBD3 is not important for channel inactivation, then what is the physiological role of the binding of CaM to CaMBD3? Binding of CaM to CaMBD3 might alternatively mediate the Ca2+-dependent association of ryanodine receptors with various accessory proteins that regulate channel function. (33)
+@Comment The preferential binding of the CaM N-lobe to RyR (and the CaM C-lobe to the L-type channel) is supported by the observation that the CaM N-lobe binds to CaMBD3 with an affinity (Figure 3A) higher than that with which it binds to the L-type channel, (42) while the CaM C-lobe binds to the L-type channel (42) with an affinity higher than that with which it binds to CaMBD3 (Figure 3B).
+@Comment so CaM is a possible physical linker to CaMKII/L-type
+@Comment Also, the binding of the fifth Ca2+ causes a 2-fold increase in the binding affinity of the CaM/CaMBD3 complex (Figure 3C), which might be important for fine-tuning the stability of the CaM/RyR2 complex under physiological conditions
+
 author = {Yu, Qinhong and Anderson, David E. and Kaur, Ramanjeet and Fisher, Andrew J. and Ames, James B.},
 title = {The Crystal Structure of Calmodulin Bound to the Cardiac Ryanodine Receptor (RyR2) at Residues Phe4246–Val4271 Reveals a Fifth Calcium Binding Site},
 journal = {Biochemistry},
@@ -41,6 +51,7 @@ eprint = {
 @Comment RyR2 affinities for CaM binding and Ca2+
 @Comment high affinity site CAMBD3, 2 and 3 switch,?
 @Comment a nice model of RyR2CaM worth sticking to
+@Comment their effective concentration relative to a proximate CaM may be very high. Accordingly, these two low-affinity CaMBDs may serve as secondary ‘bridging’ CaM-binding sites under some Ca2+ conditions or in certain RyR conformations, together with a high-affinity tethering site like that of CaMBD2. Noteworthy, Ser-2031 within RyR2 CaMBD1b is a target for phosphorylation by β-adrenergic-stimulated protein kinase A (PKA) [46,47] (Figure 1 and Table 1). Our results demonstrated a small decrease in the CaM affinity for the CaMBD1b peptide when using a Ser-2031 phosphorylated, compared with nonphosphorylated CaMBD1b. Hence, PKA-mediated Ser-2031 phosphorylation could potentially affect CaM's inhibition of RyR2, if CaMBD1b is indeed a functionally relevant RyR2 CaMBD at increased [Ca2+].
     author = {Brohus, Malene and Søndergaard, Mads T. and Wayne Chen, Sui Rong and van Petegem, Filip and Overgaard, Michael T.},
     title = "{Ca2+-dependent calmodulin binding to cardiac ryanodine receptor (RyR2) calmodulin-binding domains}",
     journal = {Biochemical Journal},
@@ -58,6 +69,7 @@ eprint = {
 @article{ryrcam_dissociation_rate,
 @Comment in no ca dissociation rate is 14.8+/- 2 min
 @Comment in 100 nM Ca 11.7+/- 2 min
+@Comment free CaM in myocites ~ 50-75 nM
 title = {Free and bound intracellular calmodulin measurements in cardiac myocytes},
 journal = {Cell Calcium},
 volume = {41},
@@ -100,7 +112,7 @@ page = 173,
 @Comment In 0 uM Ca2+ CaM Kd for CaMBD3 0.87 uM
 @Comment In 0 uM Ca2+ CaMN Kd for CaMBD3 1.2 uM 
 @Comment In 0 uM Ca2+ CaMC Kd for CaMBD3  1.01 uM
-
+@Comment CaMBD2 alone might be responsible for inhibition
 author = {Lau, Kelvin and Chan, Mandy M. Y. and Van Petegem, Filip},
 title = {Lobe-Specific Calmodulin Binding to Different Ryanodine Receptor Isoforms},
 journal = {Biochemistry},
@@ -285,11 +297,178 @@ page=2170,
 
 }
 
+@article{doi:10.1161/01.RES.0000236756.06252.13,
+@Comment CaMalone inhibits Ca2+ spark frequency
+@Comment activated CaMKII phosphorylates PLB to increase SERCA -- more Ca in ER
+@Comment 
+
+author = {Tao Guo  and Tong Zhang  and Ruben Mestril  and Donald M. Bers },
+title = {Ca<sup>2+</sup>/Calmodulin-Dependent Protein Kinase II Phosphorylation of Ryanodine Receptor Does Affect Calcium Sparks in Mouse Ventricular Myocytes},
+journal = {Circulation Research},
+volume = {99},
+number = {4},
+pages = {398-406},
+year = {2006},
+doi = {10.1161/01.RES.0000236756.06252.13},
+
+URL = {https://www.ahajournals.org/doi/abs/10.1161/01.RES.0000236756.06252.13},
+eprint = {https://www.ahajournals.org/doi/pdf/10.1161/01.RES.0000236756.06252.13}
+,
+    abstract = { Previous studies in transgenic mice and with isolated ryanodine receptors (RyR) have indicated that Ca2+-calmodulin-dependent protein kinase II (CaMKII) can phosphorylate RyR and activate local diastolic sarcoplasmic reticulum (SR) Ca2+ release events (Ca2+ sparks) and RyR channel opening. Here we use relatively controlled physiological conditions in saponin-permeabilized wild type (WT) and phospholamban knockout (PLB-KO) mouse ventricular myocytes to test whether exogenous preactivated CaMKII or endogenous CaMKII can enhance resting Ca2+ sparks. PLB-KO mice were used to preclude ancillary effects of CaMKII mediated by phospholamban phosphorylation. In both WT and PLB-KO myocytes, Ca2+ spark frequency was increased by both preactivated exogenous CaMKII and endogenous CaMKII. This effect was abolished by CaMKII inhibitor peptides. In contrast, protein kinase A catalytic subunit also enhanced Ca2+ spark frequency in WT, but had no effect in PLB-KO. Both endogenous and exogenous CaMKII increased SR Ca2+ content in WT (presumably via PLB phosphorylation), but not in PLB-KO. Exogenous calmodulin decreased Ca2+ spark frequency in both WT and PLB-KO (K0.5 ≈100 nmol/L). Endogenous CaMKII (at 500 nmol/L [Ca2+]) phosphorylated RyR as completely in \&lt;4 minutes as the maximum achieved by preactivated exogenous CaMKII. After CaMKII activation Ca2+ sparks were longer in duration, and more frequent propagating SR Ca2+ release events were observed. We conclude that CaMKII-dependent phosphorylation of RyR by endogenous associated CaMKII (but not PKA-dependent phosphorylation) increases resting SR Ca2+ release or leak. Moreover, this may explain the enhanced SR diastolic Ca2+ leak and certain triggered arrhythmias seen in heart failure. }
+}
+
+
+
 @article{RYR2_oxi_CaM_binding,
 @Comment H2O2 lowers RyR2's affinity for CaM,does not change the affinity for FKBP12.6
+@Comment there are indeed more sparks
+@Comment H2O2 had no effect on SERCA
+@Comment 2xmore calcium waves (10% -- 20 %)
+@Comment kd for RyR-FKBP ~ 1 nM (Guo T, Cornea RL, Huke S, Camors E, Yang Y, Picht E, et al. Kinetics of FKBP12.6 binding to ryanodine receptors in permeabilized cardiac myocytes and effects on Ca sparks. Circ Res. 2010;106:1743–1752.)
+@Comment Kd increased by 2? if both RyR and CaM oxidated
+@Comment Kd increased by 1.25 if only CaM is oxidized
+
 title= {Oxidation of ryanodine receptor (RyR) and calmodulin enhance Ca release and pathologically alter, RyR structure and calmodulin affinity},
 year={2015},
 volume=85,
 page=240,
 author={Tetsuro Oda AND Yi Yang AND Hitoshi Uchinoumi AND David D. Thomas AND Ye Chen-Izu AND Takayoshi Kato AND Takeshi Yamamoto AND Masafumi Yano AND Razvan L. Cornea AND Donald M. Bers},
+}
+
+@article{10.1093/oxfordjournals.jbchem.a134019,
+@Comment more than 10 uM of clamodulin in the brain.
+    author = {KAKIUCHI, Shiro and YASUDA, Seiji and YAMAZAKI, Reiko and TESHIMA, Yoshiko and KANDA, Keiko and KAKIUCHI, Ritsu and SOBUE, Kenji},
+    title = "{Quantitative Determinations of Calmodulin in the Supernatant and Particulate Fractions of Mammalian Tissues1}",
+    journal = {The Journal of Biochemistry},
+    volume = {92},
+    number = {4},
+    pages = {1041-1048},
+    year = {1982},
+    month = {10},
+    abstract = "{Although calmodulin is generally regarded as a soluble protein, a considerable amount of calmodulin activity was found to be associated with particulate fractions of mammalian tissues after an extensive washing of the particulate fraction with EGTA. Identity of this particle-bound and EGTA-nonextractable form of calmodulin with soluble calmodulin was established recently (Sobue, K., Yamazaki, R., Yasuda, S., \\&amp; Kakiuchi, S. (1981) FEBS Lett. 129, 215–219). The particle-associated calmodulin activity was latent to some extent and its unmasking required the presence of nonionic detergent. We have developed an assay method for the soluble and particulate forms of calmodulin in biological samples and, by means of this method, concentrations of calmodulin in rat and bovine tissues were quantitatively determined. In the supernatant, high levels (\\&gt; 10 μM) of calmodulin were found in the testis, pituitary gland, and various areas of brain, intermediate levels (5–10 μM) in the lung, prostate, and adrenal gland, and low levels (\\&lt; 5μM), in the liver, kidney, and spleen. Particulate fractions contained 10–50\\% of the total calmodulin contents in the tissues. Human erythrocytes contained (2.5±0.2) μM calmodulin, or (14±0.9)× 104 calmodulin molecules per cell.}",
+    issn = {0021-924X},
+    doi = {10.1093/oxfordjournals.jbchem.a134019},
+    url = {https://doi.org/10.1093/oxfordjournals.jbchem.a134019},
+    eprint = {https://academic.oup.com/jb/article-pdf/92/4/1041/2488318/92-4-1041.pdf},
+}
+
+@article{doi:10.1152/physrev.00022.2021,
+@Comment 
+author = {Dixon, Rose E. and Navedo, Manuel F. and Binder, Marc D. and Santana, L. Fernando},
+title = {Mechanisms and physiological implications of cooperative gating of clustered ion channels},
+journal = {Physiological Reviews},
+volume = {102},
+number = {3},
+pages = {1159-1210},
+year = {2022},
+doi = {10.1152/physrev.00022.2021},
+    note ={PMID: 34927454},
+
+URL = { 
+    
+        https://doi.org/10.1152/physrev.00022.2021
+    
+    
+
+},
+eprint = { 
+    
+        https://doi.org/10.1152/physrev.00022.2021
+    
+    
+
+}
+,
+    abstract = { Ion channels play a central role in the regulation of nearly every cellular process. Dating back to the classic 1952 Hodgkin–Huxley model of the generation of the action potential, ion channels have always been thought of as independent agents. A myriad of recent experimental findings exploiting advances in electrophysiology, structural biology, and imaging techniques, however, have posed a serious challenge to this long-held axiom, as several classes of ion channels appear to open and close in a coordinated, cooperative manner. Ion channel cooperativity ranges from variable-sized oligomeric cooperative gating in voltage-gated, dihydropyridine-sensitive CaV1.2 and CaV1.3 channels to obligatory dimeric assembly and gating of voltage-gated NaV1.5 channels. Potassium channels, transient receptor potential channels, hyperpolarization cyclic nucleotide-activated channels, ryanodine receptors (RyRs), and inositol trisphosphate receptors (IP3Rs) have also been shown to gate cooperatively. The implications of cooperative gating of these ion channels range from fine-tuning excitation-contraction coupling in muscle cells to regulating cardiac function and vascular tone, to modulation of action potential and conduction velocity in neurons and cardiac cells, and to control of pacemaking activity in the heart. In this review, we discuss the mechanisms leading to cooperative gating of ion channels, their physiological consequences, and how alterations in cooperative gating of ion channels may induce a range of clinically significant pathologies. }
+}
+
+
+@article{SCHEFF201346,
+@Comment There are no changes in CIRC with inflammation
+title = {Contribution of endoplasmic reticulum Ca2+ regulatory mechanisms to the inflammation-induced increase in the evoked Ca2+ transient in rat cutaneous dorsal root ganglion neurons},
+journal = {Cell Calcium},
+volume = {54},
+number = {1},
+pages = {46-56},
+year = {2013},
+issn = {0143-4160},
+doi = {https://doi.org/10.1016/j.ceca.2013.04.002},
+url = {https://www.sciencedirect.com/science/article/pii/S0143416013000547},
+author = {Nicole N. Scheff and Shao-Gang Lu and Michael S. Gold},
+keywords = {Pain, Sensitization, Nociceptor, Fura-2, CFA, Microdomain},
+abstract = {Persistent inflammation results in an increase in the magnitude and duration of high K+-evoked Ca2+ transients in putative nociceptive cutaneous dorsal root ganglion (DRG) neurons. The purpose of the present study was to determine whether recruitment of Ca2+-induced Ca2+ release (CICR) contributes to these inflammation-induced changes. Acutely dissociated, retrogradely labeled cutaneous DRG neurons from naïve and complete Freund's adjuvant inflamed adult male Sprague–Dawley rats were studied with ratiometric microfluorimetry. Ryanodine only attenuated the duration but not magnitude of the high K+-evoked Ca2+ transient in neurons from inflamed rats. However, there was no significant impact of inflammation on the potency or efficacy of ryanodine-induced block of the caffeine-evoked Ca2+ transient, or the impact of sarco-endoplasmic reticulum ATPase (SERCA) inhibition on the high K+-evoked Ca2+ transient. Furthermore, while there was no change in the magnitude, an inflammation-induced increase in the duration of the caffeine-evoked Ca2+ transient was only observed with a prolonged caffeine application. In contrast to the high K+-evoked Ca2+ transient, there was no evidence of direct mitochondrial involvement or that of the Ca2+ extrusion mechanism, the Na+/Ca2+ exchanger, on the caffeine-evoked Ca2+ transient, and block of SERCA only increased the duration of this transient. These results indicate the presence of Ca2+ regulatory domains in cutaneous nociceptive DRG neurons within which cytosolic Ca2+ increased via influx and release are highly segregated. Furthermore, our results suggest that changes in neither CICR machinery nor the coupling between Ca2+ influx and CICR are primarily responsible for the inflammation-induced changes in the evoked Ca2+ transient.}
+}
+
+
+@article{
+doi:10.1126/sciadv.abo1272,
+author = {Marco C. Miotto  and Gunnar Weninger  and Haikel Dridi  and Qi Yuan  and Yang Liu  and Anetta Wronska  and Zephan Melville  and Leah Sittenfeld  and Steven Reiken  and Andrew R. Marks },
+title = {Structural analyses of human ryanodine receptor type 2 channels reveal the mechanisms for sudden cardiac death and treatment},
+journal = {Science Advances},
+volume = {8},
+number = {29},
+pages = {eabo1272},
+year = {2022},
+doi = {10.1126/sciadv.abo1272},
+URL = {https://www.science.org/doi/abs/10.1126/sciadv.abo1272},
+eprint = {https://www.science.org/doi/pdf/10.1126/sciadv.abo1272},
+abstract = {Ryanodine receptor type 2 (RyR2) mutations have been linked to an inherited form of exercise-induced sudden cardiac death called catecholaminergic polymorphic ventricular tachycardia (CPVT). CPVT results from stress-induced sarcoplasmic reticular Ca2+ leak via the mutant RyR2 channels during diastole. We present atomic models of human wild-type (WT) RyR2 and the CPVT mutant RyR2-R2474S determined by cryo–electron microscopy with overall resolutions in the range of 2.6 to 3.6 Å, and reaching local resolutions of 2.25 Å, unprecedented for RyR2 channels. Under nonactivating conditions, the RyR2-R2474S channel is in a “primed” state between the closed and open states of WT RyR2, rendering it more sensitive to activation that results in stress-induced Ca2+ leak. The Rycal drug ARM210 binds to RyR2-R2474S, reverting the primed state toward the closed state. Together, these studies provide a mechanism for CPVT and for the therapeutic actions of ARM210. Cryo-EM structures of human RyR2, pathological primed RyR2-R2474S, and RyR2-R2474S reveal a mechanism for Rycal ARM210 treatment.}}
+
+
+@article{10.1242/jcs.133454,
+@Comment In this study, we demonstrated by cryo-EM that two hypothesized CaM-binding sequences in RyR2, 3581–3612 and 4261–4286 (corresponding to 3614–3643 and 4302–4328 in RyR1) are both in close proximity to the previously found locations of CaM. In addition, we found that when the RyR2 channel is activated, the structural domains bearing these two sequences move apart, indicating that conformational changes associated with channel activation occur in the vicinity of receptor-bound CaM. We suggest that these conformational changes also affect CaM binding, and vice versa, which would be consistent with the known influences CaM on channel gating. Clearly, more detailed studies of conformational changes in this region of RyR are needed. RyR activation is induced either by direct interaction with DHPR (for RyR1), by a small amount of Ca2+ influx from DHPR (for RyR2) or by Ca2+ released from SR stores through nearby RyRs (RyR1 and RyR2). Global conformational changes underlie RyR activation, including changes in the clamp region (Tian et al., 2013), in the transmembrane region that result in ion channel activation (Samsó et al., 2009), Global conformational changes underlie RyR activation, including changes in the clamp region (Tian et al., 2013), in the transmembrane region that result in ion channel activation (Samsó et al., 2009), and, as we show here for the first time, in the CaM-binding region of RyR1. Upon RyR activation the two fluorophore-labeled sequences move apart, a structural change that is likely to be influenced by CaM. We hypothesize that for RyR2, the presence of either apo-CaM or Ca2+-CaM inhibits the conformational change, whereas for RyR1 apo-CaM facilitates and Ca2+-CaM inhibits it, thereby accounting for the regulatory effects of CaM on the activity of RyR2 and RyR1. Additional biophysical characterization, by FRET and other techniques, of this conformational change on both RyR2 and RyR1 and in the presence of CaM and calcium should allow us to refine or reject this hypothesis. It is also possible that the conformational change we have discovered plays a role in the termination of Ca2+ release, particularly for RyR2 for which the mechanism by which Ca2+ release is terminated during excitation–contraction coupling in the heart is not understood (Cannell and Kong, 2012; Stern and Cheng, 2004).
+   author = {Huang, Xiaojun and Liu, Ying and Wang, Ruiwu and Zhong, Xiaowei and Liu, Yingjie and Koop, Andrea and Chen, S. R. Wayne and Wagenknecht, Terence and Liu, Zheng},
+    title = "{Two potential calmodulin-binding sequences in the ryanodine receptor contribute to a mobile, intra-subunit calmodulin-binding domain}",
+    journal = {Journal of Cell Science},
+    volume = {126},
+    number = {19},
+    pages = {4527-4535},
+    year = {2013},
+    month = {10},
+    abstract = "{Calmodulin (CaM), a 16 kDa ubiquitous calcium-sensing protein, is known to bind tightly to the calcium release channel/ryanodine receptor (RyR), and modulate RyR function. CaM binding studies using RyR fragments or synthetic peptides have revealed the presence of multiple, potential CaM-binding regions in the primary sequence of RyR. In the present study, we inserted GFP into two of these proposed CaM-binding sequences and mapped them onto the three-dimensional structure of intact cardiac RyR2 by cryo-electron microscopy. Interestingly, we found that the two potential CaM-binding regions encompassing, Arg3595 and Lys4269, respectively, are in close proximity and are adjacent to the previously mapped CaM-binding sites. To monitor the conformational dynamics of these CaM-binding regions, we generated a fluorescence resonance energy transfer (FRET) pair, a dual CFP- and YFP-labeled RyR2 (RyR2R3595-CFP/K4269-YFP) with CFP inserted after Arg3595 and YFP inserted after Lys4269. We transfected HEK293 cells with the RyR2R3595-CFP/K4269-YFP cDNA, and examined their FRET signal in live cells. We detected significant FRET signals in transfected cells that are sensitive to the channel activator caffeine, suggesting that caffeine is able to induce conformational changes in these CaM-binding regions. Importantly, no significant FRET signals were detected in cells co-transfected with cDNAs encoding the single CFP (RyR2R3595-CFP) and single YFP (RyR2K4269-YFP) insertions, indicating that the FRET signal stemmed from the interaction between R3595–CFP and K4269–YFP that are in the same RyR subunit. These observations suggest that multiple regions in the RyR2 sequence may contribute to an intra-subunit CaM-binding pocket that undergoes conformational changes during channel gating.}",
+    issn = {0021-9533},
+    doi = {10.1242/jcs.133454},
+    url = {https://doi.org/10.1242/jcs.133454},
+    eprint = {https://journals.biologists.com/jcs/article-pdf/126/19/4527/2116494/jcs-126-19-4527.pdf},
+}
+
+
+
+@article{doi:10.1161/CIRCRESAHA.122.321177,
+@Comment     RyR2-S2030 is an important determinant of PKA-induced suppression of CaM-dependent calcium release termination.
+
+@Comment    RyR2-S2030 mediates PKA-induced suppression of calcium alternans and calcium transient refractoriness in intact hearts upon β-adrenergic stimulation. Calcium alternans are variations in CIRC amplitude
+
+@Comment    PKA-dependent phosphorylation of RyR2-S2030 may protect against rapid heart rate–induced cardiac alternans during β-adrenergic stimulation or fight-or-flight response.
+@Comment acceleration of Ca2+ transient recovery in intact working hearts upon β-adrenergic stimulation.
+author = {Jinhong Wei  and Wenting Guo  and Ruiwu Wang  and John Paul Estillore  and Darrell Belke  and Yong-Xiang Chen  and Alexander Vallmitjana  and Raul Benitez  and Leif Hove-Madsen  and S.R. Wayne Chen },
+title = {RyR2 Serine-2030 PKA Site Governs Ca<sup>2+</sup> Release Termination and Ca<sup>2+</sup> Alternans},
+journal = {Circulation Research},
+volume = {132},
+number = {2},
+pages = {e59-e77},
+year = {2023},
+doi = {10.1161/CIRCRESAHA.122.321177},
+
+URL = {https://www.ahajournals.org/doi/abs/10.1161/CIRCRESAHA.122.321177},
+eprint = {https://www.ahajournals.org/doi/pdf/10.1161/CIRCRESAHA.122.321177}
+
+}
+
+
+@article{doi:10.1161/01.RES.0000163276.26083.e8,
+@Comment S2808 is the site responisble for FKBP12.6 dissociation from RyR2
+author = {Bailong Xiao  and Ming Tao Jiang  and Mingcai Zhao  and Dongmei Yang  and Cindy Sutherland  and F. Anthony Lai  and Michael P. Walsh  and David C. Warltier  and Heping Cheng  and S. R. Wayne Chen },
+title = {Characterization of a Novel PKA Phosphorylation Site, Serine-2030, Reveals No PKA Hyperphosphorylation of the Cardiac Ryanodine Receptor in Canine Heart Failure},
+journal = {Circulation Research},
+volume = {96},
+number = {8},
+pages = {847-855},
+year = {2005},
+doi = {10.1161/01.RES.0000163276.26083.e8},
+
+URL = {https://www.ahajournals.org/doi/abs/10.1161/01.RES.0000163276.26083.e8},
+eprint = {https://www.ahajournals.org/doi/pdf/10.1161/01.RES.0000163276.26083.e8}
+,
+    abstract = { Hyperphosphorylation of the cardiac Ca2+ release channel (ryanodine receptor, RyR2) by protein kinase A (PKA) at serine-2808 has been proposed to be a key mechanism responsible for cardiac dysfunction in heart failure (HF). However, the sites of PKA phosphorylation in RyR2 and their phosphorylation status in HF are not well defined. Here we used various approaches to investigate the phosphorylation of RyR2 by PKA. Mutating serine-2808, which was thought to be the only PKA phosphorylation site in RyR2, did not abolish the phosphorylation of RyR2 by PKA. Two-dimensional phosphopeptide mapping revealed two major PKA phosphopeptides, one of which corresponded to the known serine-2808 site. Another, novel, PKA phosphorylation site, serine 2030, was identified by Edman sequencing. Using phospho-specific antibodies, we showed that the novel serine-2030 site was phosphorylated in rat cardiac myocytes stimulated with isoproterenol, but not in unstimulated cells, whereas serine-2808 was considerably phosphorylated before and after isoproterenol treatment. We further showed that serine-2030 was stoichiometrically phosphorylated by PKA, but not by CaMKII, and that mutations of serine-2030 altered neither the FKBP12.6-RyR2 interaction nor the Ca2+ dependence of [3H]ryanodine binding. Moreover, the levels of phosphorylation of RyR2 at serine-2030 and serine-2808 in both failing and non-failing canine hearts were similar. Together, our data indicate that serine-2030 is a major PKA phosphorylation site in RyR2 responding to acute β-adrenergic stimulation, and that RyR2 is not hyperphosphorylated by PKA in canine HF. }
 }
