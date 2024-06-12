@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ReactionScheme>
   <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
-  <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
+  <!-- <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/> -->
   <Specie name="RyR"            id="RyR"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca3RyR3"            id="Ca3RyR3"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca3RyR3O"            id="Ca3RyR3O"           kdiff="0" kdiffunit="mu2/s"/>
