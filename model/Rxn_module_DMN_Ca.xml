@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<ReactionScheme>
+  <Specie name="Ca" id="Ca" kdiff="200" kdiffunit="mu2/s" />
+  <Specie name="DMN" id="DMN" kdiff="150" kdiffunit="mu2/s"/>
+  <Specie name="CaDMN" id="CaDMN" kdiff="150" kdiffunit="mu2/s"/>
+  <!--a small molecule-->
+
+<!--Dura M, Zahradník I, Zahradníková A. Kinetics of cardiac RyR channel gating studied at high temporal resolution. Physiol Res. 2003;52(5):571-8. PMID: 14535832.   -->
+  <Reaction name = "DMNbind" id="DMNbind">
+    <Reactant specieID="DMN"/>
+    <Reactant specieID="Ca"/>
+    <Product specieID="CaDMN"/>
+    <forwardRate>2.9e-8</forwardRate>
+    <reverseRate>1.9e-4</reverseRate>
+ </Reaction>
+</ReactionScheme>
