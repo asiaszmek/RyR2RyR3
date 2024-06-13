@@ -1,16 +1,28 @@
 <?xml version="1.0"?>
 <ReactionScheme>
-  <Specie name="Ca" id="Ca" kdiff="200" kdiffunit="mu2/s" />
   <Specie name="DMN" id="DMN" kdiff="150" kdiffunit="mu2/s"/>
+  <Specie name="Ca" id="Ca" kdiff="150" kdiffunit="mu2/s"/>
+  <Specie name="DMN_buf" id="DMN_buf" kdiff="150" kdiffunit="mu2/s"/>
+  <Specie name="CaDMN_buf" id="CaDMN_buf" kdiff="150" kdiffunit="mu2/s"/>
   <Specie name="CaDMN" id="CaDMN" kdiff="150" kdiffunit="mu2/s"/>
-  <!--a small molecule-->
-
-<!--Dura M, Zahradník I, Zahradníková A. Kinetics of cardiac RyR channel gating studied at high temporal resolution. Physiol Res. 2003;52(5):571-8. PMID: 14535832.   -->
-  <Reaction name = "DMNbind" id="DMNbind">
+  <Reaction name="DMNinj" id="DMNinj">
+    <Reactant specieID="CaDMN"/>
+    <Product specieID="Ca"/>
+    <Product specieID="DMN"/>
+    <forwardRate>10</forwardRate>
+  </Reaction>
+  <Reaction name="DMNtrans" id="DMNtrans">
     <Reactant specieID="DMN"/>
+    <Product specieID="DMN_buf"/>
+    <forwardRate>1</forwardRate>
+  </Reaction>
+  <!--Faas GC, Karacs K, Vergara JL, Mody I. Kinetic properties of DM-nitrophen binding to calcium and magnesium. Biophys J. 2005 Jun;88(6):4421-33. doi: 10.1529/biophysj.104.057745. Epub 2005 Mar 18. PMID: 15778435; PMCID: PMC1305669.-->
+   <Reaction name="DMNtrans" id="DMNtrans">
+     <Reactant specieID="DMN_buf"/>
     <Reactant specieID="Ca"/>
-    <Product specieID="CaDMN"/>
-    <forwardRate>2.9e-8</forwardRate>
-    <reverseRate>1.9e-4</reverseRate>
- </Reaction>
+    <Product specieID="CaDMN_buf"/>
+    <forwardRate>2.6e-4</forwardRate>
+    <reverseRate>7.52e-3</reverseRate>
+   </Reaction>
+
 </ReactionScheme>

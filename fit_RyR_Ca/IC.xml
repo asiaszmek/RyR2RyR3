@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InitialConditions>
+
+
+  <SurfaceDensitySet>
+    <PicoSD specieID="RyR" value="28"/>
+  </SurfaceDensitySet>
+
+</InitialConditions>
