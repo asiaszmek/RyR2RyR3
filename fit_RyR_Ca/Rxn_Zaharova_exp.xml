@@ -7,20 +7,20 @@
   <Specie name="Ca4RyR4" id="Ca4RyR4" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4RyR4O" id="Ca4RyR4O" kdiff="0" kdiffunit="mu2/s"/>
 
-<Reaction name="RyRe" id="RyRe">
+<Reaction name="RyRCabinding" id="RyRCabinding">
     <Reactant specieID="RyR"/>
     <Reactant specieID="Ca"/>
     <Product specieID="CaRyR"/>
-    <forwardRate>712e-5</forwardRate>
-    <reverseRate>30</reverseRate>
- </Reaction>
+    <forwardRate>712e-6</forwardRate>
+    <reverseRate>3</reverseRate>
+ </Reaction><!--Zahradnikova's constants-->
 
   <Reaction name="RyRa" id="RyRa">
     <Reactant specieID="CaRyR" power="3"/>
     <Reactant specieID="RyR"/>
     <Product specieID="Ca3RyR4"/>
-    <forwardRate>0.000245</forwardRate>
-    <reverseRate>9600e-3</reverseRate>
+    <forwardRate>0.0002</forwardRate>
+    <reverseRate>9.600e-3</reverseRate>
  </Reaction>
    
 <Reaction name="RyRb" id="RyRb">
@@ -34,8 +34,8 @@
   <Reaction name="RyRc" id="RyRc">
     <Reactant specieID="CaRyR" power="4"/>
     <Product specieID="Ca4RyR4"/>
-    <forwardRate>0.00071</forwardRate>
-    <reverseRate>9600e-3</reverseRate>
+    <forwardRate>0.0002</forwardRate>
+    <reverseRate>9.6e-3</reverseRate>
  </Reaction>
    
  <Reaction name="RyRd" id="RyRd">
