@@ -27,15 +27,22 @@ test_size=25 #for convergence
 P = aju.xml.XMLParam
 #list of parameters to change/optimize
 params = aju.optimize.ParamSet(
-    P('Ca3RyR4_flicker_fwd_rate', 1e-3, min=1e-6, max=100, xpath='//Reaction[@id="RyRb"]/forwardRate'),
-    P('Ca3RyR4_flicker_bkw_rate', 1e-3, min=1e-6, max=100, xpath='//Reaction[@id="RyRb"]/reverseRate'),
-    P('Ca4RyR4_flicker_fwd_rate', 1e-3, fixed="Ca3RyR4_flicker_fwd_rate",xpath='//Reaction[@id="RyRd"]/forwardRate'),
-    P('Ca4RyR4_flicker_bkw_rate', 1e-3, fixed="Ca3RyR4_flicker_bkw_rate",xpath='//Reaction[@id="RyRd"]/reverseRate'),
-    P('3CaRyRbinding_fwd_rate', 1e-3, min=1e-10, max=1, fixed="3CaRyRbinding_bkw_rate", constant=1, xpath='//Reaction[@id="RyRa"]/forwardRate'),
-    P('3CaRyRbinding_bkw_rate', 1e-3, min=1e-10, max=1, xpath='//Reaction[@id="RyRa"]/reverseRate'),
-
-    P('4CaRyRbinding_fwd_rate', 1e-3, fixed= '3CaRyRbinding_fwd_rate', constant=1, xpath='//Reaction[@id="RyRc"]/forwardRate'),
-    P('4CaRyRbinding_bkw_rate', 1e-3, fixed= '3CaRyRbinding_bkw_rate', constant=1, xpath='//Reaction[@id="RyRc"]/reverseRate')
+    P('Ca3RyR4_flicker_fwd_rate', 1e-3, min=1e-6, max=100,
+      xpath='//Reaction[@id="RyRb"]/forwardRate'),
+    P('Ca3RyR4_flicker_bkw_rate', 1e-3, min=1e-6, max=100,
+      xpath='//Reaction[@id="RyRb"]/reverseRate'),
+    P('Ca4RyR4_flicker_fwd_rate', 0, fixed="Ca3RyR4_flicker_fwd_rate", constant=1,
+      xpath='//Reaction[@id="RyRd"]/forwardRate'),
+    P('Ca4RyR4_flicker_bkw_rate', 0, fixed="Ca3RyR4_flicker_bkw_rate", constant=1,
+      xpath='//Reaction[@id="RyRd"]/reverseRate'),
+    P('3CaRyRbinding_fwd_rate', 1e-3, min=1e-10, max=1,
+      xpath='//Reaction[@id="RyRa"]/forwardRate'),
+    P('3CaRyRbinding_bkw_rate', 1e-3, min=1e-10, max=1,
+      xpath='//Reaction[@id="RyRa"]/reverseRate'),
+    P('4CaRyRbinding_fwd_rate', 0, fixed= '3CaRyRbinding_fwd_rate', constant=1,
+      xpath='//Reaction[@id="RyRc"]/forwardRate'),
+    P('4CaRyRbinding_bkw_rate', 0, fixed= '3CaRyRbinding_bkw_rate', constant=1,
+      xpath='//Reaction[@id="RyRc"]/reverseRate')
     
 )
 
