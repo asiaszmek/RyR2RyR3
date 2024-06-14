@@ -19,8 +19,8 @@
     <Reactant specieID="CaRyR" power="3"/>
     <Reactant specieID="RyR"/>
     <Product specieID="Ca3RyR4"/>
-    <forwardRate>5e-6</forwardRate>
-    <reverseRate>9600e-4</reverseRate>
+    <forwardRate>5e-5</forwardRate>
+    <reverseRate>9600e-3</reverseRate>
  </Reaction>
    
 <Reaction name="RyRb" id="RyRb">
@@ -31,14 +31,14 @@
   </Reaction>
 
 
-  <Reaction name="RyRa" id="RyRa">
+  <Reaction name="RyRc" id="RyRc">
     <Reactant specieID="CaRyR" power="4"/>
     <Product specieID="Ca4RyR4"/>
-    <forwardRate>5e-6</forwardRate>
-    <reverseRate>9600e-4</reverseRate>
+    <forwardRate>5e-5</forwardRate>
+    <reverseRate>9600e-3</reverseRate>
  </Reaction>
    
-<Reaction name="RyRb" id="RyRb">
+ <Reaction name="RyRd" id="RyRd">
     <Reactant specieID="Ca4RyR4"/>
     <Product specieID="Ca4RyR4O"/>
     <forwardRate>10</forwardRate>

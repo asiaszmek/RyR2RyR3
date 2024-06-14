@@ -2,8 +2,8 @@
 <InitialConditions>
 
 
-  <SurfaceDensitySet>
-    <PicoSD specieID="RyR" value="28"/>
-  </SurfaceDensitySet>
+  <ConcentrationSet>
+    <NanoMolarity specieID="RyR" value="28"/>
+  </ConcentrationSet>
 
 </InitialConditions>
