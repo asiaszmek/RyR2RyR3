@@ -3,7 +3,7 @@
 
 
   <ConcentrationSet>
-    <NanoMolarity specieID="RyR" value="28"/>
+    <NanoMolarity specieID="RyR" value="140"/>
     <NanoMolarity specieID="Ca" value="0"/>
     <NanoMolarity specieID="CaRyR" value="0"/>
     <NanoMolarity specieID="Ca3RyR4" value="0"/>
