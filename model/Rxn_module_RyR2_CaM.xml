@@ -58,7 +58,8 @@
     <forwardRate>712e-6</forwardRate>
     <reverseRate>3</reverseRate>
   </Reaction>
-
+  <!-- we can considering lowering the affinity for Ca of CaM-bound RyRs,
+       this has been observed for RyR1-->
   <Reaction name = "RyRCaMe3" id="RyRCaMe3">
     <Reactant specieID="RyRCaMCa4"/>
     <Reactant specieID="Ca"/>
