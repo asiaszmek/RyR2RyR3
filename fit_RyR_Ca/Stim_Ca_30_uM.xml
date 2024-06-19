@@ -1,9 +1,9 @@
  <StimulationSet>
 
 <InjectionStim specieID="CaDMN" injectionSite="pointA">
-        <onset>500</onset>
-	<duration>1</duration>
-	<rate>96000</rate>
+        <onset>1</onset>
+	<duration>0.1</duration>
+	<rate>960000</rate>
   </InjectionStim>
 
 </StimulationSet>

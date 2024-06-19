@@ -19,30 +19,30 @@
     <Reactant specieID="CaRyR" power="3"/>
     <Reactant specieID="RyR"/>
     <Product specieID="Ca3RyR4"/>
-    <forwardRate>0.00147</forwardRate>
-    <reverseRate>0.0165</reverseRate>
+    <forwardRate>1.47</forwardRate>
+    <reverseRate>16.5</reverseRate>
  </Reaction>
    
 <Reaction name="RyRb" id="RyRb">
     <Reactant specieID="Ca3RyR4"/>
     <Product specieID="Ca3RyR4O"/>
-    <forwardRate>0.0045</forwardRate>
-    <reverseRate>0.00912</reverseRate>
+    <forwardRate>4.52</forwardRate>
+    <reverseRate>9.12</reverseRate>
   </Reaction>
 
 
   <Reaction name="RyRc" id="RyRc">
     <Reactant specieID="CaRyR" power="4"/>
     <Product specieID="Ca4RyR4"/>
-    <forwardRate>0.00147</forwardRate>
-    <reverseRate>0.0165</reverseRate>
+    <forwardRate>1.47</forwardRate>
+    <reverseRate>16.5</reverseRate>
  </Reaction>
    
  <Reaction name="RyRd" id="RyRd">
     <Reactant specieID="Ca4RyR4"/>
     <Product specieID="Ca4RyR4O"/>
-    <forwardRate>0.00452</forwardRate>
-    <reverseRate>0.0091</reverseRate>
+    <forwardRate>4.52</forwardRate>
+    <reverseRate>9.12</reverseRate>
   </Reaction>
 
   
@@ -54,20 +54,20 @@
     <Reactant specieID="CaDMN"/>
     <Product specieID="Ca"/>
     <Product specieID="DMN"/>
-    <forwardRate>10</forwardRate>
+    <forwardRate>30</forwardRate>
   </Reaction>
   <Reaction name="DMNtrans" id="DMNtrans">
     <Reactant specieID="DMN"/>
     <Product specieID="DMN_buf"/>
-    <forwardRate>1</forwardRate>
+    <forwardRate>5</forwardRate>
   </Reaction>
   <!--Faas GC, Karacs K, Vergara JL, Mody I. Kinetic properties of DM-nitrophen binding to calcium and magnesium. Biophys J. 2005 Jun;88(6):4421-33. doi: 10.1529/biophysj.104.057745. Epub 2005 Mar 18. PMID: 15778435; PMCID: PMC1305669.-->
    <Reaction name="DMNtrans" id="DMNtrans">
      <Reactant specieID="DMN_buf"/>
     <Reactant specieID="Ca"/>
     <Product specieID="CaDMN_buf"/>
-    <forwardRate>2.6e-4</forwardRate>
-    <reverseRate>7.52e-3</reverseRate>
+    <forwardRate>2.6e-3</forwardRate>
+    <reverseRate>7.52e-2</reverseRate>
    </Reaction>
 
 </ReactionScheme>

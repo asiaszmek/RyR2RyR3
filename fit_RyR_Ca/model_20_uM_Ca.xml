@@ -19,7 +19,7 @@
 
 
     <!-- run time for the calculation, milliseconds -->
-    <runtime>           1.5         </runtime>
+    <runtime>           6         </runtime>
 
     <!-- set the seed to get the same spines each time testing -->
     <spineSeed>          123          </spineSeed>
@@ -45,7 +45,7 @@
     <fixedStepDt>         10       </fixedStepDt>
 
     <!-- interval at which stuff should be saved to the output file(s) -->
-    <outputInterval>      0.1   </outputInterval>
+    <outputInterval>      0.01   </outputInterval>
 
     <!-- the tolerace is used for adaptive sims -->
     <tolerance>           0.002       </tolerance>
