@@ -9,10 +9,9 @@
   <Specie name="CaRyR"            id="CaRyR"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyRCaM"            id="RyRCaM"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyRCaMCa2C"            id="RyRCaMCa2C"           kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyRCaMCa2N"            id="RyRCaMCa2N"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyRCaMCa4"            id="RyRCaMCa4"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="CaRyRCaM"            id="CaRyRCaM"           kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="CaRyRCaMCa2C"            id="CaRyRCaMCa2"      kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="CaRyRCaMCa2C"            id="CaRyRCaMCa2C"      kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="CaRyRCaMCa4"            id="CaRyRCaMCa4"       kdiff="0" kdiffunit="mu2/s"/>
 
   <!--1) CaM  + 2Ca
@@ -36,6 +35,13 @@
     <Q10>0.2</Q10>
   </Reaction>
 
+  <Reaction name = "RyRe" id="RyRe">
+    <Reactant specieID="RyR"/>
+    <Reactant specieID="Ca"/>
+    <Product specieID="CaRyR"/>
+    <forwardRate>712e-6</forwardRate>
+    <reverseRate>3</reverseRate>
+ </Reaction>
   
   <Reaction name = "RyRCaMe1" id="RyRCaMe1">
     <Reactant specieID="RyRCaM"/>
@@ -43,137 +49,118 @@
     <Product specieID="CaRyRCaM"/>
     <forwardRate>712e-6</forwardRate>
     <reverseRate>3</reverseRate>
- </Reaction>
+  </Reaction>
 
- <Reaction name = "RyRCaMe2" id="RyRCaMe2">
+  <Reaction name = "RyRCaMe2" id="RyRCaMe2">
     <Reactant specieID="RyRCaMCa2C"/>
     <Reactant specieID="Ca"/>
     <Product specieID="CaRyRCaMCa2C"/>
     <forwardRate>712e-6</forwardRate>
     <reverseRate>3</reverseRate>
- </Reaction>
+  </Reaction>
 
- <Reaction name = "RyRCaMe3" id="RyRCaMe3">
+  <Reaction name = "RyRCaMe3" id="RyRCaMe3">
     <Reactant specieID="RyRCaMCa4"/>
     <Reactant specieID="Ca"/>
     <Product specieID="CaRyRCaMCa4"/>
     <forwardRate>712e-6</forwardRate>
     <reverseRate>3</reverseRate>
- </Reaction>
+  </Reaction>
 
+   <!-- calculated from Balshaw-->
+   <Reaction name = "RyRCaMf1" id="RyRCaMf1">
+     <Reactant specieID="RyR"/>
+     <Reactant specieID="CaM"/>
+     <Product specieID="RyRCaM"/>
+     
+     <forwardRate>0.0002361</forwardRate>
+     <reverseRate>0.0173</reverseRate>
+   </Reaction>
+   <!-- calculated from Balshaw-->
+   <Reaction name = "RyRCaMf2" id="RyRCaMf2">
+     <Reactant specieID="RyR"/>
+     <Reactant specieID="CaMCa2C"/>
+     <Product specieID="RyRCaMCa2C"/>
+     
+     <forwardRate>3.66e-7</forwardRate>
+     <reverseRate>1.28e-6</reverseRate>
+   </Reaction>
+   <!-- again use Balshaw-->
+   <Reaction name = "RyRCaMf3" id="RyRCaMf3">
+     <Reactant specieID="RyR"/>
+     <Reactant specieID="CaMCa4"/>
+     <Product specieID="RyRCaMCa4"/>
+     
+     <forwardRate>3.66e-7</forwardRate>
+     <reverseRate>1.28e-6</reverseRate>
+   </Reaction>
+     <!-- calculated from Balshaw-->
+   <Reaction name = "CaRyRCaMf1" id="CaRyRCaMf1">
+     <Reactant specieID="CaRyR"/>
+     <Reactant specieID="CaM"/>
+     <Product specieID="CaRyRCaM"/>
 
- <Reaction name = "RyRCaMf1" id="RyRCaMf1">
-    <Reactant specieID="RyR"/>
-    <Reactant specieID="CaM"/>
-    <Product specieID="RyRCaM"/>
-    <!-- calculated from Balshaw-->
-    <forwardRate>0.0002361</forwardRate>
-    <reverseRate>0.0173</reverseRate>
- </Reaction>
+     <forwardRate>0.0002361</forwardRate>
+     <reverseRate>0.0173</reverseRate>
+   </Reaction>
+   <!-- calculated from Balshaw--> 
+   <Reaction name = "CaRyRCaMf2" id="CaRyRCaMf2">
+     <Reactant specieID="CaRyR"/>
+     <Reactant specieID="CaMCa2C"/>
+     <Product specieID="CaRyRCaMCa2C"/>
 
-  <Reaction name = "RyRCaMf2" id="RyRCaMf2">
-    <Reactant specieID="RyR"/>
-    <Reactant specieID="CaMCa2"/>
-    <Product specieID="RyRCaMCa2"/>
-    <!-- calculated from Balshaw-->
     <forwardRate>3.66e-7</forwardRate>
     <reverseRate>1.28e-6</reverseRate>
- </Reaction>
- <Reaction name = "RyRCaMf3" id="RyRCaMf3">
-    <Reactant specieID="RyR"/>
-    <Reactant specieID="CaMCa4"/>
-    <Product specieID="RyRCaMCa4"/>
-    <!-- again use Balshaw-->
-    <forwardRate>3.66e-7</forwardRate>
-    <reverseRate>1.28e-6</reverseRate>
-
- <Reaction name = "CaRyRCaMf1" id="CaRyRCaMf1">
-    <Reactant specieID="CaRyR"/>
-    <Reactant specieID="CaM"/>
-    <Product specieID="CaRyRCaM"/>
-    <!-- calculated from Balshaw-->
-    <forwardRate>0.0002361</forwardRate>
-    <reverseRate>0.0173</reverseRate>
- </Reaction>
-
-  <Reaction name = "CaRyRCaMf2" id="CaRyRCaMf2">
-    <Reactant specieID="CaRyR"/>
-    <Reactant specieID="CaMCa2"/>
-    <Product specieID="CaRyRCaMCa2"/>
-    <!-- calculated from Balshaw-->
-    <forwardRate>3.66e-7</forwardRate>
-    <reverseRate>1.28e-6</reverseRate>
- </Reaction>
- <Reaction name = "CaRyRCaMf3" id="CaRyRCaMf3">
-    <Reactant specieID="CaRyR"/>
-    <Reactant specieID="CaMCa4"/>
-    <Product specieID="CaRyRCaMCa4"/>
-    <!-- again use Balshaw-->
-    <forwardRate>3.66e-7</forwardRate>
-    <reverseRate>1.28e-6</reverseRate>
+   </Reaction>
+   <!-- again use Balshaw-->
+   <Reaction name = "CaRyRCaMf3" id="CaRyRCaMf3">
+     <Reactant specieID="CaRyR"/>
+     <Reactant specieID="CaMCa4"/>
+     <Product specieID="CaRyRCaMCa4"/>
+     
+     <forwardRate>3.66e-7</forwardRate>
+     <reverseRate>1.28e-6</reverseRate>
    
- </Reaction>
-
- <Reaction name="RyRCaMC_bind" id="RyRCaMC_bind">
+   </Reaction>
    <!-- increase CaM affinity for Ca by a factor of 10-->
-    <Reactant specieID="RyRCaM" />
-    <Reactant specieID="Ca" n="2" />
-    <Product specieID="RyRCaMCa2C" />
-    <forwardRate>6e-5</forwardRate>
-    <reverseRate>9.1e-3</reverseRate>
-    <Q10>0.2</Q10>
-  </Reaction>
+   <Reaction name="RyRCaMC_bind" id="RyRCaMC_bind">
 
-  <Reaction name="RyRCaMCa2C_bind" id="RyRCaMCa2C_bind">
-    <!-- increase CaM affinity for Ca by a factor of 10-->
-    <Reactant specieID="RyRCaMCa2C" />
-    <Reactant specieID="Ca" n="2" />
-    <Product specieID="RyRCaMCa4" />
-    <forwardRate>0.1e-2</forwardRate>
-    <reverseRate>1000e-3</reverseRate>
-    <Q10>0.2</Q10>
-  </Reaction>
-
-  <Reaction name="CaRyRCaMC_bind" id="CaRyRCaMC_bind">
+     <Reactant specieID="RyRCaM" />
+     <Reactant specieID="Ca" n="2" />
+     <Product specieID="RyRCaMCa2C" />
+     <forwardRate>6e-5</forwardRate>
+     <reverseRate>9.1e-3</reverseRate>
+     <Q10>0.2</Q10>
+   </Reaction>
    <!-- increase CaM affinity for Ca by a factor of 10-->
-    <Reactant specieID="CaRyRCaM" />
-    <Reactant specieID="Ca" n="2" />
-    <Product specieID="CaRyRCaMCa2C" />
-    <forwardRate>6e-5</forwardRate>
-    <reverseRate>9.1e-3</reverseRate>
-    <Q10>0.2</Q10>
-  </Reaction>
-
-  <Reaction name="CaRyRCaMCa2C_bind" id="CaRyRCaMCa2C_bind">
-    <!-- increase CaM affinity for Ca by a factor of 10-->
-    <Reactant specieID="CaRyRCaMCa2C" />
-    <Reactant specieID="Ca" n="2" />
-    <Product specieID="CaRyRCaMCa4" />
-    <forwardRate>0.1e-2</forwardRate>
-    <reverseRate>1000e-3</reverseRate>
-    <Q10>0.2</Q10>
-  </Reaction>
-
-
- 
- 
- 
-  <!--Sobie et al. 2002 (Saleet Jafri's) states 4/ms, Keizer and Levine 5/ms for small ER-->
-  <!--  <Reaction name = "RyRflux1" id="RyRflux1"> -->
-  <!--    <Reactant specieID="RyRO1"/> -->
-  <!--    <Reactant specieID="CaER"/> -->
-  <!--    <Product specieID="RyRO1"/> -->
-  <!--    <Product specieID="Ca"/> -->
-  <!--   <forwardRate>5e-3</forwardRate> -->
-  <!--   <reverseRate>5e-3</reverseRate> -->
-  <!-- </Reaction> -->
-  <!-- <Reaction name = "RyRflux2" id="RyRflux2"> -->
-  <!--    <Reactant specieID="RyRO2"/> -->
-  <!--    <Reactant specieID="CaER"/> -->
-  <!--    <Product specieID="RyRO2"/> -->
-  <!--    <Product specieID="Ca"/> -->
-  <!--   <forwardRate>5e-3</forwardRate> -->
-  <!--   <reverseRate>5e-3</reverseRate> -->
-  <!-- </Reaction> -->
-    
+   <Reaction name="RyRCaMCa2C_bind" id="RyRCaMCa2C_bind">
+     
+     <Reactant specieID="RyRCaMCa2C" />
+     <Reactant specieID="Ca" n="2" />
+     <Product specieID="RyRCaMCa4" />
+     <forwardRate>0.1e-2</forwardRate>
+     <reverseRate>1000e-3</reverseRate>
+     <Q10>0.2</Q10>
+   </Reaction>
+   <!-- increase CaM affinity for Ca by a factor of 10-->
+   <Reaction name="CaRyRCaMC_bind" id="CaRyRCaMC_bind">
+     
+     <Reactant specieID="CaRyRCaM" />
+     <Reactant specieID="Ca" n="2" />
+     <Product specieID="CaRyRCaMCa2C" />
+     <forwardRate>6e-5</forwardRate>
+     <reverseRate>9.1e-3</reverseRate>
+     <Q10>0.2</Q10>
+   </Reaction>
+   <!-- increase CaM affinity for Ca by a factor of 10-->
+   <Reaction name="CaRyRCaMCa2C_bind" id="CaRyRCaMCa2C_bind">
+     
+     <Reactant specieID="CaRyRCaMCa2C" />
+     <Reactant specieID="Ca" n="2" />
+     <Product specieID="CaRyRCaMCa4" />
+     <forwardRate>0.1e-2</forwardRate>
+     <reverseRate>1000e-3</reverseRate>
+     <Q10>0.2</Q10>
+   </Reaction>
+  
 </ReactionScheme>

@@ -3,6 +3,7 @@
   <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
   <!-- <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/> -->
   <Specie name="RyR"            id="RyR"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="CaRyR"            id="CaRyR"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca3RyR3"            id="Ca3RyR3"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca3RyR3O"            id="Ca3RyR3O"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca3RyR4"            id="Ca3RyR4"           kdiff="0" kdiffunit="mu2/s"/>
@@ -14,7 +15,7 @@
     <Reactant specieID="Ca"/>
     <Product specieID="CaRyR"/>
     <forwardRate>712e-6</forwardRate>
-    <reverseRate>3e</reverseRate>
+    <reverseRate>3</reverseRate>
  </Reaction>
 
   <Reaction name = "RyRa" id="RyRa">
