@@ -67,25 +67,27 @@
     <reverseRate>3</reverseRate>
   </Reaction>
 
-   <!-- calculated from Balshaw-->
+  <!-- calculated from Balshaw-->
+  <!-- also in lit, -->
    <Reaction name = "RyRCaMf1" id="RyRCaMf1">
      <Reactant specieID="RyR"/>
      <Reactant specieID="CaM"/>
      <Product specieID="RyRCaM"/>
-     
-     <forwardRate>0.0002361</forwardRate>
-     <reverseRate>0.0173</reverseRate>
+     <forwardRate>2.4e-7</forwardRate>
+     <reverseRate>1.73e-5</reverseRate>
    </Reaction>
-   <!-- calculated from Balshaw-->
+   <!-- calculated from Balshaw
+	kon 3.15e-7 nM-1ms-1 (koff 3.67e-8) ( 
+   -->
    <Reaction name = "RyRCaMf2" id="RyRCaMf2">
      <Reactant specieID="RyR"/>
      <Reactant specieID="CaMCa2C"/>
      <Product specieID="RyRCaMCa2C"/>
      
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
+     <forwardRate>3.15e-7</forwardRate>
+     <reverseRate>3.67e-6</reverseRate>
    </Reaction>
-   <!-- again use Balshaw-->
+   <!-- https://doi.org/10.1161/CIRCRESAHA.114.302857-->
    <Reaction name = "RyRCaMf3" id="RyRCaMf3">
      <Reactant specieID="RyR"/>
      <Reactant specieID="CaMCa4"/>
@@ -99,9 +101,8 @@
      <Reactant specieID="CaRyR"/>
      <Reactant specieID="CaM"/>
      <Product specieID="CaRyRCaM"/>
-
-     <forwardRate>0.0002361</forwardRate>
-     <reverseRate>0.0173</reverseRate>
+     <forwardRate>2.4e-7</forwardRate>
+     <reverseRate>1.73e-5</reverseRate>
    </Reaction>
    <!-- calculated from Balshaw--> 
    <Reaction name = "CaRyRCaMf2" id="CaRyRCaMf2">
@@ -109,8 +110,8 @@
      <Reactant specieID="CaMCa2C"/>
      <Product specieID="CaRyRCaMCa2C"/>
 
-    <forwardRate>3.66e-7</forwardRate>
-    <reverseRate>1.28e-6</reverseRate>
+    <forwardRate>3.15e-7</forwardRate>
+    <reverseRate>3.67e-6</reverseRate>
    </Reaction>
    <!-- again use Balshaw-->
    <Reaction name = "CaRyRCaMf3" id="CaRyRCaMf3">
