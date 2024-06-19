@@ -9,20 +9,20 @@
     <Reactant specieID="CaDMN"/>
     <Product specieID="Ca"/>
     <Product specieID="DMN"/>
-    <forwardRate>10</forwardRate>
+    <forwardRate>30</forwardRate>
   </Reaction>
   <Reaction name="DMNtrans" id="DMNtrans">
     <Reactant specieID="DMN"/>
     <Product specieID="DMN_buf"/>
-    <forwardRate>1</forwardRate>
+    <forwardRate>5</forwardRate>
   </Reaction>
   <!--Faas GC, Karacs K, Vergara JL, Mody I. Kinetic properties of DM-nitrophen binding to calcium and magnesium. Biophys J. 2005 Jun;88(6):4421-33. doi: 10.1529/biophysj.104.057745. Epub 2005 Mar 18. PMID: 15778435; PMCID: PMC1305669.-->
    <Reaction name="DMNtrans" id="DMNtrans">
      <Reactant specieID="DMN_buf"/>
     <Reactant specieID="Ca"/>
     <Product specieID="CaDMN_buf"/>
-    <forwardRate>2.6e-4</forwardRate>
-    <reverseRate>7.52e-3</reverseRate>
+    <forwardRate>2.6e-3</forwardRate>
+    <reverseRate>7.52e-2</reverseRate>
    </Reaction>
 
 </ReactionScheme>

@@ -5,6 +5,8 @@
   <Specie name="RyR"            id="RyR"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca3RyR3"            id="Ca3RyR3"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca3RyR3O"            id="Ca3RyR3O"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca3RyR4"            id="Ca3RyR4"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca3RyR4O"            id="Ca3RyR4O"           kdiff="0" kdiffunit="mu2/s"/>
 
 <!--Dura M, Zahradník I, Zahradníková A. Kinetics of cardiac RyR channel gating studied at high temporal resolution. Physiol Res. 2003;52(5):571-8. PMID: 14535832.   -->
   <Reaction name = "RyRe" id="RyRe">
@@ -18,18 +20,35 @@
   <Reaction name = "RyRa" id="RyRa">
     <Reactant specieID="CaRyR" power="3"/>
     <Product specieID="Ca3RyR3" />
-    <forwardRate>5e-6</forwardRate>
-    <reverseRate>9600e-4</reverseRate>
+    <forwardRate>152</forwardRate>
+    <reverseRate>3</reverseRate>
+ </Reaction>
+
+   <Reaction name="RyRc" id="RyRc">
+    <Reactant specieID="CaRyR" power="4"/>
+    <Product specieID="Ca4RyR4"/>
+    <forwardRate>152</forwardRate>
+    <reverseRate>3</reverseRate>
  </Reaction>
    
+ <Reaction name="RyRd" id="RyRd">
+    <Reactant specieID="Ca4RyR4"/>
+    <Product specieID="Ca4RyR4O"/>
+    <forwardRate>20</forwardRate>
+    <reverseRate>102</reverseRate>
+  </Reaction>
+
 <!--Dura M, Zahradník I, Zahradníková A. Kinetics of cardiac RyR channel gating studied at high temporal resolution. Physiol Res. 2003;52(5):571-8. PMID: 14535832.   -->
   <Reaction name = "RyRb" id="RyRb">
     <Reactant specieID="Ca3RyR3"/>
     <Product specieID="Ca3RyR3O" />
-    <forwardRate>10</forwardRate>
-    <reverseRate>0.4</reverseRate>
+    <forwardRate>20</forwardRate>
+    <reverseRate>102</reverseRate>
   </Reaction>
 
+
+
+  
   <!-- <!-\-Sobie et al. 2002 (Saleet Jafri's) states 4/ms, Keizer and Levine 5/ms for small ER-\-> -->
   <!--  <Reaction name = "RyRflux1" id="RyRflux1"> -->
   <!--    <Reactant specieID="Ca3RyR3O"/> -->
