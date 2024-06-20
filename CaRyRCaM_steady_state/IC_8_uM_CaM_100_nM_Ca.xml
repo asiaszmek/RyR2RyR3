@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InitialConditions>
+
+
+  <ConcentrationSet>
+    <NanoMolarity specieID="RyR" value="50"/>
+    <NanoMolarity specieID="Ca" value="100"/>
+    <NanoMolarity specieID="CaM" value="8000"/>
+  </ConcentrationSet>
+
+</InitialConditions>
