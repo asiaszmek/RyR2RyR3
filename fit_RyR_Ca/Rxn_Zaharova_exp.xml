@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ReactionScheme>
   <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s"/>
   <Specie name="RyR" id="RyR" kdiff="0" kdiffunit="mu2/s"/>
@@ -11,63 +12,50 @@
     <Reactant specieID="RyR"/>
     <Reactant specieID="Ca"/>
     <Product specieID="CaRyR"/>
-    <forwardRate>712e-6</forwardRate>
-    <reverseRate>3</reverseRate>
+    <forwardRate>712e-4</forwardRate>
+    <reverseRate>1e-2</reverseRate>
  </Reaction><!--Zahradnikova's constants-->
 
   <Reaction name="RyRa" id="RyRa">
     <Reactant specieID="CaRyR" power="3"/>
     <Reactant specieID="RyR"/>
     <Product specieID="Ca3RyR4"/>
-    <forwardRate>1.47</forwardRate>
-    <reverseRate>16.5</reverseRate>
+    <forwardRate>6030</forwardRate>
+    <reverseRate>6.51</reverseRate>
  </Reaction>
    
 <Reaction name="RyRb" id="RyRb">
     <Reactant specieID="Ca3RyR4"/>
     <Product specieID="Ca3RyR4O"/>
-    <forwardRate>4.52</forwardRate>
-    <reverseRate>9.12</reverseRate>
+    <forwardRate>852</forwardRate>
+    <reverseRate>3633</reverseRate>
   </Reaction>
 
 
   <Reaction name="RyRc" id="RyRc">
     <Reactant specieID="CaRyR" power="4"/>
     <Product specieID="Ca4RyR4"/>
-    <forwardRate>1.47</forwardRate>
-    <reverseRate>16.5</reverseRate>
+    <forwardRate>6030</forwardRate>
+    <reverseRate>6.57</reverseRate>
  </Reaction>
    
  <Reaction name="RyRd" id="RyRd">
     <Reactant specieID="Ca4RyR4"/>
     <Product specieID="Ca4RyR4O"/>
-    <forwardRate>4.52</forwardRate>
-    <reverseRate>9.12</reverseRate>
+    <forwardRate>852</forwardRate>
+    <reverseRate>3633</reverseRate>
   </Reaction>
 
   
-  <Specie name="DMN" id="DMN" kdiff="150" kdiffunit="mu2/s"/>
   <Specie name="DMN_buf" id="DMN_buf" kdiff="150" kdiffunit="mu2/s"/>
   <Specie name="CaDMN_buf" id="CaDMN_buf" kdiff="150" kdiffunit="mu2/s"/>
-  <Specie name="CaDMN" id="CaDMN" kdiff="150" kdiffunit="mu2/s"/>
-  <Reaction name="DMNinj" id="DMNinj">
-    <Reactant specieID="CaDMN"/>
-    <Product specieID="Ca"/>
-    <Product specieID="DMN"/>
-    <forwardRate>30</forwardRate>
-  </Reaction>
-  <Reaction name="DMNtrans" id="DMNtrans">
-    <Reactant specieID="DMN"/>
-    <Product specieID="DMN_buf"/>
-    <forwardRate>5</forwardRate>
-  </Reaction>
   <!--Faas GC, Karacs K, Vergara JL, Mody I. Kinetic properties of DM-nitrophen binding to calcium and magnesium. Biophys J. 2005 Jun;88(6):4421-33. doi: 10.1529/biophysj.104.057745. Epub 2005 Mar 18. PMID: 15778435; PMCID: PMC1305669.-->
    <Reaction name="DMNtrans" id="DMNtrans">
      <Reactant specieID="DMN_buf"/>
     <Reactant specieID="Ca"/>
     <Product specieID="CaDMN_buf"/>
-    <forwardRate>2.6e-3</forwardRate>
-    <reverseRate>7.52e-2</reverseRate>
+    <forwardRate>80e-6</forwardRate>
+    <reverseRate>0.4e-3</reverseRate>
    </Reaction>
 
 </ReactionScheme>

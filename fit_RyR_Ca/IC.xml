@@ -10,10 +10,7 @@
     <NanoMolarity specieID="Ca4RyR4" value="0"/>
     <NanoMolarity specieID="Ca3RyR4O" value="0"/>
     <NanoMolarity specieID="Ca4RyR4O" value="0"/>
-    <NanoMolarity specieID="DMN" value="0"/>
-    <NanoMolarity specieID="DMN_buf" value="0"/>
-    <NanoMolarity specieID="CaDMN" value="0"/>
-    <NanoMolarity specieID="CaDMN_buf" value="0"/>
+    <NanoMolarity specieID="DMN_buf" value="1e6"/>
     
   </ConcentrationSet>
 
