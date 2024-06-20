@@ -4,8 +4,8 @@
   <!-- <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/> -->
   <Specie name="RyR"            id="RyR"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="CaRyR"            id="CaRyR"           kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Ca3RyR3"            id="Ca3RyR3"           kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Ca3RyR3O"            id="Ca3RyR3O"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca3RyR4"            id="Ca3RyR4"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca3RyR4O"            id="Ca3RyR4O"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca3RyR4"            id="Ca3RyR4"           kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca3RyR4O"            id="Ca3RyR4O"           kdiff="0" kdiffunit="mu2/s"/>
 
@@ -20,7 +20,8 @@
 
   <Reaction name = "RyRa" id="RyRa">
     <Reactant specieID="CaRyR" power="3"/>
-    <Product specieID="Ca3RyR3" />
+    <Reactant specieID="RyR"/>
+    <Product specieID="Ca3RyR4" />
     <forwardRate>152</forwardRate>
     <reverseRate>3</reverseRate>
  </Reaction>
@@ -41,8 +42,8 @@
 
 <!--Dura M, Zahradník I, Zahradníková A. Kinetics of cardiac RyR channel gating studied at high temporal resolution. Physiol Res. 2003;52(5):571-8. PMID: 14535832.   -->
   <Reaction name = "RyRb" id="RyRb">
-    <Reactant specieID="Ca3RyR3"/>
-    <Product specieID="Ca3RyR3O" />
+    <Reactant specieID="Ca3RyR4"/>
+    <Product specieID="Ca3RyR4O" />
     <forwardRate>20</forwardRate>
     <reverseRate>102</reverseRate>
   </Reaction>
