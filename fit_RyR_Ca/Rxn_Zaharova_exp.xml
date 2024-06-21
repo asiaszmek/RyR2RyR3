@@ -7,7 +7,10 @@
   <Specie name="Ca3RyR4O" id="Ca3RyR4O" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4RyR4" id="Ca4RyR4" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4RyR4O" id="Ca4RyR4O" kdiff="0" kdiffunit="mu2/s"/>
-
+  <Specie name="Ca2RyR4" id="Ca2RyR4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca1RyR4" id="Ca1RyR4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR4" id="RyR4" kdiff="0" kdiffunit="mu2/s"/>
+  
 <Reaction name="RyRCabinding" id="RyRCabinding">
     <Reactant specieID="RyR"/>
     <Reactant specieID="Ca"/>
@@ -20,48 +23,91 @@
     <Reactant specieID="CaRyR" power="3"/>
     <Reactant specieID="RyR"/>
     <Product specieID="Ca3RyR4"/>
-    <forwardRate>70</forwardRate>
-    <reverseRate>38</reverseRate>
+    <forwardRate>0.415</forwardRate>
+    <reverseRate>0.417</reverseRate>
  </Reaction>
-   
+
+ <Reaction name="RyRa1" id="RyRa1">
+    <Reactant specieID="CaRyR" power="2"/>
+    <Reactant specieID="RyR" power="2"/>
+    <Product specieID="Ca2RyR4"/>
+    <forwardRate>0.415</forwardRate>
+    <reverseRate>0.417</reverseRate>
+ </Reaction>
+
+ <Reaction name="RyRa2" id="RyRa2">
+    <Reactant specieID="CaRyR" />
+    <Reactant specieID="RyR" power="3"/>
+    <Product specieID="Ca1RyR4"/>
+    <forwardRate>0.415</forwardRate>
+    <reverseRate>0.417</reverseRate>
+ </Reaction>
+
+ <Reaction name="RyRa3" id="RyRa3">
+    <Reactant specieID="RyR" power="4"/>
+    <Product specieID="RyR4"/>
+    <forwardRate>0.415</forwardRate>
+    <reverseRate>0.417</reverseRate>
+ </Reaction>
+
+ 
+ 
 <Reaction name="RyRb" id="RyRb">
     <Reactant specieID="Ca3RyR4"/>
     <Product specieID="Ca3RyR4O"/>
-    <forwardRate>32.37</forwardRate>
-    <reverseRate>25.86</reverseRate>
+    <forwardRate>16.14</forwardRate>
+    <reverseRate>68.39</reverseRate>
   </Reaction>
 
 
   <Reaction name="RyRc" id="RyRc">
     <Reactant specieID="CaRyR" power="4"/>
     <Product specieID="Ca4RyR4"/>
-    <forwardRate>70</forwardRate>
-    <reverseRate>38</reverseRate>
+    <forwardRate>0.415</forwardRate>
+    <reverseRate>0.417</reverseRate>
  </Reaction>
    
  <Reaction name="RyRd" id="RyRd">
     <Reactant specieID="Ca4RyR4"/>
     <Product specieID="Ca4RyR4O"/>
-    <forwardRate>32.37</forwardRate>
-    <reverseRate>25.86</reverseRate>
+    <forwardRate>16.14</forwardRate>
+    <reverseRate>68.39</reverseRate>
   </Reaction>
 
   <Reaction name="RyRg" id="RyRg">
-    <Reactant specieID="Ca4RyR4"/>
-    <Product specieID="Ca"/>
-    <Product specieID="Ca3RyR4"/>
+   
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="Ca3RyR4"/>
+    <Product specieID="Ca4RyR4"/>
     <forwardRate>712e-4</forwardRate>
     <reverseRate>1e-2</reverseRate>
   </Reaction>
 
   <Reaction name="RyRh" id="RyRh">
-    <Reactant specieID="Ca4RyR4O"/>
-    <Product specieID="Ca"/>
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="Ca3RyR4O"/>
+    <Product specieID="Ca4RyR4O"/>
+    <forwardRate>712e-4</forwardRate>
+    <reverseRate>1e-2</reverseRate>
+  </Reaction>
+
+  <Reaction name="RyRh1" id="RyRh1">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="Ca2RyR4"/>
     <Product specieID="Ca3RyR4"/>
     <forwardRate>712e-4</forwardRate>
     <reverseRate>1e-2</reverseRate>
   </Reaction>
-  
+
+
+  <Reaction name="RyRh2" id="RyRh2">
+    <Reactant specieID="Ca"/>
+    <Reactant specieID="Ca1RyR4"/>
+    <Product specieID="Ca2RyR4"/>
+    <forwardRate>712e-4</forwardRate>
+    <reverseRate>1e-2</reverseRate>
+  </Reaction>
+
   <Specie name="DMN_buf" id="DMN_buf" kdiff="150" kdiffunit="mu2/s"/>
   <Specie name="CaDMN_buf" id="CaDMN_buf" kdiff="150" kdiffunit="mu2/s"/>
   <!--Faas GC, Karacs K, Vergara JL, Mody I. Kinetic properties of DM-nitrophen binding to calcium and magnesium. Biophys J. 2005 Jun;88(6):4421-33. doi: 10.1529/biophysj.104.057745. Epub 2005 Mar 18. PMID: 15778435; PMCID: PMC1305669.-->
