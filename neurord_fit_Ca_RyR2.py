@@ -27,22 +27,71 @@ test_size=25 #for convergence
 P = aju.xml.XMLParam
 #list of parameters to change/optimize
 params = aju.optimize.ParamSet(
+    
+    P('CaRyR_binding_fwd_rate', 1, min=1e-7, max=1,
+      xpath='//Reaction[@id="RyRCabinding"]/forwardRate'),
+    P('CaRyR_binding_bkw_rate', 0, fixed="CaRyR_binding_fwd_rate",
+      constant=1000,		
+      xpath='//Reaction[@id="CaRyR_binding_bkw_rate"]/reverseRate'),
+    P('3CaRyR4_Ca_binding_fwd_rate', 0, fixed='CaRyR_binding_fwd_rate',
+      constant=1,
+      xpath='//Reaction[@id="RyRh"]/forwardRate'),
+    P('3CaRyR4_Ca_binding_bkw_rate', 0, fixed='CaRyR_binding_bkw_rate',
+      constant=1,
+      xpath='//Reaction[@id="RyRh"]/reverseRate'),
+    P('2CaRyR4_Ca_binding_fwd_rate', 0, fixed='CaRyR_binding_fwd_rate',
+      constant=1,
+      xpath='//Reaction[@id="RyRh1"]/forwardRate'),
+    P('2CaRyR4_Ca_binding_bkw_rate', 0, fixed='CaRyR_binding_bkw_rate',
+      constant=1,
+      xpath='//Reaction[@id="RyRh1"]/reverseRate'),
+    P('CaRyR4_Ca_binding_fwd_rate', 0, fixed='CaRyR_binding_fwd_rate',
+      constant=1,
+      xpath='//Reaction[@id="RyRh2"]/forwardRate'),
+    P('CaRyR4_Ca_binding_bkw_rate', 0, fixed='CaRyR_binding_bkw_rate',
+      constant=1,
+      xpath='//Reaction[@id="RyRh2"]/reverseRate'),
+
+
+    
+    P('3Ca3RyR_RyRbinding_fwd_rate', 1, min=1e-3, max=1000,
+      xpath='//Reaction[@id="RyRa"]/forwardRate'),
+    P('3Ca3RyR_RyRbinding_bkw_rate', 0, fixed='3Ca3RyR_RyRbinding_fwd_rate',
+      constant=0.1,
+      xpath='//Reaction[@id="RyRa"]/reverseRate'),
+    P('Ca2RyR2_2RyR_binding_fwd_rate', 0, fixed= '3Ca3RyR_RyRbinding_fwd_rate',
+      constant=1,
+      xpath='//Reaction[@id="RyRa1"]/forwardRate'),
+    P('Ca2RyR2_2RyR_binding_bkw_rate', 0, fixed='3Ca3RyR_RyRbinding_bkw_rate',
+      constant=1,
+      xpath='//Reaction[@id="RyRa1"]/reverseRate'),
+    P('1CaRyRbinding_fwd_rate', 0, fixed= '3Ca3RyR_RyRbinding_fwd_rate',
+      constant=1,
+      xpath='//Reaction[@id="RyRa2"]/forwardRate'),
+    P('1CaRyRbinding_bkw_rate', 0, fixed= '3Ca3RyR_RyRbinding_bkw_rate',
+      constant=1,
+      xpath='//Reaction[@id="RyRa2"]/reverseRate'),
+    P('4CaRyRbinding_bkw_rate', 0, fixed= '3Ca3RyR_RyRbinding_bkw_rate',
+      constant=1,
+      xpath='//Reaction[@id="RyRc"]/reverseRate'),
+    P('4CaRyRbinding_fwd_rate', 0, fixed= '3Ca3RyR_RyRbinding_fwd_rate',
+      constant=1,
+      xpath='//Reaction[@id="RyRc"]/forwardRate'),
+
+
+    
     P('Ca3RyR4_flicker_fwd_rate', 1, min=1, max=1000,
       xpath='//Reaction[@id="RyRb"]/forwardRate'),
     P('Ca3RyR4_flicker_bkw_rate', 1, min=1, max=1000,
       xpath='//Reaction[@id="RyRb"]/reverseRate'),
-    P('Ca4RyR4_flicker_fwd_rate', 0, fixed="Ca3RyR4_flicker_fwd_rate", constant=1,
+
+    P('Ca4RyR4_flicker_fwd_rate', 0, fixed="Ca3RyR4_flicker_fwd_rate",
+      constant=1,
       xpath='//Reaction[@id="RyRd"]/forwardRate'),
-    P('Ca4RyR4_flicker_bkw_rate', 0, fixed="Ca3RyR4_flicker_bkw_rate", constant=1,
+    P('Ca4RyR4_flicker_bkw_rate', 0, fixed="Ca3RyR4_flicker_bkw_rate",
+      constant=1,
       xpath='//Reaction[@id="RyRd"]/reverseRate'),
-    P('3CaRyRbinding_fwd_rate', 1, min=1, max=1000,
-      xpath='//Reaction[@id="RyRa"]/forwardRate'),
-    P('3CaRyRbinding_bkw_rate', 1, min=1, max=1000,
-      xpath='//Reaction[@id="RyRa"]/reverseRate'),
-    P('4CaRyRbinding_fwd_rate', 0, fixed= '3CaRyRbinding_fwd_rate', constant=1,
-      xpath='//Reaction[@id="RyRc"]/forwardRate'),
-    P('4CaRyRbinding_bkw_rate', 0, fixed= '3CaRyRbinding_bkw_rate', constant=1,
-      xpath='//Reaction[@id="RyRc"]/reverseRate')
+    
     
 )
 
