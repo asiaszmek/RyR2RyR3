@@ -20,32 +20,47 @@
     <Reactant specieID="CaRyR" power="3"/>
     <Reactant specieID="RyR"/>
     <Product specieID="Ca3RyR4"/>
-    <forwardRate>6030</forwardRate>
-    <reverseRate>6.51</reverseRate>
+    <forwardRate>70</forwardRate>
+    <reverseRate>38</reverseRate>
  </Reaction>
    
 <Reaction name="RyRb" id="RyRb">
     <Reactant specieID="Ca3RyR4"/>
     <Product specieID="Ca3RyR4O"/>
-    <forwardRate>852</forwardRate>
-    <reverseRate>3633</reverseRate>
+    <forwardRate>32.37</forwardRate>
+    <reverseRate>25.86</reverseRate>
   </Reaction>
 
 
   <Reaction name="RyRc" id="RyRc">
     <Reactant specieID="CaRyR" power="4"/>
     <Product specieID="Ca4RyR4"/>
-    <forwardRate>6030</forwardRate>
-    <reverseRate>6.57</reverseRate>
+    <forwardRate>70</forwardRate>
+    <reverseRate>38</reverseRate>
  </Reaction>
    
  <Reaction name="RyRd" id="RyRd">
     <Reactant specieID="Ca4RyR4"/>
     <Product specieID="Ca4RyR4O"/>
-    <forwardRate>852</forwardRate>
-    <reverseRate>3633</reverseRate>
+    <forwardRate>32.37</forwardRate>
+    <reverseRate>25.86</reverseRate>
   </Reaction>
 
+  <Reaction name="RyRg" id="RyRg">
+    <Reactant specieID="Ca4RyR4"/>
+    <Product specieID="Ca"/>
+    <Product specieID="Ca3RyR4"/>
+    <forwardRate>712e-4</forwardRate>
+    <reverseRate>e-2</reverseRate>
+  </Reaction>
+
+  <Reaction name="RyRh" id="RyRh">
+    <Reactant specieID="Ca4RyR4O"/>
+    <Product specieID="Ca"/>
+    <Product specieID="Ca3RyR4"/>
+    <forwardRate>712e-4</forwardRate>
+    <reverseRate>e-2</reverseRate>
+  </Reaction>
   
   <Specie name="DMN_buf" id="DMN_buf" kdiff="150" kdiffunit="mu2/s"/>
   <Specie name="CaDMN_buf" id="CaDMN_buf" kdiff="150" kdiffunit="mu2/s"/>
