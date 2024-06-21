@@ -51,7 +51,7 @@
     <Product specieID="Ca"/>
     <Product specieID="Ca3RyR4"/>
     <forwardRate>712e-4</forwardRate>
-    <reverseRate>e-2</reverseRate>
+    <reverseRate>1e-2</reverseRate>
   </Reaction>
 
   <Reaction name="RyRh" id="RyRh">
@@ -59,7 +59,7 @@
     <Product specieID="Ca"/>
     <Product specieID="Ca3RyR4"/>
     <forwardRate>712e-4</forwardRate>
-    <reverseRate>e-2</reverseRate>
+    <reverseRate>1e-2</reverseRate>
   </Reaction>
   
   <Specie name="DMN_buf" id="DMN_buf" kdiff="150" kdiffunit="mu2/s"/>
