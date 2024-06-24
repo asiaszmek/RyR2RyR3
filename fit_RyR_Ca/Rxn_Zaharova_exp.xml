@@ -1,88 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ReactionScheme>
   <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s"/>
-  <Specie name="RyR" id="RyR" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="CaRyR" id="CaRyR" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Ca3RyR3" id="Ca3RyR3" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR4" id="RyR4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca1RyR4" id="Ca1RyR4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca2RyR4" id="Ca2RyR4" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca3RyR4" id="Ca3RyR4" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Ca3RyR4O" id="Ca3RyR4O" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4RyR4" id="Ca4RyR4" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Ca4RyR4O" id="Ca4RyR4O" kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Ca3RyR4I" id="Ca3RyR4I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4RyR4C" id="Ca4RyR4C" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O1" id="O1" kdiff="0" kdiffunit="mu2/s"/>
+  <!-- <Specie name="O2" id="O2" kdiff="0" kdiffunit="mu2/s"/> -->
+  <!-- <Specie name="I" id="I" kdiff="0" kdiffunit="mu2/s"/> -->
 
-
-  <Reaction name="RyRCabinding" id="RyRCabinding">
-    <Reactant specieID="RyR"/>
+<!--Zahradnikova's constants-->
+  <Reaction name="RyRCa1" id="RyRCa1">
+    <Reactant specieID="RyR4"/>
     <Reactant specieID="Ca"/>
-    <Product specieID="CaRyR"/>
-    <forwardRate>1e-3</forwardRate>
-    <reverseRate>100</reverseRate>
- </Reaction><!--Zahradnikova's constants-->
-
-  <Reaction name="RyRa" id="RyRa">
-    <Reactant specieID="CaRyR" power="3"/>
-    <Product specieID="Ca3RyR3"/>
-    <forwardRate>0.742</forwardRate>
-    <reverseRate>742</reverseRate>
+    <Product specieID="Ca1RyR4"/>
+    <forwardRate>1e-2</forwardRate>
+    <reverseRate>1</reverseRate>
+  </Reaction>
+  
+  <Reaction name="RyRCa2" id="RyRCa2">
+    <Reactant specieID="Ca1RyR4"/>
+    <Reactant specieID="Ca"/>
+    <Product specieID="Ca2RyR4"/>
+    <forwardRate>2e-2</forwardRate>
+    <reverseRate>2</reverseRate>
  </Reaction>
 
- <Reaction name="RyRa2" id="RyRa2">
-    <Reactant specieID="Ca3RyR3" />
-    <Reactant specieID="RyR" />
+ <Reaction name="RyRCa3" id="RyRCa3">
+    <Reactant specieID="Ca2RyR4"/>
+    <Reactant specieID="Ca"/>
     <Product specieID="Ca3RyR4"/>
-    <forwardRate>8e-4</forwardRate>
-    <reverseRate>8e-5</reverseRate>
+    <forwardRate>3e-2</forwardRate>
+    <reverseRate>3</reverseRate>
  </Reaction>
 
- <Reaction name="RyRa3" id="RyRa3">
-    <Reactant specieID="Ca3RyR3" />
-    <Reactant specieID="CaRyR"/>
-    <Product specieID="Ca4RyR4"/>
-    <forwardRate>8e-4</forwardRate>
-    <reverseRate>8e-5</reverseRate>
- </Reaction>
-
- 
- <Reaction name="RyRCabinding2" id="RyRCabinding2">
+ <Reaction name="RyRCa4" id="RyRCa4">
     <Reactant specieID="Ca3RyR4"/>
     <Reactant specieID="Ca"/>
     <Product specieID="Ca4RyR4"/>
-    <forwardRate>7.1e-4</forwardRate>
-    <reverseRate>3</reverseRate>
- </Reaction><!--Zahradnikova's constants-->
-
-
- 
-
-<Reaction name="RyRb" id="RyRb">
-    <Reactant specieID="Ca3RyR4"/>
-    <Product specieID="Ca3RyR4O"/>
-    <forwardRate>60.88</forwardRate>
-    <reverseRate>0.313</reverseRate>
-  </Reaction>
-
-  <Reaction name="RyRbi" id="RyRbi">
-    <Reactant specieID="Ca3RyR4O"/>
-    <Product specieID="Ca3RyR4I"/>
-    <forwardRate>0.00072</forwardRate>
-    <reverseRate>4e-5</reverseRate>
-  </Reaction>
+    <forwardRate>10e-2</forwardRate>
+    <reverseRate>1</reverseRate>
+ </Reaction>
 
 
  <Reaction name="RyRd" id="RyRd">
     <Reactant specieID="Ca4RyR4"/>
-    <Product specieID="Ca4RyR4O"/>
-    <forwardRate>60.888</forwardRate>
-    <reverseRate>0.313</reverseRate>
+    <Product specieID="O1"/>
+    <forwardRate>10</forwardRate>
+    <reverseRate>50</reverseRate>
   </Reaction>
 
-  <Reaction name="RyRg" id="RyRg">
-    <Reactant specieID="Ca"/>
-    <Reactant specieID="Ca3RyR4I"/>
-    <Product specieID="Ca4RyR4O"/>
-    <forwardRate>7.1e-4</forwardRate>
-    <reverseRate>3</reverseRate>
+  <!-- <Reaction name="RyRe" id="RyRe"> -->
+  <!--   <Reactant specieID="Ca4RyR4"/> -->
+  <!--   <Product specieID="O2"/> -->
+  <!--   <forwardRate>1e-3</forwardRate> -->
+  <!--   <reverseRate>5e-4</reverseRate> -->
+  <!-- </Reaction> -->
+  
+  <Reaction name="RyRf" id="RyRf">
+    <Reactant specieID="O1"/>
+    <Product specieID="Ca4RyR4C"/>
+    <forwardRate>2</forwardRate>
+    <reverseRate>6.7e-1</reverseRate>
   </Reaction>
+
+  <!-- <Reaction name="RyRg" id="RyRg"> -->
+  <!--   <Reactant specieID="O2"/> -->
+  <!--   <Product specieID="Ca4RyR4C"/> -->
+  <!--   <forwardRate>3</forwardRate> -->
+  <!--   <reverseRate>10</reverseRate> -->
+  <!-- </Reaction> -->
+
+  
+  <!-- <Reaction name="RyRg" id="RyRg"> -->
+  <!--   <Reactant specieID="Ca4RyR4C"/> -->
+  <!--   <Product specieID="I"/> -->
+  <!--   <forwardRate>5e-4</forwardRate> -->
+  <!--   <reverseRate>1.5e-3</reverseRate> -->
+  <!-- </Reaction> -->
 
   
   <Specie name="DMN_buf" id="DMN_buf" kdiff="150" kdiffunit="mu2/s"/>
@@ -93,7 +90,7 @@
     <Reactant specieID="Ca"/>
     <Product specieID="CaDMN_buf"/>
     <forwardRate>80e-6</forwardRate>
-    <reverseRate>0.4e-3</reverseRate>
+    <reverseRate>0.4e-4</reverseRate>
    </Reaction>
 
 </ReactionScheme>

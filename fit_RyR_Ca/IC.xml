@@ -3,9 +3,9 @@
 
 
   <ConcentrationSet>
-    <NanoMolarity specieID="RyR" value="140"/>
+    <NanoMolarity specieID="RyR4" value="35"/>
     <NanoMolarity specieID="Ca" value="0"/>
-    <NanoMolarity specieID="DMN_buf" value="1e6"/>
+    <NanoMolarity specieID="DMN_buf" value="1e5"/>
     
   </ConcentrationSet>
 
