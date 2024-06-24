@@ -85,16 +85,6 @@
     <reverseRate>3</reverseRate>
   </Reaction>
 
-
-
-  <Reaction name="RyRh3" id="RyRh3">
-    <Reactant specieID="Ca"/>
-    <Reactant specieID="RyR4"/>
-    <Product specieID="Ca1RyR4"/>
-    <forwardRate>1.0637647852838967 </forwardRate>
-    <reverseRate>1.064e3</reverseRate>
-  </Reaction>
-
   
   <Specie name="DMN_buf" id="DMN_buf" kdiff="150" kdiffunit="mu2/s"/>
   <Specie name="CaDMN_buf" id="CaDMN_buf" kdiff="150" kdiffunit="mu2/s"/>
