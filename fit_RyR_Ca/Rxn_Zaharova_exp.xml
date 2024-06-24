@@ -19,6 +19,30 @@
     <reverseRate>100</reverseRate>
  </Reaction><!--Zahradnikova's constants-->
 
+  <Reaction name="RyRa" id="RyRa">
+    <Reactant specieID="CaRyR" power="3"/>
+    <Product specieID="Ca3RyR3"/>
+    <forwardRate>0.742</forwardRate>
+    <reverseRate>742</reverseRate>
+ </Reaction>
+
+ <Reaction name="RyRa2" id="RyRa2">
+    <Reactant specieID="Ca3RyR3" />
+    <Reactant specieID="RyR" />
+    <Product specieID="Ca3RyR4"/>
+    <forwardRate>8e-4</forwardRate>
+    <reverseRate>8e-5</reverseRate>
+ </Reaction>
+
+ <Reaction name="RyRa3" id="RyRa3">
+    <Reactant specieID="Ca3RyR3" />
+    <Reactant specieID="CaRyR"/>
+    <Product specieID="Ca4RyR4"/>
+    <forwardRate>8e-4</forwardRate>
+    <reverseRate>8e-5</reverseRate>
+ </Reaction>
+
+ 
  <Reaction name="RyRCabinding2" id="RyRCabinding2">
     <Reactant specieID="Ca3RyR4"/>
     <Reactant specieID="Ca"/>
@@ -27,54 +51,29 @@
     <reverseRate>3</reverseRate>
  </Reaction><!--Zahradnikova's constants-->
 
-  <Reaction name="RyRa" id="RyRa">
-    <Reactant specieID="CaRyR" power="3"/>
-    <Reactant specieID="RyR"/>
-    <Product specieID="Ca3RyR4"/>
-    <forwardRate>1</forwardRate>
-    <reverseRate>1000</reverseRate>
- </Reaction>
 
-
- <Reaction name="RyRa2" id="RyRa2">
-    <Reactant specieID="Ca3RyR3" />
-    <Reactant specieID="RyR" />
-    <Product specieID="Ca3RyR4"/>
-    <forwardRate>1</forwardRate>
-    <reverseRate>10</reverseRate>
- </Reaction>
-
- <Reaction name="RyRa3" id="RyRa3">
-    <Reactant specieID="Ca3RyR3" />
-    <Reactant specieID="CaRyR"/>
-    <Product specieID="Ca4RyR4"/>
-    <forwardRate>1</forwardRate>
-    <reverseRate>10</reverseRate>
- </Reaction>
-
- 
  
 
 <Reaction name="RyRb" id="RyRb">
     <Reactant specieID="Ca3RyR4"/>
     <Product specieID="Ca3RyR4O"/>
-    <forwardRate>762.62</forwardRate>
-    <reverseRate>0.001</reverseRate>
+    <forwardRate>60.88</forwardRate>
+    <reverseRate>0.313</reverseRate>
   </Reaction>
 
   <Reaction name="RyRbi" id="RyRbi">
     <Reactant specieID="Ca3RyR4O"/>
     <Product specieID="Ca3RyR4I"/>
-    <forwardRate>1</forwardRate>
-    <reverseRate>1</reverseRate>
+    <forwardRate>0.00072</forwardRate>
+    <reverseRate>4e-5</reverseRate>
   </Reaction>
 
 
  <Reaction name="RyRd" id="RyRd">
     <Reactant specieID="Ca4RyR4"/>
     <Product specieID="Ca4RyR4O"/>
-    <forwardRate>762.62</forwardRate>
-    <reverseRate>0.001</reverseRate>
+    <forwardRate>60.888</forwardRate>
+    <reverseRate>0.313</reverseRate>
   </Reaction>
 
   <Reaction name="RyRg" id="RyRg">
