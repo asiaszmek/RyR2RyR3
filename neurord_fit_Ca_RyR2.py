@@ -12,7 +12,7 @@ dirname='fit_RyR_Ca/'  #where data and model file are stored.  Can be different 
 model_set='model'
 exp_set='po' #set of data files corresponding to model files; files may contain several molecules
 mol={"RO": ["Ca3RyR4O", "Ca4RyR4O" ]} #which molecule(s) to match in optimization
-tmpdir='/tmp/RyR2CaM'+dirname 
+tmpdir='/tmp/RyR2'+dirname 
 os.chdir(dirname)
 
 # Use loadconc.CSV_conc_set if data to match are csv format (typically from wet experiments)
@@ -28,36 +28,30 @@ P = aju.xml.XMLParam
 #list of parameters to change/optimize
 params = aju.optimize.ParamSet(
     
-    P('3CaRyR4_Ca_binding_fwd_rate', 712e-5, min=1e-06, max=1e3,
-      xpath='//Reaction[@id="RyRh"]/forwardRate'),
-    P('3CaRyR4_Ca_binding_bkw_rate', 0, fixed='3CaRyR4_Ca_binding_fwd_rate',
+    
+    P('3Ca3RyR_RyRbinding_fwd_rate', 1, min=1e-3, max=1000,
+      xpath='//Reaction[@id="RyRa"]/forwardRate'),
+    P('3Ca3RyR_RyRbinding_bkw_rate', 0, fixed='3Ca3RyR_RyRbinding_fwd_rate',
       constant=1000,
-      xpath='//Reaction[@id="RyRh"]/reverseRate'),
-    P('2CaRyR4_Ca_binding_fwd_rate', 0, fixed='3CaRyR4_Ca_binding_fwd_rate',
+      xpath='//Reaction[@id="RyRa"]/reverseRate'),
+    P('Ca3RyR3_RyR_fwd', 0, fixed= '3Ca3RyR_RyRbinding_fwd_rate',
       constant=1,
-      xpath='//Reaction[@id="RyRh1"]/forwardRate'),
-    P('2CaRyR4_Ca_binding_bkw_rate', 0, fixed='3CaRyR4_Ca_binding_fwd_rate',
-      constant=1000,
-      xpath='//Reaction[@id="RyRh1"]/reverseRate'),
-    P('CaRyR4_Ca_binding_fwd_rate', 0, fixed='3CaRyR4_Ca_binding_fwd_rate',
+      xpath='//Reaction[@id="RyRa2"]/forwardRate'),
+    P('Ca3RyR3_RyR_bkw', 0, fixed='3Ca3RyR_RyRbinding_fwd_rate',
+      constant=0.01,
+      xpath='//Reaction[@id="RyRa2"]/reverseRate'),
+    P('Ca3RyR3_CaRyR_fwd', 0, fixed= '3Ca3RyR_RyRbinding_fwd_rate',
       constant=1,
-      xpath='//Reaction[@id="RyRh2"]/forwardRate'),
-    P('CaRyR4_Ca_binding_bkw_rate', 0, fixed='3CaRyR4_Ca_binding_fwd_rate',
-      constant=1000,
-      xpath='//Reaction[@id="RyRh2"]/reverseRate'),
-    P('RyR4_Ca_binding_fwd_rate', 0, fixed='3CaRyR4_Ca_binding_fwd_rate',
-      constant=1,
-      xpath='//Reaction[@id="RyRh2"]/forwardRate'),
-    P('RyR4_Ca_binding_bkw_rate', 0, fixed='3CaRyR4_Ca_binding_fwd_rate',
-      constant=1000,
-      xpath='//Reaction[@id="RyRh2"]/reverseRate'),
-
+      xpath='//Reaction[@id="RyRa3"]/forwardRate'),
+    P('Ca3RyR3_CaRyR_bkw', 0, fixed='3Ca3RyR_RyRbinding_fwd_rate',
+      constant=0.01,
+      xpath='//Reaction[@id="RyRa3"]/reverseRate'),
+   
 
     
-    
-    P('Ca3RyR4_flicker_fwd_rate', 1, min=1, max=1000,
+    P('Ca3RyR4_flicker_fwd_rate', 1, min=1e-6, max=10,
       xpath='//Reaction[@id="RyRb"]/forwardRate'),
-    P('Ca3RyR4_flicker_bkw_rate', 1, min=1, max=1000,
+    P('Ca3RyR4_flicker_bkw_rate', 1, min=1e-6, max=10,
       xpath='//Reaction[@id="RyRb"]/reverseRate'),
 
     P('Ca4RyR4_flicker_fwd_rate', 0, fixed="Ca3RyR4_flicker_fwd_rate",
@@ -66,7 +60,12 @@ params = aju.optimize.ParamSet(
     P('Ca4RyR4_flicker_bkw_rate', 0, fixed="Ca3RyR4_flicker_bkw_rate",
       constant=1,
       xpath='//Reaction[@id="RyRd"]/reverseRate'),
-    
+
+    P('O_inact_fwd_rate', 5e-4, min=1e-6,max=1,
+      xpath='//Reaction[@id="RyRbi"]/forwardRate'),
+    P('O_inact_bkw_rate', 1.5e-3, min=1e-6,max=1,
+      xpath='//Reaction[@id="RyRbi"]/reverseRate'),
+
     
 )
 
@@ -102,38 +101,3 @@ for i,p in enumerate(fit.params.unscale(result[0])):
 
 save_params.save_params(fit,0,1)
 
-'''
-a. try starting from previous good parameters  - this worked!          previous:                           new:old
-CK2_fwd_rate = 3.43460459241e-10 +/- 7.36199078809e-12                 CK2_fwd_rate', 4.78e-10 - similar - 71%
-CK4_fwd_rate = 2.96293987538e-16 +/- 5.22679398079e-18                 CK4_fwd_rate', 2.40e-16 - similar - 123%
-CK3_fwd_rate = 6.38652104333e-15 +/- 1.56822600609e-15                 CK3_fwd_rate', 1.38e-14 - diff  -   46%
-CK1_CKp2_fwd_rate = 2.67337675692e-13 +/- 1.92768856981e-14            CK1_CKp2_fwd_rate', 1.79e-13 - similar - 149%
-CK2_CKp1_fwd_rate = 1.32611014657e-14 +/- 4.58697020871e-14            CK2_CKp1_fwd_rate', 1.10e-12 - HUGH diff - 1%, large var
-CK2_CKp2_fwd_rate = 1.75527421788e-17 +/- 6.5301636154e-19             CK2_CKp2_fwd_rate', 2.20e-17 - similar - 79%
-
-b. opt to all data, starting from 0. DOESN"T WORK
-c. opt to data, without 6s data, starting from 0: DOESN"T WORK
-d. opt to data, with 6s data, but start from coarse values - minimum fitness of 0.1
-CK2_fwd_rate = 3.83119676007e-10 +/- 9.8597395351e-13
-CK4_fwd_rate = 2.23694832822e-16 +/- 1.54061581795e-18
-CK3_fwd_rate = 3.55792141502e-13 +/- 2.20969578794e-15
-CK1_CKp2_fwd_rate = 3.0330636368e-13 +/- 2.29809824284e-13
-CK2_CKp1_fwd_rate = 2.39399544094e-13 +/- 2.71561338665e-13 - STILL LARGE VARIANCE
-CK2_CKp2_fwd_rate = 1.10450093247e-18 +/- 1.41461185682e-16 - EVEN LARGER VARIANCE (but small in previous sim)
-
-Next: opt to data, exclude CK2_CKp1_fwd_rate (set = 0) - similar minimum fitness of 0.1
-CK2_fwd_rate = 1.25915358328e-09 +/- 2.55635426689e-12
-CK4_fwd_rate = 1.55853698323e-16 +/- 4.27641783607e-18
-CK3_fwd_rate = 3.7001965304e-13 +/- 5.81743571691e-15
-CK1_CKp2_fwd_rate = 5.60003015714e-13 +/- 4.76116161324e-13 - variance as large as value
-CK2_CKp2_fwd_rate = 1.16831852933e-17 +/- 4.56376338119e-16
-
-Next: opt to data, exclude CK1_CKp2_fwd_rate (set = 0)  - 4 parameters
-CK2_fwd_rate = 7.89325641207e-10 +/- 1.20234737985e-12
-CK4_fwd_rate = 7.50031075336e-17 +/- 1.92187649653e-19
-CK3_fwd_rate = 9.66232673723e-13 +/- 3.90664628821e-16
-CK2_CKp2_fwd_rate = 1.07481418709e-16 +/- 1.15866464049e-17
-
-Next, using 4 and 6 param results, repeat PP1 optimization (update Rxn_CamKIInew_Ca.xml)
-
-'''
