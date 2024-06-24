@@ -1,64 +1,61 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ReactionScheme>
-  <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
-  <!-- <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/> -->
-  <Specie name="RyR"            id="RyR"           kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="CaRyR"            id="CaRyR"           kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Ca3RyR4"            id="Ca3RyR4"           kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Ca3RyR4O"            id="Ca3RyR4O"           kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Ca3RyR4"            id="Ca3RyR4"           kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="Ca3RyR4O"            id="Ca3RyR4O"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s"/>
+  <Specie name="RyR4" id="RyR4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca1RyR4" id="Ca1RyR4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca2RyR4" id="Ca2RyR4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca3RyR4" id="Ca3RyR4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4RyR4" id="Ca4RyR4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4RyR4C" id="Ca4RyR4C" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O1" id="O1" kdiff="0" kdiffunit="mu2/s"/>
 
-<!--Dura M, Zahradník I, Zahradníková A. Kinetics of cardiac RyR channel gating studied at high temporal resolution. Physiol Res. 2003;52(5):571-8. PMID: 14535832.   -->
-  <Reaction name = "RyRe" id="RyRe">
-    <Reactant specieID="RyR"/>
+
+  <Reaction name="RyRCa1" id="RyRCa1">
+    <Reactant specieID="RyR4"/>
     <Reactant specieID="Ca"/>
-    <Product specieID="CaRyR"/>
-    <forwardRate>712e-6</forwardRate>
-    <reverseRate>3</reverseRate>
+    <Product specieID="Ca1RyR4"/>
+    <forwardRate>3.37e-3</forwardRate>
+    <reverseRate>3.37e-2</reverseRate>
+  </Reaction>
+  
+  <Reaction name="RyRCa2" id="RyRCa2">
+    <Reactant specieID="Ca1RyR4"/>
+    <Reactant specieID="Ca"/>
+    <Product specieID="Ca2RyR4"/>
+    <forwardRate>6.74e-3</forwardRate>
+    <reverseRate>6.74e-2</reverseRate>
  </Reaction>
 
-  <Reaction name = "RyRa" id="RyRa">
-    <Reactant specieID="CaRyR" power="3"/>
-    <Reactant specieID="RyR"/>
-    <Product specieID="Ca3RyR4" />
-    <forwardRate>152</forwardRate>
-    <reverseRate>3</reverseRate>
+ <Reaction name="RyRCa3" id="RyRCa3">
+    <Reactant specieID="Ca2RyR4"/>
+    <Reactant specieID="Ca"/>
+    <Product specieID="Ca3RyR4"/>
+    <forwardRate>10.11e-3</forwardRate>
+    <reverseRate>10.11e-2</reverseRate>
  </Reaction>
 
-   <Reaction name="RyRc" id="RyRc">
-    <Reactant specieID="CaRyR" power="4"/>
+ <Reaction name="RyRCa4" id="RyRCa4">
+    <Reactant specieID="Ca3RyR4"/>
+    <Reactant specieID="Ca"/>
     <Product specieID="Ca4RyR4"/>
-    <forwardRate>152</forwardRate>
-    <reverseRate>3</reverseRate>
+    <forwardRate>0.02696</forwardRate>
+    <reverseRate>0.0216</reverseRate>
  </Reaction>
-   
+
+
  <Reaction name="RyRd" id="RyRd">
     <Reactant specieID="Ca4RyR4"/>
-    <Product specieID="Ca4RyR4O"/>
-    <forwardRate>20</forwardRate>
-    <reverseRate>102</reverseRate>
+    <Product specieID="O1"/>
+    <forwardRate>7.27</forwardRate>
+    <reverseRate>2.78</reverseRate>
   </Reaction>
-
-<!--Dura M, Zahradník I, Zahradníková A. Kinetics of cardiac RyR channel gating studied at high temporal resolution. Physiol Res. 2003;52(5):571-8. PMID: 14535832.   -->
-  <Reaction name = "RyRb" id="RyRb">
-    <Reactant specieID="Ca3RyR4"/>
-    <Product specieID="Ca3RyR4O" />
-    <forwardRate>20</forwardRate>
-    <reverseRate>102</reverseRate>
-  </Reaction>
-
-
-
   
-  <!-- <!-\-Sobie et al. 2002 (Saleet Jafri's) states 4/ms, Keizer and Levine 5/ms for small ER-\-> -->
-  <!--  <Reaction name = "RyRflux1" id="RyRflux1"> -->
-  <!--    <Reactant specieID="Ca3RyR3O"/> -->
-  <!--    <Reactant specieID="CaER"/> -->
-  <!--    <Product specieID="Ca3RyR3O"/> -->
-  <!--    <Product specieID="Ca"/> -->
-  <!--   <forwardRate>5e-3</forwardRate> -->
-  <!--   <reverseRate>1.55e-3</reverseRate> -->
-  <!-- </Reaction> -->
-    
+  <Reaction name="RyRf" id="RyRf">
+    <Reactant specieID="O1"/>
+    <Product specieID="Ca4RyR4C"/>
+    <forwardRate>0.778</forwardRate>
+    <reverseRate>0.057</reverseRate>
+  </Reaction>
+
+
 </ReactionScheme>
