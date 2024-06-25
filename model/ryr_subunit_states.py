@@ -5,7 +5,7 @@ kfs = {"CaM": 2.4e-7, "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
        "2CaN":  0.1e-2}
 
 
-krs = {"CaM": 2.4e-7, "CaMCa2C": 3.67e-6, "CaMCa4": 1.28e-6, "2CaC": 9.1e-3,
+krs = {"CaM": 1.73e-5, "CaMCa2C": 3.67e-6, "CaMCa4": 1.28e-6, "2CaC": 9.1e-3,
        "2CaN": 1000e-3}
 counter = 1
 
