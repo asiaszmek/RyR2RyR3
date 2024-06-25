@@ -1,732 +1,838 @@
-<?xml version="1.0"?>
 <ReactionScheme>
-  <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
-  <!-- <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/> -->
-  <Specie name="CaM" id="CaM" kdiff="4." kdiffunit="mu2/s"/>
-  <Specie name="CaMCa2C" id="CaMCa2C" kdiff="4." kdiffunit="mu2/s"/>
-  <Specie name="CaMCa4" id="CaMCa4" kdiff="4." kdiffunit="mu2/s"/>
-  <Specie name="RyR"        id="RyR"           kdiff="0" kdiffunit="mu2/s"/>
-  
-  <Specie name="RyR_1CaM"    id="RyR_1CaM"    kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_1CaM_1CaMCa2C"    id="RyR_1CaM_1CaMCa2C"    kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_1CaM_2CaMCa2C"    id="RyR_1CaM_2CaMCa2C"    kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_1CaM_3CaMCa2C"    id="RyR_1CaM_3CaMCa2C"    kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_1CaM_1CaMCa2C_1CaMCa4"    id="RyR_1CaM_1CaMCa2C_1CaMCa4"    kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_1CaM_2CaMCa2C_1CaMCa4"    id="RyR_1CaM_2CaMCa2C_1CaMCa4"    kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_1CaM_1CaMCa2C_2CaMCa4"    id="RyR_1CaM_1CaMCa2C_2CaMCa4"    kdiff="0" kdiffunit="mu2/s"/>
-
-  <Specie name="RyR_1CaM_1CaMCa4"    id="RyR_1CaM_1CaMCa34"    kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_1CaM_2CaMCa4"    id="RyR_1CaM_2CaMCa4"    kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_1CaM_3CaMCa4"    id="RyR_1CaM_3CaMCa4"    kdiff="0" kdiffunit="mu2/s"/>
-  
-  <Specie name="RyR_2CaM"  id="RyR_2CaM"      kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_2CaM_1CaMCa2C"  id="RyR_2CaM_1CaMCa2C"      kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_2CaM_1CaMCa4"  id="RyR_2CaM_1CaMCa4"      kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_2CaM_1CaMCa2C_1CaMCa4"  id="RyR_2CaM_1CaMCa2C_1CaMCa4"      kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_2CaM_2CaMCa2C"  id="RyR_2CaM_2CaMCa2C"      kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_2CaM_2CaMCa4"  id="RyR_2CaM_2CaMCa4"      kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_3CaM"  id="RyR_3CaM"      kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_3CaM_1CaMCa2C"  id="RyR_3CaM_1CaMCa2C"      kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_3CaM_1CaMCa4"  id="RyR_3CaM_1CaMCa4"      kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_4CaM"  id="RyR_4CaM"      kdiff="0" kdiffunit="mu2/s"/>
-
-  
-  <Specie name="RyR_1CaMCa2C"    id="RyR_1CaMCa"     kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_1CaMCa2C_1CaMCa4"    id="RyR_1CaMCa2C_1CaMCa4"     kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_1CaMCa2C_2CaMCa4"    id="RyR_1CaMCa2C_2CaMCa4"     kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_1CaMCa2C_3CaMCa4"    id="RyR_1CaMCa2C_3CaMCa4"     kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_2CaMCa2C"  id="RyR_2CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_2CaMCa2C_1CaMCa4"  id="RyR_2CaMCa2C_1CaMCa4"     kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_2CaMCa2C_2CaMCa4"  id="RyR_2CaMCa2C_2CaMCa4"     kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_3CaMCa2C"  id="RyR_3CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_3CaMCa2C_1CaMCa4"  id="RyR_3CaMCa2C_1CaMCa4"     kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_4CaMCa2C"  id="RyR_4CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_1CaMCa4"    id="RyR_1CaMCa4"   kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_2CaMCa4"  id="RyR_2CaMCa4"     kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_3CaMCa4"  id="RyR_3CaMCa4"     kdiff="0" kdiffunit="mu2/s"/>
-  <Specie name="RyR_4CaMCa4"  id="RyR_4CaMCa4"     kdiff="0" kdiffunit="mu2/s"/>
-
-  <!-- <Specie name="Ca1RyR_1CaMCa2C"    id="Ca1RyR_1CaMCa"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca1RyR_2CaMCa2C"  id="Ca1RyR_2CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca1RyR_3CaMCa2C"  id="Ca1RyR_3CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca1RyR_4CaMCa2C"  id="Ca1RyR_4CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca1RyR_1CaMCa4"    id="Ca1RyR_1CaMCa4"   kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca1RyR_2CaMCa4"  id="Ca1RyR_2CaMCa4"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca1RyR_3CaMCa4"  id="Ca1RyR_3CaMCa4"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca1RyR_4CaMCa4"  id="Ca1RyR_4CaMCa4"     kdiff="0" kdiffunit="mu2/s"/> -->
-
-<!--   <Specie name="Ca2RyR_1CaMCa2C"    id="Ca2RyR_1CaMCa"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca2RyR_2CaMCa2C"  id="Ca2RyR_2CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca2RyR_3CaMCa2C"  id="Ca2RyR_3CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca2RyR_4CaMCa2C"  id="Ca2RyR_4CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca2RyR_1CaMCa4"    id="Ca2RyR_1CaMCa4"   kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca2RyR_2CaMCa4"  id="Ca2RyR_2CaMCa4"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca2RyR_3CaMCa4"  id="Ca2RyR_3CaMCa4"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca2RyR_4CaMCa4"  id="Ca2RyR_4CaMCa4"     kdiff="0" kdiffunit="mu2/s"/> -->
-
-<!--   <Specie name="Ca3RyR_1CaMCa2C"    id="Ca3RyR_1CaMCa"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca3RyR_2CaMCa2C"  id="Ca3RyR_2CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca3RyR_3CaMCa2C"  id="Ca3RyR_3CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca3RyR_4CaMCa2C"  id="Ca3RyR_4CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca3RyR_1CaMCa4"    id="Ca3RyR_1CaMCa4"   kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca3RyR_2CaMCa4"  id="Ca3RyR_2CaMCa4"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca3RyR_3CaMCa4"  id="Ca3RyR_3CaMCa4"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca3RyR_4CaMCa4"  id="Ca3RyR_4CaMCa4"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!-- <!-\- Can be open-\-> -->
-<!--   <Specie name="Ca4RyR_1CaMCa2C"    id="Ca4RyR_1CaMCa"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca4RyR_2CaMCa2C"  id="Ca4RyR_2CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca4RyR_3CaMCa2C"  id="Ca4RyR_3CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca4RyR_4CaMCa2C"  id="Ca4RyR_4CaMCa2C"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <!-\- Inactivation-\-> -->
-<!--   <Specie name="Ca4RyR_1CaMCa4"    id="Ca4RyR_1CaMCa4"   kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca4RyR_2CaMCa4"  id="Ca4RyR_2CaMCa4"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca4RyR_3CaMCa4"  id="Ca4RyR_3CaMCa4"     kdiff="0" kdiffunit="mu2/s"/> -->
-<!--   <Specie name="Ca4RyR_4CaMCa4"  id="Ca4RyR_4CaMCa4"     kdiff="0" kdiffunit="mu2/s"/> -->
-
-
-  <!--1) CaM  + 2Ca
-      <-> CaMCa2 -->
-  <!--This is the C site-->
-  <Reaction name="CaMC_bind" id="CaMC_bind">
-    <Reactant specieID="CaM" />
-    <Reactant specieID="Ca" n="2" />
-    <Product specieID="CaMCa2C" />
-    <forwardRate>6e-6</forwardRate>
-    <reverseRate>9.1e-3</reverseRate>
-    <Q10>0.2</Q10>
+  <Specie name="RyR" id="RyR" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaMCa4" id="RyR_1CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_2CaMCa4" id="RyR_2CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_3CaMCa4" id="RyR_3CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_4CaMCa4" id="RyR_4CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaMCa2C" id="RyR_1CaMCa2C" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaMCa2C_1CaMCa4" id="RyR_1CaMCa2C_1CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaMCa2C_2CaMCa4" id="RyR_1CaMCa2C_2CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaMCa2C_3CaMCa4" id="RyR_1CaMCa2C_3CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_2CaMCa2C" id="RyR_2CaMCa2C" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_2CaMCa2C_1CaMCa4" id="RyR_2CaMCa2C_1CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_2CaMCa2C_2CaMCa4" id="RyR_2CaMCa2C_2CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_3CaMCa2C" id="RyR_3CaMCa2C" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_3CaMCa2C_1CaMCa4" id="RyR_3CaMCa2C_1CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_4CaMCa2C" id="RyR_4CaMCa2C" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaM" id="RyR_1CaM" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaM_1CaMCa4" id="RyR_1CaM_1CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaM_2CaMCa4" id="RyR_1CaM_2CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaM_3CaMCa4" id="RyR_1CaM_3CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaM_1CaMCa2C" id="RyR_1CaM_1CaMCa2C" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaM_1CaMCa2C_1CaMCa4" id="RyR_1CaM_1CaMCa2C_1CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaM_1CaMCa2C_2CaMCa4" id="RyR_1CaM_1CaMCa2C_2CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaM_2CaMCa2C" id="RyR_1CaM_2CaMCa2C" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaM_2CaMCa2C_1CaMCa4" id="RyR_1CaM_2CaMCa2C_1CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_1CaM_3CaMCa2C" id="RyR_1CaM_3CaMCa2C" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_2CaM" id="RyR_2CaM" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_2CaM_1CaMCa4" id="RyR_2CaM_1CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_2CaM_2CaMCa4" id="RyR_2CaM_2CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_2CaM_1CaMCa2C" id="RyR_2CaM_1CaMCa2C" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_2CaM_1CaMCa2C_1CaMCa4" id="RyR_2CaM_1CaMCa2C_1CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_2CaM_2CaMCa2C" id="RyR_2CaM_2CaMCa2C" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_3CaM" id="RyR_3CaM" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_3CaM_1CaMCa4" id="RyR_3CaM_1CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_3CaM_1CaMCa2C" id="RyR_3CaM_1CaMCa2C" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyR_4CaM" id="RyR_4CaM" kdiff="0" kdiffunit="mu2/s"/>
+  <Reaction name="RyR_CaM_1" id="RyR_CaM_1">
+    <Reactant specieID="RyR"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_1CaM"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
   </Reaction>
-
-  <Reaction name="CaMCa2C_bind" id="CaMCa2C_bind">
-    <Reactant specieID="CaMCa2C" />
-    <Reactant specieID="Ca" n="2" />
-    <Product specieID="CaMCa4" />
-    <forwardRate>0.1e-3</forwardRate>
-    <reverseRate>1000e-3</reverseRate>
-    <Q10>0.2</Q10>
+  <Reaction name="RyR_CaMCa2C_2" id="RyR_CaMCa2C_2">
+    <Reactant specieID="RyR"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_1CaMCa2C"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
   </Reaction>
+  <Reaction name="RyR_CaMCa4_3" id="RyR_CaMCa4_3">
+    <Reactant specieID="RyR"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_1CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa4_CaM_4" id="RyR_1CaMCa4_CaM_4">
+    <Reactant specieID="RyR_1CaMCa4"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_1CaM_1CaMCa4"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa4_CaMCa2C_5" id="RyR_1CaMCa4_CaMCa2C_5">
+    <Reactant specieID="RyR_1CaMCa4"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa4_CaMCa4_6" id="RyR_1CaMCa4_CaMCa4_6">
+    <Reactant specieID="RyR_1CaMCa4"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_2CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaMCa4_CaM_7" id="RyR_2CaMCa4_CaM_7">
+    <Reactant specieID="RyR_2CaMCa4"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_1CaM_2CaMCa4"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaMCa4_CaMCa2C_8" id="RyR_2CaMCa4_CaMCa2C_8">
+    <Reactant specieID="RyR_2CaMCa4"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_1CaMCa2C_2CaMCa4"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaMCa4_CaMCa4_9" id="RyR_2CaMCa4_CaMCa4_9">
+    <Reactant specieID="RyR_2CaMCa4"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_3CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaMCa4_CaM_10" id="RyR_3CaMCa4_CaM_10">
+    <Reactant specieID="RyR_3CaMCa4"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_1CaM_3CaMCa4"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaMCa4_CaMCa2C_11" id="RyR_3CaMCa4_CaMCa2C_11">
+    <Reactant specieID="RyR_3CaMCa4"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_1CaMCa2C_3CaMCa4"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaMCa4_CaMCa4_12" id="RyR_3CaMCa4_CaMCa4_12">
+    <Reactant specieID="RyR_3CaMCa4"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_4CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa2C_CaM_13" id="RyR_1CaMCa2C_CaM_13">
+    <Reactant specieID="RyR_1CaMCa2C"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_1CaM_1CaMCa2C"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa2C_CaMCa2C_14" id="RyR_1CaMCa2C_CaMCa2C_14">
+    <Reactant specieID="RyR_1CaMCa2C"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_2CaMCa2C"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa2C_CaMCa4_15" id="RyR_1CaMCa2C_CaMCa4_15">
+    <Reactant specieID="RyR_1CaMCa2C"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa2C_2CaN_16" id="RyR_1CaMCa2C_2CaN_16">
+    <Reactant specieID="RyR_1CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa2C_1CaMCa4_CaM_17" id="RyR_1CaMCa2C_1CaMCa4_CaM_17">
+    <Reactant specieID="RyR_1CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa2C_1CaMCa4_CaMCa2C_18" id="RyR_1CaMCa2C_1CaMCa4_CaMCa2C_18">
+    <Reactant specieID="RyR_1CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_2CaMCa2C_1CaMCa4"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa2C_1CaMCa4_CaMCa4_19" id="RyR_1CaMCa2C_1CaMCa4_CaMCa4_19">
+    <Reactant specieID="RyR_1CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_1CaMCa2C_2CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa2C_1CaMCa4_2CaN_20" id="RyR_1CaMCa2C_1CaMCa4_2CaN_20">
+    <Reactant specieID="RyR_1CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_2CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa2C_2CaMCa4_CaM_21" id="RyR_1CaMCa2C_2CaMCa4_CaM_21">
+    <Reactant specieID="RyR_1CaMCa2C_2CaMCa4"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_1CaM_1CaMCa2C_2CaMCa4"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa2C_2CaMCa4_CaMCa2C_22" id="RyR_1CaMCa2C_2CaMCa4_CaMCa2C_22">
+    <Reactant specieID="RyR_1CaMCa2C_2CaMCa4"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_2CaMCa2C_2CaMCa4"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa2C_2CaMCa4_CaMCa4_23" id="RyR_1CaMCa2C_2CaMCa4_CaMCa4_23">
+    <Reactant specieID="RyR_1CaMCa2C_2CaMCa4"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_1CaMCa2C_3CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa2C_2CaMCa4_2CaN_24" id="RyR_1CaMCa2C_2CaMCa4_2CaN_24">
+    <Reactant specieID="RyR_1CaMCa2C_2CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_3CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaMCa2C_3CaMCa4_2CaN_25" id="RyR_1CaMCa2C_3CaMCa4_2CaN_25">
+    <Reactant specieID="RyR_1CaMCa2C_3CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_4CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaMCa2C_CaM_26" id="RyR_2CaMCa2C_CaM_26">
+    <Reactant specieID="RyR_2CaMCa2C"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_1CaM_2CaMCa2C"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaMCa2C_CaMCa2C_27" id="RyR_2CaMCa2C_CaMCa2C_27">
+    <Reactant specieID="RyR_2CaMCa2C"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_3CaMCa2C"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaMCa2C_CaMCa4_28" id="RyR_2CaMCa2C_CaMCa4_28">
+    <Reactant specieID="RyR_2CaMCa2C"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_2CaMCa2C_1CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaMCa2C_2CaN_29" id="RyR_2CaMCa2C_2CaN_29">
+    <Reactant specieID="RyR_2CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaMCa2C_1CaMCa4_CaM_30" id="RyR_2CaMCa2C_1CaMCa4_CaM_30">
+    <Reactant specieID="RyR_2CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_1CaM_2CaMCa2C_1CaMCa4"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaMCa2C_1CaMCa4_CaMCa2C_31" id="RyR_2CaMCa2C_1CaMCa4_CaMCa2C_31">
+    <Reactant specieID="RyR_2CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_3CaMCa2C_1CaMCa4"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaMCa2C_1CaMCa4_CaMCa4_32" id="RyR_2CaMCa2C_1CaMCa4_CaMCa4_32">
+    <Reactant specieID="RyR_2CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_2CaMCa2C_2CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaMCa2C_1CaMCa4_2CaN_33" id="RyR_2CaMCa2C_1CaMCa4_2CaN_33">
+    <Reactant specieID="RyR_2CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaMCa2C_2CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaMCa2C_2CaMCa4_2CaN_34" id="RyR_2CaMCa2C_2CaMCa4_2CaN_34">
+    <Reactant specieID="RyR_2CaMCa2C_2CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaMCa2C_3CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaMCa2C_CaM_35" id="RyR_3CaMCa2C_CaM_35">
+    <Reactant specieID="RyR_3CaMCa2C"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_1CaM_3CaMCa2C"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaMCa2C_CaMCa2C_36" id="RyR_3CaMCa2C_CaMCa2C_36">
+    <Reactant specieID="RyR_3CaMCa2C"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_4CaMCa2C"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaMCa2C_CaMCa4_37" id="RyR_3CaMCa2C_CaMCa4_37">
+    <Reactant specieID="RyR_3CaMCa2C"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_3CaMCa2C_1CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaMCa2C_2CaN_38" id="RyR_3CaMCa2C_2CaN_38">
+    <Reactant specieID="RyR_3CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_2CaMCa2C_1CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaMCa2C_1CaMCa4_2CaN_39" id="RyR_3CaMCa2C_1CaMCa4_2CaN_39">
+    <Reactant specieID="RyR_3CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_2CaMCa2C_2CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_4CaMCa2C_2CaN_40" id="RyR_4CaMCa2C_2CaN_40">
+    <Reactant specieID="RyR_4CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_3CaMCa2C_1CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_CaM_41" id="RyR_1CaM_CaM_41">
+    <Reactant specieID="RyR_1CaM"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_2CaM"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_CaMCa2C_42" id="RyR_1CaM_CaMCa2C_42">
+    <Reactant specieID="RyR_1CaM"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_1CaM_1CaMCa2C"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_CaMCa4_43" id="RyR_1CaM_CaMCa4_43">
+    <Reactant specieID="RyR_1CaM"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_1CaM_1CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_2CaC_44" id="RyR_1CaM_2CaC_44">
+    <Reactant specieID="RyR_1CaM"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaMCa2C"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa4_CaM_45" id="RyR_1CaM_1CaMCa4_CaM_45">
+    <Reactant specieID="RyR_1CaM_1CaMCa4"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_2CaM_1CaMCa4"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa4_CaMCa2C_46" id="RyR_1CaM_1CaMCa4_CaMCa2C_46">
+    <Reactant specieID="RyR_1CaM_1CaMCa4"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa4_CaMCa4_47" id="RyR_1CaM_1CaMCa4_CaMCa4_47">
+    <Reactant specieID="RyR_1CaM_1CaMCa4"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_1CaM_2CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa4_2CaC_48" id="RyR_1CaM_1CaMCa4_2CaC_48">
+    <Reactant specieID="RyR_1CaM_1CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_2CaMCa4_CaM_49" id="RyR_1CaM_2CaMCa4_CaM_49">
+    <Reactant specieID="RyR_1CaM_2CaMCa4"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_2CaM_2CaMCa4"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_2CaMCa4_CaMCa2C_50" id="RyR_1CaM_2CaMCa4_CaMCa2C_50">
+    <Reactant specieID="RyR_1CaM_2CaMCa4"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_1CaM_1CaMCa2C_2CaMCa4"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_2CaMCa4_CaMCa4_51" id="RyR_1CaM_2CaMCa4_CaMCa4_51">
+    <Reactant specieID="RyR_1CaM_2CaMCa4"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_1CaM_3CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_2CaMCa4_2CaC_52" id="RyR_1CaM_2CaMCa4_2CaC_52">
+    <Reactant specieID="RyR_1CaM_2CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaMCa2C_2CaMCa4"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_3CaMCa4_2CaC_53" id="RyR_1CaM_3CaMCa4_2CaC_53">
+    <Reactant specieID="RyR_1CaM_3CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaMCa2C_3CaMCa4"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa2C_CaM_54" id="RyR_1CaM_1CaMCa2C_CaM_54">
+    <Reactant specieID="RyR_1CaM_1CaMCa2C"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_2CaM_1CaMCa2C"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa2C_CaMCa2C_55" id="RyR_1CaM_1CaMCa2C_CaMCa2C_55">
+    <Reactant specieID="RyR_1CaM_1CaMCa2C"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_1CaM_2CaMCa2C"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa2C_CaMCa4_56" id="RyR_1CaM_1CaMCa2C_CaMCa4_56">
+    <Reactant specieID="RyR_1CaM_1CaMCa2C"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa2C_2CaC_57" id="RyR_1CaM_1CaMCa2C_2CaC_57">
+    <Reactant specieID="RyR_1CaM_1CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_2CaMCa2C"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa2C_2CaN_58" id="RyR_1CaM_1CaMCa2C_2CaN_58">
+    <Reactant specieID="RyR_1CaM_1CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaM_1CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa2C_1CaMCa4_CaM_59" id="RyR_1CaM_1CaMCa2C_1CaMCa4_CaM_59">
+    <Reactant specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_2CaM_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa2C_1CaMCa4_CaMCa2C_60" id="RyR_1CaM_1CaMCa2C_1CaMCa4_CaMCa2C_60">
+    <Reactant specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_1CaM_2CaMCa2C_1CaMCa4"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa2C_1CaMCa4_CaMCa4_61" id="RyR_1CaM_1CaMCa2C_1CaMCa4_CaMCa4_61">
+    <Reactant specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_1CaM_1CaMCa2C_2CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa2C_1CaMCa4_2CaC_62" id="RyR_1CaM_1CaMCa2C_1CaMCa4_2CaC_62">
+    <Reactant specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_2CaMCa2C_1CaMCa4"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa2C_1CaMCa4_2CaN_63" id="RyR_1CaM_1CaMCa2C_1CaMCa4_2CaN_63">
+    <Reactant specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaM_2CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa2C_2CaMCa4_2CaC_64" id="RyR_1CaM_1CaMCa2C_2CaMCa4_2CaC_64">
+    <Reactant specieID="RyR_1CaM_1CaMCa2C_2CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_2CaMCa2C_2CaMCa4"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_1CaMCa2C_2CaMCa4_2CaN_65" id="RyR_1CaM_1CaMCa2C_2CaMCa4_2CaN_65">
+    <Reactant specieID="RyR_1CaM_1CaMCa2C_2CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaM_3CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_2CaMCa2C_CaM_66" id="RyR_1CaM_2CaMCa2C_CaM_66">
+    <Reactant specieID="RyR_1CaM_2CaMCa2C"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_2CaM_2CaMCa2C"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_2CaMCa2C_CaMCa2C_67" id="RyR_1CaM_2CaMCa2C_CaMCa2C_67">
+    <Reactant specieID="RyR_1CaM_2CaMCa2C"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_1CaM_3CaMCa2C"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_2CaMCa2C_CaMCa4_68" id="RyR_1CaM_2CaMCa2C_CaMCa4_68">
+    <Reactant specieID="RyR_1CaM_2CaMCa2C"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_1CaM_2CaMCa2C_1CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_2CaMCa2C_2CaC_69" id="RyR_1CaM_2CaMCa2C_2CaC_69">
+    <Reactant specieID="RyR_1CaM_2CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_3CaMCa2C"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_2CaMCa2C_2CaN_70" id="RyR_1CaM_2CaMCa2C_2CaN_70">
+    <Reactant specieID="RyR_1CaM_2CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_2CaMCa2C_1CaMCa4_2CaC_71" id="RyR_1CaM_2CaMCa2C_1CaMCa4_2CaC_71">
+    <Reactant specieID="RyR_1CaM_2CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_3CaMCa2C_1CaMCa4"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_2CaMCa2C_1CaMCa4_2CaN_72" id="RyR_1CaM_2CaMCa2C_1CaMCa4_2CaN_72">
+    <Reactant specieID="RyR_1CaM_2CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaM_1CaMCa2C_2CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_3CaMCa2C_2CaC_73" id="RyR_1CaM_3CaMCa2C_2CaC_73">
+    <Reactant specieID="RyR_1CaM_3CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_4CaMCa2C"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_1CaM_3CaMCa2C_2CaN_74" id="RyR_1CaM_3CaMCa2C_2CaN_74">
+    <Reactant specieID="RyR_1CaM_3CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaM_2CaMCa2C_1CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_CaM_75" id="RyR_2CaM_CaM_75">
+    <Reactant specieID="RyR_2CaM"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_3CaM"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_CaMCa2C_76" id="RyR_2CaM_CaMCa2C_76">
+    <Reactant specieID="RyR_2CaM"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_2CaM_1CaMCa2C"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_CaMCa4_77" id="RyR_2CaM_CaMCa4_77">
+    <Reactant specieID="RyR_2CaM"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_2CaM_1CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_2CaC_78" id="RyR_2CaM_2CaC_78">
+    <Reactant specieID="RyR_2CaM"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaM_1CaMCa2C"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_1CaMCa4_CaM_79" id="RyR_2CaM_1CaMCa4_CaM_79">
+    <Reactant specieID="RyR_2CaM_1CaMCa4"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_3CaM_1CaMCa4"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_1CaMCa4_CaMCa2C_80" id="RyR_2CaM_1CaMCa4_CaMCa2C_80">
+    <Reactant specieID="RyR_2CaM_1CaMCa4"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_2CaM_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_1CaMCa4_CaMCa4_81" id="RyR_2CaM_1CaMCa4_CaMCa4_81">
+    <Reactant specieID="RyR_2CaM_1CaMCa4"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_2CaM_2CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_1CaMCa4_2CaC_82" id="RyR_2CaM_1CaMCa4_2CaC_82">
+    <Reactant specieID="RyR_2CaM_1CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_2CaMCa4_2CaC_83" id="RyR_2CaM_2CaMCa4_2CaC_83">
+    <Reactant specieID="RyR_2CaM_2CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaM_1CaMCa2C_2CaMCa4"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_1CaMCa2C_CaM_84" id="RyR_2CaM_1CaMCa2C_CaM_84">
+    <Reactant specieID="RyR_2CaM_1CaMCa2C"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_3CaM_1CaMCa2C"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_1CaMCa2C_CaMCa2C_85" id="RyR_2CaM_1CaMCa2C_CaMCa2C_85">
+    <Reactant specieID="RyR_2CaM_1CaMCa2C"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_2CaM_2CaMCa2C"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_1CaMCa2C_CaMCa4_86" id="RyR_2CaM_1CaMCa2C_CaMCa4_86">
+    <Reactant specieID="RyR_2CaM_1CaMCa2C"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_2CaM_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_1CaMCa2C_2CaC_87" id="RyR_2CaM_1CaMCa2C_2CaC_87">
+    <Reactant specieID="RyR_2CaM_1CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaM_2CaMCa2C"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_1CaMCa2C_2CaN_88" id="RyR_2CaM_1CaMCa2C_2CaN_88">
+    <Reactant specieID="RyR_2CaM_1CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_2CaM_1CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_1CaMCa2C_1CaMCa4_2CaC_89" id="RyR_2CaM_1CaMCa2C_1CaMCa4_2CaC_89">
+    <Reactant specieID="RyR_2CaM_1CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaM_2CaMCa2C_1CaMCa4"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_1CaMCa2C_1CaMCa4_2CaN_90" id="RyR_2CaM_1CaMCa2C_1CaMCa4_2CaN_90">
+    <Reactant specieID="RyR_2CaM_1CaMCa2C_1CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_2CaM_2CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_2CaMCa2C_2CaC_91" id="RyR_2CaM_2CaMCa2C_2CaC_91">
+    <Reactant specieID="RyR_2CaM_2CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_1CaM_3CaMCa2C"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_2CaM_2CaMCa2C_2CaN_92" id="RyR_2CaM_2CaMCa2C_2CaN_92">
+    <Reactant specieID="RyR_2CaM_2CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_2CaM_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaM_CaM_93" id="RyR_3CaM_CaM_93">
+    <Reactant specieID="RyR_3CaM"/>
+    <Reactant specieID="CaM"/>
+    <Product specieID="RyR_4CaM"/>
+    <forwardRate>2.4e-07</forwardRate>
+    <reverseRate>2.4e-07</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaM_CaMCa2C_94" id="RyR_3CaM_CaMCa2C_94">
+    <Reactant specieID="RyR_3CaM"/>
+    <Reactant specieID="CaMCa2C"/>
+    <Product specieID="RyR_3CaM_1CaMCa2C"/>
+    <forwardRate>3.15e-07</forwardRate>
+    <reverseRate>3.67e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaM_CaMCa4_95" id="RyR_3CaM_CaMCa4_95">
+    <Reactant specieID="RyR_3CaM"/>
+    <Reactant specieID="CaMCa4"/>
+    <Product specieID="RyR_3CaM_1CaMCa4"/>
+    <forwardRate>3.66e-07</forwardRate>
+    <reverseRate>1.28e-06</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaM_2CaC_96" id="RyR_3CaM_2CaC_96">
+    <Reactant specieID="RyR_3CaM"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_2CaM_1CaMCa2C"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaM_1CaMCa4_2CaC_97" id="RyR_3CaM_1CaMCa4_2CaC_97">
+    <Reactant specieID="RyR_3CaM_1CaMCa4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_2CaM_1CaMCa2C_1CaMCa4"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaM_1CaMCa2C_2CaC_98" id="RyR_3CaM_1CaMCa2C_2CaC_98">
+    <Reactant specieID="RyR_3CaM_1CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_2CaM_2CaMCa2C"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_3CaM_1CaMCa2C_2CaN_99" id="RyR_3CaM_1CaMCa2C_2CaN_99">
+    <Reactant specieID="RyR_3CaM_1CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_3CaM_1CaMCa4"/>
+    <forwardRate>0.001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="RyR_4CaM_2CaC_100" id="RyR_4CaM_2CaC_100">
+    <Reactant specieID="RyR_4CaM"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="RyR_3CaM_1CaMCa2C"/>
+    <forwardRate>6e-05</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+</ReactionScheme>
 
- 
-  <!-- also in lit, -->
-  <Reaction name = "RyR_ApoCaM1" id="RyR_ApoCaM1">
-     <Reactant specieID="RyR"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_1CaM"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-   <!-- calculated from Balshaw
-	kon 3.15e-7 nM-1ms-1 (koff 3.67e-8) ( 
-
-   -->
-   <Reaction name = "RyR_ApoCaM1a" id="RyR_ApoCaM1a">
-     <Reactant specieID="RyR_1CaMCa2C"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_1CaM_1CaMCa2C"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_ApoCaM1a" id="RyR_ApoCaM1b">
-     <Reactant specieID="RyR_2CaMCa2C"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_1CaM_2CaMCa2C"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_ApoCaM1a" id="RyR_ApoCaM1c">
-     <Reactant specieID="RyR_3CaMCa2C"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_1CaM_3CaMCa2C"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_ApoCaM1a" id="RyR_ApoCaM1d">
-     <Reactant specieID="RyR_1CaMCa4"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_1CaM_1CaMCa4"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_ApoCaM1a" id="RyR_ApoCaM1e">
-     <Reactant specieID="RyR_2CaMCa4"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_1CaM_2CaMCa4"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_ApoCaM1a" id="RyR_ApoCaM1g">
-     <Reactant specieID="RyR_1CaMCa2C_1CaMCa4"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-
-
-   <Reaction name = "RyR_ApoCaM1a" id="RyR_ApoCaM1i">
-     <Reactant specieID="RyR_2CaMCa2C_1CaMCa4"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_1CaM_2CaMCa2C_1CaMCa4"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_ApoCaM1a" id="RyR_ApoCaM1h">
-     <Reactant specieID="RyR_1CaMCa2C_2CaMCa4"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_1CaM_1CaMCa2C_2CaMCa4"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-
-   
-   <Reaction name = "RyR_ApoCaM1a" id="RyR_ApoCaM1f">
-     <Reactant specieID="RyR_3CaMCa4"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_1CaM_3CaMCa4"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-
-   
-   
- <Reaction name = "RyR_ApoCaM2" id="RyR_ApoCaM2">
-     <Reactant specieID="RyR_1CaM"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_2CaM"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-   <!-- calculated from Balshaw
-	kon 3.15e-7 nM-1ms-1 (koff 3.67e-8) ( 
-   -->
- <Reaction name = "RyR_ApoCaM3" id="RyR_ApoCaM3">
-     <Reactant specieID="RyR_2CaM"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_3CaM"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
- </Reaction>
-
-  <Reaction name = "RyR_ApoCaM3a" id="RyR_ApoCaM3a">
-     <Reactant specieID="RyR_2CaM_1CaMCa2C"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_3CaM_1CaMCa2C"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_ApoCaM3b" id="RyR_ApoCaM3b">
-     <Reactant specieID="RyR_2CaM_1CaMCa4"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_3CaM_1CaMCa4"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-
-   <!-- calculated from Balshaw
-	kon 3.15e-7 nM-1ms-1 (koff 3.67e-8) ( 
-   -->
- <Reaction name = "RyR_ApoCaM4" id="RyR_ApoCaM4">
-     <Reactant specieID="RyR_3CaM"/>
-     <Reactant specieID="CaM"/>
-     <Product specieID="RyR_4CaM"/>
-     <forwardRate>2.4e-7</forwardRate>
-     <reverseRate>1.73e-5</reverseRate>
-   </Reaction>
-   <!-- calculated from Balshaw
-	kon 3.15e-7 nM-1ms-1 (koff 3.67e-8) ( 
-   -->
-
-
-
-   <Reaction name = "RyR_CaMCa2_1" id="RyR_CaMCa2_1">
-     <Reactant specieID="RyR"/>
-     <Reactant specieID="CaMCa2C"/>
-     <Product specieID="RyR_1CaMCa2C"/>
-     
-     <forwardRate>3.15e-7</forwardRate>
-     <reverseRate>3.67e-6</reverseRate>
-   </Reaction>
-   <Reaction name = "RyR_CaMCa2_11" id="RyR_CaMCa2_11">
-     <Reactant specieID="RyR_1CaM"/>
-     <Reactant specieID="CaMCa2C"/>
-     <Product specieID="RyR_1CaM_1CaMCa2C"/>
-     
-     <forwardRate>3.15e-7</forwardRate>
-     <reverseRate>3.67e-6</reverseRate>
-   </Reaction>
-   <Reaction name = "RyR_CaMCa2_11a" id="RyR_CaMCa2_11a">
-     <Reactant specieID="RyR_1CaM_1CaMCa2C"/>
-     <Reactant specieID="CaMCa2C"/>
-     <Product specieID="RyR_1CaM_2CaMCa2C"/>
-     
-     <forwardRate>3.15e-7</forwardRate>
-     <reverseRate>3.67e-6</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_CaMCa2_11b" id="RyR_CaMCa2_11b">
-     <Reactant specieID="RyR_1CaM_2CaMCa2C"/>
-     <Reactant specieID="CaMCa2C"/>
-     <Product specieID="RyR_1CaM_3CaMCa2C"/>
-     
-     <forwardRate>3.15e-7</forwardRate>
-     <reverseRate>3.67e-6</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_CaMCa2_11a" id="RyR_CaMCa2_11c">
-     <Reactant specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
-     <Reactant specieID="CaMCa2C"/>
-     <Product specieID="RyR_1CaM_2CaMCa2C_1CaMCa4"/>
-     
-     <forwardRate>3.15e-7</forwardRate>
-     <reverseRate>3.67e-6</reverseRate>
-   </Reaction>
-   <Reaction name = "RyR_CaMCa2_11a" id="RyR_CaMCa2_11d">
-     <Reactant specieID="RyR_1CaM_1CaMCa4"/>
-     <Reactant specieID="CaMCa2C"/>
-     <Product specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
-     
-     <forwardRate>3.15e-7</forwardRate>
-     <reverseRate>3.67e-6</reverseRate>
-   </Reaction>
-
-   
-   <Reaction name = "RyR_CaMCa2_11a" id="RyR_CaMCa2_11d">
-     <Reactant specieID="RyR_1CaM_2CaMCa4"/>
-     <Reactant specieID="CaMCa2C"/>
-     <Product specieID="RyR_1CaM_1CaMCa2C_2CaMCa4"/>
-     <forwardRate>3.15e-7</forwardRate>
-     <reverseRate>3.67e-6</reverseRate>
-   </Reaction>
-
-   
-   <!-- https://doi.org/10.1161/CIRCRESAHA.114.302857-->
-   <Reaction name = "RyR_CaMCa2_2" id="RyR_CaMCa2_2">
-     <Reactant specieID="RyR_1CaMCa2C"/>
-     <Reactant specieID="CaMCa2C"/>
-     <Product specieID="RyR_2CaMCa2C"/>
-     <forwardRate>3.15e-7</forwardRate>
-     <reverseRate>3.67e-6</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_CaMCa2_2a" id="RyR_CaMCa2_2a">
-     <Reactant specieID="RyR_1CaMCa2C_1CaMCa4"/>
-     <Reactant specieID="CaMCa2C"/>
-     <Product specieID="RyR_2CaMCa2C_1CaMCa4"/>
-     <forwardRate>3.15e-7</forwardRate>
-     <reverseRate>3.67e-6</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_CaMCa2_2b" id="RyR_CaMCa2_2b">
-     <Reactant specieID="RyR_1CaMCa2C_2CaMCa4"/>
-     <Reactant specieID="CaMCa2C"/>
-     <Product specieID="RyR_2CaMCa2C_2CaMCa4"/>
-     <forwardRate>3.15e-7</forwardRate>
-     <reverseRate>3.67e-6</reverseRate>
-   </Reaction>
-
-
-
-   <!-- https://doi.org/10.1161/CIRCRESAHA.114.302857-->
-   <Reaction name = "RyR_CaMCa2_3" id="RyR_CaMCa2_3">
-     <Reactant specieID="RyR_2CaMCa2C"/>
-     <Reactant specieID="CaMCa2C"/>
-     <Product specieID="RyR_3CaMCa2C"/>
-     <forwardRate>3.15e-7</forwardRate>
-     <reverseRate>3.67e-6</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_CaMCa2_3" id="RyR_CaMCa2_3">
-     <Reactant specieID="RyR_2CaMCa2C_1CaMCa4"/>
-     <Reactant specieID="CaMCa2C"/>
-     <Product specieID="RyR_3CaMCa2C_1CaMCa4"/>
-     <forwardRate>3.15e-7</forwardRate>
-     <reverseRate>3.67e-6</reverseRate>
-   </Reaction>
-
-
-
-   <!-- https://doi.org/10.1161/CIRCRESAHA.114.302857-->
-   <Reaction name = "RyR_CaMCa2_4" id="RyR_CaMCa2_4">
-     <Reactant specieID="RyR_3CaMCa2C"/>
-     <Reactant specieID="CaMCa2C"/>
-     <Product specieID="RyR_4CaMCa2C"/>
-     <forwardRate>3.15e-7</forwardRate>
-     <reverseRate>3.67e-6</reverseRate>
-   </Reaction>
-   <!-- https://doi.org/10.1161/CIRCRESAHA.114.302857-->
-
-  
-   <Reaction name = "RyR_CaMCa4_1" id="RyR_CaMCa4_1">
-     <Reactant specieID="RyR"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_1CaMCa4"/>
- 
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_CaMCa4_1a" id="RyR_CaMCa4_1a">
-     <Reactant specieID="RyR_1CaM"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_1CaM_1CaMCa4"/>
- 
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-
-
-   <Reaction name = "RyR_CaMCa4_1aa" id="RyR_CaMCa4_1aa">
-     <Reactant specieID="RyR_1CaM_1CaMCa2C"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
- 
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_CaMCa4_1aaa" id="RyR_CaMCa4_1aaa">
-     <Reactant specieID="RyR_1CaM_2CaMCa2C"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_1CaM_2CaMCa2C_1CaMCa4"/>
- 
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_CaMCa4_1aa1a" id="RyR_CaMCa4_1aa1">
-     <Reactant specieID="RyR_1CaMCa2C"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_1CaMCa2C_1CaMCa4"/>
- 
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-
-   
-   <Reaction name = "RyR_CaMCa4_1b" id="RyR_CaMCa4_1b">
-     <Reactant specieID="RyR_2CaM"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_2CaM_1CaMCa4"/>
- 
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-
-
-   <Reaction name = "RyR_CaMCa4_1b" id="RyR_CaMCa4_1ba">
-     <Reactant specieID="RyR_2CaM_1CaMCa2C"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_2CaM_1CaMCa2C_1CaMCa4"/>
- 
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-
-
-   <Reaction name = "RyR_CaMCa4_1aa2a" id="RyR_CaMCa4_1aa2">
-     <Reactant specieID="RyR_2CaMCa2C"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_2CaMCa2C_1CaMCa4"/>
- 
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_CaMCa4_1bbbb" id="RyR_CaMCa4_1bbbb">
-     <Reactant specieID="RyR_2CaMCa2C_1CaMCa4"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_2CaMCa2C_2CaMCa4"/>
- 
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-
-   
-   <Reaction name = "RyR_CaMCa4_1b" id="RyR_CaMCa4_1b3">
-     <Reactant specieID="RyR_3CaM"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_3CaM_1CaMCa4"/>
- 
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-
-      <Reaction name = "RyR_CaMCa4_1bb" id="RyR_CaMCa4_1b3b">
-     <Reactant specieID="RyR_3CaMCa2C"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_3CaMCa2C_1CaMCa4"/>
- 
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-
-   
-   <Reaction name = "RyR_CaMCa4_2" id="RyR_CaMCa4_2">
-     <Reactant specieID="RyR_1CaMCa4"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_2CaMCa4"/>
-     
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-
-   <Reaction name = "RyR_CaMCa4_3" id="RyR_CaMCa4_3">
-     <Reactant specieID="RyR_2CaMCa4"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_3CaMCa4"/>
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-   
-   <Reaction name = "RyR_CaMCa4_4" id="RyR_CaMCa4_4">
-     <Reactant specieID="RyR_3CaMCa4"/>
-     <Reactant specieID="CaMCa4"/>
-     <Product specieID="RyR_4CaMCa4"/>
-     <forwardRate>3.66e-7</forwardRate>
-     <reverseRate>1.28e-6</reverseRate>
-   </Reaction>
-
-   <!-- increase CaM affinity for Ca by a factor of 10-->
-   <Reaction name="RyR_CaM_2Ca_bind_1" id="RyR_CaM_2Ca_bind_1">
-       <Reactant specieID="RyR_1CaM" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_1CaMCa2C" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-   
-   <Reaction name="RyR_CaM_2Ca_bind_2" id="RyR_CaM_2Ca_bind_2">
-       <Reactant specieID="RyR_2CaM" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_1CaM_1CaMCa2C" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaM_2Ca_bind_2a" id="RyR_CaM_2Ca_bind_2a">
-       <Reactant specieID="RyR_1CaM_1CaMCa2C" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_2CaMCa2C" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-
-
-   <Reaction name="RyR_CaM_2Ca_bind_2aa" id="RyR_CaM_2Ca_bind_2aa">
-       <Reactant specieID="RyR_1CaM_1CaMCa2C_1CaMCa4" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_2CaMCa2C_1CaMCa4" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaM_2Ca_bind_2aa2" id="RyR_CaM_2Ca_bind_2aa2">
-       <Reactant specieID="RyR_1CaM_1CaMCa2C_2CaMCa4" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_2CaMCa2C_2CaMCa4" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-   
-   <Reaction name="RyR_CaM_2Ca_bind_2aa3" id="RyR_CaM_2Ca_bind_2aa3">
-       <Reactant specieID="RyR_1CaM_1CaMCa4" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_1CaMCa2C_1CaMCa4" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaM_2Ca_bind_2aa4" id="RyR_CaM_2Ca_bind_2aa4">
-       <Reactant specieID="RyR_1CaM_2CaMCa4" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_1CaMCa2C_2CaMCa4" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaM_2Ca_bind_2aa5" id="RyR_CaM_2Ca_bind_2aa5">
-       <Reactant specieID="RyR_1CaM_3CaMCa4" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_1CaMCa2C_3CaMCa4" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-
-   
-   <Reaction name="RyR_CaM_2Ca_bind_3" id="RyR_CaM_2Ca_bind_3">
-       <Reactant specieID="RyR_3CaM" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_2CaM_1CaMCa2C" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaM_2Ca_bind_3a" id="RyR_CaM_2Ca_bind_3a">
-       <Reactant specieID="RyR_2CaM_1CaMCa2C" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_1CaM_2CaMCa2C" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaM_2Ca_bind_3b" id="RyR_CaM_2Ca_bind_3b">
-       <Reactant specieID="RyR_1CaM_2CaMCa2C" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_3CaMCa2C" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-
-   
-   <Reaction name="RyR_CaM_2Ca_bind_4" id="RyR_CaM_2Ca_bind_4">
-       <Reactant specieID="RyR_4CaM" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_3CaM_1CaMCa2C" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaM_2Ca_bind_4a" id="RyR_CaM_2Ca_bind_4a">
-       <Reactant specieID="RyR_3CaM_1CaMCa2C" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_2CaM_2CaMCa2C" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaM_2Ca_bind_4b" id="RyR_CaM_2Ca_bind_4b">
-       <Reactant specieID="RyR_2CaM_2CaMCa2C" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_1CaM_3CaMCa2C" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-
-
-   <Reaction name="RyR_CaM_2Ca_bind_4c" id="RyR_CaM_2Ca_bind_4c">
-       <Reactant specieID="RyR_1CaM_3CaMCa2C" />
-       <Reactant specieID="Ca" n="2" />
-       <Product specieID="RyR_4CaMCa2C" />
-       <forwardRate>6e-5</forwardRate>
-       <reverseRate>9.1e-3</reverseRate>
-       <Q10>0.2</Q10>
-   </Reaction>
-
-
-
-   <!-- increase CaM affinity for Ca by a factor of 10-->
-   <Reaction name="RyR_CaMCa2C_2Ca_bind_1" id="RyR_CaMCa2C_2Ca_bind_1">
-     
-     <Reactant specieID="RyR_1CaMCa2C" />
-     <Reactant specieID="Ca" n="2" />
-     <Product specieID="RyR_1CaMCa4" />
-     <forwardRate>0.1e-2</forwardRate>
-     <reverseRate>1000e-3</reverseRate>
-     <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaMCa2C_2Ca_bind_1a" id="RyR_CaMCa2C_2Ca_bind_1a">
-     <Reactant specieID="RyR_1CaM_1CaMCa2C" />
-     <Reactant specieID="Ca" n="2" />
-     <Product specieID="RyR_1CaM_1CaMCa4" />
-     <forwardRate>0.1e-2</forwardRate>
-     <reverseRate>1000e-3</reverseRate>
-     <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaMCa2C_2Ca_bind_1b" id="RyR_CaMCa2C_2Ca_bind_1b">
-     <Reactant specieID="RyR_2CaM_1CaMCa2C" />
-     <Reactant specieID="Ca" n="2" />
-     <Product specieID="RyR_2CaM_1CaMCa4" />
-     <forwardRate>0.1e-2</forwardRate>
-     <reverseRate>1000e-3</reverseRate>
-     <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaMCa2C_2Ca_bind_1c" id="RyR_CaMCa2C_2Ca_bind_1c">
-     <Reactant specieID="RyR_3CaM_1CaMCa2C" />
-     <Reactant specieID="Ca" n="2" />
-     <Product specieID="RyR_3CaM_1CaMCa4" />
-     <forwardRate>0.1e-2</forwardRate>
-     <reverseRate>1000e-3</reverseRate>
-     <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaMCa2C_2Ca_bind_2a" id="RyR_CaMCa2C_2Ca_bind_2a">
-     <Reactant specieID="RyR_1CaM_2CaMCa2C" />
-     <Reactant specieID="Ca" n="2" />
-     <Product specieID="RyR_1CaM_1CaMCa2C_1CaMCa4" />
-     <forwardRate>0.1e-2</forwardRate>
-     <reverseRate>1000e-3</reverseRate>
-     <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaMCa2C_2Ca_bind_2a_" id="RyR_CaMCa2C_2Ca_bind_2a_">
-     <Reactant specieID="RyR_2CaM_2CaMCa2C" />
-     <Reactant specieID="Ca" n="2" />
-     <Product specieID="RyR_2CaM_1CaMCa2C_1CaMCa4" />
-     <forwardRate>0.1e-2</forwardRate>
-     <reverseRate>1000e-3</reverseRate>
-     <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaMCa2C_2Ca_bind_2aa" id="RyR_CaMCa2C_2Ca_bind_2aa">
-     <Reactant specieID="RyR_1CaM_1CaMCa2C_1CaMCa4" />
-     <Reactant specieID="Ca" n="2" />
-     <Product specieID="RyR_1CaM_2CaMCa4" />
-     <forwardRate>0.1e-2</forwardRate>
-     <reverseRate>1000e-3</reverseRate>
-     <Q10>0.2</Q10>
-   </Reaction>
-
-
-   
-   <Reaction name="RyR_CaMCa2C_2Ca_bind_2b" id="RyR_CaMCa2C_2Ca_bind_2b">
-     <Reactant specieID="RyR_1CaM_3CaMCa2C" />
-     <Reactant specieID="Ca" n="2" />
-     <Product specieID="RyR_1CaM_2CaMCa2C_1CaMCa4" />
-     <forwardRate>0.1e-2</forwardRate>
-     <reverseRate>1000e-3</reverseRate>
-     <Q10>0.2</Q10>
-   </Reaction>
-
-   <Reaction name="RyR_CaMCa2C_2Ca_bind_2ba" id="RyR_CaMCa2C_2Ca_bind_2ba">
-     <Reactant specieID="RyR_1CaM_2CaMCa2C_1CaMCa4" />
-     <Reactant specieID="Ca" n="2" />
-     <Product specieID="RyR_1CaM_1CaMCa2C_2CaMCa4" />
-     <forwardRate>0.1e-2</forwardRate>
-     <reverseRate>1000e-3</reverseRate>
-     <Q10>0.2</Q10>
-   </Reaction>
-   
-   <Reaction name="RyR_CaMCa2C_2Ca_bind_2bb" id="RyR_CaMCa2C_2Ca_bind_2bb">
-     <Reactant specieID="RyR_1CaM_1CaMCa2C_2CaMCa4" />
-     <Reactant specieID="Ca" n="2" />
-     <Product specieID="RyR_1CaM_3CaMCa4" />
-     <forwardRate>0.1e-2</forwardRate>
-     <reverseRate>1000e-3</reverseRate>
-     <Q10>0.2</Q10>
-   </Reaction>
-
-   
- </ReactionScheme>
