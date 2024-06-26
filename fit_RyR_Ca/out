@@ -1,0 +1,105 @@
+  CV=stdev/means
+**************  optimization NOT converged 0 m= 0.32876911935650166
+*************** optimization converged at 200 with m= 0.31384890312637076
+*************** optimization converged at 400 with m= 0.3095267677679335
+*************** optimization converged at 600 with m= 0.31112090722632496
+*************** optimization converged at 800 with m= 0.3138797058639304
+end of iterate_fit.py  len of fitness 1000 last_j 5 len(mean_dict) 5
+RyRCa1_fwd_rate = 0.002257645416180593 +/- 1.0836755049973842e-06
+RyRCa3_fwd = 0.001721684590722361 +/- 1.1216351539136692e-12
+Ca4RyR4_open_fwd_rate = 6.5858049372965715 +/- 1.0612597564799395e-06
+Ca4RyR4_flicker_bkw_rate = 1.1662365179515795 +/- 1.0511471035399889e-06
+O1_flicker_fwd_rate = 0.8420707520580156 +/- 0.0010311614838596115
+O1_flicker_bkw_rate = 0.04396570903824586 +/- 0.001226687321454947
+
+**************  optimization NOT converged 0 m= 0.3248272309951102
+*************** optimization converged at 200 with m= 0.32215944354074566
+*************** optimization converged at 400 with m= 0.31907050211912336
+*************** optimization converged at 600 with m= 0.3062682920205306
+*************** optimization converged at 800 with m= 0.3207478958737829
+end of iterate_fit.py  len of fitness 1000 last_j 5 len(mean_dict) 5
+RyRCa1_fwd_rate = 0.001473390684691955 +/- 1.1662658337408364e-06
+RyRCa3_fwd = 0.0020625916588286456 +/- 1.1177422654939325e-06
+Ca4RyR4_open_fwd_rate = 8.340316957428373 +/- 1.1954638382430486e-06
+Ca4RyR4_flicker_bkw_rate = 1.0263560286902669 +/- 1.19964265748175e-06
+O1_flicker_fwd_rate = 0.6778065575151483 +/- 0.00111027021573916
+O1_flicker_bkw_rate = 0.07098258875023278 +/- 0.0011891438175173478
+
+
+*************** optimization converged at 0 with m= 0.33157690937604
+*************** optimization converged at 200 with m= 0.3247320562352414
+*************** optimization converged at 400 with m= 0.31659830303689396
+*************** optimization converged at 600 with m= 0.3126794284878535
+*************** optimization converged at 800 with m= 0.31214806711163606
+end of iterate_fit.py  len of fitness 1000 last_j 5 len(mean_dict) 5
+RyRCa1_fwd_rate = 0.0023870092349496186 +/- 1.0406440492562248e-06
+RyRCa3_fwd = 0.005970548896252225 +/- 1.0541113245805661e-06
+Ca4RyR4_open_fwd_rate = 9.412309011227789 +/- 1.0718923555641578e-06
+Ca4RyR4_flicker_bkw_rate = 0.6353511094473836 +/- 1.0455366894561276e-06
+O1_flicker_fwd_rate = 0.921352618929405 +/- 0.0010291277986764335
+O1_flicker_bkw_rate = 0.12454771013555306 +/- 0.0012656244031952868
+
+*************** optimization converged at 0 with m= 0.32644133633250094
+*************** optimization converged at 200 with m= 0.307339539792174
+*************** optimization converged at 400 with m= 0.30815124634362834
+*************** optimization converged at 600 with m= 0.309900902181127
+*************** optimization converged at 800 with m= 0.3106246491119215
+end of iterate_fit.py  len of fitness 1000 last_j 5 len(mean_dict) 5
+RyRCa1_fwd_rate = 0.008378701739292223 +/- 1.0139036415258066e-06
+RyRCa3_fwd = 0.001504837500280441 +/- 1.0115970584719336e-06
+Ca4RyR4_open_fwd_rate = 8.971778598263585 +/- 1.0089258002602117e-06
+Ca4RyR4_flicker_bkw_rate = 0.30600106114482517 +/- 1.0233397664666144e-06
+O1_flicker_fwd_rate = 0.8278839568811595 +/- 0.0010051400974430851
+O1_flicker_bkw_rate = 0.13146584030125258 +/- 0.0010082230138874757
+
+
+**************  optimization NOT converged 0 m= 0.3278715599660849
+*************** optimization converged at 200 with m= 0.29851439544731195
+*************** optimization converged at 400 with m= 0.2991095220827559
+*************** optimization converged at 600 with m= 0.30592152068092376
+*************** optimization converged at 800 with m= 0.30031668041116805
+end of iterate_fit.py  len of fitness 1000 last_j 5 len(mean_dict) 5
+RyRCa1_fwd_rate = 0.0035123779210466076 +/- 1.0371588476776839e-06
+RyRCa3_fwd = 0.002606464039809621 +/- 1.1511500014643823e-06
+Ca4RyR4_open_fwd_rate = 6.38068336035594 +/- 1.0572794642539522e-06
+Ca4RyR4_flicker_bkw_rate = 0.1874972379533503 +/- 1.0885011284939412e-06
+O1_flicker_fwd_rate = 0.9918842058886357 +/- 0.0010989280411620533
+O1_flicker_bkw_rate = 0.13933604453149304 +/- 0.0010678000640462469
+**************  optimization NOT converged 0 m= 0.3282231397617244
+*************** optimization converged at 200 with m= 0.3047133288000299
+*************** optimization converged at 400 with m= 0.30180420408746744
+*************** optimization converged at 600 with m= 0.3000484715126127
+*************** optimization converged at 800 with m= 0.3008240141258593
+end of iterate_fit.py  len of fitness 1000 last_j 5 len(mean_dict) 5
+RyRCa1_fwd_rate = 0.0023119105631535224 +/- 1.0795604650510372e-06
+RyRCa3_fwd = 0.012148156316039938 +/- 1.3698225224394053e-06
+Ca4RyR4_open_fwd_rate = 7.097350278059313 +/- 1.1249499000293562e-06
+Ca4RyR4_flicker_bkw_rate = 0.04555381743156386 +/- 1.1443028585973704e-06
+O1_flicker_fwd_rate = 0.9004068118422431 +/- 0.0010625860497019601
+O1_flicker_bkw_rate = 0.1225401934967626 +/- 0.0011619917571261491
+*************** optimization converged at 0 with m= 0.3239605861445753
+*************** optimization converged at 200 with m= 0.3155186889929135
+*************** optimization converged at 400 with m= 0.301768954290092
+*************** optimization converged at 600 with m= 0.2988011496529277
+*************** optimization converged at 800 with m= 0.29749981801145436
+end of iterate_fit.py  len of fitness 1000 last_j 5 len(mean_dict) 5
+RyRCa1_fwd_rate = 0.004301873537590269 +/- 1.1922323790941897e-06
+RyRCa2_fwd = 0.004409558616981127 +/- 1.164903569931993e-06
+RyRCa3_fwd = 0.002751037487343213 +/- 1.1491209217952374e-06
+Ca4RyR4_open_fwd_rate = 9.476037765506378 +/- 1.141715568558286e-06
+Ca4RyR4_flicker_bkw_rate = 0.2877388954317396 +/- 1.344101503933894e-06
+O1_flicker_fwd_rate = 0.705916981082758 +/- 0.0011407120853132546
+O1_flicker_bkw_rate = 0.09286594208384534 +/- 0.001313572361737392
+*************** optimization converged at 0 with m= 0.3180771572543914
+*************** optimization converged at 200 with m= 0.3013925393474032
+*************** optimization converged at 400 with m= 0.29790294254474625
+*************** optimization converged at 600 with m= 0.2961285994506053
+*************** optimization converged at 800 with m= 0.2976755248972339
+end of iterate_fit.py  len of fitness 1000 last_j 5 len(mean_dict) 5
+RyRCa1_fwd_rate = 0.006779825831535174 +/- 1.2886410023242481e-06
+RyRCa2_fwd = 0.0037160454205059376 +/- 1.1522539897854334e-06
+RyRCa3_fwd = 0.0030815996746667382 +/- 1.1246584960947478e-06
+Ca4RyR4_open_fwd_rate = 5.533598967571325 +/- 1.22218835311917e-06
+Ca4RyR4_flicker_bkw_rate = 0.21022290144595385 +/- 1.312711936753113e-06
+O1_flicker_fwd_rate = 1.17171872610578 +/- 0.0011183978263909107
+O1_flicker_bkw_rate = 0.24015058246041227 +/- 0.00119115738355417
