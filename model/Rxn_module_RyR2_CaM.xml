@@ -57,7 +57,7 @@
     <Reactant specieID="RyR"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_1CaM"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -81,7 +81,7 @@
     <Reactant specieID="RyR_1CaMCa4"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_1CaM_1CaMCa4"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -105,7 +105,7 @@
     <Reactant specieID="RyR_2CaMCa4"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_1CaM_2CaMCa4"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -129,7 +129,7 @@
     <Reactant specieID="RyR_3CaMCa4"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_1CaM_3CaMCa4"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -153,7 +153,7 @@
     <Reactant specieID="RyR_1CaMCa2C"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_1CaM_1CaMCa2C"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -185,7 +185,7 @@
     <Reactant specieID="RyR_1CaMCa2C_1CaMCa4"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -217,7 +217,7 @@
     <Reactant specieID="RyR_1CaMCa2C_2CaMCa4"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_1CaM_1CaMCa2C_2CaMCa4"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -257,7 +257,7 @@
     <Reactant specieID="RyR_2CaMCa2C"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_1CaM_2CaMCa2C"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -289,7 +289,7 @@
     <Reactant specieID="RyR_2CaMCa2C_1CaMCa4"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_1CaM_2CaMCa2C_1CaMCa4"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -329,7 +329,7 @@
     <Reactant specieID="RyR_3CaMCa2C"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_1CaM_3CaMCa2C"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -377,7 +377,7 @@
     <Reactant specieID="RyR_1CaM"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_2CaM"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -409,7 +409,7 @@
     <Reactant specieID="RyR_1CaM_1CaMCa4"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_2CaM_1CaMCa4"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -441,7 +441,7 @@
     <Reactant specieID="RyR_1CaM_2CaMCa4"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_2CaM_2CaMCa4"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -481,7 +481,7 @@
     <Reactant specieID="RyR_1CaM_1CaMCa2C"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_2CaM_1CaMCa2C"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
@@ -521,7 +521,7 @@
     <Reactant specieID="RyR_1CaM_1CaMCa2C_1CaMCa4"/>
     <Reactant specieID="CaM"/>
     <Product specieID="RyR_2CaM_1CaMCa2C_1CaMCa4"/>
-    <forwardRate>2.4e-07</forwardRate>
+    <forwardRate>2.4e-08</forwardRate>
     <reverseRate>1.73e-05</reverseRate>
     <Q10>.2</Q10>
   </Reaction>

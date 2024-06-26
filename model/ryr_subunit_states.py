@@ -1,7 +1,7 @@
 import itertools
 from lxml import etree
 
-kfs = {"CaM": 2.4e-7, "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
+kfs = {"CaM": 2.4e-8, "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
        "2CaN":  0.1e-2}
 
 
