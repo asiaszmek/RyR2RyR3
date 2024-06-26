@@ -50,6 +50,9 @@ if __name__ == "__main__":
                         states.add(iteration)
 
     my_rxn_file = etree.Element("ReactionScheme")
+    etree.SubElement(my_rxn_file, "Specie", name="Ca",
+                         id="Ca", kdiff="200", kdiffunit="mu2/s")
+
     etree.SubElement(my_rxn_file, "Specie", name="CaM",
                          id="CaM", kdiff="4", kdiffunit="mu2/s")
     etree.SubElement(my_rxn_file, "Specie", name="CaMCa2C",
