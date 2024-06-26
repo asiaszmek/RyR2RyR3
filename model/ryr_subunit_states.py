@@ -20,7 +20,7 @@ def add_reaction(root, name, what, new_name):
     etree.SubElement(my_r, "Reactant", specieID=name)
     if what != "2CaC" and what != "2CaN" and not what.startswith("RyR"):
         etree.SubElement(my_r, "Reactant", specieID=what)
-    if what == "RyRCa1" or what == "RyRCa2":
+    elif what == "RyRCa1" or what == "RyRCa2":
         etree.SubElement(my_r, "Reactant", specieID="Ca")
     else:
         etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
