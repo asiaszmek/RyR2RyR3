@@ -50,6 +50,41 @@ if __name__ == "__main__":
                         states.add(iteration)
 
     my_rxn_file = etree.Element("ReactionScheme")
+    etree.SubElement(my_rxn_file, "Specie", name="CaM",
+                         id="CaM", kdiff="4", kdiffunit="mu2/s")
+    etree.SubElement(my_rxn_file, "Specie", name="CaMCa2C",
+                         id="CaMCa2C", kdiff="4", kdiffunit="mu2/s")
+    etree.SubElement(my_rxn_file, "Specie", name="CaMCa4",
+                         id="CaMCa4", kdiff="4", kdiffunit="mu2/s")
+    my_r = etree.SubElement(my_rxn_file, "Reaction",
+                            name="CaM_Ca2C",
+                            id="CaM_Ca2C")
+    etree.SubElement(my_r, "Reactant", specieID="CaM")
+    etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
+    etree.SubElement(my_r, "Product", specieID="CaMCa2C")
+    kf = etree.SubElement(my_r, "forwardRate")
+    kf.text = str(6e-6)
+    kr = etree.SubElement(my_r, "reverseRate")
+    kr.text = str(9.1e-3)
+    q = etree.SubElement(my_r, "Q10")
+    q.text = ".2"
+
+    my_r = etree.SubElement(my_rxn_file, "Reaction",
+                            name="CaMCa2C_2Ca",
+                            id="CaMCa2C_2Ca")
+    etree.SubElement(my_r, "Reactant", specieID="CaMCa2C")
+    etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
+    etree.SubElement(my_r, "Product", specieID="CaMCa4")
+    kf = etree.SubElement(my_r, "forwardRate")
+    kf.text = str(0.1e-3)
+    kr = etree.SubElement(my_r, "reverseRate")
+    kr.text = str(1000e-3)
+    q = etree.SubElement(my_r, "Q10")
+    q.text = ".2"
+
+
+
+    
     for (i,  j, k) in sorted(states):
         my_specie_name = generate_name(i, j, k)
         etree.SubElement(my_rxn_file, "Specie", name=my_specie_name,

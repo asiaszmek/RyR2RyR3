@@ -1,34 +1,23 @@
 <ReactionScheme>
-
-
-  <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
-  <!-- <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/> -->
-  <Specie name="CaM" id="CaM" kdiff="4." kdiffunit="mu2/s"/>
-  <Specie name="CaMCa2C" id="CaMCa2C" kdiff="4." kdiffunit="mu2/s"/>
-  <Specie name="CaMCa4" id="CaMCa4" kdiff="4." kdiffunit="mu2/s"/>
-
-  
-  <!-- 1) CaM  + 2Ca -->
-  <!--     <-> CaMCa2 -->
-  <!-- This is the C site -->
-  <Reaction name="CaMC_bind" id="CaMC_bind">
-    <Reactant specieID="CaM" />
-    <Reactant specieID="Ca" n="2" />
-    <Product specieID="CaMCa2C" />
-    <forwardRate>6e-6</forwardRate>
-    <reverseRate>9.1e-3</reverseRate>
-    <Q10>0.2</Q10>
+  <Specie name="CaM" id="CaM" kdiff="4" kdiffunit="mu2/s"/>
+  <Specie name="CaMCa2C" id="CaMCa2C" kdiff="4" kdiffunit="mu2/s"/>
+  <Specie name="CaMCa4" id="CaMCa4" kdiff="4" kdiffunit="mu2/s"/>
+  <Reaction name="CaM_Ca2C" id="CaM_Ca2C">
+    <Reactant specieID="CaM"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="CaMCa2C"/>
+    <forwardRate>6e-06</forwardRate>
+    <reverseRate>0.0091</reverseRate>
+    <Q10>.2</Q10>
   </Reaction>
-
-  <Reaction name="CaMCa2C_bind" id="CaMCa2C_bind">
-    <Reactant specieID="CaMCa2C" />
-    <Reactant specieID="Ca" n="2" />
-    <Product specieID="CaMCa4" />
-    <forwardRate>0.1e-3</forwardRate>
-    <reverseRate>1000e-3</reverseRate>
-    <Q10>0.2</Q10>
+  <Reaction name="CaMCa2C_2Ca" id="CaMCa2C_2Ca">
+    <Reactant specieID="CaMCa2C"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="CaMCa4"/>
+    <forwardRate>0.0001</forwardRate>
+    <reverseRate>1.0</reverseRate>
+    <Q10>.2</Q10>
   </Reaction>
-
   <Specie name="RyR" id="RyR" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR_1CaMCa4" id="RyR_1CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="RyR_2CaMCa4" id="RyR_2CaMCa4" kdiff="0" kdiffunit="mu2/s"/>
