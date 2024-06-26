@@ -4199,4 +4199,108 @@
     <reverseRate>0.0091</reverseRate>
     <Q10>.2</Q10>
   </Reaction>
+  <Specie name="O0" id="O0" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O1" id="O1" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O2" id="O2" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O3" id="O3" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O4" id="O4" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O5" id="O5" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O6" id="O6" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O7" id="O7" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O8" id="O8" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O9" id="O9" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O10" id="O10" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O11" id="O11" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O12" id="O12" kdiff="0" kdiffunit="mu2/s"/>
+  <Reaction name="Ca3_RyR_O_506" id="Ca3_RyR_O_506">
+    <Reactant specieID="Ca3_RyR"/>
+    <Product specieID="O0"/>
+    <forwardRate>0.43</forwardRate>
+    <reverseRate>7.43</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="Ca3_RyR_1CaMCa2C_O_507" id="Ca3_RyR_1CaMCa2C_O_507">
+    <Reactant specieID="Ca3_RyR_1CaMCa2C"/>
+    <Product specieID="O1"/>
+    <forwardRate>0.43</forwardRate>
+    <reverseRate>7.43</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="Ca3_RyR_2CaMCa2C_O_508" id="Ca3_RyR_2CaMCa2C_O_508">
+    <Reactant specieID="Ca3_RyR_2CaMCa2C"/>
+    <Product specieID="O2"/>
+    <forwardRate>0.43</forwardRate>
+    <reverseRate>7.43</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="Ca3_RyR_3CaMCa2C_O_509" id="Ca3_RyR_3CaMCa2C_O_509">
+    <Reactant specieID="Ca3_RyR_3CaMCa2C"/>
+    <Product specieID="O3"/>
+    <forwardRate>0.43</forwardRate>
+    <reverseRate>7.43</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="Ca3_RyR_1CaM_O_510" id="Ca3_RyR_1CaM_O_510">
+    <Reactant specieID="Ca3_RyR_1CaM"/>
+    <Product specieID="O4"/>
+    <forwardRate>0.43</forwardRate>
+    <reverseRate>7.43</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="Ca3_RyR_1CaM_1CaMCa2C_O_511" id="Ca3_RyR_1CaM_1CaMCa2C_O_511">
+    <Reactant specieID="Ca3_RyR_1CaM_1CaMCa2C"/>
+    <Product specieID="O5"/>
+    <forwardRate>0.43</forwardRate>
+    <reverseRate>7.43</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="Ca3_RyR_1CaM_2CaMCa2C_O_512" id="Ca3_RyR_1CaM_2CaMCa2C_O_512">
+    <Reactant specieID="Ca3_RyR_1CaM_2CaMCa2C"/>
+    <Product specieID="O6"/>
+    <forwardRate>0.43</forwardRate>
+    <reverseRate>7.43</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="Ca3_RyR_1CaM_3CaMCa2C_O_513" id="Ca3_RyR_1CaM_3CaMCa2C_O_513">
+    <Reactant specieID="Ca3_RyR_1CaM_3CaMCa2C"/>
+    <Product specieID="O7"/>
+    <forwardRate>0.43</forwardRate>
+    <reverseRate>7.43</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="Ca3_RyR_2CaM_O_514" id="Ca3_RyR_2CaM_O_514">
+    <Reactant specieID="Ca3_RyR_2CaM"/>
+    <Product specieID="O8"/>
+    <forwardRate>0.43</forwardRate>
+    <reverseRate>7.43</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="Ca3_RyR_2CaM_1CaMCa2C_O_515" id="Ca3_RyR_2CaM_1CaMCa2C_O_515">
+    <Reactant specieID="Ca3_RyR_2CaM_1CaMCa2C"/>
+    <Product specieID="O9"/>
+    <forwardRate>0.43</forwardRate>
+    <reverseRate>7.43</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="Ca3_RyR_2CaM_2CaMCa2C_O_516" id="Ca3_RyR_2CaM_2CaMCa2C_O_516">
+    <Reactant specieID="Ca3_RyR_2CaM_2CaMCa2C"/>
+    <Product specieID="O10"/>
+    <forwardRate>0.43</forwardRate>
+    <reverseRate>7.43</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="Ca3_RyR_3CaM_O_517" id="Ca3_RyR_3CaM_O_517">
+    <Reactant specieID="Ca3_RyR_3CaM"/>
+    <Product specieID="O11"/>
+    <forwardRate>0.43</forwardRate>
+    <reverseRate>7.43</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
+  <Reaction name="Ca3_RyR_3CaM_1CaMCa2C_O_518" id="Ca3_RyR_3CaM_1CaMCa2C_O_518">
+    <Reactant specieID="Ca3_RyR_3CaM_1CaMCa2C"/>
+    <Product specieID="O12"/>
+    <forwardRate>0.43</forwardRate>
+    <reverseRate>7.43</reverseRate>
+    <Q10>.2</Q10>
+  </Reaction>
 </ReactionScheme>
