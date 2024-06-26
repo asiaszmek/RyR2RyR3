@@ -5,7 +5,7 @@
 
           <xi:include href="Rxn_module_RyR2_CaM.xml" />
           <xi:include href="../fit_RyR_Ca/Morph.xml" />
-	  <xi:include href="IC_Ca_100_CaM_100.xml" />       
+	  <xi:include href="IC_Ca_100000_CaM_75.xml" />       
 
 
     <!--2D means the morphology is interpreted like a flatworm, 3D for roundworms. 
