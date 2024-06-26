@@ -103,3 +103,16 @@ Ca4RyR4_open_fwd_rate = 5.533598967571325 +/- 1.22218835311917e-06
 Ca4RyR4_flicker_bkw_rate = 0.21022290144595385 +/- 1.312711936753113e-06
 O1_flicker_fwd_rate = 1.17171872610578 +/- 0.0011183978263909107
 O1_flicker_bkw_rate = 0.24015058246041227 +/- 0.00119115738355417
+*************** optimization converged at 0 with m= 0.316750902137918
+*************** optimization converged at 200 with m= 0.29615844577284683
+*************** optimization converged at 400 with m= 0.30093927695092815
+*************** optimization converged at 600 with m= 0.30158796962201445
+*************** optimization converged at 800 with m= 0.29600093088486
+end of iterate_fit.py  len of fitness 1000 last_j 5 len(mean_dict) 5
+RyRCa1_fwd_rate = 0.008836614289816332 +/- 1.03754583667951e-06
+RyRCa2_fwd = 0.002879130560298341 +/- 1.031652069844455e-06
+RyRCa3_fwd = 0.003811720085522787 +/- 1.0395111457188828e-06
+Ca4RyR4_open_fwd_rate = 7.837004621758737 +/- 1.05988509384854e-06
+Ca4RyR4_flicker_bkw_rate = 0.43309376051683074 +/- 1.0755813649864445e-06
+O1_flicker_fwd_rate = 0.8962198330050336 +/- 0.0010269819334799127
+O1_flicker_bkw_rate = 0.1469122529140386 +/- 0.0010550391378063152
