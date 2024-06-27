@@ -3,7 +3,7 @@
     <!-- this file defines a single run of the calculation, using morphology and 
 	 reaction data brought in from other files --> 
 
-          <xi:include href="Rxn_Zahradnikova_exp.xml" />
+          <xi:include href="../model/Rxn_module_RyR2_CaM.xml" />
           <xi:include href="Morph.xml" />
 	  <xi:include href="IC_0.000014.xml" />       
 
