@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <ReactionScheme>
   <Specie name="Ca" id="Ca" kdiff="200" kdiffunit="mu2/s"/>
   <Specie name="CaM" id="CaM" kdiff="4" kdiffunit="mu2/s"/>

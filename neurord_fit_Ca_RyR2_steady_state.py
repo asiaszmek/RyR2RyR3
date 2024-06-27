@@ -9,10 +9,10 @@ import os
 
 dirname='fit_RyR_Ca/'  #where data and model file are stored.  Can be different than current directory. Multiple datafiles allowed
 #Set of model files that have first part of file name in common.  All included files must be in same directory.
-model_set='model_Z'
-exp_set='po' #set of data files corresponding to model files; files may contain several molecules
+model_set='model_ca'
+exp_set='copello_ca' #set of data files corresponding to model files; files may contain several molecules
 mol={"RO": ["O1",]} #which molecule(s) to match in optimization
-tmpdir='/tmp/RyR2'+dirname 
+tmpdir='/tmp/RyR2_Ca_ss'+dirname 
 os.chdir(dirname)
 
 # Use loadconc.CSV_conc_set if data to match are csv format (typically from wet experiments)
@@ -29,17 +29,17 @@ P = aju.xml.XMLParam
 params = aju.optimize.ParamSet(
     
     
-    P('RyRCa1_fwd_rate', 6.78e-3, min=1e-6, max=1,
+    P('RyRCa1_fwd_rate', 3.04e-3, min=1e-6, max=1,
       xpath='//Reaction[@id="RyRCa1"]/forwardRate'),
     P('RyRCa1_bkw_rate', 0, fixed='RyRCa1_fwd_rate',
       constant=10,
       xpath='//Reaction[@id="RyRCa1"]/reverseRate'),
-    P('RyRCa2_fwd',  3.72e-3, min=1e-6, max=1,
+    P('RyRCa2_fwd',  5.76e-3, min=1e-6, max=1,
       xpath='//Reaction[@id="RyRCa2"]/forwardRate'),
     P('RyRCa2_bkw', 0, fixed='RyRCa2_fwd',
       constant=10,
       xpath='//Reaction[@id="RyRCa2"]/reverseRate'),
-    P('RyRCa3_fwd', 0.00308, min=1e-6, max=1,
+    P('RyRCa3_fwd', 0.00615, min=1e-6, max=1,
       xpath='//Reaction[@id="RyRCa3"]/forwardRate'),
     P('RyRCa3_bkw', 0, fixed="RyRCa3_fwd", constant=40,
       xpath='//Reaction[@id="RyRCa3"]/reverseRate'),
@@ -52,14 +52,14 @@ params = aju.optimize.ParamSet(
     #   xpath='//Reaction[@id="RyRCa4"]/reverseRate'),
  
     
-    P('Ca4RyR4_open_fwd_rate', 5.534, min=1e-6, max=100,
+    P('Ca4RyR4_open_fwd_rate', 9.912, min=1e-6, max=100,
       xpath='//Reaction[@id="RyRd"]/forwardRate'),
-    P('Ca4RyR4_flicker_bkw_rate', 0.21, min=1e-6, max=100,
+    P('Ca4RyR4_open_bkw_rate', 1.94, min=1e-6, max=100,
       xpath='//Reaction[@id="RyRd"]/reverseRate'),
 
-    P('O1_flicker_fwd_rate', 1.1717, min=1e-3,max=1e3,
+    P('O1_flicker_fwd_rate', 0.75, min=1e-3,max=1e3,
       xpath='//Reaction[@id="RyRf"]/forwardRate'),
-    P('O1_flicker_bkw_rate', 0.2401,
+    P('O1_flicker_bkw_rate', 0.114,
       min=1e-3, max=1e3,
       xpath='//Reaction[@id="RyRf"]/reverseRate'),
 
