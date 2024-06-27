@@ -35,6 +35,13 @@
     <reverseRate>0.152</reverseRate>
  </Reaction>
 
+ <Reaction name="RyRCa5" id="RyRCa5">
+    <Reactant specieID="Ca2RyR4"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="Ca4RyR4C"/>
+    <forwardRate>0.00381</forwardRate>
+    <reverseRate>0.152</reverseRate>
+ </Reaction>
  
 
  <Reaction name="RyRd" id="RyRd">
