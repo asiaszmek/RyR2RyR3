@@ -15,24 +15,24 @@
     <Reactant specieID="RyR4"/>
     <Reactant specieID="Ca"/>
     <Product specieID="Ca1RyR4"/>
-    <forwardRate>8.84e-3</forwardRate>
-    <reverseRate>8.84e-2</reverseRate>
+    <forwardRate>5.3e-3</forwardRate>
+    <reverseRate>5.3e-2</reverseRate>
   </Reaction>
   
   <Reaction name="RyRCa2" id="RyRCa2">
     <Reactant specieID="Ca1RyR4"/>
     <Reactant specieID="Ca"/>
     <Product specieID="Ca2RyR4"/>
-    <forwardRate>2.88e-3</forwardRate>
-    <reverseRate>2.88e-2</reverseRate>
+    <forwardRate>6.11e-3</forwardRate>
+    <reverseRate>6.11e-2</reverseRate>
  </Reaction>
 
  <Reaction name="RyRCa3" id="RyRCa3">
     <Reactant specieID="Ca2RyR4"/>
     <Reactant specieID="Ca" n="2"/>
     <Product specieID="Ca4RyR4"/>
-    <forwardRate>0.00381</forwardRate>
-    <reverseRate>0.152</reverseRate>
+    <forwardRate>0.0034</forwardRate>
+    <reverseRate>0.136</reverseRate>
  </Reaction>
 
 
@@ -40,8 +40,8 @@
  <Reaction name="RyRd" id="RyRd">
     <Reactant specieID="Ca4RyR4"/>
     <Product specieID="O1"/>
-    <forwardRate>7.84</forwardRate>
-    <reverseRate>0.43</reverseRate>
+    <forwardRate>17.53</forwardRate>
+    <reverseRate>2.98</reverseRate>
   </Reaction>
 
   <!-- <Reaction name="RyRe" id="RyRe"> -->
@@ -54,8 +54,8 @@
   <Reaction name="RyRf" id="RyRf">
     <Reactant specieID="O1"/>
     <Product specieID="Ca4RyR4C"/>
-    <forwardRate>0.89</forwardRate>
-    <reverseRate>0.147</reverseRate>
+    <forwardRate>0.98</forwardRate>
+    <reverseRate>0.144</reverseRate>
   </Reaction>
 
   <!-- <Reaction name="RyRg" id="RyRg"> -->
