@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<OutputScheme>
+  <OutputSet filename="all" dt="0.01">
+    <OutputSpecie name="RyR4"/>
+    <OutputSpecie name="Ca"/>
+    <OutputSpecie name="Ca1RyR4"/>
+    <OutputSpecie name="Ca2RyR4"/>
+    <OutputSpecie name="Ca4RyR4" />
+    <OutputSpecie name="Ca4RyR4C" />
+    <OutputSpecie name="O1" />
+  </OutputSet>
+</OutputScheme>
