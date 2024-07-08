@@ -3,7 +3,7 @@ from lxml import etree
 
 fname = "Rxn_module_RyR2_CaM.xml"
 
-kfs = {"CaM": 2.4e-7, #2.1e-8 for Kd of 820 nM
+kfs = {"CaM": 2.1e-8 # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
        "2CaN":  0.1e-2, "RyRCa1": 3.04e-3, "RyRCa2": 5.76e-3,
        "RyRCa3":0.00615, "O": 9.912, "C": 0.75}
@@ -20,7 +20,8 @@ def add_reaction(root, name, what, new_name):
                             name=name+"_"+what+"_"+str(counter),
                             id=name+"_"+what+"_"+str(counter))
     etree.SubElement(my_r, "Reactant", specieID=name)
-    if what != "2CaC" and what != "2CaN" and not what.startswith("RyR") and what not in ["O", "C"]:
+    if (what != "2CaC" and what != "2CaN"
+        and not what.startswith("RyR") and what not in ["O", "C"]):
         etree.SubElement(my_r, "Reactant", specieID=what)
     elif what == "RyRCa1" or what == "RyRCa2":
         etree.SubElement(my_r, "Reactant", specieID="Ca")
@@ -105,7 +106,7 @@ if __name__ == "__main__":
             my_specie_name = generate_name(i, j, k, l)
             etree.SubElement(my_rxn_file, "Specie", name=my_specie_name,
                              id=my_specie_name, kdiff="0", kdiffunit="mu2/s")
-            if my_specie_name.startswith("Ca3_") and not "4" in my_specie_name:
+            if my_specie_name.startswith("Ca3_") and not "CaMCa4" in my_specie_name:
                 ryr_species_to_open.append(my_specie_name)
 
     for l in [0, 1, 2, 3]:
