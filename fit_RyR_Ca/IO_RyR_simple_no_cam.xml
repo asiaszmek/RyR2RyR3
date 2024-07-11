@@ -5,8 +5,12 @@
     <OutputSpecie name="Ca"/>
     <OutputSpecie name="Ca1RyR4"/>
     <OutputSpecie name="Ca2RyR4"/>
+    <OutputSpecie name="Ca3RyR4"/> 
     <OutputSpecie name="Ca4RyR4" />
-    <OutputSpecie name="Ca4RyR4C" />
     <OutputSpecie name="O1" />
+    <OutputSpecie name="O2" /> 
+    <OutputSpecie name="Ca4RyR4C" />
+    <!-- <OutputSpecie name="RyR4I2" /> -->
+    
   </OutputSet>
 </OutputScheme>

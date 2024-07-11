@@ -28,7 +28,7 @@ results (also, 3D may not work yet...)  -->
     <outputQuantity>NUMBER</outputQuantity>
 
     <!-- run time for the calculation, milliseconds -->
-    <runtime>20000</runtime>
+    <runtime>10000</runtime>
 
     <!-- set the seed to get the same spines each time testing -->
     <spineSeed>123</spineSeed>
@@ -39,7 +39,7 @@ results (also, 3D may not work yet...)  -->
     </discretization>
     <tolerance>0.01</tolerance>
 
-    <outputInterval>0.1</outputInterval>
+    <outputInterval>0.01</outputInterval>
 
     <calculation>GRID_ADAPTIVE</calculation>
 
@@ -114,24 +114,23 @@ def sum_volume(my_file, region_list):
     return vol_sum
 
 def get_all_closed(data, species):
-    length = len(data)
     sum_times = 0
     for specie in species:
         if "O" in specie:
             continue
-        if "RyR4" not in specie:
+        if "RyR" not in specie:
             continue
-        specie_state = data[int(length/2)+1:, 0, species.index(specie)]
+        specie_state = data[:, 0, species.index(specie)]
         sum_times += specie_state.sum()
     return sum_times
 
 
 def get_all_open(data, species):
     length = len(data[:, 0, 0])
-    state = np.zeros(int(length/2))
+    state = np.zeros(length)
     for specie in species:
         if "O" in specie:
-            state +=  data[int(length/2)+1:, 0, species.index(specie)]
+            state +=  data[:, 0, species.index(specie)]
     count = len(np.where((state[1:] - state[0:-1])==1)[0])
     sum_times = state.sum()
     return sum_times, count, state[-1]
@@ -157,7 +156,7 @@ def get_numbers(my_file, output="all"):
         species = get_all_species(my_file, output=output)
         data = get_populations(my_file, trial=trial, output=output)
         dt = times[1]-times[0]
-        exp_len = int((times[-1])/dt/2)
+        exp_len = int((times[-1])/dt)
         mean_ca = data[:, 0, species.index("Ca")].mean()*10/6.023/vol
         
       
@@ -165,6 +164,8 @@ def get_numbers(my_file, output="all"):
       
         
         ryr_basal = data[0, 0, bas_idx]
+        if ryr_basal > 1:
+            continue
         open_sum, tot_no, ends = get_all_open(data, species)
         if ends:
             end_closed = False
