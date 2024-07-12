@@ -5,7 +5,7 @@
     <OutputSpecie name="Ca"/>
     <OutputSpecie name="Ca1RyR4"/>
     <OutputSpecie name="Ca2RyR4"/>
-    <OutputSpecie name="Ca3RyR4"/> 
+    <!-- <OutputSpecie name="Ca3RyR4"/>  -->
     <OutputSpecie name="Ca4RyR4" />
     <OutputSpecie name="O1" />
     <OutputSpecie name="O2" /> 
