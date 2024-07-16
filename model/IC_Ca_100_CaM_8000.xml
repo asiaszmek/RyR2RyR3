@@ -3,9 +3,9 @@
 
 
   <ConcentrationSet>
-    <NanoMolarity specieID="RyR" value="35"/>
-    <NanoMolarity specieID="Ca" value="100"/>
-    <NanoMolarity specieID="CaM" value="100"/>
+    <NanoMolarity specieID="RyR_4CaM" value="35"/>
+    <NanoMolarity specieID="Ca" value="400"/>
+    <NanoMolarity specieID="CaM" value="7860"/>
     
   </ConcentrationSet>
 
