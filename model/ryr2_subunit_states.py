@@ -3,15 +3,18 @@ from lxml import etree
 
 fname = "Rxn_module_RyR2_CaM.xml"
 
-kfs = {"CaM": 2.1e-8 # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
+kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
-       "2CaN":  0.1e-2, "RyRCa1": 3.04e-3, "RyRCa2": 5.76e-3,
-       "RyRCa3":0.00615, "O": 9.912, "C": 0.75}
+       "2CaN":  0.1e-2, "RyRCa1": 1.8e-3, "RyRCa2": 1.35e-3,
+       "RyRCa3":0.9e-3, "RyRCa4":0.45e-3, "O1": 46, "C1": 46e-3,
+       "O2": 0.002, "C1O2":2.65}
 
 
-krs = {"CaM": 1.73e-5, "CaMCa2C": 3.67e-6, "CaMCa4": 1.28e-6, "2CaC": 9.1e-3,
-       "2CaN": 1000e-3,"RyRCa1": 3.04e-2, "RyRCa2": 5.76e-2, "RyRCa3":0.246,
-       "O": 1.945, "C": 0.114}
+krs = {"CaM": 1.73e-5, "CaMCa2C": 3.67e-6, "CaMCa4": 1.28e-6,
+       "2CaC": 9.1e-3,
+       "2CaN": 1000e-3,"RyRCa1": 7.2,
+       "RyRCa2": 14.4, "RyRCa3": 21.6, "RyRCa4": 28.8,
+       "O1": 0.44, "C1": 0.44e-3, "O2": 0.002e3,  "C1O2":2.65e3}
 counter = 1
 
 def add_reaction(root, name, what, new_name):
@@ -21,12 +24,13 @@ def add_reaction(root, name, what, new_name):
                             id=name+"_"+what+"_"+str(counter))
     etree.SubElement(my_r, "Reactant", specieID=name)
     if (what != "2CaC" and what != "2CaN"
-        and not what.startswith("RyR") and what not in ["O", "C"]):
+        and not what.startswith("RyR") and what not in ["O1", "C1",
+                                                        "O2", "C1O2"]):
         etree.SubElement(my_r, "Reactant", specieID=what)
-    elif what == "RyRCa1" or what == "RyRCa2":
-        etree.SubElement(my_r, "Reactant", specieID="Ca")
-    elif what in ["O", "C"]:
+    elif what in ["O1", "C1", "O2", "C1O2"]:
         pass
+    elif what.startswith("RyRC"):
+        etree.SubElement(my_r, "Reactant", specieID="Ca")
     else:
         etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
     etree.SubElement(my_r, "Product", specieID=new_name)
@@ -54,7 +58,7 @@ def generate_name(a, b, c, d=0):
 
 if __name__ == "__main__":
     states = set()
-    for i in range(0, 5):
+    for i in range(0,5):
         for j in range(0, 5):
             for k in range(0, 5):
                 if i+j+k > 4:
@@ -101,12 +105,12 @@ if __name__ == "__main__":
     ryr_species_to_open =[]
 
 
-    for l in [0, 1, 2, 3]:
+    for l in [0, 1, 2, 3, 4]:
         for (i,  j, k) in sorted(states):
             my_specie_name = generate_name(i, j, k, l)
             etree.SubElement(my_rxn_file, "Specie", name=my_specie_name,
                              id=my_specie_name, kdiff="0", kdiffunit="mu2/s")
-            if my_specie_name.startswith("Ca3_") and not "CaMCa4" in my_specie_name:
+            if my_specie_name.startswith("Ca4_") and not "CaMCa4" in my_specie_name:
                 ryr_species_to_open.append(my_specie_name)
 
     for l in [0, 1, 2, 3]:
@@ -132,27 +136,44 @@ if __name__ == "__main__":
             else:
                 add_reaction(my_rxn_file, my_specie_name, "2CaN",
                              generate_name(i, j-1, k+1, l))
-            if l < 3:
-                new_name = generate_name(i, j, k, l + 1)
-                rxn_name = "RyRCa%d" % (l+1)
-                add_reaction(my_rxn_file, my_specie_name, rxn_name,
-                             new_name)
+           
+            new_name = generate_name(i, j, k, l + 1)
+            rxn_name = "RyRCa%d" % (l+1)
+            add_reaction(my_rxn_file, my_specie_name, rxn_name,
+                         new_name)
 
     for i, specie in enumerate(ryr_species_to_open):
-        etree.SubElement(my_rxn_file, "Specie", name="%sO" % specie,
-                         id="%sO" % specie, kdiff="0", kdiffunit="mu2/s")
+        etree.SubElement(my_rxn_file, "Specie", name="%sO1" % specie,
+                         id="%sO1" % specie, kdiff="0", kdiffunit="mu2/s")
 
     for i, specie in enumerate(ryr_species_to_open):
-        add_reaction(my_rxn_file, specie, "O",
-                     "%sO"%specie)
+        add_reaction(my_rxn_file, specie, "O1",
+                     "%sO1"%specie)
 
     for i, specie in enumerate(ryr_species_to_open):
-        etree.SubElement(my_rxn_file, "Specie", name="%sC" % specie,
-                         id="%sC" % specie, kdiff="0", kdiffunit="mu2/s")
+        etree.SubElement(my_rxn_file, "Specie", name="%sO2" % specie,
+                         id="%sO2" % specie, kdiff="0", kdiffunit="mu2/s")
 
     for i, specie in enumerate(ryr_species_to_open):
-        add_reaction(my_rxn_file, "%sO" % specie, "C",
-                     "%sC"%specie)
+        add_reaction(my_rxn_file,"%sO1"% specie, "O2",
+                     "%sO2"%specie)
+
+        
+    for i, specie in enumerate(ryr_species_to_open):
+        etree.SubElement(my_rxn_file, "Specie", name="%sC1" % specie,
+                         id="%sC1" % specie, kdiff="0", kdiffunit="mu2/s")
+
+    for i, specie in enumerate(ryr_species_to_open):
+        add_reaction(my_rxn_file, "%s" % specie, "C1",
+                     "%sC1"%specie)
+        
+    
+
+    for i, specie in enumerate(ryr_species_to_open):
+        add_reaction(my_rxn_file, "%s" % specie, "C1",
+                     "%sC1"%specie)
+        add_reaction(my_rxn_file, "%sC1" % specie, "C1O2",
+                     "%sO2"%specie)
 
                 
     f = open(fname, "w")
