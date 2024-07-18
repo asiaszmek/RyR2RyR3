@@ -3,7 +3,8 @@ import glob
 from lxml import etree
 import numpy as np
 
-t_end = 50000
+t_end = 5000
+dt = 1000
 RyR_conc = 35
 
 def save_conc(ca_conc, RyR_conc):
@@ -21,7 +22,7 @@ def save_conc(ca_conc, RyR_conc):
 
 
 if __name__ == "__main__":
-    original_data = np.loadtxt("ryr2_mg_ca_Copello_et_al_1997.csv", skiprows=1,
+    original_data = np.loadtxt("../datasets_for_fitting/ryr2_mg_ca_Copello_et_al_1997.csv", skiprows=1,
                                delimiter=",")
     for data_point in original_data:
         print(data_point)
@@ -31,7 +32,8 @@ if __name__ == "__main__":
         new_file = open(new_file_name, "w")
         new_file.write("time, RO\n")
         new_file.write("0, 0\n")
-        new_file.write("%d, %f\n" % (t_end, open_channels))
+        for time in range(dt, t_end+dt, dt):
+            new_file.write("%d, %f\n" % (time, open_channels))
         new_file.close()
         print(save_conc(ca_conc, RyR_conc))
         

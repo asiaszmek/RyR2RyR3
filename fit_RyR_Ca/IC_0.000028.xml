@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <InitialConditions>
   <ConcentrationSet>
     <NanoMolarity specieID="RyR4" value="35"/>

@@ -11,10 +11,10 @@ dirname='fit_RyR_Ca/'  #where data and model file are stored.  Can be different 
 #Set of model files that have first part of file name in common.  All included files must be in same directory.
 model_set='model_Z'
 exp_set='po' #set of data files corresponding to model files; files may contain several molecules
-mol={"RO": ["O1"]} #which molecule(s) to match in optimization
+mol={"RO": ["O1", "O2"]} #which molecule(s) to match in optimization
 tmpdir='/tmp/RyR2'+dirname 
 os.chdir(dirname)
-kd = 4000
+kd = 2000
 # Use loadconc.CSV_conc_set if data to match are csv format (typically from wet experiments)
 exp = loadconc.CSV_conc_set(exp_set)
 
@@ -27,7 +27,7 @@ test_size=25 #for convergence
 P = aju.xml.XMLParam
 #list of parameters to change/optimize
 params = aju.optimize.ParamSet(
-    P('RyRCa1_fwd_rate', 1.8e-3, min=1e-5, max=100,
+    P('RyRCa1_fwd_rate', 0.00107, min=1e-7, max=1,
       xpath='//Reaction[@id="RyRCa1"]/forwardRate'),
     P('RyRCa1_bkw_rate', 0, fixed='RyRCa1_fwd_rate',
       constant=kd,
@@ -45,29 +45,37 @@ params = aju.optimize.ParamSet(
     P('RyRCa4_bkw', 0, fixed="RyRCa1_fwd_rate", constant=kd*4,
       xpath='//Reaction[@id="RyRCa4"]/reverseRate'),
     
-    # P('Ca4RyR4_open_fwd_rate', 885, min=1e-6, max=1000,
-    #   xpath='//Reaction[@id="RyRd"]/forwardRate'),
-    # P('Ca4RyR4_open_bkw_rate', 229,  min=1e-6, max=1000,
-    #   xpath='//Reaction[@id="RyRd"]/reverseRate'),
-
-    P('O1_flicker_fwd_rate', 0.29, min=1e-3, max=1000,
+    P('Ca4RyR4_open_fwd_rate', 43, min=1e-3, max=1000,
+      xpath='//Reaction[@id="RyRd"]/forwardRate'),
+    P('Ca4RyR4_open_bkw_rate', 1.3,  min=1e-3, max=1000,
+      xpath='//Reaction[@id="RyRd"]/reverseRate'),
+    
+    P('O1_flicker_fwd_rate', 0.0024 , min=1e-6, max=1000,
       xpath='//Reaction[@id="RyRf"]/forwardRate'),
-    P('O1_flicker_bkw_rate', 0.026, min=1e-3, max=1000,
+    P('O1_flicker_bkw_rate', 1.76, min=1e-3, max=1000,
       xpath='//Reaction[@id="RyRf"]/reverseRate'),
 
-    # P('Ca4RyR4_O2_open_fwd_rate', 0, fixed='Ca4RyR4_open_fwd_rate',
-    #   constant=1e-1,
-    #   xpath='//Reaction[@id="RyRe"]/forwardRate'),
-    # P('Ca4RyR4_O2_open_bkw_rate', 0, fixed='Ca4RyR4_open_bkw_rate',
-    #   constant=1e-1,
-    #   xpath='//Reaction[@id="RyRe"]/reverseRate'),
+    P('Ca4RyR4_O2_open_fwd_rate', 0, fixed='Ca4RyR4_open_fwd_rate',
+      constant=1e-3,
+      xpath='//Reaction[@id="RyRe"]/forwardRate'),
+    P('Ca4RyR4_O2_open_bkw_rate', 0, fixed='Ca4RyR4_open_bkw_rate',
+      constant=1e-3,
+      xpath='//Reaction[@id="RyRe"]/reverseRate'),
 
-    # P('O2_flicker_fwd_rate',  0, fixed='O1_flicker_fwd_rate',
-    #   constant=1e1,
-    #   xpath='//Reaction[@id="RyRg"]/forwardRate'),
-    # P('O2_flicker_bkw_rate', 0, fixed='O1_flicker_bkw_rate',
-    #   constant=1e1,
-    #   xpath='//Reaction[@id="RyRg"]/reverseRate'),
+    P('O2_flicker_fwd_rate',  0, fixed='O1_flicker_fwd_rate',
+      constant=1e3,
+       xpath='//Reaction[@id="RyRg"]/forwardRate'),
+    P('O2_flicker_bkw_rate', 0, fixed='O1_flicker_bkw_rate',
+      constant=1e3,
+      xpath='//Reaction[@id="RyRg"]/reverseRate'),
+    P('O2_I_flicker_fwd_rate', 3.58, min=1e-3, max=1000,
+
+      xpath='//Reaction[@id="RyRh"]/forwardRate'),
+    P('O2_I_flicker_bkw_rate', 0.045, min=1e-3, max=1000,
+      
+      xpath='//Reaction[@id="RyRh"]/reverseRate'),
+
+
     
     
 )

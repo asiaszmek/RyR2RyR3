@@ -44,7 +44,7 @@
     <fixedStepDt>         10     </fixedStepDt>
 
     <!-- interval at which stuff should be saved to the output file(s) -->
-    <outputInterval>      5000   </outputInterval>
+    <outputInterval>      1000   </outputInterval>
 
     <!-- the tolerace is used for adaptive sims -->
     <tolerance>           0.01       </tolerance>
