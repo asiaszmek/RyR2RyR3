@@ -20,9 +20,9 @@ exp = loadconc.CSV_conc_set(exp_set)
 
 # number of iterations, use 1 for testing
 # default popsize=8, use 3 for testing
-iterations=4
-popsize=4
-test_size=4 #for convergence
+iterations=100
+popsize=8
+test_size=25 #for convergence
 
 P = aju.xml.XMLParam
 #list of parameters to change/optimize
