@@ -15,7 +15,7 @@ model_text = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <xi:include href="%s" />
     <xi:include href="Morph.xml" />
     <xi:include href="Rxn_RyRCaM.xml" />
-   
+    <xi:include href="IO_RyRCaM.xml" />
     <!--2D means the morphology is interpreted like a flatworm, 3D for
 roundworms. The 2D case is good for testing as it is easy to visualize the
 results (also, 3D may not work yet...)  -->
@@ -39,7 +39,7 @@ results (also, 3D may not work yet...)  -->
     </discretization>
     <tolerance>0.01</tolerance>
 
-    <outputInterval>0.01</outputInterval>
+    <outputInterval>1000</outputInterval>
 
     <calculation>GRID_ADAPTIVE</calculation>
 

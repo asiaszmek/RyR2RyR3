@@ -39,7 +39,7 @@ results (also, 3D may not work yet...)  -->
     </discretization>
     <tolerance>0.01</tolerance>
 
-    <outputInterval>0.01</outputInterval>
+    <outputInterval>1000</outputInterval>
 
     <calculation>GRID_ADAPTIVE</calculation>
 

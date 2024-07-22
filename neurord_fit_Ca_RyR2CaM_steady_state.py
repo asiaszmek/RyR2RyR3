@@ -46,14 +46,14 @@ params = aju.optimize.ParamSet(
     # P('RyRCa4_bkw', 0, fixed="RyRCa1_fwd_rate", constant=kd*4,
     #   xpath='//Reaction[@id="RyRCa4"]/reverseRate'),
     
-    P('Ca4RyR4_open_fwd_rate', 38.4, min=1e-3, max=1000,
+    P('Ca4RyR4_open_fwd_rate', 0.306, min=1e-3, max=1000,
       xpath='//Reaction[@id="RyRd"]/forwardRate'),
-    P('Ca4RyR4_open_bkw_rate', 3,  min=1e-3, max=1000,
+    P('Ca4RyR4_open_bkw_rate', 0.72,  min=1e-3, max=1000,
       xpath='//Reaction[@id="RyRd"]/reverseRate'),
     
-    P('O1_flicker_fwd_rate', 0.0025 , min=1e-6, max=1000,
+    P('O1_flicker_fwd_rate', 0.24 , min=1e-6, max=1000,
       xpath='//Reaction[@id="RyRf"]/forwardRate'),
-    P('O1_flicker_bkw_rate', 0.77, min=1e-3, max=1000,
+    P('O1_flicker_bkw_rate', 13.06, min=1e-3, max=1000,
       xpath='//Reaction[@id="RyRf"]/reverseRate'),
 
     P('Ca4RyR4_O2_open_fwd_rate', 0, fixed='Ca4RyR4_open_fwd_rate',
@@ -69,10 +69,10 @@ params = aju.optimize.ParamSet(
     P('O2_flicker_bkw_rate', 0, fixed='O1_flicker_bkw_rate',
       constant=1e3,
       xpath='//Reaction[@id="RyRg"]/reverseRate'),
-    P('O2_I_flicker_fwd_rate', 11.28, min=1e-3, max=1000,
+    P('O2_I_flicker_fwd_rate', 7.5, min=1e-3, max=1000,
 
       xpath='//Reaction[@id="RyRh"]/forwardRate'),
-    P('O2_I_flicker_bkw_rate', 0.05, min=1e-3, max=1000,
+    P('O2_I_flicker_bkw_rate', 0.09, min=1e-3, max=1000,
       
       xpath='//Reaction[@id="RyRh"]/reverseRate'),
 
