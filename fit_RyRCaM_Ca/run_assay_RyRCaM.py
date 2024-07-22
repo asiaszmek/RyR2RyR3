@@ -7,14 +7,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 ca_conc_file = "../datasets_for_fitting/xu_meissner_RyR2CaM_po.csv"
-ryr_op_fname = "../datasets_for_fitting/xu_meissner_RyR2CaM_minnopentime.csv"
+ryr_op_fname = "../datasets_for_fitting/xu_meissner_RyR2CaM_minopentime.csv"
 ryr_cl_fname = "../datasets_for_fitting/xu_meissner_RyR2CaM_minclosedtime.csv"
 
 model_text = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SDRun xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://stochdiff.textensor.org">
-    <xi:include href="%s" />
-    <xi:include href="Morph.xml" />
     <xi:include href="Rxn_RyRCaM.xml" />
+    <xi:include href="Morph.xml" />
+    <xi:include href="%s" />
     <xi:include href="IO_RyRCaM.xml" />
     <!--2D means the morphology is interpreted like a flatworm, 3D for
 roundworms. The 2D case is good for testing as it is easy to visualize the
@@ -114,22 +114,24 @@ def sum_volume(my_file, region_list):
     return vol_sum
 
 def get_all_closed(data, species):
+    length = len(data[:, 0, 0])//2
     sum_times = 0
     for specie in species:
         if "O" in specie:
             continue
-        if "RyRCaM" not in specie:
+        if "RyR4CaM" not in specie:
             continue
-        specie_state = data[:, 0, species.index(specie)]
+        specie_state = data[length+1:, 0, species.index(specie)]
         sum_times += specie_state.sum()
     return sum_times
 
 
 def get_all_open(data, species):
-    state = np.zeros(data[:, 0, 0].shape)
+    length = len(data[:, 0, 0])//2
+    state = np.zeros(length)
     for specie in species:
         if "O" in specie:
-            state +=  data[:, 0, species.index(specie)]
+            state +=  data[length+1:, 0, species.index(specie)]
     count = len(np.where((state[1:] - state[0:-1])==1)[0])
     sum_times = state.sum()
     return sum_times, count, state[-1]
@@ -155,14 +157,16 @@ def get_numbers(my_file, output="all"):
         species = get_all_species(my_file, output=output)
         data = get_populations(my_file, trial=trial, output=output)
         dt = times[1]-times[0]
-        exp_len = int((times[-1])/dt)
+        exp_len = int((times[-1])/dt)//2
         mean_ca = data[:, 0, species.index("Ca")].mean()*10/6.023/vol
         
       
-        bas_idx = species.index("RyRCaM")
+        bas_idx = species.index("RyR4CaM")
       
         
         ryr_basal = data[0, 0, bas_idx]
+        if ryr_basal > 1:
+            continue
         open_sum, tot_no, ends = get_all_open(data, species)
         if ends:
             end_closed = False
@@ -206,13 +210,15 @@ if __name__ == "__main__":
         
     exp_res = np.loadtxt(ca_conc_file, skiprows=1, delimiter=',')
     ca_conc_list = exp_res[:, 0]
+
     output = np.zeros(exp_res.shape)
     mean_times = []
     for i, ca_conc in enumerate(ca_conc_list):
-        ca_conc_nM = int(np.ceil(ca_conc))
-        IC_name = "Ca_%d_KS_CaM.xml" % ca_conc_nM
-        model_name = "RyR_KS_Ca_%d_CaM.xml" % ca_conc_nM
-        output_name = "RyR_KS_Ca_%d_CaM.h5" % ca_conc_nM
+        ca_conc_nM = int(np.ceil(ca_conc*1000))
+        IC_name = "Ca_%d_RyRCaM.xml" % ca_conc_nM
+        model_name = "RyRCaM_Ca_%d_CaM.xml" % ca_conc_nM
+        output_name = "RyRCaM_Ca_%d_CaM.h5" % ca_conc_nM
+        print(ca_conc_nM, IC_name, model_name, output_name)
         with open(IC_name, "w") as fic:
             fic.write(IC_text % ca_conc_nM)
         with open(model_name, "w") as fm:

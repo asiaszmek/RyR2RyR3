@@ -12,7 +12,7 @@ ryr_cl_fname = "ryr_cam_tc_no_cam.csv"
 
 model_text = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SDRun xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://stochdiff.textensor.org">
-    <xi:include href="%s" />
+    <xi:include href="Rxn_Zahradnikova.xml" />
     <xi:include href="Morph.xml" />
     <xi:include href="%s" />
     <xi:include href="IO_RyR_simple_no_cam.xml"/>
@@ -28,7 +28,7 @@ results (also, 3D may not work yet...)  -->
     <outputQuantity>NUMBER</outputQuantity>
 
     <!-- run time for the calculation, milliseconds -->
-    <runtime>10000</runtime>
+    <runtime>20000</runtime>
 
     <!-- set the seed to get the same spines each time testing -->
     <spineSeed>123</spineSeed>
@@ -56,8 +56,6 @@ IC_text = """<?xml version="1.0" encoding="utf-8"?>
 </InitialConditions>
 """
 
-
-Rxn_file = "Rxn_Zahradnikova.xml"
 
 
 def get_key(cell):
@@ -114,23 +112,24 @@ def sum_volume(my_file, region_list):
     return vol_sum
 
 def get_all_closed(data, species):
+    length = len(data[:, 0, 0])//2
     sum_times = 0
     for specie in species:
         if "O" in specie:
             continue
         if "RyR" not in specie:
             continue
-        specie_state = data[:, 0, species.index(specie)]
+        specie_state = data[length+1:, 0, species.index(specie)]
         sum_times += specie_state.sum()
     return sum_times
 
 
 def get_all_open(data, species):
-    length = len(data[:, 0, 0])
+    length = len(data[:, 0, 0])//2
     state = np.zeros(length)
     for specie in species:
         if "O" in specie:
-            state +=  data[:, 0, species.index(specie)]
+            state +=  data[length+1:, 0, species.index(specie)]
     count = len(np.where((state[1:] - state[0:-1])==1)[0])
     sum_times = state.sum()
     return sum_times, count, state[-1]
@@ -156,7 +155,7 @@ def get_numbers(my_file, output="all"):
         species = get_all_species(my_file, output=output)
         data = get_populations(my_file, trial=trial, output=output)
         dt = times[1]-times[0]
-        exp_len = int((times[-1])/dt)
+        exp_len = int((times[-1])/dt)//2
         mean_ca = data[:, 0, species.index("Ca")].mean()*10/6.023/vol
         
       
@@ -219,7 +218,7 @@ if __name__ == "__main__":
         with open(IC_name, "w") as fic:
             fic.write(IC_text % ca_conc_nM)
         with open(model_name, "w") as fm:
-            fm.write(model_text % (Rxn_file, IC_name))
+            fm.write(model_text %  IC_name)
 
         process = subprocess.run(["/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
                                   "-jar",
