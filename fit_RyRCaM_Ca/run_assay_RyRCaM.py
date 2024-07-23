@@ -252,7 +252,7 @@ if __name__ == "__main__":
                header="Ca [nM], mean open time, mean closed time")
     fig, ax = plt.subplots(1, 2, figsize=(15, 12))
     ax[0].set_xscale('log')
-    ax[0].plot(exp_res[:, 0]*1e-9, exp_res[:, 1], "d",
+    ax[0].plot(exp_res[:, 0]*1e-6, exp_res[:, 1], "d",
                color="tab:blue", label="experimental data",
                ms=10)
     ax[0].plot(output[:, 0]*1e-9, output[:, 1], "d",
@@ -264,9 +264,9 @@ if __name__ == "__main__":
     ax[0].tick_params(axis='y', labelsize=20)
     ax[1].set_xscale('log')
     ax[1].set_yscale('log')
-    ax[1].plot(exp_open[:, 0]*1e-9, exp_open[:, 1], "d", color="tab:blue",
+    ax[1].plot(exp_open[:, 0]*1e-6, exp_open[:, 1], "d", color="tab:blue",
                label="exp open", ms=10)
-    ax[1].plot(exp_closed[:, 0]*1e-9, exp_closed[:, 1], "d", color="tab:green",
+    ax[1].plot(exp_closed[:, 0]*1e-6, exp_closed[:, 1], "d", color="tab:green",
                label="exp closed", ms=10)
     ax[1].plot(mean_times_a[:, 0]*1e-9, mean_times_a[:, 1], "d",
                label="model open", color="tab:cyan", ms=10)

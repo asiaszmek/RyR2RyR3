@@ -3,13 +3,15 @@ import glob
 from lxml import etree
 import numpy as np
 
-
+t_end = 5000
+dt = 1000
+RyR_conc = 35
 model_text = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SDRun xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://stochdiff.textensor.org">
     <xi:include href="%s" />
     <xi:include href="Morph.xml" />
     <xi:include href="Rxn_RyRCaM.xml" />
-    <xi:include href="IO_RyRCaM_open_fit.xml"/>
+
     <!--2D means the morphology is interpreted like a flatworm, 3D for
 roundworms. The 2D case is good for testing as it is easy to visualize the
 results (also, 3D may not work yet...)  -->
@@ -22,7 +24,7 @@ results (also, 3D may not work yet...)  -->
     <outputQuantity>NUMBER</outputQuantity>
 
     <!-- run time for the calculation, milliseconds -->
-    <runtime>20000</runtime>
+    <runtime>""" + str(t_end) + """</runtime>
 
     <!-- set the seed to get the same spines each time testing -->
     <spineSeed>123</spineSeed>
@@ -33,15 +35,12 @@ results (also, 3D may not work yet...)  -->
     </discretization>
     <tolerance>0.01</tolerance>
 
-    <outputInterval>1000</outputInterval>
+    <outputInterval>1</outputInterval>
 
     <calculation>GRID_ADAPTIVE</calculation>
 
-</SDRun>"""
+</SDRun>""" 
 
-t_end = 5000
-dt = 1000
-RyR_conc = 35
 
 def save_conc(ca_conc, RyR_conc):
     fname = "IC_%d.xml" % ca_conc
@@ -64,7 +63,7 @@ if __name__ == "__main__":
     for data_point in original_data:
         print(data_point)
         ca_conc = int(1000*data_point[0])
-        
+        print(ca_conc)
         open_channels = abs(data_point[1])*RyR_conc
         new_file_name = "xu_meissner_ca_%d.csv" % ca_conc
         new_file = open(new_file_name, "w")

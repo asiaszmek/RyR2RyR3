@@ -1,7 +1,6 @@
-<?xml version="1.0"?>
 <OutputScheme>
-  <OutputSet filename="all" dt="0.01">
-    <OutputSpecie name="O1" id="O1"/>
-    <OutputSpecie name="O2" id="O2"/>
+  <OutputSet filename="all"  region="dend" dt="10">
+    <OutputSpecie name="O1"/>
+    <OutputSpecie name="O2"/>
   </OutputSet>
 </OutputScheme>

@@ -3,7 +3,7 @@
     <xi:include href="IC_823.xml" />
     <xi:include href="Morph.xml" />
     <xi:include href="Rxn_RyRCaM.xml" />
-    
+
     <!--2D means the morphology is interpreted like a flatworm, 3D for
 roundworms. The 2D case is good for testing as it is easy to visualize the
 results (also, 3D may not work yet...)  -->
@@ -16,7 +16,7 @@ results (also, 3D may not work yet...)  -->
     <outputQuantity>NUMBER</outputQuantity>
 
     <!-- run time for the calculation, milliseconds -->
-    <runtime>20000</runtime>
+    <runtime>5000</runtime>
 
     <!-- set the seed to get the same spines each time testing -->
     <spineSeed>123</spineSeed>
@@ -27,7 +27,7 @@ results (also, 3D may not work yet...)  -->
     </discretization>
     <tolerance>0.01</tolerance>
 
-    <outputInterval>0.01</outputInterval>
+    <outputInterval>1</outputInterval>
 
     <calculation>GRID_ADAPTIVE</calculation>
 
