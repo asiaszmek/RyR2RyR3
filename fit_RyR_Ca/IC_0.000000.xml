@@ -1,6 +1,6 @@
 <InitialConditions>
   <ConcentrationSet>
-    <NanoMolarity specieID="RyR4" value="35"/>
-    <NanoMolarity specieID="Ca" value="80.000000"/>
+    <NanoMolarity specieID="RyR" value="35"/>
+    <NanoMolarity specieID="Ca" value="83.400000"/>
   </ConcentrationSet>
 </InitialConditions>

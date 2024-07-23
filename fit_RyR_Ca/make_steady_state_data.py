@@ -26,7 +26,8 @@ if __name__ == "__main__":
                                delimiter=",")
     for data_point in original_data:
         print(data_point)
-        ca_conc = round(10**(-data_point[0]), 8)
+        ca_conc = round(10**(-data_point[0]), 10)
+        print(ca_conc)
         open_channels = data_point[1]*RyR_conc
         new_file_name = "copello_ca_%f.csv" % ca_conc
         new_file = open(new_file_name, "w")
