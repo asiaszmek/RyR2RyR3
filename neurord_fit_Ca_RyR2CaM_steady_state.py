@@ -27,25 +27,7 @@ test_size=25 #for convergence
 P = aju.xml.XMLParam
 #list of parameters to change/optimize
 params = aju.optimize.ParamSet(
-       
-    # P('RyRCa1_fwd_rate', 0.001, min=1e-7, max=1,
-    #   xpath='//Reaction[@id="RyRCa1"]/forwardRate'),
-    # P('RyRCa1_bkw_rate', 0, fixed='RyRCa1_fwd_rate',
-    #   constant=kd,
-    #   xpath='//Reaction[@id="RyRCa1"]/reverseRate'),
-    # P('RyRCa2_fwd',  0, fixed='RyRCa1_fwd_rate', constant=0.75,
-    #   xpath='//Reaction[@id="RyRCa2"]/forwardRate'),
-    # P('RyRCa2_bkw', 0, fixed='RyRCa1_fwd_rate', constant=kd*2,
-    #   xpath='//Reaction[@id="RyRCa2"]/reverseRate'),
-    # P('RyRCa3_fwd', 0, fixed='RyRCa1_fwd_rate', constant=0.5,
-    #   xpath='//Reaction[@id="RyRCa3"]/forwardRate'),
-    # P('RyRCa3_bkw', 0, fixed="RyRCa1_fwd_rate", constant=kd*3,
-    #   xpath='//Reaction[@id="RyRCa3"]/reverseRate'),
-    # P('RyRCa4_fwd', 0, fixed='RyRCa1_fwd_rate', constant=0.25,
-    #   xpath='//Reaction[@id="RyRCa4"]/forwardRate'),
-    # P('RyRCa4_bkw', 0, fixed="RyRCa1_fwd_rate", constant=kd*4,
-    #   xpath='//Reaction[@id="RyRCa4"]/reverseRate'),
-    
+
     P('Ca4RyR4_open_fwd_rate', 4.27, min=1e-3, max=1000,
       xpath='//Reaction[@id="RyRd"]/forwardRate'),
     P('Ca4RyR4_open_bkw_rate', 8.08,  min=1e-3, max=1000,
