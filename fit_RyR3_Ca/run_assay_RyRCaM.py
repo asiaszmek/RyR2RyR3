@@ -210,18 +210,17 @@ if __name__ == "__main__":
         
     exp_res = np.loadtxt(ca_conc_file, skiprows=1, delimiter=',')
     ca_conc_list = exp_res[:, 0]
-
     output = np.zeros(exp_res.shape)
     mean_times = []
     for i, ca_conc in enumerate(ca_conc_list):
-        ca_conc_nM = int(np.ceil(ca_conc*1000))
+        ca_conc_nM = int(np.ceil(ca_conc*1e9))
         IC_name = "Ca_%d_RyRCaM.xml" % ca_conc_nM
         model_name = "RyRCaM_Ca_%d_CaM.xml" % ca_conc_nM
         output_name = "RyRCaM_Ca_%d_CaM.h5" % ca_conc_nM
-        print(ca_conc_nM, IC_name, model_name, output_name)
         with open(IC_name, "w") as fic:
             fic.write(IC_text % ca_conc_nM)
         with open(model_name, "w") as fm:
+            print(ca_conc_nM, IC_name, model_name, output_name)
             fm.write(model_text % IC_name)
 
         process = subprocess.run(["/usr/lib/jvm/java-8-openjdk-amd64/bin/java",
