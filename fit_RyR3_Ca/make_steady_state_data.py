@@ -62,7 +62,7 @@ if __name__ == "__main__":
                                skiprows=1, delimiter=",")
     for data_point in original_data:
         print(data_point)
-        ca_conc = int(1000*data_point[0])
+        ca_conc = int(1e9*data_point[0])
         print(ca_conc)
         open_channels = abs(data_point[1])*RyR_conc
         new_file_name = "chen_et_al_hek_ryr3_%d.csv" % ca_conc

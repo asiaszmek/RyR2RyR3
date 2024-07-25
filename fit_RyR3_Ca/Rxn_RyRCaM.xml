@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- with no CaM, Ca affinity to RyR of 1 uM fits much better. For RyRCaM Ca affinity should probably 2 uM or 4 uM -->
+<ReactionScheme>
+  <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s"/>
+  <Specie name="RyR4CaM" id="RyR4CaM" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca1RyR4CaM" id="Ca1RyR4CaM" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca2RyR4CaM" id="Ca2RyR4CaM" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca3RyR4CaM" id="Ca3RyR4CaM" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4RyR4CaM" id="Ca4RyR4CaM" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4RyR4CaMC" id="Ca4RyR4CaMC" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O1" id="O1" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="O2" id="O2" kdiff="0" kdiffunit="mu2/s"/>
+ <Specie name="RyR4CaMI" id="RyR4CaMI" kdiff="0" kdiffunit="mu2/s"/> 
+
+    <Reaction name="RyRCa1" id="RyRCa1">
+    <Reactant specieID="RyR4CaM"/>
+    <Reactant specieID="Ca"/>
+    <Product specieID="Ca1RyR4CaM"/>
+    <forwardRate>1.e-3</forwardRate>
+    <reverseRate>1.</reverseRate>
+  </Reaction>
+  
+  <Reaction name="RyRCa2" id="RyRCa2">
+    <Reactant specieID="Ca1RyR4CaM"/>
+    <Reactant specieID="Ca"/>
+    <Product specieID="Ca2RyR4CaM"/>
+    <forwardRate>0.75e-3</forwardRate>
+    <reverseRate>2.</reverseRate>
+ </Reaction>
+
+ <Reaction name="RyRCa3" id="RyRCa3">
+    <Reactant specieID="Ca2RyR4CaM"/>
+    <Reactant specieID="Ca"/>
+    <Product specieID="Ca3RyR4CaM"/>
+    <forwardRate>5e-4</forwardRate>
+    <reverseRate>3</reverseRate>
+ </Reaction>
+
+  <Reaction name="RyRCa4" id="RyRCa4">
+    <Reactant specieID="Ca3RyR4CaM"/>
+    <Reactant specieID="Ca"/>
+    <Product specieID="Ca4RyR4CaM"/>
+    <forwardRate>2.5e-4</forwardRate>
+    <reverseRate>4</reverseRate>
+ </Reaction>
+
+
+
+ <Reaction name="RyRd" id="RyRd">
+    <Reactant specieID="Ca4RyR4CaM"/>
+    <Product specieID="O1"/>
+    <forwardRate>5.21</forwardRate>
+    <reverseRate>8.08</reverseRate>
+  </Reaction>
+
+  <Reaction name="RyRe" id="RyRe">
+    <Reactant specieID="Ca4RyR4CaM"/>
+    <Product specieID="O2"/>
+    <forwardRate>4.27e-3</forwardRate>
+    <reverseRate>8.08e-3</reverseRate>
+  </Reaction>
+  
+  <Reaction name="RyRf" id="RyRf">
+    <Reactant specieID="O1"/>
+    <Product specieID="Ca4RyR4CaMC"/>
+    <forwardRate>0.16</forwardRate>
+    <reverseRate>32</reverseRate>
+  </Reaction>
+
+
+  <Reaction name="RyRg" id="RyRg">
+    <Reactant specieID="O2"/>
+    <Product specieID="Ca4RyR4CaMC"/>
+    <forwardRate>0.16e3</forwardRate>
+    <reverseRate>32e3</reverseRate>
+  </Reaction>
+  
+  
+  <Reaction name="RyRh" id="RyRh">
+    <Reactant specieID="Ca4RyR4CaMC"/>
+    <Product specieID="RyR4CaMI"/>
+    <forwardRate>4.37</forwardRate>
+    <reverseRate>0.94</reverseRate>
+  </Reaction>
+
+
+
+ 
+</ReactionScheme>
