@@ -123,8 +123,9 @@ if __name__ == "__main__":
             my_specie_name = generate_name(i, j, k, l)
             etree.SubElement(my_rxn_file, "Specie", name=my_specie_name,
                              id=my_specie_name, kdiff="0", kdiffunit="mu2/s")
-            if my_specie_name.startswith("Ca4_") and not "CaMCa4" in my_specie_name:
-                ryr_species_to_open.append(my_specie_name)
+            if my_specie_name.startswith("Ca4_") and not "CaMCa2C" in my_specie_name:
+                if not "CaMCa4" in my_specie_name:
+                    ryr_species_to_open.append(my_specie_name)
 
     for l in [0, 1, 2, 3]:
         for (i,  j, k) in sorted(states):

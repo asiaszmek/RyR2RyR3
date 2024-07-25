@@ -159,11 +159,7 @@ def get_numbers(my_file, output="all"):
         dt = times[1]-times[0]
         exp_len = int((times[-1])/dt)//2
         mean_ca = data[:, 0, species.index("Ca")].mean()*10/6.023/vol
-        
-      
         bas_idx = species.index("RyR4CaM")
-      
-        
         ryr_basal = data[0, 0, bas_idx]
         if ryr_basal > 1:
             continue
@@ -173,6 +169,7 @@ def get_numbers(my_file, output="all"):
         else:
             end_closed = True
         p_open_ryr = open_sum/ryr_basal/exp_len
+        
         Ca_conc.append(mean_ca)
         open_ryr3.append(p_open_ryr)
         if ryr_basal != 1:
@@ -191,14 +188,14 @@ def get_numbers(my_file, output="all"):
             nc += no
 
     if  nc != 0:
-       mean_c_t = dt*sum_c/nc
+        mean_c_t = dt*sum_c/nc
     else:
         mean_c_t = 0
     if no != 0: 
         mean_o_t = dt*sum_o/no
     else:
         mean_o_t = 0
-        mean_c_t = 0
+        mean_c_t = len(data)//2*dt
     return Ca_conc, open_ryr3, mean_o_t, mean_c_t
 
 
@@ -214,9 +211,9 @@ if __name__ == "__main__":
     mean_times = []
     for i, ca_conc in enumerate(ca_conc_list):
         ca_conc_nM = int(np.ceil(ca_conc*1e9))
-        IC_name = "Ca_%d_RyRCaM.xml" % ca_conc_nM
-        model_name = "RyRCaM_Ca_%d_CaM.xml" % ca_conc_nM
-        output_name = "RyRCaM_Ca_%d_CaM.h5" % ca_conc_nM
+        IC_name = "Ca_%d_RyR3.xml" % ca_conc_nM
+        model_name = "RyR3_Ca_%d.xml" % ca_conc_nM
+        output_name = "RyR3_Ca_%d.h5" % ca_conc_nM
         with open(IC_name, "w") as fic:
             fic.write(IC_text % ca_conc_nM)
         with open(model_name, "w") as fm:
