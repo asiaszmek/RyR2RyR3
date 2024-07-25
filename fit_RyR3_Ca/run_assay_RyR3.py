@@ -195,7 +195,7 @@ def get_numbers(my_file, output="all"):
         mean_o_t = dt*sum_o/no
     else:
         mean_o_t = 0
-        mean_c_t = len(data)//2*dt
+        mean_c_t = 0  #len(data)//2*dt # Chen data provides tc/to only for po>0
     return Ca_conc, open_ryr3, mean_o_t, mean_c_t
 
 
