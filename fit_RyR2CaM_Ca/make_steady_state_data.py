@@ -47,7 +47,7 @@ def save_conc(ca_conc, RyR_conc):
     my_ic = etree.Element("InitialConditions")
     beg = etree.SubElement(my_ic, "ConcentrationSet")
     ryr = etree.SubElement(beg, "NanoMolarity", 
-                           specieID="RyR4CaM", value="%f"%RyR_conc)
+                           specieID="RyR4_4CaM", value="%f"%RyR_conc)
     ca = etree.SubElement(beg, "NanoMolarity", 
                           specieID="Ca", value="%f"% (ca_conc))
     with open(fname, "w") as f:

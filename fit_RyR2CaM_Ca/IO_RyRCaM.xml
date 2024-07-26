@@ -1,14 +1,14 @@
 <OutputScheme>
   <OutputSet filename="all" dt="0.01">
     <OutputSpecie name="Ca"/>
-    <OutputSpecie name="RyR4CaM"/>
-    <OutputSpecie name="Ca1RyR4CaM"/>
-    <OutputSpecie name="Ca2RyR4CaM"/>
-    <OutputSpecie name="Ca3RyR4CaM"/>
-    <OutputSpecie name="Ca4RyR4CaM"/>
-    <OutputSpecie name="Ca4RyR4CaMC"/>
+    <OutputSpecie name="RyR4_4CaM"/>
+    <OutputSpecie name="Ca1RyR4_4CaM"/>
+    <OutputSpecie name="Ca2RyR4_4CaM"/>
+    <OutputSpecie name="Ca3RyR4_4CaM"/>
+    <OutputSpecie name="Ca4RyR4_4CaM"/>
+    <OutputSpecie name="Ca4RyR4_4CaMC"/>
     <OutputSpecie name="O1"/>
     <OutputSpecie name="O2"/>
-    <OutputSpecie name="RyR4CaMI"/>
+    <OutputSpecie name="RyR4_4CaMI"/>
   </OutputSet>
 </OutputScheme>

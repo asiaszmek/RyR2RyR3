@@ -1,6 +1,0 @@
-<OutputScheme>
-  <OutputSet filename="all"  region="dend" dt="10">
-    <OutputSpecie name="O1"/>
-    <OutputSpecie name="O2"/>
-  </OutputSet>
-</OutputScheme>
