@@ -169,7 +169,7 @@ if __name__ == "__main__":
                          "%s_O1"%specie)
             add_reaction(my_rxn_file, specie, "RyR2Ca4O2",
                          "%s_O2"%specie)
-            add_reaction(my_rxn_file, "%s_O1" % specie,"RyR2Ca4O2C1",
+            add_reaction(my_rxn_file, "%s_O1" % specie,"RyR2Ca4O1C1",
                          "%s_C1"%specie)
             add_reaction(my_rxn_file, "%s_O2" % specie,"RyR2Ca4O2C1",
                          "%s_C1"%specie)
@@ -180,7 +180,7 @@ if __name__ == "__main__":
                          "%s_O1"%specie)
             add_reaction(my_rxn_file, specie, "CaMRyR2Ca4O2",
                          "%s_O2"%specie)
-            add_reaction(my_rxn_file, "%s_O1" % specie,"CaMRyR2Ca4O2C1",
+            add_reaction(my_rxn_file, "%s_O1" % specie,"CaMRyR2Ca4O1C1",
                          "%s_C1"%specie)
             add_reaction(my_rxn_file, "%s_O2" % specie,"CaMRyR2Ca4O2C1",
                          "%s_C1"%specie)
