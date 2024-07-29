@@ -1,7 +1,7 @@
 import itertools
 from lxml import etree
 
-fname = "Rxn_module_RyR2_CaM.xml"
+fname = "Rxn_RyRCaM.xml"
 
 kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
@@ -28,8 +28,8 @@ counter = 1
 def add_reaction(root, name, what, new_name):
     global counter
     my_r = etree.SubElement(root, "Reaction",
-                            name=name+"_"+what+"_"+str(counter),
-                            id=name+"_"+what+"_"+str(counter))
+                            name=str(counter),
+                            id=str(counter))
     etree.SubElement(my_r, "Reactant", specieID=name)
     if what == "2CaC" or what == "2CaN":
         etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
@@ -51,9 +51,9 @@ def add_reaction(root, name, what, new_name):
     
 def generate_name(a, b, c, d=0):
     if not d:
-        name = "RyR2"
+        name = "RyR4"
     else:
-        name = "Ca%d_RyR2" % d
+        name = "Ca%d_RyR4" % d
     if a:
         name += "_%dCaM" % a
     if b:
@@ -67,7 +67,7 @@ if __name__ == "__main__":
     for i in range(0,5):
         for j in range(0, 5):
             for k in range(0, 5):
-                if i+j+k > 4:
+                if i+j+k != 4:
                     continue
                 for iteration in itertools.permutations((i,j,k), r=3):
                     states.add(iteration)
@@ -77,37 +77,6 @@ if __name__ == "__main__":
     etree.SubElement(my_rxn_file, "Specie", name="Ca",
                          id="Ca", kdiff="200", kdiffunit="mu2/s")
 
-    etree.SubElement(my_rxn_file, "Specie", name="CaM",
-                         id="CaM", kdiff="4", kdiffunit="mu2/s")
-    etree.SubElement(my_rxn_file, "Specie", name="CaMCa2C",
-                         id="CaMCa2C", kdiff="4", kdiffunit="mu2/s")
-    etree.SubElement(my_rxn_file, "Specie", name="CaMCa4",
-                         id="CaMCa4", kdiff="4", kdiffunit="mu2/s")
-    my_r = etree.SubElement(my_rxn_file, "Reaction",
-                            name="CaM_Ca2C",
-                            id="CaM_Ca2C")
-    etree.SubElement(my_r, "Reactant", specieID="CaM")
-    etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
-    etree.SubElement(my_r, "Product", specieID="CaMCa2C")
-    kf = etree.SubElement(my_r, "forwardRate")
-    kf.text = str(6e-6)
-    kr = etree.SubElement(my_r, "reverseRate")
-    kr.text = str(9.1e-3)
-    q = etree.SubElement(my_r, "Q10")
-    q.text = ".2"
-
-    my_r = etree.SubElement(my_rxn_file, "Reaction",
-                            name="CaMCa2C_2Ca",
-                            id="CaMCa2C_2Ca")
-    etree.SubElement(my_r, "Reactant", specieID="CaMCa2C")
-    etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
-    etree.SubElement(my_r, "Product", specieID="CaMCa4")
-    kf = etree.SubElement(my_r, "forwardRate")
-    kf.text = str(0.1e-3)
-    kr = etree.SubElement(my_r, "reverseRate")
-    kr.text = str(1000e-3)
-    q = etree.SubElement(my_r, "Q10")
-    q.text = ".2"
     ryr_species_to_open =[]
 
 
