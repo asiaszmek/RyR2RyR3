@@ -113,19 +113,6 @@ def sum_volume(my_file, region_list):
             vol_sum += volumes[region]
     return vol_sum
 
-def get_all_closed(data, species):
-    length = len(data[:, 0, 0])//2
-    sum_times = 0
-    for specie in species:
-        if "O" in specie:
-            continue
-        if "RyR4CaM" not in specie:
-            continue
-        specie_state = data[length+1:, 0, species.index(specie)]
-        sum_times += specie_state.sum()
-    return sum_times
-
-
 def get_all_open(data, species):
     length = len(data[:, 0, 0])//2
     state = np.zeros(length)
@@ -134,7 +121,7 @@ def get_all_open(data, species):
             state +=  data[length+1:, 0, species.index(specie)]
     count = len(np.where((state[1:] - state[0:-1])==1)[0])
     sum_times = state.sum()
-    return sum_times, count, state[-1]
+    return sum_times, count
 
 
 def get_numbers(my_file, output="all"):
@@ -157,45 +144,28 @@ def get_numbers(my_file, output="all"):
         species = get_all_species(my_file, output=output)
         data = get_populations(my_file, trial=trial, output=output)
         dt = times[1]-times[0]
-        exp_len = int((times[-1])/dt)//2
+        exp_len = int(times[-1])//2
         mean_ca = data[:, 0, species.index("Ca")].mean()*10/6.023/vol
         bas_idx = species.index("RyR4CaM")
         ryr_basal = data[0, 0, bas_idx]
         if ryr_basal > 1:
             continue
-        open_sum, tot_no, ends = get_all_open(data, species)
-        if ends:
-            end_closed = False
-        else:
-            end_closed = True
-        p_open_ryr = open_sum/ryr_basal/exp_len
-        
+        open_sum, tot_no = get_all_open(data, species)
+        p_open_ryr = dt*open_sum/ryr_basal/exp_len
         Ca_conc.append(mean_ca)
         open_ryr3.append(p_open_ryr)
-        if ryr_basal != 1:
-            continue
+        sum_o += dt*open_sum
         if tot_no > 0:
             no += tot_no
-            sum_o += open_sum
-        
-        sum_closed = get_all_closed(data, species)
-        tot_nc = tot_no
-        if end_closed:
+            nc += tot_no+1
+        else:
             nc += 1
+            no += 1
+        sum_c += (exp_len - dt*open_sum)
 
-        if tot_nc > 0:
-            sum_c +=sum_closed
-            nc += no
 
-    if  nc != 0:
-        mean_c_t = dt*sum_c/nc
-    else:
-        mean_c_t = 0
-    if no != 0: 
-        mean_o_t = dt*sum_o/no
-    else:
-        mean_o_t = 0
-        mean_c_t = 0  #len(data)//2*dt # Chen data provides tc/to only for po>0
+    mean_c_t = sum_c/nc
+    mean_o_t = sum_o/no
     return Ca_conc, open_ryr3, mean_o_t, mean_c_t
 
 
