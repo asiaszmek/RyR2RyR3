@@ -10,7 +10,7 @@ fname = "Rxn_module_RyR3_CaM.xml"
 
 
 
-kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR3)
+kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
        "2CaN":  0.1e-2, "RyR3Ca1": 1e-3, "RyR3Ca2": 0.75e-3,
        "RyR3Ca3":5e-4, "RyR3Ca4": 2.5e-4, "RyR3Ca4O1": 38.4, "RyR3Ca4O1C1": 0.0025,
