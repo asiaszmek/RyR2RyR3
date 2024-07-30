@@ -11,7 +11,7 @@ kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "CaMRyR2Ca1": 1e-3, "CaMRyR2Ca2": 0.75e-3,
        "CaMRyR2Ca3":5e-4, "CaMRyR2Ca4": 2.5e-4, "CaMRyR2Ca4O1": 5.21,
        "CaMRyR2Ca4O1C1": 0.16,
-       "CaMRyR2Ca4O2": 5.21e-3, "CaMRyR2Ca4O2C1":0.16e3, "CaMRyR2Ca4C1I": 4.37}
+       "CaMRyR2Ca4O2": 5.21e-2, "CaMRyR2Ca4O2C1":0.16e2, "CaMRyR2Ca4C1I": 4.37}
 
 
 krs = {"CaM": 1.73e-5, "CaMCa2C": 3.67e-6, "CaMCa4": 1.28e-6,
@@ -21,8 +21,8 @@ krs = {"CaM": 1.73e-5, "CaMCa2C": 3.67e-6, "CaMCa4": 1.28e-6,
        "RyR2Ca4O2C1": 0.77e3,  "RyR2Ca4C1I":0.05,
        "CaMRyR2Ca1": 1,
        "CaMRyR2Ca2": 2, "CaMRyR2Ca3": 3, "CaMRyR2Ca4": 4,
-       "CaMRyR2Ca4O1": 8.08,"CaMRyR2Ca4O1C1": 32, "CaMRyR2Ca4O2": 8.08e-3,
-       "CaMRyR2Ca4O2C1": 32e3,  "CaMRyR2Ca4C1I":0.95}
+       "CaMRyR2Ca4O1": 8.08,"CaMRyR2Ca4O1C1": 32, "CaMRyR2Ca4O2": 8.08e-2,
+       "CaMRyR2Ca4O2C1": 32e2,  "CaMRyR2Ca4C1I":0.95}
 counter = 1
 
 def add_reaction(root, name, what, new_name):
