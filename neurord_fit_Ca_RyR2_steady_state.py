@@ -7,7 +7,7 @@ from ajustador import drawing,loadconc,nrd_fitness
 from ajustador.helpers import converge,save_params
 import os
 kd = 1000
-dirname='fit_RyR_Ca/'  #where data and model file are stored.  Can be different than current directory. Multiple datafiles allowed
+dirname='fit_RyR2_Ca/'  #where data and model file are stored.  Can be different than current directory. Multiple datafiles allowed
 #Set of model files that have first part of file name in common.  All included files must be in same directory.
 model_set='model_ca'
 exp_set='copello_ca' #set of data files corresponding to model files; files may contain several molecules
