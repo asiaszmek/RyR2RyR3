@@ -11,6 +11,7 @@
 
 \usepackage[version=4]{mhchem}
 \usepackage{siunitx}
+\usepackage{graphicx}
 \DeclareSIUnit\Molar{M}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,6 +98,15 @@
 \section{Methods and Materials}
 
 Ryanodine receptor is a tertamer comprising four identical subunits, which forms a functional ion channel. Each ryanodine type 2 receptor (RyR2) subunit can bind calmodulin at three sites: CaMDB1, CaMDB2, CaMDB3 \citep{3_sites_ryr3cam}. Among these sites CaMBD1 has the lowest affinity for calmodulin \cite{3_sites_ryr3cam,ryrcam_sites_affinities} and its role is unknown, CaMBD2 and CaMBD3 have bindinging affinities in the range  of 1 uM to apoCaM to 50 nM to Ca-CaM \citep{3_sites_ryr3cam, low_threshold_soicrCaMBD1,xu_meissner_2004}. However, only calmodulin binding to CaMBD2 is resposible for the inhibitory effect of calmodulin on RyR2 \citep{YAMAGUCHI200323480,low_threshold_soicrCaMBD1} and we costructed a multistate model of RyR2-CaM complex with calmodulin bound at CaMBD2. CaM dissociates from RYR2 on the scale of minutes \citep{BALSHAW200120144}, which is increased to minutes for calcium-bound calmodulin \citep{BALSHAW200120144, ryrcam_dissociation_rate}.
+
+Kinetic constant for calcium-activation of RyR2 Calcium activation of RyR2 unbound to calmodulin was fitted to RyR2 opening time course from \citep{ca_stoichiometry_ryr}, and verfied by evaluating the fit to open probability, mean open and closed time provided by \citep{xu_meissner_2004}. Calcium activation of CaM-bound RyR2 open probability was fitted to appropriate data from \citep{xu_meissner_2004} and the mean open and closed time was validated to best match data from \citep{xu_meissner_2004}.
+
+We used the following activation scheme for RyR2 activation, based on the gating model of the Hodgik-Huxley potassium channel \citep{johnston_wu} and the kinetic model of RyR2 gating \citep{Zahradnikova_kon,ca_stoichiometry_ryr}
+\begin{figure}
+\includegraphics[width=0.95\linewidth]{RyR_Ca_activation_scheme.png}
+\caption{\label{fig:RyR2activation}}
+\end{figure}
+
 
 
 
@@ -284,7 +294,7 @@ Ryanodine receptor is a tertamer comprising four identical subunits, which forms
 
 Additional information can be given in the template, such as to not include funder information in the acknowledgments section.
 
-\nocite{*} % This command displays all refs in the bib file. PLEASE DELETE IT BEFORE YOU SUBMIT YOUR MANUSCRIPT!
+
 \bibliography{elife-sample}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
