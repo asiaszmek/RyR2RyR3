@@ -6,7 +6,9 @@ Introduction
 -----------------------
 This repo contains two kinetic models: one of the ryanodine type 2 receptor (RyR2) inactivation by calmodulin and activation by calcium and ryanodine type 3 receptor (RyR3) activation by calcium and calmodulin. RyR2 is expressed mostly in cardiac myocites and has been quite thoroughly investigated. However, there is much less known about the RyR3, which is express throught the body. We used the known measurements of affinity of calmodulin binding to CaMBD2 domain of RyR2 to built both RyR2-CaM and RyR3-CaM [1, 2, 3] and dissociation rates [4, 5], because CaMBD2 is highly conserved for both ryanodine receptor types [6].
 
-Models have been fitted to experimental data. Calcium activation of RyR2 unbound to calmodulin was fitted to RyR2 opening time course from [7], and verfied by evaluating the fit to open probability, mean open and closed time provided by [3]. Calcium activation of CaM-bound RyR2 open probability was fitted to appropriate data from [3] and the mean open and closed time was validated to best match data from [3]. 
+Models have been fitted to experimental data. Calcium activation of RyR2 unbound to calmodulin was fitted to RyR2 opening time course from [7], and verfied by evaluating the fit to open probability, mean open and closed time provided by [3]. Calcium activation of CaM-bound RyR2 open probability was fitted to appropriate data from [3] and the mean open and closed time was validated to best match data from [3].
+
+
 
 Models are implemented using NeuroRD, a stochastic reaction-diffusion simulator implementing Gillespie algorith with asynchronous tau-leaping [8] (https://github.com/neurord/stochdiff).
 
