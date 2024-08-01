@@ -8,7 +8,7 @@ This repo contains two kinetic models: one of the ryanodine type 2 receptor (RyR
 
 Models have been fitted to experimental data. Calcium activation of RyR2 unbound to calmodulin was fitted to RyR2 opening time course from [7], and verfied by evaluating the fit to open probability, mean open and closed time provided by [3]. Calcium activation of CaM-bound RyR2 open probability was fitted to appropriate data from [3] and the mean open and closed time was validated to best match data from [3]. 
 
-Models are implemented using NeuroRD, a stochastic reaction-diffusion simulator implementing Gillespie algorith with asynchronous tau-leaping.
+Models are implemented using NeuroRD, a stochastic reaction-diffusion simulator implementing Gillespie algorith with asynchronous tau-leaping [8] (https://github.com/neurord/stochdiff).
 
 
 [1] Lau K, Chan MMY, Van Petegem F. Lobe-Speciﬁc Calmodulin Binding to Different Ryanodine Receptor Isoforms. Biochemistry. 2014; 53(5):932–946. https://doi.org/10.1021/bi401502x, doi: 10.1021/bi401502x, pMID:
@@ -28,3 +28,5 @@ Journal of Biological Chemistry. 2001; 276(23):20144–20153. https://www.scienc
 [7] Zahradníková A, Zahradník I, Györke I, Györke S. Rapid Activation of the Cardiac Ryanodine Receptor by Sub-
 millisecond Calcium Stimuli. Journal of General Physiology. 1999 11; 114(6):787–798. https://doi.org/10.1085/
 jgp.114.6.787, doi: 10.1085/jgp.114.6.787.
+
+[8] Jędrzejewski-Szmek Z, Blackwell KT. Asynchronous 𝜏-leaping. The Journal of Chemical Physics. 2016 03; 144(12):125104. https://doi.org/10.1063/1.4944575, doi: 10.1063/1.4944575.
