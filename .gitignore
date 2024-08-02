@@ -16,3 +16,9 @@ fit_RyR3_Ca/*xml
 fit_RyR2_Ca/*xml
 fit_RyR2CaM_Ca/*xml
 fit_RyR3CaM_Ca/*xml
+*zip
+manuscript/*aux
+manuscript/*bbl
+manuscript/*blg
+manuscript/*pdf
+manuscript/*suppinfo
