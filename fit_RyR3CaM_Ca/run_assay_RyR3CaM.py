@@ -181,9 +181,9 @@ if __name__ == "__main__":
     mean_times = []
     for i, ca_conc in enumerate(ca_conc_list):
         ca_conc_nM = int(np.ceil(ca_conc*1e9))
-        IC_name = "Ca_%d_RyR3.xml" % ca_conc_nM
-        model_name = "RyR3_Ca_%d.xml" % ca_conc_nM
-        output_name = "RyR3_Ca_%d.h5" % ca_conc_nM
+        IC_name = "Ca_%d_RyR3CaM.xml" % ca_conc_nM
+        model_name = "RyR3CaM_Ca_%d.xml" % ca_conc_nM
+        output_name = "RyR3CaM_Ca_%d.h5" % ca_conc_nM
         with open(IC_name, "w") as fic:
             fic.write(IC_text % ca_conc_nM)
         with open(model_name, "w") as fm:
@@ -192,14 +192,11 @@ if __name__ == "__main__":
 
         process = subprocess.run(["java",
                                   "-jar",
-                                  "/home/asia/stochdiff/target/neurord-3.3.0-all-deps.jar",
+                                  "/home/jszmek/stochdiff/target/neurord-3.3.0-all-deps.jar",
                                   "-Dneurord.trials=20", model_name],
                                  capture_output=True)
-        # process = subprocess.run(["java", "-jar",
-        #                           "~/stochdiff/target/neurord-3.3.0-all-deps.jar",
-        #                           "-Dneurord.trials=20", model_name],
-        #                          capture_output=True)
-        print(process.returncode)
+       
+        print(process)
         if not process.returncode:
             my_file = h5py.File(output_name, 'r')
             conc, po, t_o, t_c = get_numbers(my_file, output="all")
