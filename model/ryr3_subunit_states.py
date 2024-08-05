@@ -21,7 +21,7 @@ kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "CaMRyR3Ca4O2": 5.21e-3, "CaMRyR3Ca4O2C1":0.16e3, "CaMRyR3Ca4C1I": 4.37}
 
 
-krs = {"CaM": 1.73e-5, "CaMCa2C": 3.67e-6, "CaMCa4": 3.015e-6,
+krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
        "2CaC": 9.1e-3, "2CaN": 1000e-3,"RyR3Ca1": 1,
        "RyR3Ca2": 2, "RyR3Ca3": 3, "RyR3Ca4": 4,
        "RyR3Ca4O1": 3,"RyR3Ca4O1C1": 0.77, "RyR3Ca4O2": 3e-3,

@@ -14,7 +14,7 @@ kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "CaMRyR2Ca4O2": 5.21e-2, "CaMRyR2Ca4O2C1":0.16e2, "CaMRyR2Ca4C1I": 4.37}
 
 
-krs = {"CaM": 1.73e-5, "CaMCa2C": 3.67e-6, "CaMCa4": 3.015e-6,
+krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
        "2CaC": 9.1e-3, "2CaN": 1000e-3,"RyR2Ca1": 1,
        "RyR2Ca2": 2, "RyR2Ca3": 3, "RyR2Ca4": 4,
        "RyR2Ca4O1": 3,"RyR2Ca4O1C1": 0.77, "RyR2Ca4O2": 3e-3,
@@ -85,7 +85,7 @@ if __name__ == "__main__":
             my_specie_name = generate_name(i, j, k, l)
             etree.SubElement(my_rxn_file, "Specie", name=my_specie_name,
                              id=my_specie_name, kdiff="0", kdiffunit="mu2/s")
-            if my_specie_name.startswith("Ca4_"):
+            if my_specie_name.startswith("Ca4_") and "CaMCa4" not in my_specie_name:
                 ryr_species_to_open.append(my_specie_name)
 
     for l in [0, 1, 2, 3]:
