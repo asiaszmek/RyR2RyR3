@@ -8,10 +8,9 @@ kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "2CaN":  0.1e-2, "RyR2Ca1": 1e-3, "RyR2Ca2": 0.75e-3,
        "RyR2Ca3":5e-4, "RyR2Ca4": 2.5e-4, "RyR2Ca4O1": 38.4, "RyR2Ca4O1C1": 0.0025,
        "RyR2Ca4O2": 38.4e-3, "RyR2Ca4O2C1":2.5, "RyR2Ca4C1I": 11.28,
-       "CaMRyR2Ca1": 1e-3, "CaMRyR2Ca2": 0.75e-3,
-       "CaMRyR2Ca3":5e-4, "CaMRyR2Ca4": 2.5e-4, "CaMRyR2Ca4O1": 5.21,
+       "CaMRyR2Ca4O1": 5.21,
        "CaMRyR2Ca4O1C1": 0.16,
-       "CaMRyR2Ca4O2": 5.21e-2, "CaMRyR2Ca4O2C1":0.16e2, "CaMRyR2Ca4C1I": 4.37}
+       "CaMRyR2Ca4O2": 5.21e-2, "CaMRyR2Ca4O2C1":0.16e2, "CaMRyR2Ca4C1I": 11.28}
 
 
 krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
@@ -19,10 +18,8 @@ krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
        "RyR2Ca2": 2, "RyR2Ca3": 3, "RyR2Ca4": 4,
        "RyR2Ca4O1": 3,"RyR2Ca4O1C1": 0.77, "RyR2Ca4O2": 3e-3,
        "RyR2Ca4O2C1": 0.77e3,  "RyR2Ca4C1I":0.05,
-       "CaMRyR2Ca1": 1,
-       "CaMRyR2Ca2": 2, "CaMRyR2Ca3": 3, "CaMRyR2Ca4": 4,
        "CaMRyR2Ca4O1": 8.08,"CaMRyR2Ca4O1C1": 32, "CaMRyR2Ca4O2": 8.08e-2,
-       "CaMRyR2Ca4O2C1": 32e2,  "CaMRyR2Ca4C1I":0.95}
+       "CaMRyR2Ca4O2C1": 32e2,  "CaMRyR2Ca4C1I":0.05}
 counter = 1
 
 def add_reaction(root, name, what, new_name):
@@ -182,10 +179,8 @@ if __name__ == "__main__":
 
             if l < 4:
                 new_name = generate_name(i, j, k, l + 1)
-                if "CaM" in my_specie_name:
-                    rxn_name = "CaMRyR2Ca%d" % (l+1)
-                else:
-                    rxn_name = "RyR2Ca%d" % (l+1)
+               
+                rxn_name = "RyR2Ca%d" % (l+1)
                 add_reaction(my_rxn_file, my_specie_name, rxn_name,
                              new_name)
 
