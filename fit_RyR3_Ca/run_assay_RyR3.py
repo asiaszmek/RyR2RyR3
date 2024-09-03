@@ -179,7 +179,7 @@ if __name__ == "__main__":
     ca_conc_list = exp_res[:, 0]
     output = np.zeros(exp_res.shape)
     mean_times = []
-    for i, ca_conc in enumerate(ca_conc_list):
+    for i, ca_conc in enumerate(ca_conc_list[::4]):
         ca_conc_nM = int(np.ceil(ca_conc*1e9))
         IC_name = "Ca_%d_RyR3.xml" % ca_conc_nM
         model_name = "RyR3_Ca_%d.xml" % ca_conc_nM

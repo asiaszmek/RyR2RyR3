@@ -69,7 +69,7 @@ for son in root:
         if species[-1].endswith("O1"):
             if "O1" not in counters:
                 counters["O1"] = 0
-                my_params.append(P('Ca4RyR4_open_fwd_rate', 5.21, min=1e-3,
+                my_params.append(P('Ca4RyR4_open_fwd_rate', 57.62, min=1e-3,
                                    max=1000,
                                    xpath=forward_path))
             else:
@@ -87,7 +87,7 @@ for son in root:
         elif species[0].endswith("O1") and species[-1].endswith("C1"):
             if "O1C1" not in counters:
                 counters["O1C1"] = 0
-                my_params.append(P('O1_flicker_fwd_rate', 0.16 , min=1e-6,
+                my_params.append(P('O1_flicker_fwd_rate', 0.139 , min=1e-3,
                                    max=1000,
                                    xpath=forward_path))
             else:
@@ -105,7 +105,7 @@ for son in root:
         elif species[-1].endswith("O2"):
             if "O2" not in counters:
                 counters["O2"] = 0
-                my_params.append(P('Ca4RyR4_O2_open_fwd_rate', 0.16 , min=1e-6,
+                my_params.append(P('Ca4RyR4_O2_open_fwd_rate', 2.08 , min=1e-3,
                                    max=1000,
                                    xpath=forward_path))
             else:
@@ -123,7 +123,7 @@ for son in root:
         elif species[0].endswith("O2") and species[-1].endswith("C1"):
             if "O2C1" not in counters:
                 counters["O2C1"] = 0
-                my_params.append(P('O2_flicker_fwd_rate', 0.16 , min=1e-6,
+                my_params.append(P('O2_flicker_fwd_rate', 2.57 , min=1e-3,
                                    max=1000,
                                    xpath=forward_path))
             else:

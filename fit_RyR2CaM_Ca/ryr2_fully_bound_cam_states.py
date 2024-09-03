@@ -6,11 +6,12 @@ fname = "Rxn_RyRCaM.xml"
 kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
        "2CaN":  0.1e-2, "RyR2Ca1": 1e-3, "RyR2Ca2": 0.75e-3,
-       "RyR2Ca3":5e-4, "RyR2Ca4": 2.5e-4, "RyR2Ca4O1": 38.4, "RyR2Ca4O1C1": 0.0025,
+       "RyR2Ca3":5e-4, "RyR2Ca4": 2.5e-4, "RyR2Ca4O1": 38.4,
+       "RyR2Ca4O1C1": 0.0025,
        "RyR2Ca4O2": 38.4e-3, "RyR2Ca4O2C1":2.5, "RyR2Ca4C1I": 11.28,
-       "CaMRyR2Ca4O1": 5.21,
-       "CaMRyR2Ca4O1C1": 0.16,
-       "CaMRyR2Ca4O2": 5.21e-2, "CaMRyR2Ca4O2C1":0.16e2, "CaMRyR2Ca4C1I": 11.28}
+       "CaMRyR2Ca4O1": 57.63 ,
+       "CaMRyR2Ca4O1C1": 0.14,
+       "CaMRyR2Ca4O2": 2.08, "CaMRyR2Ca4O2C1":2.58, "CaMRyR2Ca4C1I": 11.28}
 
 
 krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
@@ -18,8 +19,8 @@ krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
        "RyR2Ca2": 2, "RyR2Ca3": 3, "RyR2Ca4": 4,
        "RyR2Ca4O1": 3,"RyR2Ca4O1C1": 0.77, "RyR2Ca4O2": 3e-3,
        "RyR2Ca4O2C1": 0.77e3,  "RyR2Ca4C1I":0.05,
-       "CaMRyR2Ca4O1": 8.08,"CaMRyR2Ca4O1C1": 32, "CaMRyR2Ca4O2": 8.08e-2,
-       "CaMRyR2Ca4O2C1": 32e2,  "CaMRyR2Ca4C1I":0.05}
+       "CaMRyR2Ca4O1": 4.5,"CaMRyR2Ca4O1C1": 42.8, "CaMRyR2Ca4O2": 0.16,
+       "CaMRyR2Ca4O2C1": 794,  "CaMRyR2Ca4C1I":0.05}
 counter = 1
 
 def add_reaction(root, name, what, new_name):
