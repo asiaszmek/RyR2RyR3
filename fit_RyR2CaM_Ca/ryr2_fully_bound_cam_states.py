@@ -2,25 +2,27 @@ import itertools
 from lxml import etree
 
 fname = "Rxn_RyRCaM.xml"
+# Rebbeck, R.T., Svensson, B., Zhang, J. et al. Kinetics and mapping of Ca-driven calmodulin conformations on skeletal and cardiac muscle ryanodine receptors. Nat Commun 15, 5120 (2024). https://doi.org/10.1038/s41467-024-48951-5
+# Ca dissociation constant form RyR2-bound-CaM is 1/450 ms
 
 kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
-       "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
+       "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 1.464e-5,
        "2CaN":  0.1e-2, "RyR2Ca1": 1e-3, "RyR2Ca2": 0.75e-3,
        "RyR2Ca3":5e-4, "RyR2Ca4": 2.5e-4, "RyR2Ca4O1": 38.4,
        "RyR2Ca4O1C1": 0.0025,
        "RyR2Ca4O2": 38.4e-3, "RyR2Ca4O2C1":2.5, "RyR2Ca4C1I": 11.28,
-       "CaMRyR2Ca4O1": 57.63 ,
-       "CaMRyR2Ca4O1C1": 0.14,
-       "CaMRyR2Ca4O2": 2.08, "CaMRyR2Ca4O2C1":2.58, "CaMRyR2Ca4C1I": 11.28}
+       "CaMRyR2Ca4O1": 82.11 ,
+       "CaMRyR2Ca4O1C1": 0.32,
+       "CaMRyR2Ca4O2": 232.4, "CaMRyR2Ca4O2C1":0.033, "CaMRyR2Ca4C1I": 11.28}
 
-
+#
 krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
-       "2CaC": 9.1e-3, "2CaN": 1000e-3,"RyR2Ca1": 1,
+       "2CaC": 2.2222e-3, "2CaN": 1000e-3,"RyR2Ca1": 1,
        "RyR2Ca2": 2, "RyR2Ca3": 3, "RyR2Ca4": 4,
        "RyR2Ca4O1": 3,"RyR2Ca4O1C1": 0.77, "RyR2Ca4O2": 3e-3,
        "RyR2Ca4O2C1": 0.77e3,  "RyR2Ca4C1I":0.05,
-       "CaMRyR2Ca4O1": 4.5,"CaMRyR2Ca4O1C1": 42.8, "CaMRyR2Ca4O2": 0.16,
-       "CaMRyR2Ca4O2C1": 794,  "CaMRyR2Ca4C1I":0.05}
+       "CaMRyR2Ca4O1": 6.41,"CaMRyR2Ca4O1C1": 98.56, "CaMRyR2Ca4O2": 18.16,
+       "CaMRyR2Ca4O2C1": 10.164,  "CaMRyR2Ca4C1I":0.05}
 counter = 1
 
 def add_reaction(root, name, what, new_name):
@@ -79,52 +81,51 @@ if __name__ == "__main__":
     etree.SubElement(my_rxn_file, "Specie", name="Ca",
                          id="Ca", kdiff="200", kdiffunit="mu2/s")
 
-    etree.SubElement(my_rxn_file, "Specie", name="CaM",
-                         id="CaM", kdiff="4", kdiffunit="mu2/s")
-    etree.SubElement(my_rxn_file, "Specie", name="CaMCa2C",
-                         id="CaMCa2C", kdiff="4", kdiffunit="mu2/s")
-    etree.SubElement(my_rxn_file, "Specie", name="CaMCa4",
-                         id="CaMCa4", kdiff="4", kdiffunit="mu2/s")
-    my_r = etree.SubElement(my_rxn_file, "Reaction",
-                            name="CaM_Ca2C",
-                            id="CaM_Ca2C")
-    etree.SubElement(my_r, "Reactant", specieID="CaM")
-    etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
-    etree.SubElement(my_r, "Product", specieID="CaMCa2C")
-    kf = etree.SubElement(my_r, "forwardRate")
-    kf.text = str(6e-6)
-    kr = etree.SubElement(my_r, "reverseRate")
-    kr.text = str(9.1e-3)
-    q = etree.SubElement(my_r, "Q10")
-    q.text = ".2"
+    # etree.SubElement(my_rxn_file, "Specie", name="CaM",
+    #                      id="CaM", kdiff="4", kdiffunit="mu2/s")
+    # etree.SubElement(my_rxn_file, "Specie", name="CaMCa2C",
+    #                      id="CaMCa2C", kdiff="4", kdiffunit="mu2/s")
+    # etree.SubElement(my_rxn_file, "Specie", name="CaMCa4",
+    #                      id="CaMCa4", kdiff="4", kdiffunit="mu2/s")
+    # my_r = etree.SubElement(my_rxn_file, "Reaction",
+    #                         name="CaM_Ca2C",
+    #                         id="CaM_Ca2C")
+    # etree.SubElement(my_r, "Reactant", specieID="CaM")
+    # etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
+    # etree.SubElement(my_r, "Product", specieID="CaMCa2C")
+    # kf = etree.SubElement(my_r, "forwardRate")
+    # kf.text = str(6e-6)
+    # kr = etree.SubElement(my_r, "reverseRate")
+    # kr.text = str(9.1e-3)
+    # q = etree.SubElement(my_r, "Q10")
+    # q.text = ".2"
 
-    my_r = etree.SubElement(my_rxn_file, "Reaction",
-                            name="CaMCa2C_2Ca",
-                            id="CaMCa2C_2Ca")
-    etree.SubElement(my_r, "Reactant", specieID="CaMCa2C")
-    etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
-    etree.SubElement(my_r, "Product", specieID="CaMCa4")
-    kf = etree.SubElement(my_r, "forwardRate")
-    kf.text = str(0.1e-3)
-    kr = etree.SubElement(my_r, "reverseRate")
-    kr.text = str(1000e-3)
-    q = etree.SubElement(my_r, "Q10")
-    q.text = ".2"
+    # my_r = etree.SubElement(my_rxn_file, "Reaction",
+    #                         name="CaMCa2C_2Ca",
+    #                         id="CaMCa2C_2Ca")
+    # etree.SubElement(my_r, "Reactant", specieID="CaMCa2C")
+    # etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
+    # etree.SubElement(my_r, "Product", specieID="CaMCa4")
+    # kf = etree.SubElement(my_r, "forwardRate")
+    # kf.text = str(0.1e-3)
+    # kr = etree.SubElement(my_r, "reverseRate")
+    # kr.text = str(1000e-3)
+    # q = etree.SubElement(my_r, "Q10")
+    # q.text = ".2"
     ryr_species_to_open =[]
 
 
     for l in [0, 1, 2, 3, 4]:
-        for (i,  j, k) in sorted(states):
+        for (i, j, k) in sorted(states):
             my_specie_name = generate_name(i, j, k, l)
             etree.SubElement(my_rxn_file, "Specie", name=my_specie_name,
                              id=my_specie_name, kdiff="0", kdiffunit="mu2/s")
-            if my_specie_name.startswith("Ca4_"):
+            if my_specie_name.startswith("Ca4_") and "4CaMCa4" not in my_specie_name:
                 ryr_species_to_open.append(my_specie_name)
 
     for i, specie in enumerate(ryr_species_to_open):
         etree.SubElement(my_rxn_file, "Specie", name="%s_O1" % specie,
                          id="%s_O1" % specie, kdiff="0", kdiffunit="mu2/s")
-        print("%s_O1" % specie, "%s_O2" % specie)
         etree.SubElement(my_rxn_file, "Specie", name="%s_O2" % specie,
                          id="%s_O2" % specie, kdiff="0", kdiffunit="mu2/s")
         etree.SubElement(my_rxn_file, "Specie", name="%s_C1" % specie,
@@ -136,52 +137,31 @@ if __name__ == "__main__":
 
 
     for l in [0, 1, 2, 3, 4]:
-        for (i,  j, k) in sorted(states):
+        for (i, j, k) in sorted(states):
             my_specie_name = generate_name(i, j, k, l)
-            if i+j+k < 4:
-                add_reaction(my_rxn_file, my_specie_name, "CaM",
-                             generate_name(i+1,j, k, l))
-                add_reaction(my_rxn_file, my_specie_name, "CaMCa2C",
-                             generate_name(i,j+1, k, l))
-                add_reaction(my_rxn_file, my_specie_name, "CaMCa4",
-                             generate_name(i,j, k+1, l))
-                if my_specie_name in ryr_species_to_open:
-                    for suffix in ["O1", "O2", "C1", "I"]:
-                        my_name = "%s_%s" % (my_specie_name, suffix)
-                        add_reaction(my_rxn_file, my_name, "CaM",
-                                     "%s_%s" % (generate_name(i+1,j, k, l),
-                                                suffix))
-                        add_reaction(my_rxn_file, my_name, "CaMCa2C",
-                                    "%s_%s" % (generate_name(i,j+1, k, l),
-                                               suffix))
-                        add_reaction(my_rxn_file, my_name, "CaMCa4",
-                                     "%s_%s"% (generate_name(i,j, k+1, l),
-                                               suffix))
-            else:
-                pass   
+         
             if not i:
                 pass 
             else:
                 add_reaction(my_rxn_file, my_specie_name, "2CaC",
                              generate_name(i-1, j+1, k, l))
-                if my_specie_name in ryr_species_to_open:
-                    for suffix in ["O1", "O2", "C1", "I"]:
-                        my_name = "%s_%s" % (my_specie_name, suffix)
-                        add_reaction(my_rxn_file, my_name, "2CaC",
-                             "%s_%s" % (generate_name(i-1, j+1, k, l),
-                                        suffix))
+                # if my_specie_name in ryr_species_to_open:
+                #     for suffix in ["O1", "O2", "C1", "I"]:
+                #         my_name = "%s_%s" % (my_specie_name, suffix)
+                #         add_reaction(my_rxn_file, my_name, "2CaC",
+                #              "%s_%s" % (generate_name(i-1, j+1, k, l),
+                #                         suffix))
             
             if not j:    
                 pass  
             else:
                 add_reaction(my_rxn_file, my_specie_name, "2CaN",
                              generate_name(i, j-1, k+1, l))
-                if my_specie_name in ryr_species_to_open:
-                    for suffix in ["O1", "O2", "C1", "I"]:
-                        my_name = "%s_%s" % (my_specie_name, suffix)
-                        add_reaction(my_rxn_file, my_name, "2CaN",
-                                     "%s_%s" % (generate_name(i, j-1, k+1, l),
-                                                suffix))
+                # if my_specie_name in ryr_species_to_open:
+                #     for suffix in ["O1", "O2", "C1", "I"]:
+                #         my_name = "%s_%s" % (my_specie_name, suffix)
+                #         add_reaction(my_rxn_file, my_name, "2CaN",
+                #                      "%s" % generate_name(i, j-1, k+1, l))
 
             if l < 4:
                 new_name = generate_name(i, j, k, l + 1)
