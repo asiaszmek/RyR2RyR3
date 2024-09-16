@@ -8,14 +8,7 @@ from ajustador import drawing,loadconc,nrd_fitness
 from ajustador.helpers import converge,save_params
 
 # constants:
-kd = {
-    "O1": 3/38.4,
-    "O1C1": 0.77/0.0025,
-    "O2": 3e-3/38.4e-3,
-    "O2C1": 0.77e3/2.5,
-    "C1I":0.05/11.28,
-}
-
+kd = 4000   # Ca affinity for RyRCaM
 
 dirname='fit_RyR2CaM_Ca/'  #where data and model file are stored.  Can be different than current directory. Multiple datafiles allowed
 #Set of model files that have first part of file name in common.  All included files must be in same directory.
@@ -60,85 +53,94 @@ for son in root:
                 species.append(grandson.attrib["specieID"])
             except KeyError:
                 continue
-        if len(species) > 2:
-            continue
+    
         reac_id = son.attrib["id"]
         forward_path = '//Reaction[@id="%s"]/forwardRate' % reac_id
         reverse_path = '//Reaction[@id="%s"]/reverseRate' % reac_id
-        print(reac_id, species, forward_path, reverse_path)
         if species[-1].endswith("O1"):
-            if "O1" not in counters:
-                counters["O1"] = 0
-                my_params.append(P('Ca4RyR4_open_fwd_rate', 46.34, min=1e-3,
-                                   max=1000,
-                                   xpath=forward_path))
+            continue
+        if species[-1].endswith("O2"):
+            continue
+        if species[-1].endswith("C1"):
+            continue
+        if species[-1].endswith("I"):
+            continue
+        if species[-1].startswith("Ca1") and species[0].startswith("RyR"):
+            print(species, reac_id)
+            if "Ca1" not in counters:
+                counters["Ca1"] = 0
+                my_params.append(P('Ca1RyR_fwd_rate', 0.001, min=1e-9,
+                                    max=1,
+                                    xpath=forward_path))
             else:
-                my_params.append(P('Ca4RyR4_open_fwd_rate%d'%counters["O1"], 0,
-                                   fixed='Ca4RyR4_open_fwd_rate',
+                my_params.append(P('Ca1RyR_fwd_rate%d'%counters["Ca1"], 0,
+                                   fixed='Ca1RyR_fwd_rate',
                                    constant=1,
                                    xpath=forward_path))
-
-            my_params.append(P('Ca4RyR4_open_bkw_rate%d'%counters["O1"], 0,
-                               fixed='Ca4RyR4_open_fwd_rate',
-                               constant=kd["O1"],
-                               xpath=reverse_path))
             
-            counters["O1"] += 1
-        elif species[0].endswith("O1") and species[-1].endswith("C1"):
-            if "O1C1" not in counters:
-                counters["O1C1"] = 0
-                my_params.append(P('O1_flicker_fwd_rate', 1.8 , min=1e-3,
-                                   max=1000,
-                                   xpath=forward_path))
-            else:
-                my_params.append(P('O1_flicker_fwd_rate%d'% counters["O1C1"],
-                                   0, fixed='O1_flicker_fwd_rate',
-                                   constant=1,
-                                   xpath=forward_path))
-            my_params.append(P('O1_flicker_bkw_rate%d' % counters["O1C1"], 0,
-                               fixed='O1_flicker_fwd_rate',
-                               constant=kd["O1C1"], 
+            my_params.append(P('Ca1RyR_bkw_rate%d'%counters["Ca1"], 0,
+                               fixed='Ca1RyR_fwd_rate',
+                               constant=kd,
                                xpath=reverse_path))
-            
-            counters["O1C1"] +=1
-
-        elif species[-1].endswith("O2"):
-            if "O2" not in counters:
-                counters["O2"] = 0
-                my_params.append(P('Ca4RyR4_O2_open_fwd_rate',78.6 , min=1e-3,
-                                   max=1000,
+            counters["Ca1"] += 1
+        elif species[-1].startswith("Ca2") and species[0].startswith("Ca1"):
+            print(species, reac_id)
+                        
+            if "Ca2" not in counters:
+                counters["Ca2"] = 0
+            my_params.append(P('Ca2RyR_fwd_rate%d'%counters["Ca2"], 0,
+                                   fixed='Ca1RyR_fwd_rate',
+                                   constant=0.75,
                                    xpath=forward_path))
-            else:
-                my_params.append(P('Ca4RyR4_O2_open_fwd_rate%d'%counters["O2"],
-                               0, fixed='Ca4RyR4_O2_open_fwd_rate',
-                               constant=1,
+            
+            my_params.append(P('Ca2RyR_bkw_rate%d'%counters["Ca2"], 0,
+                               fixed='Ca1RyR_fwd_rate',
+                               constant=kd*2,
+                               xpath=reverse_path))
+            counters["Ca2"] += 1
+        elif species[-1].startswith("Ca3") and species[0].startswith("Ca2"):
+            print(species, reac_id)
+                        
+            if "Ca3" not in counters:
+                counters["Ca3"] = 0
+            my_params.append(P('Ca3RyR_fwd_rate%d'%counters["Ca3"], 0,
+                                   fixed='Ca1RyR_fwd_rate',
+                                   constant=0.5,
+                                   xpath=forward_path))
+            
+            my_params.append(P('Ca3RyR_bkw_rate%d'%counters["Ca3"], 0,
+                               fixed='Ca1RyR_fwd_rate',
+                               constant=kd*3,
+                               xpath=reverse_path))
+            counters["Ca3"] += 1
+        elif species[-1].startswith("Ca4") and species[0].startswith("Ca3"):
+            print(species, reac_id)
+                        
+            if "Ca4" not in counters:
+                counters["Ca4"] = 0
+            my_params.append(P('Ca4RyR_fwd_rate%d'%counters["Ca4"], 0,
+                                   fixed='Ca1RyR_fwd_rate',
+                                   constant=0.25,
+                                   xpath=forward_path))
+            
+            my_params.append(P('Ca4RyR_bkw_rate%d'%counters["Ca4"], 0,
+                               fixed='Ca1RyR_fwd_rate',
+                               constant=kd*4,
+                               xpath=reverse_path))
+            counters["Ca4"] += 1
+
+        
+        elif species[-1].endswith("I2"):
+            print(species, reac_id)
+            my_params.append(P("I2_flicker_fwd_rate", 1,
+                               min=1e-3, max=1e3,
                                xpath=forward_path))
             
-            my_params.append(P('Ca4RyR4_O2_open_bkw_rate%d'%counters["O2"], 0,
-                               fixed='Ca4RyR4_O2_open_fwd_rate',
-                               constant=kd["O2"],
+            my_params.append(P("I2_flicker_bkw_rate", 0.06,
+                               min=1e-3, max=1e3,
                                xpath=reverse_path))
-            counters["O2"] += 1
+                
 
-        elif species[0].endswith("O2") and species[-1].endswith("C1"):
-            if "O2C1" not in counters:
-                counters["O2C1"] = 0
-                my_params.append(P('O2_flicker_fwd_rate', 3.32 , min=1e-3,
-                                   max=1000,
-                                   xpath=forward_path))
-            else:
-                my_params.append(P('O2_flicker_fwd_rate%d'% counters["O2C1"],
-                                   0, fixed='O2_flicker_fwd_rate',
-                                   constant=1,
-                                   xpath=forward_path))
-            my_params.append(P('O2_flicker_bkw_rate%d' % counters["O2C1"], 0,
-                               fixed='O2_flicker_fwd_rate',
-                               constant=kd["O2C1"], 
-                               xpath=reverse_path))
-            
-            counters["O2C1"] +=1
-
-            
 
 params = aju.optimize.ParamSet(*my_params)
                              
