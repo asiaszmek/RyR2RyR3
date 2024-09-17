@@ -8,7 +8,7 @@ from ajustador import drawing,loadconc,nrd_fitness
 from ajustador.helpers import converge,save_params
 
 # constants:
-kd = 4000   # Ca affinity for RyRCaM
+kd = 3000   # Ca affinity for RyRCaM
 
 dirname='fit_RyR2CaM_Ca/'  #where data and model file are stored.  Can be different than current directory. Multiple datafiles allowed
 #Set of model files that have first part of file name in common.  All included files must be in same directory.
@@ -69,7 +69,7 @@ for son in root:
             print(species, reac_id)
             if "Ca1" not in counters:
                 counters["Ca1"] = 0
-                my_params.append(P('Ca1RyR_fwd_rate', 0.001, min=1e-9,
+                my_params.append(P('Ca1RyR_fwd_rate', 0.001, min=1e-7,
                                     max=1,
                                     xpath=forward_path))
             else:
@@ -85,7 +85,6 @@ for son in root:
             counters["Ca1"] += 1
         elif species[-1].startswith("Ca2") and species[0].startswith("Ca1"):
             print(species, reac_id)
-                        
             if "Ca2" not in counters:
                 counters["Ca2"] = 0
             my_params.append(P('Ca2RyR_fwd_rate%d'%counters["Ca2"], 0,
@@ -100,7 +99,6 @@ for son in root:
             counters["Ca2"] += 1
         elif species[-1].startswith("Ca3") and species[0].startswith("Ca2"):
             print(species, reac_id)
-                        
             if "Ca3" not in counters:
                 counters["Ca3"] = 0
             my_params.append(P('Ca3RyR_fwd_rate%d'%counters["Ca3"], 0,
@@ -132,15 +130,23 @@ for son in root:
         
         elif species[-1].endswith("I2"):
             print(species, reac_id)
-            my_params.append(P("I2_flicker_fwd_rate", 1,
-                               min=1e-3, max=1e3,
-                               xpath=forward_path))
-            
-            my_params.append(P("I2_flicker_bkw_rate", 0.06,
-                               min=1e-3, max=1e3,
-                               xpath=reverse_path))
-                
-
+            if "I2" not in counters:
+                counters["I2"] = 0
+                my_params.append(P("I2_flicker_fwd_rate", 1,
+                                   min=1e-3, max=1e3,
+                                   xpath=forward_path))        
+                my_params.append(P("I2_flicker_bkw_rate", 0.6,
+                                   min=1e-3, max=1e3,
+                                   xpath=reverse_path))
+            else:
+                my_params.append(P("I2_flicker_fwd_rate%d" % counters["I2"], 0,
+                                   fixed="I2_flicker_fwd_rate",
+                                   constant=1,
+                                   xpath=forward_path))        
+                my_params.append(P("I2_flicker_bkw_rate%d" % counters["I2"], 0,
+                                   fixed="I2_flicker_bkw_rate", constant=1,
+                                   xpath=reverse_path))
+            counters["I2"] += 1
 
 params = aju.optimize.ParamSet(*my_params)
                              

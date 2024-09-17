@@ -3,7 +3,9 @@ from lxml import etree
 
 fname = "Rxn_module_RyR2_CaM.xml"
 
-A = 4 #  k_b in Ca+RyRCaM -> CaRyRCaM is multiplied by A
+A = 3 #  k_b in Ca+RyRCaM -> CaRyRCaM is multiplied by A
+
+counter = 1
 
 kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
@@ -34,12 +36,13 @@ for specie in open_close:
     krs[new_specie] = krs[specie]
 
 
-
-
-
-counter = 1
-
-
+def write_rates(root1, k_forward, k_reverse):
+    kf = etree.SubElement(root1, "forwardRate")
+    kf.text = str(k_forward)
+    kr = etree.SubElement(root1, "reverseRate")
+    kr.text = str(k_reverse)
+    q = etree.SubElement(root1, "Q10")
+    q.text = ".2"
 
 def add_reaction(root, name, what, new_name):
     global counter
@@ -56,20 +59,14 @@ def add_reaction(root, name, what, new_name):
             Ca_no = int(name.split("_")[0][-1])
             if "CaM" not in name:
                 CaM_no = 0
-                if Ca_no > CaM_no:
+                if CaM_no == 0:
                     multiplier= A**(Ca_no-CaM_no)
-
     elif "O1" in what or "O2" in what or "C1" in what or "I" in what:
         pass
     else:
         etree.SubElement(my_r, "Reactant", specieID="Ca")
     etree.SubElement(my_r, "Product", specieID=new_name)
-    kf = etree.SubElement(my_r, "forwardRate")
-    kf.text = str(kfs[what])
-    kr = etree.SubElement(my_r, "reverseRate")
-    kr.text = str(krs[what]*multiplier)
-    q = etree.SubElement(my_r, "Q10")
-    q.text = ".2"
+    write_rates(my_r, kfs[what], krs[what]*multiplier)
     counter += 1
 
     
@@ -240,6 +237,8 @@ if __name__ == "__main__":
                          "%s_I"%specie)
             if "CaMCa4" in specie:
                 add_reaction(my_rxn_file, "%s_O1" % specie,"II2",
+                             "%s_I2"%specie)
+                add_reaction(my_rxn_file, "%s_O2" % specie,"II2",
                              "%s_I2"%specie)
 
                 

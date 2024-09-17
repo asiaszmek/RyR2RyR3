@@ -11,19 +11,30 @@ kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "RyR2Ca3":5e-4, "RyR2Ca4": 2.5e-4, "RyR2Ca4O1": 38.4,
        "RyR2Ca4O1C1": 0.0025,
        "RyR2Ca4O2": 38.4e-3, "RyR2Ca4O2C1":2.5, "RyR2Ca4C1I": 11.28,
-       "CaMRyR2Ca4O1": 82.11 ,
-       "CaMRyR2Ca4O1C1": 0.32,
-       "CaMRyR2Ca4O2": 232.4, "CaMRyR2Ca4O2C1":0.033, "CaMRyR2Ca4C1I": 11.28}
+       "CaMRyR2Ca4O1":  38.4,
+       "CaMRyR2Ca4O1C1":0.0025,
+       "CaMRyR2Ca4O2":  38.4e-3,
+       "CaMRyR2Ca4O2C1":2.5, "CaMRyR2Ca4C1I": 11.28, "II2":1}
 
 #
 krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
-       "2CaC": 2.2222e-3, "2CaN": 1000e-3,"RyR2Ca1": 1,
-       "RyR2Ca2": 2, "RyR2Ca3": 3, "RyR2Ca4": 4,
+       "2CaC": 2.2222e-3, "2CaN": 1000e-3,"RyR2Ca1": 4,
+       "RyR2Ca2": 8, "RyR2Ca3": 12, "RyR2Ca4": 16,
        "RyR2Ca4O1": 3,"RyR2Ca4O1C1": 0.77, "RyR2Ca4O2": 3e-3,
        "RyR2Ca4O2C1": 0.77e3,  "RyR2Ca4C1I":0.05,
-       "CaMRyR2Ca4O1": 6.41,"CaMRyR2Ca4O1C1": 98.56, "CaMRyR2Ca4O2": 18.16,
-       "CaMRyR2Ca4O2C1": 10.164,  "CaMRyR2Ca4C1I":0.05}
+       "CaMRyR2Ca4O1": 3,"CaMRyR2Ca4O1C1": 0.77,
+       "CaMRyR2Ca4O2": 3e-3,
+       "CaMRyR2Ca4O2C1":0.77e3,  "CaMRyR2Ca4C1I":0.05, "II2":0.6}
 counter = 1
+
+def write_rates(root1, k_forward, k_reverse):
+    kf = etree.SubElement(root1, "forwardRate")
+    kf.text = str(k_forward)
+    kr = etree.SubElement(root1, "reverseRate")
+    kr.text = str(k_reverse)
+    q = etree.SubElement(root1, "Q10")
+    q.text = ".2"
+
 
 def add_reaction(root, name, what, new_name):
     global counter
@@ -40,12 +51,7 @@ def add_reaction(root, name, what, new_name):
     else:
         etree.SubElement(my_r, "Reactant", specieID="Ca")
     etree.SubElement(my_r, "Product", specieID=new_name)
-    kf = etree.SubElement(my_r, "forwardRate")
-    kf.text = str(kfs[what])
-    kr = etree.SubElement(my_r, "reverseRate")
-    kr.text = str(krs[what])
-    q = etree.SubElement(my_r, "Q10")
-    q.text = ".2"
+    write_rates(my_r, kfs[what], krs[what])
     counter += 1
 
     
@@ -104,7 +110,7 @@ if __name__ == "__main__":
         etree.SubElement(my_rxn_file, "Specie", name="%s_I" % specie,
                          id="%s_I" % specie, kdiff="0",
                          kdiffunit="mu2/s")
-        if "4CaMCa4" in specie:
+        if "CaMCa4" in specie:
             etree.SubElement(my_rxn_file, "Specie", name="%s_I2" % specie,
                              id="%s_I2" % specie, kdiff="0",
                              kdiffunit="mu2/s")
@@ -136,7 +142,8 @@ if __name__ == "__main__":
                     for suffix in ["O1", "O2", "C1", "I"]:
                         my_name = "%s_%s" % (my_specie_name, suffix)
                         add_reaction(my_rxn_file, my_name, "2CaN",
-                                     "%s_%s" % (generate_name(i, j-1, k+1, l), suffix))
+                                     "%s_%s" % (generate_name(i, j-1, k+1, l),
+                                                suffix))
 
             if l < 4:
                 new_name = generate_name(i, j, k, l + 1)
@@ -159,10 +166,12 @@ if __name__ == "__main__":
         add_reaction(my_rxn_file, "%s_C1" % specie,"RyR2Ca4C1I",
                      "%s_I"%specie)
         
-        # if "4CaMCa4" in specie:
+        if "CaMCa4" in specie:
             
-        #     add_reaction(my_rxn_file, "%s" % specie,"II2",
-        #                  "%s_I2"%specie)
+            add_reaction(my_rxn_file, "%s_O1" % specie,"II2",
+                         "%s_I2"%specie)
+            add_reaction(my_rxn_file, "%s_O2" % specie,"II2",
+                         "%s_I2"%specie)
 
                 
     f = open(fname, "w")
