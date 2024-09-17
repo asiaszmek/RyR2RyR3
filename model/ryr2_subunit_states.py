@@ -3,27 +3,47 @@ from lxml import etree
 
 fname = "Rxn_module_RyR2_CaM.xml"
 
+A = 4 #  k_b in Ca+RyRCaM -> CaRyRCaM is multiplied by A
+
 kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
        "2CaN":  0.1e-2, "RyR2Ca1": 1e-3, "RyR2Ca2": 0.75e-3,
        "RyR2Ca3":5e-4, "RyR2Ca4": 2.5e-4, "RyR2Ca4O1": 38.4, "RyR2Ca4O1C1": 0.0025,
        "RyR2Ca4O2": 38.4e-3, "RyR2Ca4O2C1":2.5, "RyR2Ca4C1I": 11.28,
-       "CaMRyR2Ca4O1": 5.21,
-       "CaMRyR2Ca4O1C1": 0.16,
-       "CaMRyR2Ca4O2": 5.21e-2, "CaMRyR2Ca4O2C1":0.16e2, "CaMRyR2Ca4C1I": 11.28}
+       "II2":1}
 
 
 krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
        "2CaC": 9.1e-3, "2CaN": 1000e-3,"RyR2Ca1": 1,
        "RyR2Ca2": 2, "RyR2Ca3": 3, "RyR2Ca4": 4,
        "RyR2Ca4O1": 3,"RyR2Ca4O1C1": 0.77, "RyR2Ca4O2": 3e-3,
-       "RyR2Ca4O2C1": 0.77e3,  "RyR2Ca4C1I":0.05,
-       "CaMRyR2Ca4O1": 8.08,"CaMRyR2Ca4O1C1": 32, "CaMRyR2Ca4O2": 8.08e-2,
-       "CaMRyR2Ca4O2C1": 32e2,  "CaMRyR2Ca4C1I":0.05}
+       "RyR2Ca4O2C1": 0.77e3,  "RyR2Ca4C1I":0.05, "II2":0.06}
+
+for i in range(1, 5):
+    new_specie = "CaMRyR2Ca%d"%i
+    old_specie = "RyR2Ca%d"%i
+    kfs[new_specie] = kfs[old_specie]
+    krs[new_specie] = A*krs[old_specie]
+
+open_close = ["RyR2Ca4O1", "RyR2Ca4O1C1",
+              "RyR2Ca4O2", "RyR2Ca4O2C1", "RyR2Ca4C1I"]
+    
+for specie in open_close:
+    new_specie = "CaM%s" % specie
+    kfs[new_specie] = kfs[specie]
+    krs[new_specie] = krs[specie]
+
+
+
+
+
 counter = 1
+
+
 
 def add_reaction(root, name, what, new_name):
     global counter
+    multiplier = 1
     my_r = etree.SubElement(root, "Reaction",
                             name=name+"_"+what+"_"+str(counter),
                             id=name+"_"+what+"_"+str(counter))
@@ -32,6 +52,13 @@ def add_reaction(root, name, what, new_name):
         etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
     elif what in ["CaM", "CaMCa2C", "CaMCa4"]:
         etree.SubElement(my_r, "Reactant", specieID=what)
+        if name.startswith("Ca"):
+            Ca_no = int(name.split("_")[0][-1])
+            if "CaM" not in name:
+                CaM_no = 0
+                if Ca_no > CaM_no:
+                    multiplier= A**(Ca_no-CaM_no)
+
     elif "O1" in what or "O2" in what or "C1" in what or "I" in what:
         pass
     else:
@@ -40,7 +67,7 @@ def add_reaction(root, name, what, new_name):
     kf = etree.SubElement(my_r, "forwardRate")
     kf.text = str(kfs[what])
     kr = etree.SubElement(my_r, "reverseRate")
-    kr.text = str(krs[what])
+    kr.text = str(krs[what]*multiplier)
     q = etree.SubElement(my_r, "Q10")
     q.text = ".2"
     counter += 1
@@ -179,8 +206,10 @@ if __name__ == "__main__":
 
             if l < 4:
                 new_name = generate_name(i, j, k, l + 1)
-               
-                rxn_name = "RyR2Ca%d" % (l+1)
+                if "CaM" in my_specie_name:
+                    rxn_name = "CaMRyR2Ca%d" % (l+1)
+                else:
+                    rxn_name = "RyR2Ca%d" % (l+1)
                 add_reaction(my_rxn_file, my_specie_name, rxn_name,
                              new_name)
 
