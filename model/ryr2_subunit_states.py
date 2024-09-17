@@ -238,6 +238,9 @@ if __name__ == "__main__":
                          "%s_C1"%specie)
             add_reaction(my_rxn_file, "%s_C1" % specie,"CaMRyR2Ca4C1I",
                          "%s_I"%specie)
+            if "CaMCa4" in specie:
+                add_reaction(my_rxn_file, "%s_O1" % specie,"II2",
+                             "%s_I2"%specie)
 
                 
     f = open(fname, "w")
