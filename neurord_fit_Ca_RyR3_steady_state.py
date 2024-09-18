@@ -27,7 +27,7 @@ test_size=25 #for convergence
 P = aju.xml.XMLParam
 #list of parameters to change/optimize
 params = aju.optimize.ParamSet(
-    P('RyRCa1_fwd_rate', 0.00103, min=1e-7, max=1,
+    P('RyRCa1_fwd_rate', 0.00103, min=1e-7, max=1e-2,
       xpath='//Reaction[@id="RyRCa1"]/forwardRate'),
     P('RyRCa1_bkw_rate', 0, fixed='RyRCa1_fwd_rate',
       constant=kd,
@@ -50,7 +50,7 @@ params = aju.optimize.ParamSet(
     P('Ca4RyR4_open_bkw_rate', 3.02,  min=1e-3, max=1000,
       xpath='//Reaction[@id="RyRd"]/reverseRate'),
     
-    P('O1_flicker_fwd_rate', 0.0025 , min=1e-6, max=1000,
+    P('O1_flicker_fwd_rate', 0.0025 , min=1e-3, max=1000,
       xpath='//Reaction[@id="RyRf"]/forwardRate'),
     P('O1_flicker_bkw_rate', 0.77, min=1e-3, max=1000,
       xpath='//Reaction[@id="RyRf"]/reverseRate'),

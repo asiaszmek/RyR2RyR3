@@ -12,10 +12,9 @@ ryr_cl_fname = "../datasets_for_fitting/ryr3_cam_tc.csv"
 
 model_text = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SDRun xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://stochdiff.textensor.org">
-    <xi:include href="Rxn_Zahradnikova.xml" />
+    <xi:include href="Rxn_RyRCaM.xml" />
     <xi:include href="Morph.xml" />
     <xi:include href="%s" />
-    <xi:include href="IO_RyRCaM.xml" />
     <!--2D means the morphology is interpreted like a flatworm, 3D for
 roundworms. The 2D case is good for testing as it is easy to visualize the
 results (also, 3D may not work yet...)  -->
@@ -39,7 +38,7 @@ results (also, 3D may not work yet...)  -->
     </discretization>
     <tolerance>0.01</tolerance>
 
-    <outputInterval>1000</outputInterval>
+    <outputInterval>0.1</outputInterval>
 
     <calculation>GRID_ADAPTIVE</calculation>
 
@@ -51,7 +50,7 @@ IC_text = """<?xml version="1.0" encoding="utf-8"?>
 <InitialConditions>
   <ConcentrationSet>
     <NanoMolarity specieID="Ca" value="%f"/>
-    <NanoMolarity specieID="RyR4CaM"      value="0.1"    />
+    <NanoMolarity specieID="RyR4_4CaM"      value="0.1"    />
   </ConcentrationSet>
 </InitialConditions>
 """
@@ -115,16 +114,20 @@ def sum_volume(my_file, region_list):
 
 def get_all_open(data, species):
     length = len(data[:, 0, 0])//2
+    if length %2:
+        beg = 0
+    else:
+        beg = 1
     state = np.zeros(length)
     for specie in species:
         if "O" in specie:
-            state +=  data[length+1:, 0, species.index(specie)]
+            state +=  data[length+beg:, 0, species.index(specie)]
     count = len(np.where((state[1:] - state[0:-1])==1)[0])
     sum_times = state.sum()
     return sum_times, count
 
 
-def get_numbers(my_file, output="all"):
+def get_numbers(my_file, output="__main__"):
     output_dict = get_output_regions(my_file)
     Ca_conc = []
     open_ryr3 = []
@@ -146,7 +149,7 @@ def get_numbers(my_file, output="all"):
         dt = times[1]-times[0]
         exp_len = int(times[-1])//2
         mean_ca = data[:, 0, species.index("Ca")].mean()*10/6.023/vol
-        bas_idx = species.index("RyR4CaM")
+        bas_idx = species.index("RyR4_4CaM")
         ryr_basal = data[0, 0, bas_idx]
         if ryr_basal > 1:
             continue
@@ -199,7 +202,7 @@ if __name__ == "__main__":
         print(process)
         if not process.returncode:
             my_file = h5py.File(output_name, 'r')
-            conc, po, t_o, t_c = get_numbers(my_file, output="all")
+            conc, po, t_o, t_c = get_numbers(my_file, output="__main__")
             output[i, 0] = np.mean(conc)
             output[i, 1] = np.mean(po)
             print(output[i])
