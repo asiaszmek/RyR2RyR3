@@ -244,6 +244,6 @@ if __name__ == "__main__":
     ax[1].tick_params(axis='y', labelsize=20)
     ax[1].set_xlabel("Concentration [M]", fontsize=20)
     ax[1].set_ylabel("Time [ms]", fontsize=20)
-    fig.savefig("RyR2CaM_properties.png", dpi=200, bbox_inches="tight")
+    fig.savefig("RyR3CaM_properties.png", dpi=200, bbox_inches="tight")
 
 plt.show()

@@ -151,6 +151,10 @@ if __name__ == "__main__":
         etree.SubElement(my_rxn_file, "Specie", name="%s_I" % specie,
                          id="%s_I" % specie, kdiff="0",
                          kdiffunit="mu2/s")
+        if "CaMCa4" in specie:
+            etree.SubElement(my_rxn_file, "Specie", name="%s_I2" % specie,
+                             id="%s_I2" % specie, kdiff="0",
+                             kdiffunit="mu2/s")
 
 
     for l in [0, 1, 2, 3, 4]:

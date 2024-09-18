@@ -202,18 +202,22 @@
   <Specie name="Ca4_RyR2_1CaMCa4_O2" id="Ca4_RyR2_1CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa4_C1" id="Ca4_RyR2_1CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa4_I" id="Ca4_RyR2_1CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_1CaMCa4_I2" id="Ca4_RyR2_1CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaMCa4_O1" id="Ca4_RyR2_2CaMCa4_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaMCa4_O2" id="Ca4_RyR2_2CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaMCa4_C1" id="Ca4_RyR2_2CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaMCa4_I" id="Ca4_RyR2_2CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_2CaMCa4_I2" id="Ca4_RyR2_2CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaMCa4_O1" id="Ca4_RyR2_3CaMCa4_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaMCa4_O2" id="Ca4_RyR2_3CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaMCa4_C1" id="Ca4_RyR2_3CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaMCa4_I" id="Ca4_RyR2_3CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_3CaMCa4_I2" id="Ca4_RyR2_3CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_4CaMCa4_O1" id="Ca4_RyR2_4CaMCa4_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_4CaMCa4_O2" id="Ca4_RyR2_4CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_4CaMCa4_C1" id="Ca4_RyR2_4CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_4CaMCa4_I" id="Ca4_RyR2_4CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_4CaMCa4_I2" id="Ca4_RyR2_4CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa2C_O1" id="Ca4_RyR2_1CaMCa2C_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa2C_O2" id="Ca4_RyR2_1CaMCa2C_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa2C_C1" id="Ca4_RyR2_1CaMCa2C_C1" kdiff="0" kdiffunit="mu2/s"/>
@@ -222,14 +226,17 @@
   <Specie name="Ca4_RyR2_1CaMCa2C_1CaMCa4_O2" id="Ca4_RyR2_1CaMCa2C_1CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa2C_1CaMCa4_C1" id="Ca4_RyR2_1CaMCa2C_1CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa2C_1CaMCa4_I" id="Ca4_RyR2_1CaMCa2C_1CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_1CaMCa2C_1CaMCa4_I2" id="Ca4_RyR2_1CaMCa2C_1CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa2C_2CaMCa4_O1" id="Ca4_RyR2_1CaMCa2C_2CaMCa4_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa2C_2CaMCa4_O2" id="Ca4_RyR2_1CaMCa2C_2CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa2C_2CaMCa4_C1" id="Ca4_RyR2_1CaMCa2C_2CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa2C_2CaMCa4_I" id="Ca4_RyR2_1CaMCa2C_2CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_1CaMCa2C_2CaMCa4_I2" id="Ca4_RyR2_1CaMCa2C_2CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa2C_3CaMCa4_O1" id="Ca4_RyR2_1CaMCa2C_3CaMCa4_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa2C_3CaMCa4_O2" id="Ca4_RyR2_1CaMCa2C_3CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa2C_3CaMCa4_C1" id="Ca4_RyR2_1CaMCa2C_3CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaMCa2C_3CaMCa4_I" id="Ca4_RyR2_1CaMCa2C_3CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_1CaMCa2C_3CaMCa4_I2" id="Ca4_RyR2_1CaMCa2C_3CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaMCa2C_O1" id="Ca4_RyR2_2CaMCa2C_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaMCa2C_O2" id="Ca4_RyR2_2CaMCa2C_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaMCa2C_C1" id="Ca4_RyR2_2CaMCa2C_C1" kdiff="0" kdiffunit="mu2/s"/>
@@ -238,10 +245,12 @@
   <Specie name="Ca4_RyR2_2CaMCa2C_1CaMCa4_O2" id="Ca4_RyR2_2CaMCa2C_1CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaMCa2C_1CaMCa4_C1" id="Ca4_RyR2_2CaMCa2C_1CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaMCa2C_1CaMCa4_I" id="Ca4_RyR2_2CaMCa2C_1CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_2CaMCa2C_1CaMCa4_I2" id="Ca4_RyR2_2CaMCa2C_1CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaMCa2C_2CaMCa4_O1" id="Ca4_RyR2_2CaMCa2C_2CaMCa4_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaMCa2C_2CaMCa4_O2" id="Ca4_RyR2_2CaMCa2C_2CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaMCa2C_2CaMCa4_C1" id="Ca4_RyR2_2CaMCa2C_2CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaMCa2C_2CaMCa4_I" id="Ca4_RyR2_2CaMCa2C_2CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_2CaMCa2C_2CaMCa4_I2" id="Ca4_RyR2_2CaMCa2C_2CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaMCa2C_O1" id="Ca4_RyR2_3CaMCa2C_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaMCa2C_O2" id="Ca4_RyR2_3CaMCa2C_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaMCa2C_C1" id="Ca4_RyR2_3CaMCa2C_C1" kdiff="0" kdiffunit="mu2/s"/>
@@ -250,6 +259,7 @@
   <Specie name="Ca4_RyR2_3CaMCa2C_1CaMCa4_O2" id="Ca4_RyR2_3CaMCa2C_1CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaMCa2C_1CaMCa4_C1" id="Ca4_RyR2_3CaMCa2C_1CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaMCa2C_1CaMCa4_I" id="Ca4_RyR2_3CaMCa2C_1CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_3CaMCa2C_1CaMCa4_I2" id="Ca4_RyR2_3CaMCa2C_1CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_4CaMCa2C_O1" id="Ca4_RyR2_4CaMCa2C_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_4CaMCa2C_O2" id="Ca4_RyR2_4CaMCa2C_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_4CaMCa2C_C1" id="Ca4_RyR2_4CaMCa2C_C1" kdiff="0" kdiffunit="mu2/s"/>
@@ -262,14 +272,17 @@
   <Specie name="Ca4_RyR2_1CaM_1CaMCa4_O2" id="Ca4_RyR2_1CaM_1CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_1CaMCa4_C1" id="Ca4_RyR2_1CaM_1CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_1CaMCa4_I" id="Ca4_RyR2_1CaM_1CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_1CaM_1CaMCa4_I2" id="Ca4_RyR2_1CaM_1CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_2CaMCa4_O1" id="Ca4_RyR2_1CaM_2CaMCa4_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_2CaMCa4_O2" id="Ca4_RyR2_1CaM_2CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_2CaMCa4_C1" id="Ca4_RyR2_1CaM_2CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_2CaMCa4_I" id="Ca4_RyR2_1CaM_2CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_1CaM_2CaMCa4_I2" id="Ca4_RyR2_1CaM_2CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_3CaMCa4_O1" id="Ca4_RyR2_1CaM_3CaMCa4_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_3CaMCa4_O2" id="Ca4_RyR2_1CaM_3CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_3CaMCa4_C1" id="Ca4_RyR2_1CaM_3CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_3CaMCa4_I" id="Ca4_RyR2_1CaM_3CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_1CaM_3CaMCa4_I2" id="Ca4_RyR2_1CaM_3CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_1CaMCa2C_O1" id="Ca4_RyR2_1CaM_1CaMCa2C_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_1CaMCa2C_O2" id="Ca4_RyR2_1CaM_1CaMCa2C_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_1CaMCa2C_C1" id="Ca4_RyR2_1CaM_1CaMCa2C_C1" kdiff="0" kdiffunit="mu2/s"/>
@@ -278,10 +291,12 @@
   <Specie name="Ca4_RyR2_1CaM_1CaMCa2C_1CaMCa4_O2" id="Ca4_RyR2_1CaM_1CaMCa2C_1CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_1CaMCa2C_1CaMCa4_C1" id="Ca4_RyR2_1CaM_1CaMCa2C_1CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_1CaMCa2C_1CaMCa4_I" id="Ca4_RyR2_1CaM_1CaMCa2C_1CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_1CaM_1CaMCa2C_1CaMCa4_I2" id="Ca4_RyR2_1CaM_1CaMCa2C_1CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_1CaMCa2C_2CaMCa4_O1" id="Ca4_RyR2_1CaM_1CaMCa2C_2CaMCa4_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_1CaMCa2C_2CaMCa4_O2" id="Ca4_RyR2_1CaM_1CaMCa2C_2CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_1CaMCa2C_2CaMCa4_C1" id="Ca4_RyR2_1CaM_1CaMCa2C_2CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_1CaMCa2C_2CaMCa4_I" id="Ca4_RyR2_1CaM_1CaMCa2C_2CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_1CaM_1CaMCa2C_2CaMCa4_I2" id="Ca4_RyR2_1CaM_1CaMCa2C_2CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_2CaMCa2C_O1" id="Ca4_RyR2_1CaM_2CaMCa2C_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_2CaMCa2C_O2" id="Ca4_RyR2_1CaM_2CaMCa2C_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_2CaMCa2C_C1" id="Ca4_RyR2_1CaM_2CaMCa2C_C1" kdiff="0" kdiffunit="mu2/s"/>
@@ -290,6 +305,7 @@
   <Specie name="Ca4_RyR2_1CaM_2CaMCa2C_1CaMCa4_O2" id="Ca4_RyR2_1CaM_2CaMCa2C_1CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_2CaMCa2C_1CaMCa4_C1" id="Ca4_RyR2_1CaM_2CaMCa2C_1CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_2CaMCa2C_1CaMCa4_I" id="Ca4_RyR2_1CaM_2CaMCa2C_1CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_1CaM_2CaMCa2C_1CaMCa4_I2" id="Ca4_RyR2_1CaM_2CaMCa2C_1CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_3CaMCa2C_O1" id="Ca4_RyR2_1CaM_3CaMCa2C_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_3CaMCa2C_O2" id="Ca4_RyR2_1CaM_3CaMCa2C_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_1CaM_3CaMCa2C_C1" id="Ca4_RyR2_1CaM_3CaMCa2C_C1" kdiff="0" kdiffunit="mu2/s"/>
@@ -302,10 +318,12 @@
   <Specie name="Ca4_RyR2_2CaM_1CaMCa4_O2" id="Ca4_RyR2_2CaM_1CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_1CaMCa4_C1" id="Ca4_RyR2_2CaM_1CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_1CaMCa4_I" id="Ca4_RyR2_2CaM_1CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_2CaM_1CaMCa4_I2" id="Ca4_RyR2_2CaM_1CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_2CaMCa4_O1" id="Ca4_RyR2_2CaM_2CaMCa4_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_2CaMCa4_O2" id="Ca4_RyR2_2CaM_2CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_2CaMCa4_C1" id="Ca4_RyR2_2CaM_2CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_2CaMCa4_I" id="Ca4_RyR2_2CaM_2CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_2CaM_2CaMCa4_I2" id="Ca4_RyR2_2CaM_2CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_1CaMCa2C_O1" id="Ca4_RyR2_2CaM_1CaMCa2C_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_1CaMCa2C_O2" id="Ca4_RyR2_2CaM_1CaMCa2C_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_1CaMCa2C_C1" id="Ca4_RyR2_2CaM_1CaMCa2C_C1" kdiff="0" kdiffunit="mu2/s"/>
@@ -314,6 +332,7 @@
   <Specie name="Ca4_RyR2_2CaM_1CaMCa2C_1CaMCa4_O2" id="Ca4_RyR2_2CaM_1CaMCa2C_1CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_1CaMCa2C_1CaMCa4_C1" id="Ca4_RyR2_2CaM_1CaMCa2C_1CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_1CaMCa2C_1CaMCa4_I" id="Ca4_RyR2_2CaM_1CaMCa2C_1CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_2CaM_1CaMCa2C_1CaMCa4_I2" id="Ca4_RyR2_2CaM_1CaMCa2C_1CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_2CaMCa2C_O1" id="Ca4_RyR2_2CaM_2CaMCa2C_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_2CaMCa2C_O2" id="Ca4_RyR2_2CaM_2CaMCa2C_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_2CaM_2CaMCa2C_C1" id="Ca4_RyR2_2CaM_2CaMCa2C_C1" kdiff="0" kdiffunit="mu2/s"/>
@@ -326,6 +345,7 @@
   <Specie name="Ca4_RyR2_3CaM_1CaMCa4_O2" id="Ca4_RyR2_3CaM_1CaMCa4_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaM_1CaMCa4_C1" id="Ca4_RyR2_3CaM_1CaMCa4_C1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaM_1CaMCa4_I" id="Ca4_RyR2_3CaM_1CaMCa4_I" kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="Ca4_RyR2_3CaM_1CaMCa4_I2" id="Ca4_RyR2_3CaM_1CaMCa4_I2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaM_1CaMCa2C_O1" id="Ca4_RyR2_3CaM_1CaMCa2C_O1" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaM_1CaMCa2C_O2" id="Ca4_RyR2_3CaM_1CaMCa2C_O2" kdiff="0" kdiffunit="mu2/s"/>
   <Specie name="Ca4_RyR2_3CaM_1CaMCa2C_C1" id="Ca4_RyR2_3CaM_1CaMCa2C_C1" kdiff="0" kdiffunit="mu2/s"/>
