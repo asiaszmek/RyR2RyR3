@@ -1,25 +1,39 @@
 import itertools
+import argparse
 from lxml import etree
 
-fname = "Rxn_module_RyR2_CaM.xml"
 
-A = 3 #  k_b in Ca+RyRCaM -> CaRyRCaM is multiplied by A
+default_fname = "Rxn_module_RyR2_CaM.xml"
+
+parser = argparse.ArgumentParser(description='Generate RyR2-CaM-Ca_cyt reactions')
+parser.add_argument('--release', default=False,
+                    help='Add Ca release from the ER')
+parser.add_argument('--CaM_k_rev_multiplier', type=float, default=1,
+                    help='Increase CaM-RyR binding k_rev to simulate oxidative conditions')
+parser.add_argument('--filename', default=default_fname,
+                    help="Destination filename")
+
+
+
+A = 3 #  k_rev in Ca+RyRCaM -> CaRyRCaM is multiplied by A
 
 counter = 1
 
 kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
        "2CaN":  0.1e-2, "RyR2Ca1": 1e-3, "RyR2Ca2": 0.75e-3,
-       "RyR2Ca3":5e-4, "RyR2Ca4": 2.5e-4, "RyR2Ca4O1": 38.4, "RyR2Ca4O1C1": 0.0025,
+       "RyR2Ca3":5e-4, "RyR2Ca4": 2.5e-4, "RyR2Ca4O1": 38.4,
+       "RyR2Ca4O1C1": 0.0025,
        "RyR2Ca4O2": 38.4e-3, "RyR2Ca4O2C1":2.5, "RyR2Ca4C1I": 11.28,
-       "II2":1}
+       "II2":1, "release": 5e-3}
 
 
 krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
        "2CaC": 9.1e-3, "2CaN": 1000e-3,"RyR2Ca1": 1,
        "RyR2Ca2": 2, "RyR2Ca3": 3, "RyR2Ca4": 4,
        "RyR2Ca4O1": 3,"RyR2Ca4O1C1": 0.77, "RyR2Ca4O2": 3e-3,
-       "RyR2Ca4O2C1": 0.77e3,  "RyR2Ca4C1I":0.05, "II2":0.06}
+       "RyR2Ca4O2C1": 0.77e3,  "RyR2Ca4C1I":0.05, "II2":0.06,
+       "release": 5e-3}
 
 for i in range(1, 5):
     new_specie = "CaMRyR2Ca%d"%i
@@ -63,6 +77,9 @@ def add_reaction(root, name, what, new_name):
                     multiplier= A**(Ca_no-CaM_no)
     elif "O1" in what or "O2" in what or "C1" in what or "I" in what:
         pass
+    elif what == "release":
+        etree.SubElement(my_r, "Reactant", specieID="CaER")
+        etree.SubElement(my_r, "Product", specieID="Ca")
     else:
         etree.SubElement(my_r, "Reactant", specieID="Ca")
     etree.SubElement(my_r, "Product", specieID=new_name)
@@ -84,6 +101,14 @@ def generate_name(a, b, c, d=0):
     return name
 
 if __name__ == "__main__":
+    args = parser.parse_args()
+    fname = args.filename
+    if args.CaM_k_rev_multiplier > 1:
+        krs["CaM"] = args.CaM_k_rev_multiplier*krs["CaM"]
+        krs["CaMCa2C"] = args.CaM_k_rev_multiplier*krs["CaMCa2C"]
+        krs["CaMCa4"] = args.CaM_k_rev_multiplier*krs["CaMCa4"]
+
+    
     states = set()
     for i in range(0, 5):
         for j in range(0, 5):
@@ -245,8 +270,16 @@ if __name__ == "__main__":
                 add_reaction(my_rxn_file, "%s_O2" % specie,"II2",
                              "%s_I2"%specie)
 
-                
+    if args.release:
+        etree.SubElement(my_rxn_file, "Specie", name="CaER",
+                         id="CaER", kdiff="10", kdiffunit="mu2/s")
+        for specie in ryr_species_to_open:
+             add_reaction(my_rxn_file, "%s_O1" % specie, "release",
+                          "%s_O1" % specie) 
+             add_reaction(my_rxn_file, "%s_O2" % specie, "release",
+                          "%s_O2" % specie) 
+             
     f = open(fname, "w")
     f.write(etree.tostring(my_rxn_file, pretty_print=True).decode("utf-8"))
     f.close()
-    print(ryr_species_to_open)
+
