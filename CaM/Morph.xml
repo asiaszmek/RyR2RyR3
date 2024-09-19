@@ -2,7 +2,7 @@
 
     <Segment   id="seg1"    region="dend">
         <start x="0.0"    y="0.0" z="0.0" r="3"/>
-        <end   x="54.0"    y="0.0" z="0.0" r="3" label="pointA"/>
+        <end   x="3.0"    y="0.0" z="0.0" r="3" label="pointA"/>
     </Segment>
 
 </Morphology>
