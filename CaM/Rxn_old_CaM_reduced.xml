@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<ReactionScheme>
+  <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
+  <Specie name="CaM" id="CaM" kdiff="4" kdiffunit="mu2/s" />
+  <!--Calmodulin-->
+  <Specie name="CaMCa2C" id="CaMCa2C" kdiff="4" kdiffunit="mu2/s" />
+  <Specie name="CaMCa2N" id="CaMCa2N" kdiff="4" kdiffunit="mu2/s" />
+  <!-- 2 Ca bound Calmodulin-->
+  <Specie name="CaMCa4" id="CaMCa4" kdiff="4" kdiffunit="mu2/s" />
+  
+  <!-- CaM, CaMCa4 and PP2B Binding -->
+  <!--1) CaM  + 2Ca
+      <-> CaMCa2 -->
+  <!--This is the C site-->
+  <Reaction name="CaMC_bind" id="CaMC_bind">
+    <Reactant specieID="CaM" />
+    <Reactant specieID="Ca" n="2" />
+    <Product specieID="CaMCa2C" />
+    <forwardRate>6e-6</forwardRate>
+    <reverseRate>9.1e-3</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+  <!--2) CaMCa2  + 2Ca
+      <-> CaMCa4 -->
+  <!--This is the N-site-->
+  <Reaction name="CaMCa2C_bind" id="CaMCa2C_bind">
+    <Reactant specieID="CaMCa2C" />
+    <Reactant specieID="Ca" n="2" />
+    <Product specieID="CaMCa4" />
+    <forwardRate>0.1e-3</forwardRate>
+    <reverseRate>1000e-3</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+  <!--1B) CaM  + 2Ca <-> CaMCa2N GQ RXN FILE, C or N can bind first-->
+  <Reaction name = "CaMN_bind" id="CaMN_bind">
+    <Reactant specieID="CaM"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="CaMCa2N"/>
+    
+    <forwardRate>0.1e-3</forwardRate>
+    <reverseRate>1000e-3</reverseRate>
+    
+  </Reaction>
+
+  <!--2B) CaMCa2N  + 2Ca <-> CaMCa4 GQ RXN FILE, C or N can bind first-->
+  <Reaction name = "CaMCa2N_bind" id="CaMCa2N_bind">
+    <Reactant specieID="CaMCa2N"/>
+    <Reactant specieID="Ca" n="2"/>
+    <Product specieID="CaMCa4"/>
+    
+    <forwardRate>6e-6</forwardRate>
+    <reverseRate>9.1e-3</reverseRate>
+    
+  </Reaction>
+
+</ReactionScheme>
