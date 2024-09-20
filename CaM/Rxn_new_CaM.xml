@@ -125,8 +125,8 @@
     <Reactant specieID="CaM" />
     <Reactant specieID="Ca" power="2" />
     <Product specieID="CaMCa2C" />
-    <forwardRate>16.8e-9</forwardRate>
-    <reverseRate>35e-3</reverseRate>
+    <forwardRate>7.5e-8</forwardRate>
+    <reverseRate>9.1e-3</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
   <!--2) CaMCa2  + 2Ca
@@ -134,19 +134,19 @@
   <!--This is the N-site-->
   <Reaction name="CaMCa2C_bind" id="CaMCa2C_bind">
     <Reactant specieID="CaMCa2C" />
-    <Reactant specieID="Ca" n="2" />
+    <Reactant specieID="Ca" power="2" />
     <Product specieID="CaMCa4" />
-    <forwardRate>0.1e-3</forwardRate>
+    <forwardRate>0.01e-4</forwardRate>
     <reverseRate>1000e-3</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
   <!--1B) CaM  + 2Ca <-> CaMCa2N GQ RXN FILE, C or N can bind first-->
   <Reaction name = "CaMN_bind" id="CaMN_bind">
     <Reactant specieID="CaM"/>
-    <Reactant specieID="Ca" n="2"/>
+    <Reactant specieID="Ca" power="2"/>
     <Product specieID="CaMCa2N"/>
     
-    <forwardRate>0.1e-3</forwardRate>
+    <forwardRate>0.01e-4</forwardRate>
     <reverseRate>1000e-3</reverseRate>
     
   </Reaction>
@@ -157,8 +157,8 @@
     <Reactant specieID="Ca" power="2"/>
     <Product specieID="CaMCa4"/>
     
-    <forwardRate>16.8e-9</forwardRate>
-    <reverseRate>35e-3</reverseRate>
+    <forwardRate>7.5e-8</forwardRate>
+    <reverseRate>9.1e-3</reverseRate>
     
   </Reaction>
 
