@@ -1,0 +1,151 @@
+begin model
+
+begin parameters
+  MCELL_DIFFUSION_CONSTANT_3D_Ca  2e-6
+  MCELL_DIFFUSION_CONSTANT_3D_CaM 1.5e-7
+  MCELL_DIFFUSION_CONSTANT_3D_RyR2  10
+  NA      6.022e23/1e6  #uM
+  V       0.15121*1e-15 #uM
+  VOL_RXN 1
+
+
+# For Ca-CaM binding use Faas, Raghavachari, Lisman & Mody, 2011 
+# possibly one has to go back to Sunita Nadkarni's constants
+  kon1c     168/(NA*V)  
+  koff1c    2.6e3
+  kon1n     1440/(NA*V)
+  koff1n    16000
+  kon2c     25/(NA*V)
+  koff2c    13
+  kon2n     3.2e4/(NA*V)
+  koff2n    2.2e4
+  konCam    
+  # konCam1C  59e-3/(NA*V)  #unphosphorylated RyR2
+#   konCam2C  0.92/(NA*V)
+#   konCam1N  22e-3/(NA*V)
+#   konCam2N  0.12/(NA*V)
+#   konCam1C1N    0.33/(NA*V)
+#   konCam2C1N    5.2/(NA*V)
+#   konCam1C2N    1.9/(NA*V)
+#   konCam4       60/(NA*V)
+#   koffCam1C     6.1
+#   koffCam2C     6.8
+#   koffCam1N     3.1
+#   koffCam2N     1.7
+#   koffCam1C1N   3.4
+#   koffCam2C1N   3.8
+#   koffCam1C2N   1.9
+#   koffCam4      2.3
+#   koncacam1c    44/(NA*V) #unphosphorylated RyR2
+#   koncacam2c    44/(NA*V)
+#   koncacam1n    76/(NA*V)
+#   koncacam2n    76/(NA*V)
+#   koffcacam1c   33
+#   koffcacam2c   4.9
+#   koffcacam1n   300
+#   koffcacam2n   60
+#   #CaM binding to phosphorylated RyR2
+#   konpcacam1c     19.7/(NA*V)
+#   konpcacam2c     0.3/(NA*V)
+#   konpcacam1n     7.3/(NA*V)
+#   konpcacam2n     0.03/(NA*V)
+#   konpcacam1c1n   1.1/(NA*V)
+#   konpcacam1c2n   0.63/(NA*V)
+#   konpcacam2c1n   1.73/(NA*V)
+#   konpcacam4      10/(NA*V)
+#   konpcacam0      1.27e-3/(NA*V)
+#   koffpcam        0.07
+#   k_p             0.08
+
+
+# end parameters
+
+# begin molecule types
+#   Ca()
+#   CaM(C~0~2,N~0~2,RyR2)
+#   RyR2(r,l,Ca~0~1,CaM)
+# end molecule types
+# begin compartments
+#   box 3 1  
+# end compartments
+
+ 
+
+# begin species
+#   @box:CaM(C~0,N~0,RyR2)   30*NA*V  
+#   @box:Ca()      10*NA*V
+#   @box:RyR2(r!1,l!4,Ca~0,CaM).RyR2(r!2,l!1,Ca~0,CaM).RyR2(r!3,l!2,Ca~0,CaM).RyR2(r!4,l!3,Ca~0,CaM)   80*NA*V/3
+# end species
+
+# begin observables
+#   Molecules CaM0  CaM(C~0,N~0)
+#   Molecules CaM2C CaM(C~2,N~0)
+#   Molecules CaM2N CaM(C~0,N~2)
+#   Molecules CaM4 CaM(C~2,N~2)
+#   Molecules k_CaM1C CaM(C~1,N~0,RyR2!1).RyR2(Ca~0,CaM!1)
+#   Molecules k_CaM2C CaM(C~2,N~0,RyR2!1).RyR2(Ca~0,CaM!1)
+#   Molecules k_CaM1N CaM(C~0,N~1,RyR2!1).RyR2(Ca~0,CaM!1)
+#   Molecules k_CaM2N CaM(C~0,N~2,RyR2!1).RyR2(Ca~0,CaM!1)
+#   Molecules k_CaM1C1N CaM(C~1,N~1,RyR2!1).RyR2(Ca~0,CaM!1)
+#   Molecules k_CaM1C2N CaM(C~1,N~2,RyR2!1).RyR2(Ca~0,CaM!1)
+#   Molecules k_CaM2C1N CaM(C~2,N~1,RyR2!1).RyR2(Ca~0,CaM!1)
+#   Molecules k_CaM4 CaM(C~2,N~2,RyR2!1).RyR2(Ca~0,CaM!1)
+#   Molecules pk_CaM1C CaM(C~1,N~0,RyR2!1).RyR2(Ca~1,CaM!1)
+#   Molecules pk_CaM2C CaM(C~2,N~0,RyR2!1).RyR2(Ca~1,CaM!1)
+#   Molecules pk_CaM1N CaM(C~0,N~1,RyR2!1).RyR2(Ca~1,CaM!1)
+#   Molecules pk_CaM2N CaM(C~0,N~2,RyR2!1).RyR2(Ca~1,CaM!1)
+#   Molecules pk_CaM1C1N CaM(C~1,N~1,RyR2!1).RyR2(Ca~1,CaM!1)
+#   Molecules pk_CaM1C2N CaM(C~1,N~2,RyR2!1).RyR2(Ca~1,CaM!1)
+#   Molecules pk_CaM2C1N CaM(C~2,N~1,RyR2!1).RyR2(Ca~1,CaM!1)
+#   Molecules pk_CaM4 CaM(C~2,N~2,RyR2!1).RyR2(Ca~1,CaM!1)
+  
+  
+  
+  
+
+# end observables
+
+
+
+# begin reaction rules
+# r1: Ca + CaM(C~0) <-> CaM(C~1)  kon1c,koff1c   #Ca bin
+# r2: Ca + CaM(N~0) <-> CaM(N~1)  kon1n, koff1n
+# r3: Ca + CaM(C~1) <-> CaM(C~2)  kon2c ,koff2c
+# r4: Ca + CaM(N~1) <-> CaM(N~2)  kon2n, koff2n 
+# r5: CaM(C~0,N~0,RyR2) + RyR2(Ca~0,CaM) <-> CaM(C~0,N~0,RyR2!1).RyR2(Ca~0,CaM!1)  konCam1C, koffCam1C  #CHANGE the parameter
+# r6: CaM(C~1,N~0,RyR2) + RyR2(Ca~0,CaM) <-> CaM(C~1,N~0,RyR2!1).RyR2(Ca~0,CaM!1)  konCam1C, koffCam1C    
+# r7: CaM(C~2,N~0,RyR2) + RyR2(Ca~0,CaM) <-> CaM(C~2,N~0,RyR2!1).RyR2(Ca~0,CaM!1)  konCam2C, koffCam2C 
+# r8: CaM(C~0,N~1,RyR2) + RyR2(Ca~0,CaM) <-> CaM(C~0,N~1,RyR2!1).RyR2(Ca~0,CaM!1)  konCam1N, koffCam1N
+# r9: CaM(C~0,N~2,RyR2) + RyR2(Ca~0,CaM) <-> CaM(C~0,N~2,RyR2!1).RyR2(Ca~0,CaM!1)  konCam2N, koffCam2N
+# r10: CaM(C~1,N~1,RyR2) + RyR2(Ca~0,CaM) <-> CaM(C~1,N~1,RyR2!1).RyR2(Ca~0,CaM!1)  konCam1C1N, koffCam1C1N
+# r11: CaM(C~2,N~1,RyR2) + RyR2(Ca~0,CaM) <-> CaM(C~2,N~1,RyR2!1).RyR2(Ca~0,CaM!1)  konCam2C1N, koffCam2C1N
+# r12: CaM(C~1,N~2,RyR2) + RyR2(Ca~0,CaM) <-> CaM(C~1,N~2,RyR2!1).RyR2(Ca~0,CaM!1)  konCam1C2N, koffCam1C2N
+# r13: CaM(C~2,N~2,RyR2) + RyR2(Ca~0,CaM) <-> CaM(C~2,N~2,RyR2!1).RyR2(Ca~0,CaM!1)  konCam4, koffCam4
+# r14: Ca + CaM(C~0,RyR2!1).RyR2(CaM!1) <-> CaM(C~1,RyR2!1).RyR2(CaM!1)  koncacam1c,  koffcacam1c
+# r15: Ca + CaM(C~1,RyR2!1).RyR2(CaM!1) <-> CaM(C~2,RyR2!1).RyR2(CaM!1)  koncacam2c,  koffcacam2c
+# r16: Ca + CaM(N~0,RyR2!1).RyR2(CaM!1) <-> CaM(N~1,RyR2!1).RyR2(CaM!1)  koncacam1n,  koffcacam1n
+# r17: Ca + CaM(N~1,RyR2!1).RyR2(CaM!1) <-> CaM(N~2,RyR2!1).RyR2(CaM!1)  koncacam2n,  koffcacam2n
+
+
+# #Have to implement which CaM is bound to RyR2 if needed later,slight difference in rates
+# r18: RyR2(r!1,CaM!+).RyR2(l!1,CaM!+,Ca~0) -> RyR2(r!1,CaM!+).RyR2(l!1,CaM!+,Ca~1) k_p
+# r19: RyR2(r!1,Ca~1).RyR2(l!1,CaM!+,Ca~0)  -> RyR2(r!1,Ca~1).RyR2(l!1,CaM!+,Ca~1)  k_p
+
+# r20: CaM(C~0,N~0,RyR2) + RyR2(Ca~1,CaM) -> CaM(C~0,N~0,RyR2!1).RyR2(Ca~1,CaM!1)  konpcacam0
+# r21: CaM(C~1,N~0,RyR2) + RyR2(Ca~1,CaM) -> CaM(C~1,N~0,RyR2!1).RyR2(Ca~1,CaM!1)  konpcacam1c     
+# r22: CaM(C~2,N~0,RyR2) + RyR2(Ca~1,CaM) -> CaM(C~2,N~0,RyR2!1).RyR2(Ca~1,CaM!1)  konpcacam2c  
+# r23: CaM(C~0,N~1,RyR2) + RyR2(Ca~1,CaM) -> CaM(C~0,N~1,RyR2!1).RyR2(Ca~1,CaM!1)  konpcacam1n 
+# r24: CaM(C~0,N~2,RyR2) + RyR2(Ca~1,CaM) -> CaM(C~1,N~2,RyR2!1).RyR2(Ca~1,CaM!1)  konpcacam2n 
+# r25: CaM(C~1,N~1,RyR2) + RyR2(Ca~1,CaM) -> CaM(C~1,N~1,RyR2!1).RyR2(Ca~1,CaM!1)  konpcacam1c1n
+# r26: CaM(C~2,N~1,RyR2) + RyR2(Ca~1,CaM) -> CaM(C~2,N~1,RyR2!1).RyR2(Ca~1,CaM!1)  konpcacam2c1n
+# r27: CaM(C~1,N~2,RyR2) + RyR2(Ca~1,CaM) -> CaM(C~1,N~2,RyR2!1).RyR2(Ca~1,CaM!1)  konpcacam1c2n
+# r28: CaM(C~2,N~2,RyR2) + RyR2(Ca~1,CaM) -> CaM(C~2,N~2,RyR2!1).RyR2(Ca~1,CaM!1)  konpcacam4 
+
+
+
+
+end reaction rules
+
+end model
+
+
