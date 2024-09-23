@@ -13,14 +13,12 @@ begin parameters
 # possibly one has to go back to Sunita Nadkarni's constants
   kon1c     168/(NA*V)  
   koff1c    2.6e3
-  kon1n     1440/(NA*V)
+  kon1n     15.4e2/(NA*V)
   koff1n    16000
   kon2c     25/(NA*V)
   koff2c    13
   kon2n     3.2e4/(NA*V)
-  koff2n    2.2e4
-  konCam    
-  # konCam1C  59e-3/(NA*V)  #unphosphorylated RyR2
+  koff2n    4.4e4
 #   konCam2C  0.92/(NA*V)
 #   konCam1N  22e-3/(NA*V)
 #   konCam2N  0.12/(NA*V)
