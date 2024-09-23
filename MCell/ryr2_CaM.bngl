@@ -10,7 +10,25 @@ begin parameters
 
 
 # For Ca-CaM binding use Faas, Raghavachari, Lisman & Mody, 2011 
-# possibly one has to go back to Sunita Nadkarni's constants
+# possibly one has to go back to Sunita Nadkarni's (Mahajan & Nadkarni, 2018)
+  # k1c_on = 6.8/(NA*V)  ## /uM/s
+  # k1c_off = 68  ## /s
+  # k2c_on = 6.8/(NA*V) ## /uM/s
+  # k2c_off = 10 ## /s
+  # k1n_on = 108/(NA*V) ## /uM/s	
+  # k1n_off = 4150 ## /s
+  # k2n_on = 108/(NA*V) ## /uM/s
+  # k2n_off = 800 ## /s
+ #Varun's original constants:
+  # kon1c     9.3/(NA*V)  
+  # koff1c    70
+  # kon1n     260/(NA*V)
+  # koff1n    4000
+  # kon2c     25/(NA*V)
+  # koff2c    10
+  # kon2n     300/(NA*V)
+  # koff2n    1000
+
   kon1c     168/(NA*V)  
   koff1c    2.6e3
   kon1n     15.4e2/(NA*V)
@@ -19,6 +37,9 @@ begin parameters
   koff2c    13
   kon2n     3.2e4/(NA*V)
   koff2n    4.4e4
+
+
+# konCam1C  59e-3/(NA*V)  #unphosphorylated RyR2
 #   konCam2C  0.92/(NA*V)
 #   konCam1N  22e-3/(NA*V)
 #   konCam2N  0.12/(NA*V)
