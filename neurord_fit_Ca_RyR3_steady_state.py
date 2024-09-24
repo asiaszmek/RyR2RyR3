@@ -14,7 +14,7 @@ exp_set='chen_et_al' #set of data files corresponding to model files; files may 
 mol={"RO": ["O1", "O2"]} #which molecule(s) to match in optimization
 tmpdir='/tmp/RyR3Ca'+dirname 
 os.chdir(dirname)
-kd = 1000
+kd = 2000
 # Use loadconc.CSV_conc_set if data to match are csv format (typically from wet experiments)
 exp = loadconc.CSV_conc_set(exp_set)
 
@@ -27,7 +27,7 @@ test_size=25 #for convergence
 P = aju.xml.XMLParam
 #list of parameters to change/optimize
 params = aju.optimize.ParamSet(
-    P('RyRCa1_fwd_rate', 0.00103, min=1e-7, max=1e-2,
+    P('RyRCa1_fwd_rate', 0.00098, min=1e-5, max=1e-2,
       xpath='//Reaction[@id="RyRCa1"]/forwardRate'),
     P('RyRCa1_bkw_rate', 0, fixed='RyRCa1_fwd_rate',
       constant=kd,
@@ -45,9 +45,9 @@ params = aju.optimize.ParamSet(
     P('RyRCa4_bkw', 0, fixed="RyRCa1_fwd_rate", constant=kd*4,
       xpath='//Reaction[@id="RyRCa4"]/reverseRate'),
     
-    P('Ca4RyR4_open_fwd_rate', 38.44, min=1e-3, max=1000,
+    P('Ca4RyR4_open_fwd_rate', 38, min=1e-3, max=1000,
       xpath='//Reaction[@id="RyRd"]/forwardRate'),
-    P('Ca4RyR4_open_bkw_rate', 3.02,  min=1e-3, max=1000,
+    P('Ca4RyR4_open_bkw_rate', 3,  min=1e-3, max=1000,
       xpath='//Reaction[@id="RyRd"]/reverseRate'),
     
     P('O1_flicker_fwd_rate', 0.0025 , min=1e-3, max=1000,
