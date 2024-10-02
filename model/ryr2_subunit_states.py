@@ -20,15 +20,15 @@ A = 3 #  k_rev in Ca+RyRCaM -> CaRyRCaM is multiplied by A
 counter = 1
 
 kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
-       "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
-       "2CaN":  0.1e-2, "RyR2Ca1": 1e-3, "RyR2Ca2": 0.75e-3,
+       "CaMCa2C": 3.15e-7, "CaMCa4": 3.15e-7, "2CaC": 6e-5,
+       "2CaN":  0.1e-3, "RyR2Ca1": 1e-3, "RyR2Ca2": 0.75e-3,
        "RyR2Ca3":5e-4, "RyR2Ca4": 2.5e-4, "RyR2Ca4O1": 38.4,
        "RyR2Ca4O1C1": 0.0025,
        "RyR2Ca4O2": 38.4e-3, "RyR2Ca4O2C1":2.5, "RyR2Ca4C1I": 11.28,
        "II2":1, "release": 5e-3}
 
 
-krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
+krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 2.59e-5,
        "2CaC": 9.1e-3, "2CaN": 1000e-3,"RyR2Ca1": 1,
        "RyR2Ca2": 2, "RyR2Ca3": 3, "RyR2Ca4": 4,
        "RyR2Ca4O1": 3,"RyR2Ca4O1C1": 0.77, "RyR2Ca4O2": 3e-3,
