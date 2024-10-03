@@ -1,0 +1,59 @@
+begin model
+
+begin parameters
+  MCELL_DIFFUSION_CONSTANT_3D_Ca  2e-6
+  MCELL_DIFFUSION_CONSTANT_3D_RyR2  0
+  NA      6.022e23/1e6  #uM
+  V       0.15121*1e-15 #uM
+  VOL_RXN 1
+
+
+
+
+  konRyR_Ca  1e3/(VA*V)
+  koffRyR_Ca 1e3	
+
+  konO1 1e3
+  koffO1 1e3
+
+
+
+# end parameters
+
+# begin molecule types
+  Ca()
+  RyR2(r, l, Ca~0~1, S~0~1~2)
+  #S~0 -- closed, S~1 -- open, S~2 -- inhibited
+end molecule types
+begin compartments
+  box 3 1  
+end compartments
+
+ 
+
+begin species
+
+  @box:Ca()      0.1*NA*V
+  @box:RyR2(r!1,l!4,Ca~0,S~0).RyR2(r!2,l!1,Ca~0,S~0).RyR2(r!3,l!2,Ca~0,S~0).RyR2(r!4,l!3,Ca~0,S~0)   0.1*NA*V
+end species
+
+begin observables
+  Molecules Ca Ca()
+ 
+  Molecules RyR_c RyR2(S~0)
+ 
+  
+
+end observables
+
+
+
+begin reaction rules
+ r1: Ca + RyR2(Ca~0) <-> RyR2(Ca~1) konRyR_Ca, koffRyR_Ca	
+ r2: RyR2(Ca~1,S~0) <-> RyR2(Ca~1,S~1) konO1, koffO1			
+
+end reaction rules
+
+end model
+
+
