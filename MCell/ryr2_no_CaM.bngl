@@ -7,8 +7,11 @@ begin parameters
   konRyR_Ca  1e3/(NA*V)
   koffRyR_Ca 1e3	
 
-  konO1 1e3
-  koffO1 1e3
+  konO1 2.79e3
+  koffO1 0.33e3
+
+  konC1 0.25e3
+  koffC1 0.6e3
 
 
 
@@ -16,8 +19,8 @@ end parameters
 
 begin molecule types
    Ca()
-   RyR2(r,l,Ca~0~1,S~0~1)
-  #S~0 -- closed, S~1 -- open, S~2 -- inhibited
+   RyR2(r,l,Ca~0~1,S~0~1~2)
+  #S~0 -- closed, S~1 -- open, S~2 -- closed
 end molecule types
 
  
@@ -25,15 +28,14 @@ end molecule types
 begin seed species
 
   Ca()      0.1*NA*V
-  #RyR2(Ca~0,S~0) 0.05*NA*V
-  RyR2(r!1,l!4,Ca~0,S~0).RyR2(r!2,l!1,Ca~0,S~0).RyR2(r!3,l!2,Ca~0,S~0).RyR2(r!4,l!3,Ca~0,S~0)   0.025*NA*V
+  RyR2(r!1,l!4,Ca~0,S~0).RyR2(r!2,l!1,Ca~0,S~0).RyR2(r!3,l!2,Ca~0,S~0).RyR2(r!4,l!3,Ca~0,S~0)   0.0125*NA*V
 end seed species
 
 begin observables
   Molecules Ca Ca()
-  Molecules RyR_c RyR2(Ca~0,S~0)
-  Molecules RyR_o RyR2(Ca~1,S~1)
-  
+  Molecules RyR_basal RyR2(r!1,l!4,Ca~0,S~0).RyR2(r!2,l!1,Ca~0,S~0).RyR2(r!3,l!2,Ca~0,S~0).RyR2(r!4,l!3,Ca~0,S~0)
+  Molecules RyR_o RyR2(r!1,l!4,Ca~1,S~1).RyR2(r!2,l!1,Ca~1,S~1).RyR2(r!3,l!2,Ca~1,S~1).RyR2(r!4,l!3,Ca~1,S~1)
+  Molecules RyR_closed_2 RyR2(r!1,l!4,Ca~1,S~2).RyR2(r!2,l!1,Ca~1,S~2).RyR2(r!3,l!2,Ca~1,S~2).RyR2(r!4,l!3,Ca~1,S~2)
 
 end observables
 
@@ -42,10 +44,10 @@ end observables
 begin reaction rules
 r1: Ca + RyR2(Ca~0,S~0) <-> RyR2(Ca~1,S~0) konRyR_Ca, koffRyR_Ca	
 r2: RyR2(Ca~1,S~0) <-> RyR2(Ca~1,S~1) konO1, koffO1			
-
+r3: RyR2(Ca~1,S~1) <-> RyR2(Ca~1,S~2) konC1, koffC1			
 end reaction rules
 
 end model
 
 
-simulate({method=>"ode", t_end=>20000,n_steps=>1000})
+simulate({method=>"ssa", t_end=>200,n_steps=>100000})
