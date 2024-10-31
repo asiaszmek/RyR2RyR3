@@ -28,9 +28,9 @@ P = aju.xml.XMLParam
 #list of parameters to change/optimize
 params = aju.optimize.ParamSet(
     
-    P('Ca4RyR4_open_fwd_rate',1e-6 , min=1e-12, max=1,
+    P('Ca4RyR4_open_fwd_rate',4e-7 , min=1e-12, max=1e-3,
       xpath='//Reaction[@id="RyR4Ca4"]/forwardRate'),
-    P('Ca4RyR4_open_bkw_rate', 0.01,  min=1e-3, max=1000,
+    P('Ca4RyR4_open_bkw_rate', 0.0025,  min=1e-5, max=1,
       xpath='//Reaction[@id="RyR4Ca4"]/reverseRate'),
 
     # P('Ca4RyR4_open_fwd_rate', 38.44, min=1e-3, max=1000,

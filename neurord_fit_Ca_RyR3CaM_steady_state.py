@@ -84,7 +84,7 @@ mean_dict,std_dict,CV=converge.iterate_fit(fit,test_size,popsize)
 ########################################### Done with fitting
 
 #to look at fit history
-aju.drawing.plot_history(fit,fit.measurement)
+#aju.drawing.plot_history(fit,fit.measurement)
 if callable(fit.optimizer.result):
     result = fit.optimizer.result()
 else:
