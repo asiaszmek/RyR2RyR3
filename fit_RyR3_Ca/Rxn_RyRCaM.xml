@@ -72,7 +72,7 @@
     <Reactant specieID="O2"/>
     <Product specieID="Ca4RyR4CaMC"/>
     <forwardRate>0.07e2</forwardRate>
-    <reverseRate>0.35e2</reverseRate>
+    <reverseRate>7e2</reverseRate>
   </Reaction>
   
   

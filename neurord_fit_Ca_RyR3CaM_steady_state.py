@@ -1,18 +1,34 @@
 #How to use :doc:`ajustador` to fit a NeuroRD model of CamKII activation
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+import os
+from lxml import etree
 import ajustador as aju
 import numpy as np
 from ajustador import drawing,loadconc,nrd_fitness
 from ajustador.helpers import converge,save_params
-import os
-kd = 1000
+
+# constants:
+kd = 667   # Ca affinity for RyRCaM
+
 dirname='fit_RyR3CaM_Ca/'  #where data and model file are stored.  Can be different than current directory. Multiple datafiles allowed
 #Set of model files that have first part of file name in common.  All included files must be in same directory.
 model_set='model'
 exp_set='combined' #set of data files corresponding to model files; files may contain several molecules
-mol={"RO": ["O1",
-            "O2",]} #which molecule(s) to match in optimization
+
+#which molecule(s) to match in optimization
+fname_xml = os.path.join(dirname, "Rxn_RyRCaM.xml")
+tree = etree.parse(fname_xml)
+root = tree.getroot()
+mol_list = []
+for son in root:
+    if son.tag == "Specie":
+        if "O" in son.attrib["id"]:
+            mol_list.append(son.attrib["id"])
+
+mol={"RO": mol_list}
+
+print(mol)
+
 tmpdir='/tmp/RyR3CaM_Ca_ss'+dirname 
 os.chdir(dirname)
 
@@ -27,43 +43,116 @@ test_size=25 #for convergence
 
 P = aju.xml.XMLParam
 #list of parameters to change/optimize
-params = aju.optimize.ParamSet(
+my_params = []
+counters = {}
+for son in root:
+    if son.tag == "Reaction":
+        species = []
+        for grandson in son:
+            try:
+                species.append(grandson.attrib["specieID"])
+            except KeyError:
+                continue
+    
+        reac_id = son.attrib["id"]
+        forward_path = '//Reaction[@id="%s"]/forwardRate' % reac_id
+        reverse_path = '//Reaction[@id="%s"]/reverseRate' % reac_id
+        if species[-1].endswith("O1"):
+            continue
+        if species[-1].endswith("O2"):
+            continue
+        if species[-1].endswith("C1"):
+            continue
+        if species[-1].endswith("I"):
+            continue
+        if species[-1].startswith("Ca1") and species[0].startswith("RyR"):
+            print(species, reac_id)
+            if "Ca1" not in counters:
+                counters["Ca1"] = 0
+                my_params.append(P('Ca1RyR_fwd_rate', 0.003, min=1e-7,
+                                    max=1,
+                                    xpath=forward_path))
+            else:
+                my_params.append(P('Ca1RyR_fwd_rate%d'%counters["Ca1"], 0,
+                                   fixed='Ca1RyR_fwd_rate',
+                                   constant=1,
+                                   xpath=forward_path))
+            
+            my_params.append(P('Ca1RyR_bkw_rate%d'%counters["Ca1"], 0,
+                               fixed='Ca1RyR_fwd_rate',
+                               constant=kd,
+                               xpath=reverse_path))
+            counters["Ca1"] += 1
+        elif species[-1].startswith("Ca2") and species[0].startswith("Ca1"):
+            print(species, reac_id)
+            if "Ca2" not in counters:
+                counters["Ca2"] = 0
+            my_params.append(P('Ca2RyR_fwd_rate%d'%counters["Ca2"], 0,
+                                   fixed='Ca1RyR_fwd_rate',
+                                   constant=0.75,
+                                   xpath=forward_path))
+            
+            my_params.append(P('Ca2RyR_bkw_rate%d'%counters["Ca2"], 0,
+                               fixed='Ca1RyR_fwd_rate',
+                               constant=kd*2,
+                               xpath=reverse_path))
+            counters["Ca2"] += 1
+        elif species[-1].startswith("Ca3") and species[0].startswith("Ca2"):
+            print(species, reac_id)
+            if "Ca3" not in counters:
+                counters["Ca3"] = 0
+            my_params.append(P('Ca3RyR_fwd_rate%d'%counters["Ca3"], 0,
+                                   fixed='Ca1RyR_fwd_rate',
+                                   constant=0.5,
+                                   xpath=forward_path))
+            
+            my_params.append(P('Ca3RyR_bkw_rate%d'%counters["Ca3"], 0,
+                               fixed='Ca1RyR_fwd_rate',
+                               constant=kd*3,
+                               xpath=reverse_path))
+            counters["Ca3"] += 1
+        elif species[-1].startswith("Ca4") and species[0].startswith("Ca3"):
+            print(species, reac_id)
+                        
+            if "Ca4" not in counters:
+                counters["Ca4"] = 0
+            my_params.append(P('Ca4RyR_fwd_rate%d'%counters["Ca4"], 0,
+                                   fixed='Ca1RyR_fwd_rate',
+                                   constant=0.25,
+                                   xpath=forward_path))
+            
+            my_params.append(P('Ca4RyR_bkw_rate%d'%counters["Ca4"], 0,
+                               fixed='Ca1RyR_fwd_rate',
+                               constant=kd*4,
+                               xpath=reverse_path))
+            counters["Ca4"] += 1
 
-    P('Ca4RyR4_open_fwd_rate', 5.21, min=1e-3, max=1000,
-      xpath='//Reaction[@id="RyRd"]/forwardRate'),
-    P('Ca4RyR4_open_bkw_rate', 8.08,  min=1e-3, max=1000,
-      xpath='//Reaction[@id="RyRd"]/reverseRate'),
- 
-    
-    P('O1_flicker_fwd_rate', 0.16 , min=1e-6, max=1000,
-      xpath='//Reaction[@id="RyRf"]/forwardRate'),
-    P('O1_flicker_bkw_rate', 31.61, min=1e-3, max=1000,
-      xpath='//Reaction[@id="RyRf"]/reverseRate'),
+        
+        elif species[-1].endswith("I2"):
+            print(species, reac_id)
+            if "I2" not in counters:
+                counters["I2"] = 0
+                my_params.append(P("I2_flicker_fwd_rate", 1,
+                                   min=1e-3, max=1e3,
+                                   xpath=forward_path))        
+                my_params.append(P("I2_flicker_bkw_rate", 0.6,
+                                   min=1e-3, max=1e3,
+                                   xpath=reverse_path))
+            else:
+                my_params.append(P("I2_flicker_fwd_rate%d" % counters["I2"], 0,
+                                   fixed="I2_flicker_fwd_rate",
+                                   constant=1,
+                                   xpath=forward_path))        
+                my_params.append(P("I2_flicker_bkw_rate%d" % counters["I2"], 0,
+                                   fixed="I2_flicker_bkw_rate", constant=1,
+                                   xpath=reverse_path))
+            counters["I2"] += 1
 
-    
-    P('Ca4RyR4_O2_open_fwd_rate', 0, fixed='Ca4RyR4_open_fwd_rate',
-      constant=1e-2,
-      xpath='//Reaction[@id="RyRe"]/forwardRate'),
-    P('Ca4RyR4_O2_open_bkw_rate', 0, fixed='Ca4RyR4_open_bkw_rate',
-      constant=1e-2,
-      xpath='//Reaction[@id="RyRe"]/reverseRate'),
-    
-    P('O2_flicker_fwd_rate',  0, fixed='O1_flicker_fwd_rate',
-      constant=1e2,
-       xpath='//Reaction[@id="RyRg"]/forwardRate'),
-    P('O2_flicker_bkw_rate', 0, fixed='O1_flicker_bkw_rate',
-      constant=1e2,
-      xpath='//Reaction[@id="RyRg"]/reverseRate'),
-   
-    P('O2_I_flicker_fwd_rate', 4.37, min=1e-3, max=1000,
-      xpath='//Reaction[@id="RyRh"]/forwardRate'),
-    P('O2_I_flicker_bkw_rate', 0.94, min=1e-3, max=1000,
-      xpath='//Reaction[@id="RyRh"]/reverseRate'),
- 
-    
-)
+params = aju.optimize.ParamSet(*my_params)
+                             
 
-###################### END CUSTOMIZATION #######################################
+
+# ###################### END CUSTOMIZATION #######################################
 
 fitness = nrd_fitness.specie_concentration_fitness(species_list=mol)
 
@@ -84,7 +173,7 @@ mean_dict,std_dict,CV=converge.iterate_fit(fit,test_size,popsize)
 ########################################### Done with fitting
 
 #to look at fit history
-#aju.drawing.plot_history(fit,fit.measurement)
+aju.drawing.plot_history(fit,fit.measurement)
 if callable(fit.optimizer.result):
     result = fit.optimizer.result()
 else:

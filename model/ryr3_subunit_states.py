@@ -1,39 +1,69 @@
 import itertools
+import argparse
 from lxml import etree
 
-fname = "Rxn_module_RyR3_CaM.xml"
 
-#  Keep CaM binding constants, it's CaMBD2, which is probably the most conserved
-#  Does CaM activate RyR3? It's a pretty common sentence in literature and
-#  apparently it means that, when CaM is added RyR3 is open more often
+default_fname = "Rxn_module_RyR3_CaM.xml"
+
+parser = argparse.ArgumentParser(description='Generate RyR2-CaM-Ca_cyt reactions')
+parser.add_argument('--release', default=False,
+                    help='Add Ca release from the ER')
+parser.add_argument('--CaM_k_rev_multiplier', type=float, default=1,
+                    help='Increase CaM-RyR binding k_rev to simulate oxidative conditions')
+parser.add_argument('--filename', default=default_fname,
+                    help="Destination filename")
 
 
 
+A = 0.333
+
+counter = 1
 
 kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
        "2CaN":  0.1e-2, "RyR3Ca1": 1e-3, "RyR3Ca2": 0.75e-3,
-       "RyR3Ca3":5e-4, "RyR3Ca4": 2.5e-4, "RyR3Ca4O1": 38.4, "RyR3Ca4O1C1": 0.0025,
-       "RyR3Ca4O2": 38.4e-3, "RyR3Ca4O2C1":2.5, "RyR3Ca4C1I": 11.28,
-       "CaMRyR3Ca1": 1e-3, "CaMRyR3Ca2": 0.75e-3,
-       "CaMRyR3Ca3":5e-4, "CaMRyR3Ca4": 2.5e-4, "CaMRyR3Ca4O1": 5.21,
-       "CaMRyR3Ca4O1C1": 0.16,
-       "CaMRyR3Ca4O2": 5.21e-3, "CaMRyR3Ca4O2C1":0.16e3, "CaMRyR3Ca4C1I": 4.37}
+       "RyR3Ca3":5e-4, "RyR3Ca4": 2.5e-4, "RyR3Ca4O1": 97.2,
+       "RyR3Ca4O1C1": 0.07,
+       "RyR3Ca4O2": 97.2e-2, "RyR3Ca4O2C1":3.5, "RyR3Ca4C1I": 1.38,
+       "II2":1, "release": 5e-3
+      }
 
 
 krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
-       "2CaC": 9.1e-3, "2CaN": 1000e-3,"RyR3Ca1": 1,
-       "RyR3Ca2": 2, "RyR3Ca3": 3, "RyR3Ca4": 4,
-       "RyR3Ca4O1": 3,"RyR3Ca4O1C1": 0.77, "RyR3Ca4O2": 3e-3,
-       "RyR3Ca4O2C1": 0.77e3,  "RyR3Ca4C1I":0.05,
-       "CaMRyR3Ca1": 1,
-       "CaMRyR3Ca2": 2, "CaMRyR3Ca3": 3, "CaMRyR3Ca4": 4,
-       "CaMRyR3Ca4O1": 8.08,"CaMRyR3Ca4O1C1": 32, "CaMRyR3Ca4O2": 8.08e-3,
-       "CaMRyR3Ca4O2C1": 32e3,  "CaMRyR3Ca4C1I":0.95}
-counter = 1
+       "2CaC": 9.1e-3, "2CaN": 1000e-3,"RyR3Ca1": 2,
+       "RyR3Ca2": 4, "RyR3Ca3": 6, "RyR3Ca4": 8,
+       "RyR3Ca4O1": 0.001,"RyR3Ca4O1C1": 7, "RyR3Ca4O2": 0.001e-2,
+       "RyR3Ca4O2C1": 7e2,  "RyR3Ca4C1I":67,
+       "II2":0.06, "release": 5e-3
+       }
+
+for i in range(1, 5):
+    new_specie = "CaMRyR3Ca%d"%i
+    old_specie = "RyR3Ca%d"%i
+    kfs[new_specie] = kfs[old_specie]
+    krs[new_specie] = A*krs[old_specie]
+
+open_close = ["RyR3Ca4O1", "RyR3Ca4O1C1",
+              "RyR3Ca4O2", "RyR3Ca4O2C1", "RyR3Ca4C1I"]
+    
+for specie in open_close:
+    new_specie = "CaM%s" % specie
+    kfs[new_specie] = kfs[specie]
+    krs[new_specie] = krs[specie]
+
+
+def write_rates(root1, k_forward, k_reverse):
+    kf = etree.SubElement(root1, "forwardRate")
+    kf.text = str(k_forward)
+    kr = etree.SubElement(root1, "reverseRate")
+    kr.text = str(k_reverse)
+    q = etree.SubElement(root1, "Q10")
+    q.text = ".2"
+
 
 def add_reaction(root, name, what, new_name):
     global counter
+    multiplier = 1
     my_r = etree.SubElement(root, "Reaction",
                             name=name+"_"+what+"_"+str(counter),
                             id=name+"_"+what+"_"+str(counter))
@@ -42,17 +72,22 @@ def add_reaction(root, name, what, new_name):
         etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
     elif what in ["CaM", "CaMCa2C", "CaMCa4"]:
         etree.SubElement(my_r, "Reactant", specieID=what)
+        if name.startswith("Ca"):
+            Ca_no = int(name.split("_")[0][-1])
+            if "CaM" not in name:
+                CaM_no = 0
+                if CaM_no == 0:
+                    multiplier= A**(Ca_no-CaM_no)
+  
     elif "O1" in what or "O2" in what or "C1" in what or "I" in what:
         pass
+    elif what == "release":
+        etree.SubElement(my_r, "Reactant", specieID="CaER")
+        etree.SubElement(my_r, "Product", specieID="Ca")
     else:
         etree.SubElement(my_r, "Reactant", specieID="Ca")
     etree.SubElement(my_r, "Product", specieID=new_name)
-    kf = etree.SubElement(my_r, "forwardRate")
-    kf.text = str(kfs[what])
-    kr = etree.SubElement(my_r, "reverseRate")
-    kr.text = str(krs[what])
-    q = etree.SubElement(my_r, "Q10")
-    q.text = ".2"
+    write_rates(my_r, kfs[what], krs[what]*multiplier)
     counter += 1
 
     
@@ -70,6 +105,14 @@ def generate_name(a, b, c, d=0):
     return name
 
 if __name__ == "__main__":
+    args = parser.parse_args()
+    fname = args.filename
+    if args.CaM_k_rev_multiplier > 1:
+        krs["CaM"] = args.CaM_k_rev_multiplier*krs["CaM"]
+        krs["CaMCa2C"] = args.CaM_k_rev_multiplier*krs["CaMCa2C"]
+        krs["CaMCa4"] = args.CaM_k_rev_multiplier*krs["CaMCa4"]
+
+  
     states = set()
     for i in range(0,5):
         for j in range(0, 5):
@@ -137,7 +180,10 @@ if __name__ == "__main__":
         etree.SubElement(my_rxn_file, "Specie", name="%s_I" % specie,
                          id="%s_I" % specie, kdiff="0",
                          kdiffunit="mu2/s")
-
+        if "CaMCa4" in specie:
+            etree.SubElement(my_rxn_file, "Specie", name="%s_I2" % specie,
+                             id="%s_I2" % specie, kdiff="0",
+                             kdiffunit="mu2/s")
 
     for l in [0, 1, 2, 3, 4]:
         for (i,  j, k) in sorted(states):
@@ -221,9 +267,21 @@ if __name__ == "__main__":
                          "%s_C1"%specie)
             add_reaction(my_rxn_file, "%s_C1" % specie,"CaMRyR3Ca4C1I",
                          "%s_I"%specie)
-
+            if "CaMCa4" in specie:
+                add_reaction(my_rxn_file, "%s_O1" % specie,"II2",
+                             "%s_I2"%specie)
+                add_reaction(my_rxn_file, "%s_O2" % specie,"II2",
+                             "%s_I2"%specie)
+    if args.release:
+        etree.SubElement(my_rxn_file, "Specie", name="CaER",
+                         id="CaER", kdiff="10", kdiffunit="mu2/s")
+        for specie in ryr_species_to_open:
+             add_reaction(my_rxn_file, "%s_O1" % specie, "release",
+                          "%s_O1" % specie) 
+             add_reaction(my_rxn_file, "%s_O2" % specie, "release",
+                          "%s_O2" % specie) 
                 
     f = open(fname, "w")
     f.write(etree.tostring(my_rxn_file, pretty_print=True).decode("utf-8"))
     f.close()
-    print(ryr_species_to_open)
+
