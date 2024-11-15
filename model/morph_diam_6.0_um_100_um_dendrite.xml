@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Morphology>
+  <Segment id="seg01" region="dend01">
+    <start x="0.0" y="1.0" z="0.0" r="3.0"/>
+    <end x="1.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg02" region="dend02">
+    <start on="seg01" at="end" r="3.0"/>
+    <end x="2.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg03" region="dend03">
+    <start on="seg02" at="end" r="3.0"/>
+    <end x="3.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg04" region="dend04">
+    <start on="seg03" at="end" r="3.0"/>
+    <end x="4.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg05" region="dend05">
+    <start on="seg04" at="end" r="3.0"/>
+    <end x="5.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg06" region="dend06">
+    <start on="seg05" at="end" r="3.0"/>
+    <end x="6.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg07" region="dend07">
+    <start on="seg06" at="end" r="3.0"/>
+    <end x="7.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg08" region="dend08">
+    <start on="seg07" at="end" r="3.0"/>
+    <end x="8.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg09" region="dend09">
+    <start on="seg08" at="end" r="3.0"/>
+    <end x="9.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg10" region="dend10">
+    <start on="seg09" at="end" r="3.0"/>
+    <end x="10.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg11" region="dend11">
+    <start on="seg10" at="end" r="3.0"/>
+    <end x="11.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg12" region="dend12">
+    <start on="seg11" at="end" r="3.0"/>
+    <end x="12.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg13" region="dend13">
+    <start on="seg12" at="end" r="3.0"/>
+    <end x="13.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg14" region="dend14">
+    <start on="seg13" at="end" r="3.0"/>
+    <end x="14.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg15" region="dend15">
+    <start on="seg14" at="end" r="3.0"/>
+    <end x="15.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg16" region="dend16">
+    <start on="seg15" at="end" r="3.0"/>
+    <end x="16.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg17" region="dend17">
+    <start on="seg16" at="end" r="3.0"/>
+    <end x="17.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg18" region="dend18">
+    <start on="seg17" at="end" r="3.0"/>
+    <end x="18.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg19" region="dend19">
+    <start on="seg18" at="end" r="3.0"/>
+    <end x="19.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg20" region="dend20">
+    <start on="seg19" at="end" r="3.0"/>
+    <end x="20.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+
+  <Segment id="seg21" region="dend21">
+    <start on="seg20" at="end" r="3.0"/>
+    <end x="21.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg22" region="dend22">
+    <start on="seg21" at="end" r="3.0"/>
+    <end x="22.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg23" region="dend23">
+    <start on="seg22" at="end" r="3.0"/>
+    <end x="23.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg24" region="dend24">
+    <start on="seg23" at="end" r="3.0"/>
+    <end x="24.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg25" region="dend25">
+    <start on="seg24" at="end" r="3.0"/>
+    <end x="25.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg26" region="dend26">
+    <start on="seg25" at="end" r="3.0"/>
+    <end x="26.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg27" region="dend27">
+    <start on="seg26" at="end" r="3.0"/>
+    <end x="27.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg28" region="dend28">
+    <start on="seg27" at="end" r="3.0"/>
+    <end x="28.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg29" region="dend29">
+    <start on="seg28" at="end" r="3.0"/>
+    <end x="29.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg30" region="dend30">
+    <start on="seg29" at="end" r="3.0"/>
+    <end x="30.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>  
+  <Segment id="seg31" region="dend31">
+    <start on="seg30" at="end" r="3.0"/>
+    <end x="31.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg32" region="dend32">
+    <start on="seg31" at="end" r="3.0"/>
+    <end x="32.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg33" region="dend33">
+    <start on="seg32" at="end" r="3.0"/>
+    <end x="33.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg34" region="dend34">
+    <start on="seg33" at="end" r="3.0"/>
+    <end x="34.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg35" region="dend35">
+    <start on="seg34" at="end" r="3.0"/>
+    <end x="35.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg36" region="dend36">
+    <start on="seg35" at="end" r="3.0"/>
+    <end x="36.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg37" region="dend37">
+    <start on="seg36" at="end" r="3.0"/>
+    <end x="37.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg38" region="dend38">
+    <start on="seg37" at="end" r="3.0"/>
+    <end x="38.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg39" region="dend39">
+    <start on="seg38" at="end" r="3.0"/>
+    <end x="39.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg40" region="dend40">
+    <start on="seg39" at="end" r="3.0"/>
+    <end x="40.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>  
+  <Segment id="seg41" region="dend41">
+    <start on="seg40" at="end" r="3.0"/>
+    <end x="41.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg42" region="dend42">
+    <start on="seg41" at="end" r="3.0"/>
+    <end x="42.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg43" region="dend43">
+    <start on="seg42" at="end" r="3.0"/>
+    <end x="43.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg44" region="dend44">
+    <start on="seg43" at="end" r="3.0"/>
+    <end x="44.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg45" region="dend45">
+    <start on="seg44" at="end" r="3.0"/>
+    <end x="45.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg46" region="dend46">
+    <start on="seg45" at="end" r="3.0"/>
+    <end x="46.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg47" region="dend47">
+    <start on="seg46" at="end" r="3.0"/>
+    <end x="47.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg48" region="dend48">
+    <start on="seg47" at="end" r="3.0"/>
+    <end x="48.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg49" region="dend49">
+    <start on="seg48" at="end" r="3.0"/>
+    <end x="49.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg50" region="dend50">
+    <start on="seg49" at="end" r="3.0"/>
+    <end x="50.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>  
+  <Segment id="seg51" region="dend51">
+    <start on="seg50" at="end" r="3.0"/>
+    <end x="51.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+    <Segment id="seg52" region="dend52">
+    <start on="seg51" at="end" r="3.0"/>
+    <end x="52.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg53" region="dend53">
+    <start on="seg52" at="end" r="3.0"/>
+    <end x="53.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg54" region="dend54">
+    <start on="seg53" at="end" r="3.0"/>
+    <end x="54.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg55" region="dend55">
+    <start on="seg54" at="end" r="3.0"/>
+    <end x="55.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg56" region="dend56">
+    <start on="seg55" at="end" r="3.0"/>
+    <end x="56.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg57" region="dend57">
+    <start on="seg56" at="end" r="3.0"/>
+    <end x="57.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg58" region="dend58">
+    <start on="seg57" at="end" r="3.0"/>
+    <end x="58.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg59" region="dend59">
+    <start on="seg58" at="end" r="3.0"/>
+    <end x="59.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg60" region="dend60">
+    <start on="seg59" at="end" r="3.0"/>
+    <end x="60.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>  
+  <Segment id="seg61" region="dend61">
+    <start on="seg60" at="end" r="3.0"/>
+    <end x="61.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+
+  <Segment id="seg62" region="dend62">
+    <start on="seg61" at="end" r="3.0"/>
+    <end x="62.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg63" region="dend63">
+    <start on="seg62" at="end" r="3.0"/>
+    <end x="63.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg64" region="dend64">
+    <start on="seg63" at="end" r="3.0"/>
+    <end x="64.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg65" region="dend65">
+    <start on="seg64" at="end" r="3.0"/>
+    <end x="65.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg66" region="dend66">
+    <start on="seg65" at="end" r="3.0"/>
+    <end x="66.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg67" region="dend67">
+    <start on="seg66" at="end" r="3.0"/>
+    <end x="67.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg68" region="dend68">
+    <start on="seg67" at="end" r="3.0"/>
+    <end x="68.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg69" region="dend69">
+    <start on="seg68" at="end" r="3.0"/>
+    <end x="69.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg70" region="dend70">
+    <start on="seg69" at="end" r="3.0"/>
+    <end x="70.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>  
+  <Segment id="seg71" region="dend71">
+    <start on="seg70" at="end" r="3.0"/>
+    <end x="71.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+
+  <Segment id="seg72" region="dend72">
+    <start on="seg71" at="end" r="3.0"/>
+    <end x="72.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg73" region="dend73">
+    <start on="seg72" at="end" r="3.0"/>
+    <end x="73.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg74" region="dend74">
+    <start on="seg73" at="end" r="3.0"/>
+    <end x="74.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg75" region="dend75">
+    <start on="seg74" at="end" r="3.0"/>
+    <end x="75.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg76" region="dend76">
+    <start on="seg75" at="end" r="3.0"/>
+    <end x="76.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg77" region="dend77">
+    <start on="seg76" at="end" r="3.0"/>
+    <end x="77.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg78" region="dend78">
+    <start on="seg77" at="end" r="3.0"/>
+    <end x="78.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg79" region="dend79">
+    <start on="seg78" at="end" r="3.0"/>
+    <end x="79.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg80" region="dend80">
+    <start on="seg79" at="end" r="3.0"/>
+    <end x="80.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>  
+  <Segment id="seg81" region="dend81">
+    <start on="seg80" at="end" r="3.0"/>
+    <end x="81.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+
+  <Segment id="seg82" region="dend82">
+    <start on="seg81" at="end" r="3.0"/>
+    <end x="82.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg83" region="dend83">
+    <start on="seg82" at="end" r="3.0"/>
+    <end x="83.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg84" region="dend84">
+    <start on="seg83" at="end" r="3.0"/>
+    <end x="84.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg85" region="dend85">
+    <start on="seg84" at="end" r="3.0"/>
+    <end x="85.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg86" region="dend86">
+    <start on="seg85" at="end" r="3.0"/>
+    <end x="86.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg87" region="dend87">
+    <start on="seg86" at="end" r="3.0"/>
+    <end x="87.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg88" region="dend88">
+    <start on="seg87" at="end" r="3.0"/>
+    <end x="88.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg89" region="dend89">
+    <start on="seg88" at="end" r="3.0"/>
+    <end x="89.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg90" region="dend90">
+    <start on="seg89" at="end" r="3.0"/>
+    <end x="90.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>  
+  <Segment id="seg91" region="dend91">
+    <start on="seg90" at="end" r="3.0"/>
+    <end x="91.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg92" region="dend92">
+    <start on="seg91" at="end" r="3.0"/>
+    <end x="92.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg93" region="dend93">
+    <start on="seg92" at="end" r="3.0"/>
+    <end x="93.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg94" region="dend94">
+    <start on="seg93" at="end" r="3.0"/>
+    <end x="94.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg95" region="dend95">
+    <start on="seg95" at="end" r="3.0"/>
+    <end x="95.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg96" region="dend96">
+    <start on="seg95" at="end" r="3.0"/>
+    <end x="96.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg97" region="dend97">
+    <start on="seg96" at="end" r="3.0"/>
+    <end x="97.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg98" region="dend98">
+    <start on="seg97" at="end" r="3.0"/>
+    <end x="98.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg99" region="dend99">
+    <start on="seg98" at="end" r="3.0"/>
+    <end x="99.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+  <Segment id="seg100" region="dend100">
+    <start on="seg99" at="end" r="3.0"/>
+    <end x="100.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>  
+  <Segment id="seg101" region="dend101">
+    <start on="seg100" at="end" r="3.0"/>
+    <end x="101.0" y="1.0" z="0.0" r="3.0"/>
+  </Segment>
+
+  
+</Morphology>
+
