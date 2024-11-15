@@ -5,7 +5,10 @@
   <ConcentrationSet>
     <NanoMolarity specieID="RyR" value="50"/>
     <NanoMolarity specieID="Ca" value="100"/>
-    <NanoMolarity specieID="CaM" value="8000"/>
+    <NanoMolarity specieID="CaM" value="20000"/>
+    <NanoMolarity specieID="GAP43" value="20000"/>
+    <NanoMolarity specieID="Neurogranin" value="20000"/>
+   
   </ConcentrationSet>
 
 </InitialConditions>

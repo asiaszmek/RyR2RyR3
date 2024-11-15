@@ -18,6 +18,8 @@
  
   <Specie name="Ng" id="Ng" kdiff="0" kdiffunit="mu2/s" />
   <Specie name="NgCaM" id="NgCaM" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="GAP43" id="GAP43" kdiff="0" kdiffunit="mu2/s" />
+  <Specie name="GAP43CaM" id="GAP43CaM" kdiff="0" kdiffunit="mu2/s" />
   <!-- -->
   <Specie name="CaM" id="CaM" kdiff="4" kdiffunit="mu2/s" />
   <!--Calmodulin-->
@@ -176,4 +178,20 @@
     <Q10>0.2</Q10>
   </Reaction>
 
+  <!-- Kubota, Putkey, Waxham, 2007, Biophys J, 92:3848-3859, constants
+       k5 and k_5-->
+  <!--2a) GAP43  + CaM
+      <-> GAP43CaM -->
+  <!--I step of the Neurogranin with 3x k_f (Zhabotinsky 2006),
+       neurogranin is similar to GAP43 (neuromodulin) -->
+  <Reaction name="NgCaM_bind" id="NgCaM_bind">
+    <Reactant specieID="CaM" />
+    <Reactant specieID="Ng" />
+    <Product specieID="NgCaM" />
+    <forwardRate>84.e-6</forwardRate>
+    <reverseRate>36.e-3</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+
+  
 </ReactionScheme>
