@@ -49,38 +49,38 @@
  <Reaction name="RyRd" id="RyRd">
     <Reactant specieID="Ca4RyR4CaM"/>
     <Product specieID="O1"/>
-    <forwardRate>9.82</forwardRate>
-    <reverseRate>0.000147</reverseRate>
+    <forwardRate>191</forwardRate>
+    <reverseRate>0.666</reverseRate>
   </Reaction>
 
   <Reaction name="RyRe" id="RyRe">
     <Reactant specieID="Ca4RyR4CaM"/>
     <Product specieID="O2"/>
-    <forwardRate>9.82e-3</forwardRate>
-    <reverseRate>0.000147e-3</reverseRate>
+    <forwardRate>191e-3</forwardRate>
+    <reverseRate>0.666e-3</reverseRate>
   </Reaction>
   
   <Reaction name="RyRf" id="RyRf">
     <Reactant specieID="O1"/>
     <Product specieID="Ca4RyR4CaMC"/>
-    <forwardRate>0.00136</forwardRate>
-    <reverseRate>0.0272</reverseRate>
+    <forwardRate>0.00216</forwardRate>
+    <reverseRate>0.096</reverseRate>
   </Reaction>
 
 
   <Reaction name="RyRg" id="RyRg">
     <Reactant specieID="O2"/>
     <Product specieID="Ca4RyR4CaMC"/>
-    <forwardRate>0.00136e3</forwardRate>
-    <reverseRate>0.0272e3</reverseRate>
+    <forwardRate>0.00216e3</forwardRate>
+    <reverseRate>0.096e3</reverseRate>
   </Reaction>
   
   
   <Reaction name="RyRh" id="RyRh">
     <Reactant specieID="Ca4RyR4CaMC"/>
     <Product specieID="RyR4CaMI"/>
-    <forwardRate>7.88</forwardRate>
-    <reverseRate>3.18</reverseRate>
+    <forwardRate>0.88</forwardRate>
+    <reverseRate>0.13</reverseRate>
   </Reaction>
 
 
