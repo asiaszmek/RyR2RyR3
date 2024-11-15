@@ -17,7 +17,7 @@
     <Reactant specieID="Ca"/>
     <Product specieID="Ca1RyR4CaM"/>
     <forwardRate>10e-3</forwardRate>
-    <reverseRate>20</reverseRate>
+    <reverseRate>2.5</reverseRate>
   </Reaction>
   
   <Reaction name="RyRCa2" id="RyRCa2">
@@ -25,7 +25,7 @@
     <Reactant specieID="Ca"/>
     <Product specieID="Ca2RyR4CaM"/>
     <forwardRate>7.5e-3</forwardRate>
-    <reverseRate>40</reverseRate>
+    <reverseRate>5</reverseRate>
  </Reaction>
 
  <Reaction name="RyRCa3" id="RyRCa3">
@@ -33,7 +33,7 @@
     <Reactant specieID="Ca"/>
     <Product specieID="Ca3RyR4CaM"/>
     <forwardRate>5e-3</forwardRate>
-    <reverseRate>60</reverseRate>
+    <reverseRate>7.5</reverseRate>
  </Reaction>
 
   <Reaction name="RyRCa4" id="RyRCa4">
@@ -41,7 +41,7 @@
     <Reactant specieID="Ca"/>
     <Product specieID="Ca4RyR4CaM"/>
     <forwardRate>2.5e-3</forwardRate>
-    <reverseRate>80</reverseRate>
+    <reverseRate>10</reverseRate>
  </Reaction>
 
 
