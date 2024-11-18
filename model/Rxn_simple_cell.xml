@@ -193,6 +193,16 @@
     <Q10>0.2</Q10>
   </Reaction>
 
+    <Reaction name="GAP42CaM_bind" id="GAP43CaM_bind">
+    <Reactant specieID="CaM"/>
+    <Reactant specieID="GAP43"/>
+    <Product specieID="GAP43CaM"/>
+    <forwardRate>9.e-6</forwardRate>
+    <reverseRate>36.e-3</reverseRate>
+    <Q10>0.2</Q10>
+  </Reaction>
+
+
   <Reaction name="CaM_Ca2C" id="CaM_Ca2C">
     <Reactant specieID="CaM"/>
     <Reactant specieID="Ca" n="2"/>
