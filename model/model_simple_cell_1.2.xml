@@ -19,7 +19,7 @@
 
 
     <!-- run time for the calculation, milliseconds -->
-    <runtime>           20000</runtime>
+    <runtime>           60000</runtime>
 
     <!-- set the seed to get the same spines each time testing -->
     <spineSeed>          123          </spineSeed>
