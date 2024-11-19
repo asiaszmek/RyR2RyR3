@@ -26,8 +26,7 @@
 
     <discretization>
 	<!-- default largest size for elements in bulk volumes (dendrites), microns -->	
-       <defaultMaxElementSide>.6</defaultMaxElementSide> 
-       <surfaceLayers>0.4</surfaceLayers> 
+       <defaultMaxElementSide>3</defaultMaxElementSide> 
 	<!-- discretization for spines, microns -->
 	<spineDeltaX>   0.1           </spineDeltaX>
 
