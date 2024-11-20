@@ -184,11 +184,11 @@
       <-> GAP43CaM -->
   <!--I step of the Neurogranin with 3x k_f (Zhabotinsky 2006),
        neurogranin is similar to GAP43 (neuromodulin) -->
-  <Reaction name="NgCaM_bind" id="NgCaM_bind">
+  <Reaction name="GAP43CaM_bind" id="GAP43CaM_bind">
     <Reactant specieID="CaM" />
-    <Reactant specieID="Ng" />
-    <Product specieID="NgCaM" />
-    <forwardRate>84.e-6</forwardRate>
+    <Reactant specieID="GAP43" />
+    <Product specieID="GAP43CaM" />
+    <forwardRate>9.333e-6</forwardRate>
     <reverseRate>36.e-3</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>
