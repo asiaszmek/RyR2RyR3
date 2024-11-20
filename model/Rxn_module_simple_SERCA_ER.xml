@@ -81,7 +81,7 @@
     <Product specieID="LeakER"/>
     <Product specieID="Ca" />
 
-    <forwardRate>1.8e-7</forwardRate>
+    <forwardRate>0.6e-7</forwardRate>
     <reverseRate>1.8e-7</reverseRate>
     <Q10>0.2</Q10>
   </Reaction>

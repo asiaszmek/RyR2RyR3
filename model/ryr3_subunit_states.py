@@ -10,8 +10,8 @@ parser.add_argument('--release', default=False,
                     help='Add Ca release from the ER')
 parser.add_argument('--CaM_k_rev_multiplier', type=float, default=1,
                     help='Increase CaM-RyR binding k_rev to simulate oxidative conditions')
-parser.add_argument('--filename', default=default_fname,
-                    help="Destination filename")
+parser.add_argument('--output', default=default_fname,
+                    help="Destination output")
 
 
 
@@ -25,7 +25,7 @@ kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "RyR3Ca3":5e-4, "RyR3Ca4": 2.5e-4, "RyR3Ca4O1": 97.2,
        "RyR3Ca4O1C1": 0.07,
        "RyR3Ca4O2": 97.2e-2, "RyR3Ca4O2C1":3.5, "RyR3Ca4C1I": 1.38,
-       "II2":1, "release": 5e-3
+       "II2":1, "release": 1.6667e-3
       }
 
 
@@ -106,7 +106,7 @@ def generate_name(a, b, c, d=0):
 
 if __name__ == "__main__":
     args = parser.parse_args()
-    fname = args.filename
+    fname = args.output
     if args.CaM_k_rev_multiplier > 1:
         krs["CaM"] = args.CaM_k_rev_multiplier*krs["CaM"]
         krs["CaMCa2C"] = args.CaM_k_rev_multiplier*krs["CaMCa2C"]
