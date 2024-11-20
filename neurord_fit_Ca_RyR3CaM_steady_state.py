@@ -8,7 +8,7 @@ from ajustador import drawing,loadconc,nrd_fitness
 from ajustador.helpers import converge,save_params
 
 # constants:
-kd = 667   # Ca affinity for RyRCaM
+kd = 1000   # Ca affinity for RyRCaM
 
 dirname='fit_RyR3CaM_Ca/'  #where data and model file are stored.  Can be different than current directory. Multiple datafiles allowed
 #Set of model files that have first part of file name in common.  All included files must be in same directory.
@@ -16,7 +16,7 @@ model_set='model'
 exp_set='combined' #set of data files corresponding to model files; files may contain several molecules
 
 #which molecule(s) to match in optimization
-fname_xml = os.path.join(dirname, "Rxn_RyRCaM.xml")
+fname_xml = os.path.join(dirname, "Rxn_RyR3CaM.xml")
 tree = etree.parse(fname_xml)
 root = tree.getroot()
 mol_list = []
@@ -69,7 +69,7 @@ for son in root:
             print(species, reac_id)
             if "Ca1" not in counters:
                 counters["Ca1"] = 0
-                my_params.append(P('Ca1RyR_fwd_rate', 0.003, min=1e-7,
+                my_params.append(P('Ca1RyR_fwd_rate', 0.003, min=1e-4,
                                     max=1,
                                     xpath=forward_path))
             else:
@@ -132,10 +132,10 @@ for son in root:
             print(species, reac_id)
             if "I2" not in counters:
                 counters["I2"] = 0
-                my_params.append(P("I2_flicker_fwd_rate", 1,
+                my_params.append(P("I2_flicker_fwd_rate", 9,
                                    min=1e-3, max=1e3,
                                    xpath=forward_path))        
-                my_params.append(P("I2_flicker_bkw_rate", 0.6,
+                my_params.append(P("I2_flicker_bkw_rate", 0.9,
                                    min=1e-3, max=1e3,
                                    xpath=reverse_path))
             else:

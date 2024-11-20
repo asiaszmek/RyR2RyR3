@@ -12,7 +12,7 @@ ryr_cl_fname = "../datasets_for_fitting/ryr3_cam_tc.csv"
 
 model_text = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SDRun xmlns:xi="http://www.w3.org/2001/XInclude" xmlns="http://stochdiff.textensor.org">
-    <xi:include href="Rxn_RyRCaM.xml" />
+    <xi:include href="Rxn_RyR3CaM.xml" />
     <xi:include href="Morph.xml" />
     <xi:include href="%s" />
     <!--2D means the morphology is interpreted like a flatworm, 3D for
@@ -50,7 +50,7 @@ IC_text = """<?xml version="1.0" encoding="utf-8"?>
 <InitialConditions>
   <ConcentrationSet>
     <NanoMolarity specieID="Ca" value="%f"/>
-    <NanoMolarity specieID="RyR4_4CaM"      value="0.1"    />
+    <NanoMolarity specieID="RyR3_4CaM"      value="0.1"    />
   </ConcentrationSet>
 </InitialConditions>
 """
@@ -149,7 +149,7 @@ def get_numbers(my_file, output="__main__"):
         dt = times[1]-times[0]
         exp_len = int(times[-1])//2
         mean_ca = data[:, 0, species.index("Ca")].mean()*10/6.023/vol
-        bas_idx = species.index("RyR4_4CaM")
+        bas_idx = species.index("RyR3_4CaM")
         ryr_basal = data[0, 0, bas_idx]
         if ryr_basal > 1:
             continue
