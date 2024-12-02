@@ -15,7 +15,7 @@ parser.add_argument('--filename', default=default_fname,
 
 
 
-A = 0.667
+A = 4
 
 counter = 1
 
@@ -25,7 +25,7 @@ kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "RyR3Ca3":5e-3, "RyR3Ca4": 2.5e-3, "RyR3Ca4O1": 263.66,
        "RyR3Ca4O1C1": 0.00734,
        "RyR3Ca4O2": 263.66e-2, "RyR3Ca4O2C1":0.00734e2, "RyR3Ca4C1I": 0.48,
-       "II2":9.33, "release": 5e-3
+       "II2":1.4, "release":1.6667e-3
       }
 
 
@@ -34,14 +34,14 @@ krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
        "RyR3Ca2": 5, "RyR3Ca3": 7.5, "RyR3Ca4": 10,
        "RyR3Ca4O1": 1.026,"RyR3Ca4O1C1": 0.6296, "RyR3Ca4O2": 1.026e-2,
        "RyR3Ca4O2C1": 0.6296e2,  "RyR3Ca4C1I":0.04,
-       "II2":0.974, "release": 5e-3
+       "II2":0.1525, "release": 5e-3
        }
 
 for i in range(1, 5):
     new_specie = "CaMRyR3Ca%d"%i
     old_specie = "RyR3Ca%d"%i
-    kfs[new_specie] = 4.5*kfs[old_specie]
-    krs[new_specie] = 4.5*A*krs[old_specie]
+    kfs[new_specie] = 0.75*kfs[old_specie]
+    krs[new_specie] = 0.75*A*krs[old_specie]
     print(new_specie, kfs[new_specie], krs[new_specie])
 
 open_close = ["RyR3Ca4O1", "RyR3Ca4O1C1",
@@ -64,8 +64,7 @@ def write_rates(root1, k_forward, k_reverse):
 
 def add_reaction(root, name, what, new_name):
     global counter
-    multiplier_rev = 1
-    multiplier_for = 1
+    multiplier = 1
     my_r = etree.SubElement(root, "Reaction",
                             name=name+"_"+what+"_"+str(counter),
                             id=name+"_"+what+"_"+str(counter))
@@ -79,10 +78,7 @@ def add_reaction(root, name, what, new_name):
             if "CaM" not in name:
                 CaM_no = 0
                 if CaM_no == 0:
-                    if A > 1: 
-                        multiplier_rev = A**(Ca_no-CaM_no)
-                    elif A < 1:
-                        multiplier_for = A**(CaM_no-Ca_no)
+                    multiplier = A**(Ca_no-CaM_no)
     elif "O1" in what or "O2" in what or "C1" in what or "I" in what:
         pass
     elif what == "release":
@@ -91,7 +87,7 @@ def add_reaction(root, name, what, new_name):
     else:
         etree.SubElement(my_r, "Reactant", specieID="Ca")
     etree.SubElement(my_r, "Product", specieID=new_name)
-    write_rates(my_r, kfs[what]*multiplier_for, krs[what]*multiplier_rev)
+    write_rates(my_r, kfs[what], krs[what]*multiplier)
     counter += 1
 
     

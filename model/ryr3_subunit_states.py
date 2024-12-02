@@ -15,33 +15,33 @@ parser.add_argument('--output', default=default_fname,
 
 
 
-A = 0.333
+A = 4
 
 counter = 1
 
 kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
-       "2CaN":  0.1e-2, "RyR3Ca1": 1e-3, "RyR3Ca2": 0.75e-3,
-       "RyR3Ca3":5e-4, "RyR3Ca4": 2.5e-4, "RyR3Ca4O1": 97.2,
-       "RyR3Ca4O1C1": 0.07,
-       "RyR3Ca4O2": 97.2e-2, "RyR3Ca4O2C1":3.5, "RyR3Ca4C1I": 1.38,
-       "II2":1, "release": 1.6667e-3
+       "2CaN":  0.1e-2, "RyR3Ca1": 10e-3, "RyR3Ca2": 7.5e-3,
+       "RyR3Ca3":5e-3, "RyR3Ca4": 2.5e-3, "RyR3Ca4O1": 263.66,
+       "RyR3Ca4O1C1": 0.00734,
+       "RyR3Ca4O2": 263.66e-2, "RyR3Ca4O2C1":0.00734e2, "RyR3Ca4C1I": 0.48,
+       "II2":1.4, "release":1.6667e-3
       }
 
 
 krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
-       "2CaC": 9.1e-3, "2CaN": 1000e-3,"RyR3Ca1": 2,
-       "RyR3Ca2": 4, "RyR3Ca3": 6, "RyR3Ca4": 8,
-       "RyR3Ca4O1": 0.001,"RyR3Ca4O1C1": 7, "RyR3Ca4O2": 0.001e-2,
-       "RyR3Ca4O2C1": 7e2,  "RyR3Ca4C1I":67,
-       "II2":0.06, "release": 5e-3
+       "2CaC": 9.1e-3, "2CaN": 1000e-3,"RyR3Ca1": 2.5,
+       "RyR3Ca2": 5, "RyR3Ca3": 7.5, "RyR3Ca4": 10,
+       "RyR3Ca4O1": 1.026,"RyR3Ca4O1C1": 0.6296, "RyR3Ca4O2": 1.026e-2,
+       "RyR3Ca4O2C1": 0.6296e2,  "RyR3Ca4C1I":0.04,
+       "II2":0.1525, "release": 5e-3
        }
 
 for i in range(1, 5):
     new_specie = "CaMRyR3Ca%d"%i
     old_specie = "RyR3Ca%d"%i
-    kfs[new_specie] = kfs[old_specie]
-    krs[new_specie] = A*krs[old_specie]
+    kfs[new_specie] = 0.75*kfs[old_specie]
+    krs[new_specie] = 0.75*A*krs[old_specie]
 
 open_close = ["RyR3Ca4O1", "RyR3Ca4O1C1",
               "RyR3Ca4O2", "RyR3Ca4O2C1", "RyR3Ca4C1I"]

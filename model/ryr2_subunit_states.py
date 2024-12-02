@@ -73,8 +73,8 @@ def add_reaction(root, name, what, new_name):
             Ca_no = int(name.split("_")[0][-1])
             if "CaM" not in name:
                 CaM_no = 0
-                if CaM_no == 0:
-                    multiplier= A**(Ca_no-CaM_no)
+            if CaM_no == 0:
+                multiplier= A**(Ca_no-CaM_no)
     elif "O1" in what or "O2" in what or "C1" in what or "I" in what:
         pass
     elif what == "release":
