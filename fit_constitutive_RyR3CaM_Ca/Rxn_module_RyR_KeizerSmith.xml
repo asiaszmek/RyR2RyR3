@@ -39,16 +39,16 @@ Keizer and Smith -->
     <Reactant specieID="RyRC2"/>
     <Reactant specieID="Ca" power="4"/>
     <Product specieID="RyRO2" />
-    <forwardRate>3.3333e-15</forwardRate>
-    <reverseRate>66.667e-3</reverseRate>
+    <forwardRate>3.3333e-14</forwardRate>
+    <reverseRate>66.667e-2</reverseRate>
   </Reaction>
 
   <Reaction name = "RyRd" id="RyRd">
     <Reactant specieID="RyRC1"/>
     <Reactant specieID="Ca" power="4"/>
     <Product specieID="RyRC2" />
-    <forwardRate>5000e-14</forwardRate>
-    <reverseRate>1.235e-2</reverseRate>
+    <forwardRate>5000e-16</forwardRate>
+    <reverseRate>1.235e-4</reverseRate>
   </Reaction>
 
   <Reaction name = "RyRf" id="RyRf">
