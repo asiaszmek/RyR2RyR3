@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<ReactionScheme>
+  <Specie name="Ca" id="Ca" kdiff="100" kdiffunit="mu2/s" />
+  <Specie name="CaER" id="CaER" kdiff="10." kdiffunit="mu2/s"/>
+  <Specie name="RyR"            id="RyR"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyRC1"            id="RyRC1"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyRC2"            id="RyRC2"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyRC3"            id="RyRC3"           kdiff="0" kdiffunit="mu2/s"/>  
+  <Specie name="RyRO1"            id="RyRO1"           kdiff="0" kdiffunit="mu2/s"/>
+  <Specie name="RyRO2"            id="RyRO2"           kdiff="0" kdiffunit="mu2/s"/>
+<!-- Stochastic model for correct transitions need K=ker/kef= 0.001uM^4
+Keizer and Smith --> 
+  <Reaction name = "RyRe" id="RyRe">
+    <Reactant specieID="RyR"/>
+    <Reactant specieID="Ca" power="4"/>
+    <Product specieID="RyRC1"/>
+    <forwardRate>5e-11</forwardRate>
+    <reverseRate>50e-3</reverseRate>
+ </Reaction>
+
+  <Reaction name = "RyRa" id="RyRa">
+    <Reactant specieID="RyRC1"/>
+    <Reactant specieID="Ca" power="4"/>
+    <Product specieID="RyRO1"/>
+    <forwardRate>5e-10</forwardRate>
+    <reverseRate>9600e-3</reverseRate>
+ </Reaction>
+   
+
+  <Reaction name = "RyRb" id="RyRb">
+    <Reactant specieID="RyRO1"/>
+    <Reactant specieID="Ca" power="4"/>
+    <Product specieID="RyRO2" />
+    <forwardRate>5e-11</forwardRate>
+    <reverseRate>13</reverseRate>
+  </Reaction>
+
+   <Reaction name = "RyRc" id="RyRc">
+    <Reactant specieID="RyRC2"/>
+    <Reactant specieID="Ca" power="4"/>
+    <Product specieID="RyRO2" />
+    <forwardRate>3.3333e-15</forwardRate>
+    <reverseRate>66.667e-3</reverseRate>
+  </Reaction>
+
+  <Reaction name = "RyRd" id="RyRd">
+    <Reactant specieID="RyRC1"/>
+    <Reactant specieID="Ca" power="4"/>
+    <Product specieID="RyRC2" />
+    <forwardRate>5000e-15</forwardRate>
+    <reverseRate>1.235e-3</reverseRate>
+  </Reaction>
+
+  <Reaction name = "RyRf" id="RyRf">
+    <Reactant specieID="RyRC2"/>
+    <Reactant specieID="Ca" power="4"/>
+    <Product specieID="RyRC3"/>
+    <forwardRate>1e-14</forwardRate>
+    <reverseRate>3</reverseRate>
+ </Reaction>
+    
+</ReactionScheme>

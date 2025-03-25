@@ -1,0 +1,11 @@
+<OutputScheme>
+  <OutputSet filename="all" dt="0.01">
+    <OutputSpecie name="Ca"/>
+    <OutputSpecie name="RyR"/>
+    <OutputSpecie name="RyRC1"/>
+    <OutputSpecie name="RyRC2"/>
+    <OutputSpecie name="RyRC3"/>
+    <OutputSpecie name="RyRO1"/>
+    <OutputSpecie name="RyRO2"/>
+  </OutputSet>
+</OutputScheme>
