@@ -14,8 +14,8 @@ Keizer and Smith -->
     <Reactant specieID="RyR"/>
     <Reactant specieID="Ca" power="4"/>
     <Product specieID="RyRC1"/>
-    <forwardRate>5e-11</forwardRate>
-    <reverseRate>50e-3</reverseRate>
+    <forwardRate>1.44e-09</forwardRate>
+    <reverseRate>0.2222</reverseRate>
  </Reaction>
 
   <Reaction name = "RyRa" id="RyRa">
