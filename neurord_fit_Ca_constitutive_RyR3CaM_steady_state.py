@@ -8,7 +8,7 @@ from ajustador import drawing,loadconc,nrd_fitness
 from ajustador.helpers import converge,save_params
 
 # constants:
-kd = 1000   # Ca affinity for RyRCaM
+
 
 dirname='fit_constitutive_RyR3CaM_Ca/'  #where data and model file are stored.  Can be different than current directory. Multiple datafiles allowed
 #Set of model files that have first part of file name in common.  All included files must be in same directory.
@@ -49,11 +49,13 @@ my_params = []
 
 
 my_params.append(P('RyR3CaMe_f', 7e-10, min=1e-20,
-                   max=1e-7,
+                   max=1e-3,
                    xpath='//Reaction[@id="RyRe"]/forwardRate'))
 my_params.append(P('RyR3CaMe_r', 0.126, min=1e-3,
                    max=1e3,
                    xpath='//Reaction[@id="RyRe"]/reverseRate'))
+
+
 
 
 params = aju.optimize.ParamSet(*my_params)

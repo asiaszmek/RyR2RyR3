@@ -14,7 +14,7 @@ exp_set='xu_meissner_ca' #set of data files corresponding to model files; files 
 mol={"RO": ["O1", "O2"]} #which molecule(s) to match in optimization
 tmpdir='/tmp/RyR2CaM_Ca_const'+dirname 
 os.chdir(dirname)
-kd = 3500
+kd = 2000
 # Use loadconc.CSV_conc_set if data to match are csv format (typically from wet experiments)
 exp = loadconc.CSV_conc_set(exp_set)
 
