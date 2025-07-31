@@ -24,6 +24,8 @@ Acknowledgements
 ----------------
 This work was funded by National Science Centre (NCN) Miniatura grant 2023/07/X/NZ3/00284
 
+Bibliography
+----------------
 [1] Lau K, Chan MMY, Van Petegem F. Lobe-Speciﬁc Calmodulin Binding to Different Ryanodine Receptor Isoforms. Biochemistry. 2014; 53(5):932–946. https://doi.org/10.1021/bi401502x, doi: 10.1021/bi401502x, pMID:
 24447242.
 
