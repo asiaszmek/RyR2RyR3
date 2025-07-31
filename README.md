@@ -44,3 +44,7 @@ jgp.114.6.787, doi: 10.1085/jgp.114.6.787.
 [10] Jędrzejewski-Szmek Z, Blackwell KT. Asynchronous 𝜏-leaping. The Journal of Chemical Physics. 2016 03; 144(12):125104. https://doi.org/10.1063/1.4944575, doi: 10.1063/1.4944575.
 
 [11] Jędrzejewski-Szmek Z, Abrahao KP, Jędrzejewska-Szmek J, Lovinger DM, Blackwell KT. Parameter Optimization Using Covariance Matrix Adaptation—Evolutionary Strategy (CMA-ES), an Approach to Investigate Differences in Channel Properties Between Neuron Subtypes. Frontiers in Neuroinformatics. 2018; 12. https://www.frontiersin.org/journals/neuroinformatics/articles/10.3389/fninf.2018.00047, doi: 10.3389/fninf.2018.00047.
+
+Acknowledgements
+----------------
+This work was funded by National Science Centre (NCN) Miniatura grant 2023/07/X/NZ3/00284
