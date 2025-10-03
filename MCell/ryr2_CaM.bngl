@@ -5,8 +5,18 @@ begin parameters
 #  MCELL_DIFFUSION_CONSTANT_3D_CaM 1.5e-7
 #  MCELL_DIFFUSION_CONSTANT_3D_RyR2  0
   NA      6.022e23/1e6  #uM
-  V       0.15121*1e-15 #uM
- 
+  ITERATIONS 10000
+  V 0.018822e-15
+  NA_V 6.022e23 * V
+  VOL_RXN 1
+  MCELL_REDEFINE_VOL_RXN NA_V
+  D 1e-3
+  MCELL_DIFFUSION_CONSTANT_3D_Ca D
+  MCELL_DIFFUSION_CONSTANT_3D_CaM D
+  MCELL_DIFFUSION_CONSTANT_3D_RyR2 0	
+  
+
+
 
 # For Ca-CaM binding use Faas, Raghavachari, Lisman & Mody, 2011 
 # possibly one has to go back to Sunita Nadkarni's (Mahajan & Nadkarni, 2018)
@@ -86,16 +96,16 @@ end parameters
 begin molecule types
   Ca()
   CaM(C~0~1~2,N~0~1~2,ryr2)
-  RyR2(r,l,Ca~0~1,cam,S~0~1~2)
+  RyR2(r,l,Ca~0~1,CaM,S~0~1~2)
   #S~0 -- closed, S~1 -- open,S~2 -- inhibited
 end molecule types
 
  
 
 begin seed species
-  CaM(C~0,N~0,ryr2)   0.0125*NA*V  
-  Ca()      0.3*NA*V
-  RyR2(r!1,l!4,Ca~0,cam,S~0).RyR2(r!2,l!1,Ca~0,cam,S~0).RyR2(r!3,l!2,Ca~0,cam,S~0).RyR2(r!4,l!3,Ca~0,cam,S~0)   0.0125*NA*V
+  CaM(C~0,N~0,ryr2)   0  
+  Ca()      0
+  RyR2(r!1,l!4,Ca~0,CaM,S~0).RyR2(r!2,l!1,Ca~0,CaM,S~0).RyR2(r!3,l!2,Ca~0,CaM,S~0).RyR2(r!4,l!3,Ca~0,CaM,S~0)   0
 end seed species
 
 begin observables
@@ -108,9 +118,10 @@ begin observables
   Molecules CaM2C1N CaM(C~2,N~1,ryr2)  
   Molecules CaM1C2N CaM(C~1,N~2,ryr2)
   Molecules CaM4 CaM(C~2,N~2,ryr2)
- 
-  Molecules RyR_c RyR2(r!1,l!4,Ca~0,cam,S~0).RyR2(r!2,l!1,Ca~0,cam,S~0).RyR2(r!3,l!2,Ca~0,cam,S~0).RyR2(r!4,l!3,Ca~0,cam,S~0), RyR2(r!1,l!4,Ca~0,cam,S~0).RyR2(r!2,l!1,S~0).RyR2(r!3,l!2,S~0).RyR2(r!4,l!3,S~1), RyR2(r!1,l!4,S~0).RyR2(r!2,l!1,S~0).RyR2(r!3,l!2,S~1).RyR2(r!4,l!3,S~0), RyR2(r!1,l!4,S~0).RyR2(r!2,l!1,S~1).RyR2(r!3,l!2,S~0).RyR2(r!4,l!3,S~0), RyR2(r!1,l!4,S~1).RyR2(r!2,l!1,S~0).RyR2(r!3,l!2,S~0).RyR2(r!4,l!3,S~0)  
- 
+  Molecules RyR2_1CaM  RyR2(r!1,l!4,Ca~0,CaM!+,S~0).RyR2(r!2,l!1,Ca~0,CaM,S~0).RyR2(r!3,l!2,Ca~0,CaM,S~0).RyR2(r!4,l!3,Ca~0,CaM,S~0) RyR2(r!1,l!4,Ca~0,CaM,S~0).RyR2(r!2,l!1,Ca~0,CaM!+,S~0).RyR2(r!3,l!2,Ca~0,CaM,S~0).RyR2(r!4,l!3,Ca~0,CaM,S~0) RyR2(r!1,l!4,Ca~0,CaM,S~0).RyR2(r!2,l!1,Ca~0,CaM,S~0).RyR2(r!3,l!2,Ca~0,CaM!+,S~0).RyR2(r!4,l!3,Ca~0,CaM,S~0) RyR2(r!1,l!4,Ca~0,CaM,S~0).RyR2(r!2,l!1,Ca~0,CaM,S~0).RyR2(r!3,l!2,Ca~0,CaM,S~0).RyR2(r!4,l!3,Ca~0,CaM!+,S~0)
+  Molecules RyR2_2CaM  RyR2(r!1,l!4,Ca~0,CaM!+,S~0).RyR2(r!2,l!1,Ca~0,CaM!+,S~0).RyR2(r!3,l!2,Ca~0,CaM,S~0).RyR2(r!4,l!3,Ca~0,CaM,S~0), RyR2(r!1,l!4,Ca~0,CaM!+,S~0).RyR2(r!2,l!1,Ca~0,CaM,S~0).RyR2(r!3,l!2,Ca~0,CaM!+,S~0).RyR2(r!4,l!3,Ca~0,CaM,S~0), RyR2(r!1,l!4,Ca~0,CaM!+,S~0).RyR2(r!2,l!1,Ca~0,CaM,S~0).RyR2(r!3,l!2,Ca~0,CaM,S~0).RyR2(r!4,l!3,Ca~0,CaM!+,S~0), RyR2(r!1,l!4,Ca~0,CaM,S~0).RyR2(r!2,l!1,Ca~0,CaM!+,S~0).RyR2(r!3,l!2,Ca~0,CaM!+,S~0).RyR2(r!4,l!3,Ca~0,CaM,S~0), RyR2(r!1,l!4,Ca~0,CaM,S~0).RyR2(r!2,l!1,Ca~0,CaM!+,S~0).RyR2(r!3,l!2,Ca~0,CaM,S~0).RyR2(r!4,l!3,Ca~0,CaM!+,S~0), RyR2(r!1,l!4,Ca~0,CaM,S~0).RyR2(r!2,l!1,Ca~0,CaM,S~0).RyR2(r!3,l!2,Ca~0,CaM!+,S~0).RyR2(r!4,l!3,Ca~0,CaM!+,S~0)
+  Molecules RyR2_3CaM RyR2(r!1,l!4,Ca~0,CaM!+,S~0).RyR2(r!2,l!1,Ca~0,CaM!+,S~0).RyR2(r!3,l!2,Ca~0,CaM!+,S~0).RyR2(r!4,l!3,Ca~0,CaM,S~0), RyR2(r!1,l!4,Ca~0,CaM,S~0).RyR2(r!2,l!1,Ca~0,CaM!+,S~0).RyR2(r!3,l!2,Ca~0,CaM,S~0).RyR2(r!4,l!3,Ca~0,CaM!+,S~0), RyR2(r!1,l!4,Ca~0,CaM!+,S~0).RyR2(r!2,l!1,Ca~0,CaM,S~0).RyR2(r!3,l!2,Ca~0,CaM!+,S~0).RyR2(r!4,l!3,Ca~0,CaM!+,S~0), RyR2(r!1,l!4,Ca~0,CaM!+,S~0).RyR2(r!2,l!1,Ca~0,CaM!+,S~0).RyR2(r!3,l!2,Ca~0,CaM,S~0).RyR2(r!4,l!3,Ca~0,CaM!+,S~0)
+  Molecules RyR2_4CaM RyR2(r!1,l!4,Ca~0,CaM!+,S~0).RyR2(r!2,l!1,Ca~0,CaM!+,S~0).RyR2(r!3,l!2,Ca~0,CaM,S~0).RyR2(r!4,l!3,Ca~0,CaM!+,S~0)
   
 
 end observables
@@ -118,39 +129,83 @@ end observables
 
 
 begin reaction rules
- r1: Ca + RyR2(Ca~0,cam,S~0) <-> RyR2(Ca~1,cam,S~0) konRyR_Ca, koffRyR_Ca	
- r2: RyR2(Ca~1,cam,S~0) <-> RyR2(Ca~1,cam,S~1) konO1, koffO1			
- r3: Ca + CaM(C~0,ryr2) <-> CaM(C~1,ryr2)  kon1c,koff1c  
- r4: Ca + CaM(N~0,ryr2) <-> CaM(N~1,ryr2)  kon1n,koff1n
- r5: Ca + CaM(C~1,ryr2) <-> CaM(C~2,ryr2)  kon2c,koff2c
- r6: Ca + CaM(N~1,ryr2) <-> CaM(N~2,ryr2)  kon2n,koff2n
+ r_RyR2CaM_ctrl_1a: Ca + RyR2(Ca~0,CaM,S~0) -> RyR2(Ca~1,CaM,S~0) konRyR_Ca
+ r_RyR2CaM_ctrl_1b: RyR2(Ca~1,CaM,S~0) -> Ca + RyR2(Ca~0,CaM,S~0) koffRyR_Ca	
+ r_RyR2CaM_ctrl_2a: RyR2(Ca~1,CaM,S~0) -> RyR2(Ca~1,CaM,S~1) konO1
+ r_RyR2CaM_ctrl_2b: RyR2(Ca~1,CaM,S~1) -> RyR2(Ca~1,CaM,S~0) koffO1		
+ r_RyR2CaM_ctrl_3a: Ca + CaM(C~0,ryr2) -> CaM(C~1,ryr2) kon1c
+ r_RyR2CaM_ctrl_3b: CaM(C~1,ryr2) -> Ca + CaM(C~0,ryr2) koff1c	
+ r_RyR2CaM_ctrl_4a: Ca + CaM(N~0,ryr2) -> CaM(N~1,ryr2) kon1n
+ r_RyR2CaM_ctrl_4b: CaM(N~1,ryr2) -> Ca + CaM(N~0,ryr2) koff1n
+ r_RyR2CaM_ctrl_5a: Ca + CaM(C~1,ryr2) -> CaM(C~2,ryr2) kon2c
+ r_RyR2CaM_ctrl_5b: CaM(C~2,ryr2) -> Ca + CaM(C~1,ryr2) koff2c	
+ r_RyR2CaM_ctrl_6a: Ca + CaM(N~1,ryr2) -> CaM(N~2,ryr2) kon2n
+ r_RyR2CaM_ctrl_6b: CaM(N~2,ryr2) -> Ca + CaM(N~1,ryr2) koff2n
  
  
- r7: Ca + CaM(ryr2!1).RyR2(Ca~0,cam!1) <-> CaM(ryr2!1).RyR2(Ca~1,cam!1) konRyRCaM_Ca,koffRyRCaM_Ca
- r8: CaM(C~0,N~0,ryr2) + RyR2(Ca~0,cam) <-> CaM(C~0,N~0,ryr2!1).RyR2(Ca~0,cam!1) konRyR_CaM,koffRyR_CaM
- r9: CaM(C~0,N~0,ryr2) + RyR2(Ca~1,cam) <-> CaM(C~0,N~0,ryr2!1).RyR2(Ca~1,cam!1) konCaRyR_CaM,koffCaRyR_CaM
- r10: CaM(C~1,N~0,ryr2) + RyR2(Ca~0,cam) <-> CaM(C~1,N~0,ryr2!1).RyR2(Ca~0,cam!1) konRyR_CaMC,koffRyR_CaMC
- r11: CaM(C~1,N~0,ryr2) + RyR2(Ca~1,cam) <-> CaM(C~1,N~0,ryr2!1).RyR2(Ca~1,cam!1) konCaRyR_CaMC,koffCaRyR_CaMC
- r12: CaM(C~2,N~0,ryr2) + RyR2(Ca~0,cam) <-> CaM(C~2,N~0,ryr2!1).RyR2(Ca~0,cam!1) konRyR_CaMC,koffRyR_CaMC
- r13: CaM(C~2,N~0,ryr2) + RyR2(Ca~1,cam) <-> CaM(C~2,N~0,ryr2!1).RyR2(Ca~1,cam!1) konCaRyR_CaMC,koffCaRyR_CaMC
- r14: CaM(C~0,N~1,ryr2) + RyR2(Ca~0,cam) <-> CaM(C~0,N~1,ryr2!1).RyR2(Ca~0,cam!1) konRyR_CaMN,koffRyR_CaMN
- r15: CaM(C~0,N~1,ryr2) + RyR2(Ca~1,cam) <-> CaM(C~0,N~1,ryr2!1).RyR2(Ca~1,cam!1) konCaRyR_CaMN,koffCaRyR_CaMN
- r16: CaM(C~0,N~2,ryr2) + RyR2(Ca~0,cam) <-> CaM(C~0,N~2,ryr2!1).RyR2(Ca~0,cam!1) konRyR_CaMN,koffRyR_CaMN
- r17: CaM(C~0,N~2,ryr2) + RyR2(Ca~1,cam) <-> CaM(C~0,N~2,ryr2!1).RyR2(Ca~1,cam!1) konCaRyR_CaMN,koffCaRyR_CaMN
- r18: CaM(C~1,N~1,ryr2) + RyR2(Ca~0,cam) <-> CaM(C~1,N~1,ryr2!1).RyR2(Ca~0,cam!1) konRyR_CaMCN,koffRyR_CaMCN
- r19: CaM(C~1,N~2,ryr2) + RyR2(Ca~1,cam) <-> CaM(C~1,N~2,ryr2!1).RyR2(Ca~1,cam!1) konCaRyR_CaMCN,koffCaRyR_CaMCN
- r20: CaM(C~2,N~1,ryr2) + RyR2(Ca~0,cam) <-> CaM(C~2,N~1,ryr2!1).RyR2(Ca~0,cam!1) konRyR_CaMCN,koffRyR_CaMCN
- r21: CaM(C~2,N~2,ryr2) + RyR2(Ca~1,cam) <-> CaM(C~2,N~2,ryr2!1).RyR2(Ca~1,cam!1) konCaRyR_CaMCN,koffCaRyR_CaMCN
- r22: Ca + CaM(C~0,ryr2!1).RyR2(cam!1) <-> CaM(C~1,ryr2!1).RyR2(cam!1) konRyR1C,koffRyR1C
- r23: Ca + CaM(C~1,ryr2!1).RyR2(cam!1) <-> CaM(C~2,ryr2!1).RyR2(cam!1) konRyR2C,koffRyR2C
- r24: Ca + CaM(N~0,ryr2!1).RyR2(cam!1) <-> CaM(N~1,ryr2!1).RyR2(cam!1) konRyR1N,koffRyR1N
+ r_RyR2CaM_ctrl_7a: Ca + CaM(ryr2!1).RyR2(Ca~0,CaM!1) -> CaM(ryr2!1).RyR2(Ca~1,CaM!1) konRyRCaM_Ca
+ r_RyR2CaM_ctrl_7b: CaM(ryr2!1).RyR2(Ca~1,CaM!1) -> Ca + CaM(ryr2!1).RyR2(Ca~0,CaM!1) koffRyRCaM_Ca
 
- r27: CaM(ryr2!1).RyR2(Ca~1,cam!1,S~0) <-> CaM(ryr2!1).RyR2(Ca~1,cam!1,S~1) konO2,koffO2
- r28: CaM(C~2,N~2,ryr2!1).RyR2(Ca~1,cam!1,S~1) <-> CaM(C~2,N~2,ryr2!1).RyR2(Ca~1,cam!1,S~2) konI,koffI
+ r_RyR2CaM_ctrl_8a: CaM(C~0,N~0,ryr2) + RyR2(Ca~0,CaM) -> CaM(C~0,N~0,ryr2!1).RyR2(Ca~0,CaM!1) konRyR_CaM
+ r_RyR2CaM_ctrl_8b: CaM(C~0,N~0,ryr2!1).RyR2(Ca~0,CaM!1) -> CaM(C~0,N~0,ryr2) + RyR2(Ca~0,CaM) koffRyR_CaM
+ 
+ r_RyR2CaM_ctrl_9a: CaM(C~0,N~0,ryr2) + RyR2(Ca~1,CaM) -> CaM(C~0,N~0,ryr2!1).RyR2(Ca~1,CaM!1) konCaRyR_CaM
+ r_RyR2CaM_ctrl_9b: CaM(C~0,N~0,ryr2!1).RyR2(Ca~1,CaM!1) -> CaM(C~0,N~0,ryr2) + RyR2(Ca~1,CaM) koffCaRyR_CaM
+ 
+ r_RyR2CaM_ctrl_10a: CaM(C~1,N~0,ryr2) + RyR2(Ca~0,CaM) -> CaM(C~1,N~0,ryr2!1).RyR2(Ca~0,CaM!1) konRyR_CaMC
+ r_RyR2CaM_ctrl_10b: CaM(C~1,N~0,ryr2!1).RyR2(Ca~0,CaM!1) -> CaM(C~1,N~0,ryr2) + RyR2(Ca~0,CaM) koffRyR_CaMC
+ 
+ r_RyR2CaM_ctrl_11a: CaM(C~1,N~0,ryr2) + RyR2(Ca~1,CaM) -> CaM(C~1,N~0,ryr2!1).RyR2(Ca~1,CaM!1) konCaRyR_CaMC
+ r_RyR2CaM_ctrl_11b: CaM(C~1,N~0,ryr2!1).RyR2(Ca~1,CaM!1) -> CaM(C~1,N~0,ryr2) + RyR2(Ca~1,CaM) koffCaRyR_CaMC
+ 
+ r_RyR2CaM_ctrl_12a: CaM(C~2,N~0,ryr2) + RyR2(Ca~0,CaM) -> CaM(C~2,N~0,ryr2!1).RyR2(Ca~0,CaM!1) koffRyR_CaMC
+ r_RyR2CaM_ctrl_12b: CaM(C~2,N~0,ryr2!1).RyR2(Ca~0,CaM!1) -> CaM(C~2,N~0,ryr2) + RyR2(Ca~0,CaM) koffRyR_CaMC
+ 
+ r_RyR2CaM_ctrl_13a: CaM(C~2,N~0,ryr2) + RyR2(Ca~1,CaM) -> CaM(C~2,N~0,ryr2!1).RyR2(Ca~1,CaM!1) konCaRyR_CaMC
+ r_RyR2CaM_ctrl_13b: CaM(C~2,N~0,ryr2!1).RyR2(Ca~1,CaM!1) -> CaM(C~2,N~0,ryr2) + RyR2(Ca~1,CaM) koffCaRyR_CaMC
+ 
+ r_RyR2CaM_ctrl_14a: CaM(C~0,N~1,ryr2) + RyR2(Ca~0,CaM) -> CaM(C~0,N~1,ryr2!1).RyR2(Ca~0,CaM!1) konRyR_CaMN
+ r_RyR2CaM_ctrl_14b: CaM(C~0,N~1,ryr2!1).RyR2(Ca~0,CaM!1) -> CaM(C~0,N~1,ryr2) + RyR2(Ca~0,CaM) koffRyR_CaMN
+ 
+ r_RyR2CaM_ctrl_15a: CaM(C~0,N~1,ryr2) + RyR2(Ca~1,CaM) -> CaM(C~0,N~1,ryr2!1).RyR2(Ca~1,CaM!1) konCaRyR_CaMN
+ r_RyR2CaM_ctrl_15b: CaM(C~0,N~1,ryr2!1).RyR2(Ca~1,CaM!1) -> CaM(C~0,N~1,ryr2) + RyR2(Ca~1,CaM) koffCaRyR_CaMN
+ 
+ r_RyR2CaM_ctrl_16a: CaM(C~0,N~2,ryr2) + RyR2(Ca~0,CaM) -> CaM(C~0,N~2,ryr2!1).RyR2(Ca~0,CaM!1) konRyR_CaMN
+ r_RyR2CaM_ctrl_16b: CaM(C~0,N~2,ryr2!1).RyR2(Ca~0,CaM!1) -> CaM(C~0,N~2,ryr2) + RyR2(Ca~0,CaM) koffRyR_CaMN
+ 
+ r_RyR2CaM_ctrl_17a: CaM(C~0,N~2,ryr2) + RyR2(Ca~1,CaM) -> CaM(C~0,N~2,ryr2!1).RyR2(Ca~1,CaM!1) konCaRyR_CaMN
+ r_RyR2CaM_ctrl_17b: CaM(C~0,N~2,ryr2!1).RyR2(Ca~1,CaM!1) -> CaM(C~0,N~2,ryr2) + RyR2(Ca~1,CaM) koffCaRyR_CaMN
+ 
+ r_RyR2CaM_ctrl_18a: CaM(C~1,N~1,ryr2) + RyR2(Ca~0,CaM) -> CaM(C~1,N~1,ryr2!1).RyR2(Ca~0,CaM!1) konRyR_CaMCN
+ r_RyR2CaM_ctrl_18b: CaM(C~1,N~1,ryr2!1).RyR2(Ca~0,CaM!1) -> CaM(C~1,N~1,ryr2) + RyR2(Ca~0,CaM) koffRyR_CaMCN
+
+ r_RyR2CaM_ctrl_19a: CaM(C~1,N~2,ryr2) + RyR2(Ca~1,CaM) -> CaM(C~1,N~2,ryr2!1).RyR2(Ca~1,CaM!1) konCaRyR_CaMCN
+ r_RyR2CaM_ctrl_19b: CaM(C~1,N~2,ryr2!1).RyR2(Ca~1,CaM!1) -> CaM(C~1,N~2,ryr2) + RyR2(Ca~1,CaM) koffCaRyR_CaMCN
+
+ r_RyR2CaM_ctrl_20a: CaM(C~2,N~1,ryr2) + RyR2(Ca~0,CaM) -> CaM(C~2,N~1,ryr2!1).RyR2(Ca~0,CaM!1) konRyR_CaMCN
+ r_RyR2CaM_ctrl_20b: CaM(C~2,N~1,ryr2!1).RyR2(Ca~0,CaM!1) -> CaM(C~2,N~1,ryr2) + RyR2(Ca~0,CaM) koffRyR_CaMCN
+
+ r_RyR2CaM_ctrl_21a: CaM(C~2,N~2,ryr2) + RyR2(Ca~1,CaM) -> CaM(C~2,N~2,ryr2!1).RyR2(Ca~1,CaM!1) konCaRyR_CaMCN
+ r_RyR2CaM_ctrl_21b: CaM(C~2,N~2,ryr2!1).RyR2(Ca~1,CaM!1) -> CaM(C~2,N~2,ryr2) + RyR2(Ca~1,CaM) koffCaRyR_CaMCN
+
+ r_RyR2CaM_ctrl_22a: Ca + CaM(C~0,ryr2!1).RyR2(CaM!1) -> CaM(C~1,ryr2!1).RyR2(CaM!1) konRyR1C
+ r_RyR2CaM_ctrl_22b: CaM(C~1,ryr2!1).RyR2(CaM!1) -> Ca + CaM(C~0,ryr2!1).RyR2(CaM!1) koffRyR1C
+
+ r_RyR2CaM_ctrl_23a: Ca + CaM(C~1,ryr2!1).RyR2(CaM!1) -> CaM(C~2,ryr2!1).RyR2(CaM!1) konRyR2C
+ r_RyR2CaM_ctrl_23b: CaM(C~2,ryr2!1).RyR2(CaM!1) -> Ca + CaM(C~1,ryr2!1).RyR2(CaM!1) koffRyR2C
+
+ r_RyR2CaM_ctrl_24a: Ca + CaM(N~0,ryr2!1).RyR2(CaM!1) -> CaM(N~1,ryr2!1).RyR2(CaM!1) konRyR1N
+ r_RyR2CaM_ctrl_24b: CaM(N~1,ryr2!1).RyR2(CaM!1) -> Ca + CaM(N~0,ryr2!1).RyR2(CaM!1) koffRyR1N
+
+ r_RyR2CaM_ctrl_25a: CaM(ryr2!1).RyR2(Ca~1,CaM!1,S~0) -> CaM(ryr2!1).RyR2(Ca~1,CaM!1,S~1) konO2
+ r_RyR2CaM_ctrl_25b: CaM(ryr2!1).RyR2(Ca~1,CaM!1,S~1) -> CaM(ryr2!1).RyR2(Ca~1,CaM!1,S~0) koffO2
+
+ r_RyR2CaM_ctrl_26a: CaM(C~2,N~2,ryr2!1).RyR2(Ca~1,CaM!1,S~1) -> CaM(C~2,N~2,ryr2!1).RyR2(Ca~1,CaM!1,S~2) konI
+ r_RyR2CaM_ctrl_26b: CaM(C~2,N~2,ryr2!1).RyR2(Ca~1,CaM!1,S~2) -> CaM(C~2,N~2,ryr2!1).RyR2(Ca~1,CaM!1,S~1) koffI
 
 end reaction rules
 
 end model
 
 
-simulate({method=>"ssa", t_end=>200,n_steps=>100000})
+simulate({method=>"nf", t_end=>200,n_steps=>100000})
