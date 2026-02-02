@@ -1,12 +1,9 @@
 begin model
 
 begin parameters
-#  MCELL_DIFFUSION_CONSTANT_3D_Ca  2e-6
-#  MCELL_DIFFUSION_CONSTANT_3D_CaM 1.5e-7
-#  MCELL_DIFFUSION_CONSTANT_3D_RyR2  0
-  NA      6.022e23/1e6  #uM
+  NA      6.022e23
   ITERATIONS 10000
-  V 0.018822e-15
+  V 1e-15
   NA_V 6.022e23 * V
   VOL_RXN 1
   MCELL_REDEFINE_VOL_RXN NA_V
@@ -14,7 +11,6 @@ begin parameters
   MCELL_DIFFUSION_CONSTANT_3D_Ca D
   MCELL_DIFFUSION_CONSTANT_3D_CaM D
   MCELL_DIFFUSION_CONSTANT_3D_RyR2 0	
-  
 
 
 
@@ -91,25 +87,45 @@ begin parameters
   konI 11.28e3
   koffI 0.05e3
   kRyRfon 90 # 1/s  10.3390/biom12111577
+
+  Ca0 1e-7*NA_V # Basal calcium concentration # 1/M Nr_ca_molecules
+  CaER0 3e-4*NA_V
+  CaM0 4e-6*NA_V
+ 
 end parameters
 
+begin compartments
+    #Endoplasmic reticulum lumen (ERL) 3D compartment with volume 0.1e-3um^3
+    #
+    ERL 3 0.1e-3um^3 ERM
+    # Endoplasmic reticulum membrane (PM) 2D compartment with volume 0.01 um x SA um^2
+    ERM 2 10e-4
+    # Cytoplasm (CP) 3D volume compartment with volume 0.4e-3um^3
+    CP 3 0.4e-3 
+end compartments
+
+
+
 begin molecule types
-  Ca()
-  CaM(C~0~1~2,N~0~1~2,ryr2)
-  RyR2(r,l,Ca~0~1,CaM,S~0~1~2)
+  Ca@CP Ca0
+  Ca@ERL CaER0
+  CaM(C~0~1~2,N~0~1~2,ryr2)@CP CaM0
+  CaM(C~0~1~2,N~0~1~2,ryr2)@ERM 0
+  RyR2@ERM (r,l,Ca~0~1,CaM,S~0~1~2) 60 # Rangamani 2025
   #S~0 -- closed, S~1 -- open,S~2 -- inhibited
 end molecule types
 
  
 
-begin seed species
-  CaM(C~0,N~0,ryr2)   0  
-  Ca()      0
-  CaER() 0
-  RyR2(r!1,l!4,Ca~0,CaM,S~0).RyR2(r!2,l!1,Ca~0,CaM,S~0).RyR2(r!3,l!2,Ca~0,CaM,S~0).RyR2(r!4,l!3,Ca~0,CaM,S~0)   0
-end seed species
+begin species
+  CaM(C~0,N~0,ryr2)@CP   CaM0  
+  Ca()@CP      Ca0
+  Ca()@ERL CaER0
+  RyR2(r!1,l!4,Ca~0,CaM,S~0).RyR2(r!2,l!1,Ca~0,CaM,S~0).RyR2(r!3,l!2,Ca~0,CaM,S~0).RyR2(r!4,l!3,Ca~0,CaM,S~0)@ERM   60 # Rangamani
+end  species
 
 begin observables
+  Molecules Cafree Ca
   Molecules CaM0  CaM(C~0,N~0,ryr2)
   Molecules CaM1C CaM(C~1,N~0,ryr2)
   Molecules CaM2C CaM(C~2,N~0,ryr2)
@@ -204,9 +220,9 @@ begin reaction rules
  r_RyR2CaM_ctrl_26a: CaM(C~2,N~2,ryr2!1).RyR2(Ca~1,CaM!1,S~1) -> CaM(C~2,N~2,ryr2!1).RyR2(Ca~1,CaM!1,S~2) konI
  r_RyR2CaM_ctrl_26b: CaM(C~2,N~2,ryr2!1).RyR2(Ca~1,CaM!1,S~2) -> CaM(C~2,N~2,ryr2!1).RyR2(Ca~1,CaM!1,S~1) koffI
 
- flux_RyR2CaM_1: RyR2(r!1,l!4,Ca~1,CaM,S~1).RyR2(r!2,l!1,Ca~1,CaM,S~1).RyR2(r!3,l!2,Ca~1,CaM,S~1).RyR2(r!4,l!3,Ca~1,CaM,S~1) + CaER -> RyR2(r!1,l!4,Ca~1,CaM,S~1).RyR2(r!2,l!1,Ca~1,CaM,S~1).RyR2(r!3,l!2,Ca~1,CaM,S~1).RyR2(r!4,l!3,Ca~1,CaM,S~1) + Ca kRyRfon
+ flux_RyR2CaM_1: RyR2(r!1,l!4,Ca~1,CaM,S~1).RyR2(r!2,l!1,Ca~1,CaM,S~1).RyR2(r!3,l!2,Ca~1,CaM,S~1).RyR2(r!4,l!3,Ca~1,CaM,S~1)@ERM + Ca@ERL -> RyR2(r!1,l!4,Ca~1,CaM,S~1).RyR2(r!2,l!1,Ca~1,CaM,S~1).RyR2(r!3,l!2,Ca~1,CaM,S~1).RyR2(r!4,l!3,Ca~1,CaM,S~1)@ERM + Ca@CP kRyRfon
 
- flux_RyR2CaM_2: RyR2(r!1,l!4,Ca~1,CaM,S~1).RyR2(r!2,l!1,Ca~1,CaM,S~1).RyR2(r!3,l!2,Ca~1,CaM,S~1).RyR2(r!4,l!3,Ca~1,CaM,S~1) + Ca -> RyR2(r!1,l!4,Ca~1,CaM,S~1).RyR2(r!2,l!1,Ca~1,CaM,S~1).RyR2(r!3,l!2,Ca~1,CaM,S~1).RyR2(r!4,l!3,Ca~1,CaM,S~1) + CaER kRyRfon
+ flux_RyR2CaM_2: RyR2(r!1,l!4,Ca~1,CaM,S~1).RyR2(r!2,l!1,Ca~1,CaM,S~1).RyR2(r!3,l!2,Ca~1,CaM,S~1).RyR2(r!4,l!3,Ca~1,CaM,S~1)@ERM + Ca@CP -> RyR2(r!1,l!4,Ca~1,CaM,S~1).RyR2(r!2,l!1,Ca~1,CaM,S~1).RyR2(r!3,l!2,Ca~1,CaM,S~1).RyR2(r!4,l!3,Ca~1,CaM,S~1)@ERM + Ca@ERL kRyRfon
 
 
 

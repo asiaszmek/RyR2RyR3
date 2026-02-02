@@ -4,7 +4,7 @@ from lxml import etree
 
 
 default_fname = "Rxn_module_RyR2_CaM.xml"
-
+# use Ca to CaM binding rates adapted from Pepke (their steady state formula for 70 nM Ca) with updated values fitted by Linkevicius et al 2026
 parser = argparse.ArgumentParser(description='Generate RyR2-CaM-Ca_cyt reactions')
 parser.add_argument('--release', default=False,
                     help='Add Ca release from the ER')
@@ -20,8 +20,8 @@ A = 3 #  k_rev in Ca+RyRCaM -> CaRyRCaM is multiplied by A
 counter = 1
 
 kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
-       "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 6e-5,
-       "2CaN":  0.1e-2, "RyR2Ca1": 1e-3, "RyR2Ca2": 0.75e-3,
+       "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 1.62e-7,
+       "2CaN":  2.62e-8, "RyR2Ca1": 1e-3, "RyR2Ca2": 0.75e-3,
        "RyR2Ca3":5e-4, "RyR2Ca4": 2.5e-4, "RyR2Ca4O1": 38.4,
        "RyR2Ca4O1C1": 0.0025,
        "RyR2Ca4O2": 38.4e-3, "RyR2Ca4O2C1":2.5, "RyR2Ca4C1I": 11.28,
@@ -29,7 +29,7 @@ kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
 
 
 krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
-       "2CaC": 9.1e-3, "2CaN": 1000e-3,"RyR2Ca1": 1,
+       "2CaC": 0.0438, "2CaN": 0.3639,"RyR2Ca1": 1,
        "RyR2Ca2": 2, "RyR2Ca3": 3, "RyR2Ca4": 4,
        "RyR2Ca4O1": 3,"RyR2Ca4O1C1": 0.77, "RyR2Ca4O2": 3e-3,
        "RyR2Ca4O2C1": 0.77e3,  "RyR2Ca4C1I":0.05, "II2":0.06,
@@ -66,7 +66,7 @@ def add_reaction(root, name, what, new_name):
                             id=name+"_"+what+"_"+str(counter))
     etree.SubElement(my_r, "Reactant", specieID=name)
     if what == "2CaC" or what == "2CaN":
-        etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
+        etree.SubElement(my_r, "Reactant", specieID="Ca", power="2")
     elif what in ["CaM", "CaMCa2C", "CaMCa4"]:
         etree.SubElement(my_r, "Reactant", specieID=what)
         if name.startswith("Ca"):
@@ -133,12 +133,12 @@ if __name__ == "__main__":
                             name="CaM_Ca2C",
                             id="CaM_Ca2C")
     etree.SubElement(my_r, "Reactant", specieID="CaM")
-    etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
+    etree.SubElement(my_r, "Reactant", specieID="Ca", power="2")
     etree.SubElement(my_r, "Product", specieID="CaMCa2C")
     kf = etree.SubElement(my_r, "forwardRate")
-    kf.text = str(6e-6)
+    kf.text = str(1.62e-7)
     kr = etree.SubElement(my_r, "reverseRate")
-    kr.text = str(9.1e-3)
+    kr.text = str(0.438)
     q = etree.SubElement(my_r, "Q10")
     q.text = ".2"
 
@@ -146,12 +146,12 @@ if __name__ == "__main__":
                             name="CaMCa2C_2Ca",
                             id="CaMCa2C_2Ca")
     etree.SubElement(my_r, "Reactant", specieID="CaMCa2C")
-    etree.SubElement(my_r, "Reactant", specieID="Ca", n="2")
+    etree.SubElement(my_r, "Reactant", specieID="Ca", power="2")
     etree.SubElement(my_r, "Product", specieID="CaMCa4")
     kf = etree.SubElement(my_r, "forwardRate")
-    kf.text = str(0.1e-3)
+    kf.text = str(2.62e-8)
     kr = etree.SubElement(my_r, "reverseRate")
-    kr.text = str(1000e-3)
+    kr.text = str(3.639)
     q = etree.SubElement(my_r, "Q10")
     q.text = ".2"
     ryr_species_to_open =[]
