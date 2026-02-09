@@ -16,11 +16,13 @@ parser.add_argument('--output', default=default_fname,
 
 
 A = 3 #  k_rev in Ca+RyRCaM -> CaRyRCaM is multiplied by A
-
+#
 counter = 1
 
-kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
-       "CaMCa2C": 3.15e-7, "CaMCa4": 3.66e-7, "2CaC": 1.62e-7,
+kfs = {"CaM": 1.25e-6, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
+       #ApoCaM forward rate 1.25e06nM-1ms-1 #Rebbeck et al 2024
+       #Fully bound Ca-CaM forward rate 4*1.25e06nM-1ms-1 #Rebbeck et al 2024
+       "CaMCa2C": 2.5e-6, "CaMCa4": 5.e-6, "2CaC": 1.62e-7,
        "2CaN":  2.62e-8, "RyR2Ca1": 1e-3, "RyR2Ca2": 0.75e-3,
        "RyR2Ca3":5e-4, "RyR2Ca4": 2.5e-4, "RyR2Ca4O1": 38.4,
        "RyR2Ca4O1C1": 0.0025,
@@ -28,7 +30,7 @@ kfs = {"CaM": 2.1e-8, # for Kd of 820 nM (Xu and Meissner 2004 for RyR2)
        "II2":1, "release": 1.6667e-3}
 
 
-krs = {"CaM": 1.73e-5, "CaMCa2C": 2.59e-5, "CaMCa4": 3.015e-6,
+krs = {"CaM": 0.001025e-5, "CaMCa2C": 0.00020555555555555556, "CaMCa4": 4.118852459016394e-05,
        "2CaC": 0.0438, "2CaN": 0.3639,"RyR2Ca1": 1,
        "RyR2Ca2": 2, "RyR2Ca3": 3, "RyR2Ca4": 4,
        "RyR2Ca4O1": 3,"RyR2Ca4O1C1": 0.77, "RyR2Ca4O2": 3e-3,
@@ -162,8 +164,9 @@ if __name__ == "__main__":
             my_specie_name = generate_name(i, j, k, l)
             etree.SubElement(my_rxn_file, "Specie", name=my_specie_name,
                              id=my_specie_name, kdiff="0", kdiffunit="mu2/s")
-            if my_specie_name.startswith("Ca4_"):
+            if my_specie_name.startswith("Ca4_") and "CaMCa4" not in my_specie_name:
                 ryr_species_to_open.append(my_specie_name)
+    print(ryr_species_to_open)
 
     for i, specie in enumerate(ryr_species_to_open):
         etree.SubElement(my_rxn_file, "Specie", name="%s_O1" % specie,
