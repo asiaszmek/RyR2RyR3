@@ -15,7 +15,7 @@ parser.add_argument('--output', default=default_fname,
 
 
 
-A = 3 #  k_rev in Ca+RyRCaM -> CaRyRCaM is multiplied by A
+A = 1 #  k_rev in Ca+RyRCaM -> CaRyRCaM is multiplied by A
 #
 counter = 1
 
